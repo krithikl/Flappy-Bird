@@ -1,7 +1,7 @@
 |mainDiagram
 red_out <= VGA_SYNC:inst1.red_out
 clk => altpll0:inst6.inclk0
-pb1 => bouncy_ball:inst.pb1
+sw0 => bouncy_ball:inst.sw0
 pb2 => bouncy_ball:inst.pb2
 mouse_data <> MOUSE:inst3.mouse_data
 mouse_clk <> MOUSE:inst3.mouse_clk
@@ -188,8 +188,28 @@ locked <= locked.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |mainDiagram|bouncy_ball:inst
-pb1 => red.DATAIN
-pb2 => green.IN1
+sw0 => ball_y_motion.OUTPUTSELECT
+sw0 => ball_y_motion.OUTPUTSELECT
+sw0 => ball_y_motion.OUTPUTSELECT
+sw0 => ball_y_motion.OUTPUTSELECT
+sw0 => ball_y_motion.OUTPUTSELECT
+sw0 => ball_y_motion.OUTPUTSELECT
+sw0 => ball_y_motion.OUTPUTSELECT
+sw0 => ball_y_motion.OUTPUTSELECT
+sw0 => ball_y_motion.OUTPUTSELECT
+sw0 => ball_y_motion.OUTPUTSELECT
+sw0 => ball_y_pos.OUTPUTSELECT
+sw0 => ball_y_pos.OUTPUTSELECT
+sw0 => ball_y_pos.OUTPUTSELECT
+sw0 => ball_y_pos.OUTPUTSELECT
+sw0 => ball_y_pos.OUTPUTSELECT
+sw0 => ball_y_pos.OUTPUTSELECT
+sw0 => ball_y_pos.OUTPUTSELECT
+sw0 => ball_y_pos.OUTPUTSELECT
+sw0 => ball_y_pos.OUTPUTSELECT
+sw0 => ball_y_pos.OUTPUTSELECT
+sw0 => green.DATAIN
+pb2 => red.DATAIN
 leftButton => Move_Ball.IN0
 leftButton => Move_Ball.IN0
 rightButton => Move_Ball.IN1
@@ -255,8 +275,8 @@ pixel_column[8] => Add0.IN14
 pixel_column[8] => LessThan1.IN16
 pixel_column[9] => Add0.IN13
 pixel_column[9] => LessThan1.IN15
-red <= pb1.DB_MAX_OUTPUT_PORT_TYPE
-green <= green.DB_MAX_OUTPUT_PORT_TYPE
+red <= pb2.DB_MAX_OUTPUT_PORT_TYPE
+green <= sw0.DB_MAX_OUTPUT_PORT_TYPE
 blue <= ball_on.DB_MAX_OUTPUT_PORT_TYPE
 
 

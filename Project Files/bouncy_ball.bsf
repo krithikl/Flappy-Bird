@@ -26,8 +26,8 @@ applicable agreement for further details.
 	(port
 		(pt 0 32)
 		(input)
-		(text "pb1" (rect 0 0 12 12)(font "Arial" ))
-		(text "pb1" (rect 21 27 33 39)(font "Arial" ))
+		(text "sw0" (rect 0 0 15 12)(font "Arial" ))
+		(text "sw0" (rect 21 27 36 39)(font "Arial" ))
 		(line (pt 0 32)(pt 16 32)(line_width 1))
 	)
 	(port
