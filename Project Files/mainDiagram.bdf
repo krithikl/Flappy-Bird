@@ -38,7 +38,7 @@ applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect 864 776 1040 792)
+	(rect 816 776 992 792)
 	(text "INPUT" (rect 133 0 161 10)(font "Arial" (font_size 6)))
 	(text "pb1" (rect 9 0 26 12)(font "Arial" ))
 	(pt 176 8)
@@ -51,11 +51,11 @@ applicable agreement for further details.
 		(line (pt 117 12)(pt 121 8))
 	)
 	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect 808 792 864 808))
+	(annotation_block (location)(rect 760 792 816 808))
 )
 (pin
 	(input)
-	(rect 864 792 1040 808)
+	(rect 816 792 992 808)
 	(text "INPUT" (rect 133 0 161 10)(font "Arial" (font_size 6)))
 	(text "pb2" (rect 9 0 26 12)(font "Arial" ))
 	(pt 176 8)
@@ -68,7 +68,7 @@ applicable agreement for further details.
 		(line (pt 117 12)(pt 121 8))
 	)
 	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect 808 808 864 824))
+	(annotation_block (location)(rect 760 808 816 824))
 )
 (pin
 	(output)
@@ -408,7 +408,7 @@ applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 888 1256 944 1272))
+	(annotation_block (location)(rect 792 1224 848 1240))
 )
 (pin
 	(output)
@@ -425,7 +425,7 @@ applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 1184 1296 1240 1312))
+	(annotation_block (location)(rect 1128 1224 1184 1240))
 )
 (pin
 	(bidir)
@@ -808,7 +808,7 @@ applicable agreement for further details.
 		(pt 232 32)
 		(output)
 		(text "sevenSegment[7..0]" (rect 0 0 100 12)(font "Arial" ))
-		(text "sevenSegment[7..0]" (rect 127 27 211 39)(font "Arial" ))
+		(text "sevenSegment[7..0]" (rect 127 27 227 39)(font "Arial" ))
 		(line (pt 232 32)(pt 216 32)(line_width 3))
 	)
 	(drawing
@@ -830,7 +830,7 @@ applicable agreement for further details.
 		(pt 232 32)
 		(output)
 		(text "sevenSegment[7..0]" (rect 0 0 100 12)(font "Arial" ))
-		(text "sevenSegment[7..0]" (rect 127 27 211 39)(font "Arial" ))
+		(text "sevenSegment[7..0]" (rect 127 27 227 39)(font "Arial" ))
 		(line (pt 232 32)(pt 216 32)(line_width 3))
 	)
 	(drawing
@@ -1152,6 +1152,14 @@ applicable agreement for further details.
 	(pt 40 1008)
 	(pt 104 1008)
 	(bus)
+)
+(connector
+	(pt 992 800)
+	(pt 1032 800)
+)
+(connector
+	(pt 992 784)
+	(pt 1032 784)
 )
 (junction (pt 1352 688))
 (junction (pt 1728 840))

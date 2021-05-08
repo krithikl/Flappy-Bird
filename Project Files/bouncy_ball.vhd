@@ -6,9 +6,9 @@ USE  IEEE.STD_LOGIC_SIGNED.all;
 
 ENTITY bouncy_ball IS
 	PORT
-		( pb1, pb2, leftButton, rightButton, clk, vert_sync	: IN std_logic;
-          pixel_row, pixel_column	: IN std_logic_vector(9 DOWNTO 0);
-		  red, green, blue 			: OUT std_logic);		
+		( SIGNAL pb1, pb2, leftButton, rightButton, clk, vert_sync	: IN std_logic;
+         SIGNAL pixel_row, pixel_column	: IN std_logic_vector(9 DOWNTO 0);
+		  SIGNAL red, green, blue 			: OUT std_logic);		
 END bouncy_ball;
 
 architecture behavior of bouncy_ball is

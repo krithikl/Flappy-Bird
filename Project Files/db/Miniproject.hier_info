@@ -1,6 +1,8 @@
 |mainDiagram
 red_out <= VGA_SYNC:inst1.red_out
 clk => altpll0:inst6.inclk0
+pb1 => bouncy_ball:inst.pb1
+pb2 => bouncy_ball:inst.pb2
 mouse_data <> MOUSE:inst3.mouse_data
 mouse_clk <> MOUSE:inst3.mouse_clk
 green_out <= VGA_SYNC:inst1.green_out
@@ -23,8 +25,6 @@ seg1[3] <= bcdToSegment:inst4.sevenSegment[3]
 seg1[4] <= bcdToSegment:inst4.sevenSegment[4]
 seg1[5] <= bcdToSegment:inst4.sevenSegment[5]
 seg1[6] <= bcdToSegment:inst4.sevenSegment[6]
-pb1 => ~NO_FANOUT~
-pb2 => ~NO_FANOUT~
 
 
 |mainDiagram|VGA_SYNC:inst1

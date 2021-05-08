@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Miniproject
-Sat May 08 13:26:07 2021
+Sat May 08 13:45:16 2021
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -49,15 +49,15 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat May 08 13:26:07 2021           ;
+; Analysis & Synthesis Status        ; Successful - Sat May 08 13:45:16 2021           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; Miniproject                                     ;
 ; Top-level Entity Name              ; mainDiagram                                     ;
 ; Family                             ; Cyclone III                                     ;
-; Total logic elements               ; 311                                             ;
-;     Total combinational functions  ; 245                                             ;
-;     Dedicated logic registers      ; 177                                             ;
-; Total registers                    ; 177                                             ;
+; Total logic elements               ; 309                                             ;
+;     Total combinational functions  ; 244                                             ;
+;     Dedicated logic registers      ; 178                                             ;
+; Total registers                    ; 178                                             ;
 ; Total pins                         ; 26                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
@@ -189,20 +189,20 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+------------------------------+
 ; Resource                                    ; Usage                        ;
 +---------------------------------------------+------------------------------+
-; Estimated Total logic elements              ; 311                          ;
+; Estimated Total logic elements              ; 309                          ;
 ;                                             ;                              ;
-; Total combinational functions               ; 245                          ;
+; Total combinational functions               ; 244                          ;
 ; Logic element usage by number of LUT inputs ;                              ;
-;     -- 4 input functions                    ; 93                           ;
+;     -- 4 input functions                    ; 94                           ;
 ;     -- 3 input functions                    ; 74                           ;
-;     -- <=2 input functions                  ; 78                           ;
+;     -- <=2 input functions                  ; 76                           ;
 ;                                             ;                              ;
 ; Logic elements by mode                      ;                              ;
-;     -- normal mode                          ; 174                          ;
+;     -- normal mode                          ; 173                          ;
 ;     -- arithmetic mode                      ; 71                           ;
 ;                                             ;                              ;
-; Total registers                             ; 177                          ;
-;     -- Dedicated logic registers            ; 177                          ;
+; Total registers                             ; 178                          ;
+;     -- Dedicated logic registers            ; 178                          ;
 ;     -- I/O registers                        ; 0                            ;
 ;                                             ;                              ;
 ; I/O pins                                    ; 26                           ;
@@ -212,8 +212,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;                                             ;                              ;
 ; Maximum fan-out node                        ; MOUSE:inst3|MOUSE_CLK_FILTER ;
 ; Maximum fan-out                             ; 95                           ;
-; Total fan-out                               ; 1313                         ;
-; Average fan-out                             ; 2.75                         ;
+; Total fan-out                               ; 1316                         ;
+; Average fan-out                             ; 2.76                         ;
 +---------------------------------------------+------------------------------+
 
 
@@ -222,15 +222,15 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node               ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                              ; Library Name ;
 +------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------+--------------+
-; |mainDiagram                             ; 245 (1)           ; 177 (0)      ; 0           ; 0            ; 0       ; 0         ; 26   ; 0            ; |mainDiagram                                                                     ; work         ;
-;    |MOUSE:inst3|                         ; 113 (113)         ; 120 (120)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mainDiagram|MOUSE:inst3                                                         ; work         ;
-;    |VGA_SYNC:inst1|                      ; 57 (57)           ; 47 (47)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mainDiagram|VGA_SYNC:inst1                                                      ; work         ;
+; |mainDiagram                             ; 244 (1)           ; 178 (0)      ; 0           ; 0            ; 0       ; 0         ; 26   ; 0            ; |mainDiagram                                                                     ; work         ;
+;    |MOUSE:inst3|                         ; 111 (111)         ; 120 (120)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mainDiagram|MOUSE:inst3                                                         ; work         ;
+;    |VGA_SYNC:inst1|                      ; 59 (59)           ; 48 (48)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mainDiagram|VGA_SYNC:inst1                                                      ; work         ;
 ;    |altpll0:inst6|                       ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mainDiagram|altpll0:inst6                                                       ; work         ;
 ;       |altpll:altpll_component|          ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mainDiagram|altpll0:inst6|altpll:altpll_component                               ; work         ;
 ;          |altpll0_altpll:auto_generated| ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mainDiagram|altpll0:inst6|altpll:altpll_component|altpll0_altpll:auto_generated ; work         ;
 ;    |bcdToSegment:inst2|                  ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mainDiagram|bcdToSegment:inst2                                                  ; work         ;
 ;    |bcdToSegment:inst4|                  ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mainDiagram|bcdToSegment:inst4                                                  ; work         ;
-;    |bouncy_ball:inst|                    ; 60 (60)           ; 10 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mainDiagram|bouncy_ball:inst                                                    ; work         ;
+;    |bouncy_ball:inst|                    ; 59 (59)           ; 10 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mainDiagram|bouncy_ball:inst                                                    ; work         ;
 +------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -264,7 +264,6 @@ Encoding Type:  One-Hot
 +----------------------------------------+-----------------------------------------------+
 ; Register name                          ; Reason for Removal                            ;
 +----------------------------------------+-----------------------------------------------+
-; VGA_SYNC:inst1|red_out                 ; Stuck at GND due to stuck port data_in        ;
 ; MOUSE:inst3|CHAROUT[4..7]              ; Stuck at VCC due to stuck port data_in        ;
 ; MOUSE:inst3|CHAROUT[3]                 ; Stuck at GND due to stuck port data_in        ;
 ; MOUSE:inst3|CHAROUT[2]                 ; Stuck at VCC due to stuck port data_in        ;
@@ -276,7 +275,7 @@ Encoding Type:  One-Hot
 ; MOUSE:inst3|cursor_row[9]              ; Stuck at GND due to stuck port data_in        ;
 ; VGA_SYNC:inst1|pixel_row[9]            ; Stuck at GND due to stuck port data_in        ;
 ; bouncy_ball:inst|ball_y_pos[0]         ; Stuck at GND due to stuck port data_in        ;
-; Total Number of Removed Registers = 22 ;                                               ;
+; Total Number of Removed Registers = 21 ;                                               ;
 +----------------------------------------+-----------------------------------------------+
 
 
@@ -295,7 +294,7 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 177   ;
+; Total registers                              ; 178   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 20    ;
 ; Number of registers using Asynchronous Clear ; 16    ;
@@ -740,14 +739,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sat May 08 13:26:03 2021
+    Info: Processing started: Sat May 08 13:45:13 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Miniproject -c Miniproject
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file maindiagram.bdf
     Info (12023): Found entity 1: mainDiagram
-Info (12021): Found 2 design units, including 1 entities, in source file text.vhd
-    Info (12022): Found design unit 1: TEXT_DISPLAY-BEHAVIOUR
-    Info (12023): Found entity 1: TEXT_DISPLAY
+Info (12021): Found 0 design units, including 0 entities, in source file text.vhd
 Info (12021): Found 2 design units, including 1 entities, in source file bcdtosegment.vhd
     Info (12022): Found design unit 1: bcdToSegment-beh
     Info (12023): Found entity 1: bcdToSegment
@@ -770,9 +767,6 @@ Info (12021): Found 2 design units, including 1 entities, in source file bigbox.
     Info (12022): Found design unit 1: box-behavior
     Info (12023): Found entity 1: box
 Info (12127): Elaborating entity "mainDiagram" for the top level hierarchy
-Warning (275011): Block or symbol "bouncy_ball" of instance "inst" overlaps another block or symbol
-Warning (275009): Pin "pb1" not connected
-Warning (275009): Pin "pb2" not connected
 Info (12128): Elaborating entity "VGA_SYNC" for hierarchy "VGA_SYNC:inst1"
 Info (12128): Elaborating entity "altpll0" for hierarchy "altpll0:inst6"
 Info (12128): Elaborating entity "altpll" for hierarchy "altpll0:inst6|altpll:altpll_component"
@@ -847,25 +841,21 @@ Info (12128): Elaborating entity "bcdToSegment" for hierarchy "bcdToSegment:inst
 Info (13000): Registers with preset signals will power-up high
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "red_out" is stuck at GND
     Warning (13410): Pin "seg0_dec" is stuck at VCC
     Warning (13410): Pin "seg1_dec" is stuck at VCC
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 2 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "pb1"
-    Warning (15610): No output dependent on input pin "pb2"
-Info (21057): Implemented 343 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 340 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
     Info (21059): Implemented 21 output pins
     Info (21060): Implemented 2 bidirectional pins
-    Info (21061): Implemented 316 logic cells
+    Info (21061): Implemented 313 logic cells
     Info (21065): Implemented 1 PLLs
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 16 warnings
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 9 warnings
     Info: Peak virtual memory: 4631 megabytes
-    Info: Processing ended: Sat May 08 13:26:07 2021
-    Info: Elapsed time: 00:00:04
+    Info: Processing ended: Sat May 08 13:45:16 2021
+    Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:04
 
 
