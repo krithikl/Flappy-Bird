@@ -38,7 +38,10 @@ ARCHITECTURE BEHAVIOUR of text_display is
 
 BEGIN							
 
-	score_display <= "100000" when pixel_column < CONV_STD_LOGIC_VECTOR(289,10) else
+	score_display <= "100000" when pixel_column < CONV_STD_LOGIC_VECTOR(289,10) else -- "space"
+							"100000" when pixel_row < CONV_STD_LOGIC_VECTOR(284,10) else -- "space"
+							"100000" when pixel_row >= CONV_STD_LOGIC_VECTOR(302,10) and pixel_row > CONV_STD_LOGIC_VECTOR(282,10) else -- "space"
+	
 					CONV_STD_LOGIC_VECTOR(19,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(302,10) else --"S"
 					CONV_STD_LOGIC_VECTOR(3,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(318,10) else --"C"
 					CONV_STD_LOGIC_VECTOR(15,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(334,10) else --"O"
@@ -48,7 +51,7 @@ BEGIN
 --					ones_score when pixel_column <= CONV_STD_LOGIC_VECTOR(398,10) else 							--"ones_score"
 --					tens_score when pixel_column <= CONV_STD_LOGIC_VECTOR(414,10) else --"tens_score"
 												
-					"100000" when pixel_column > CONV_STD_LOGIC_VECTOR(382,10) else									--" space 
+					"100000" when pixel_column > CONV_STD_LOGIC_VECTOR(382,10) else								--" space 
 					
 			
 					-- for ones 
