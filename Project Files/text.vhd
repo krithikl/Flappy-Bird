@@ -10,8 +10,8 @@ ENTITY text_display is
 	PORT(
 		clock_25Mhz : IN STD_LOGIC;
 		pixel_row, pixel_column: IN STD_LOGIC_VECTOR (9 DOWNTO 0);
-		ones_score, tens_score:IN STD_LOGIC_VECTOR(5 DOWNTO 0)
-		--output_text : OUT STD_LOGIC	
+		ones_score, tens_score:IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		output_text : OUT STD_LOGIC	
 	  );
 END ENTITY text_display;
 
@@ -38,15 +38,17 @@ ARCHITECTURE BEHAVIOUR of text_display is
 
 BEGIN							
 
-	score_display <= CONV_STD_LOGIC_VECTOR(19,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(302,10) else --"S"
+	score_display <= "100000" when pixel_column < CONV_STD_LOGIC_VECTOR(289,10) else
+					CONV_STD_LOGIC_VECTOR(19,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(302,10) else --"S"
 					CONV_STD_LOGIC_VECTOR(3,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(318,10) else --"C"
 					CONV_STD_LOGIC_VECTOR(15,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(334,10) else --"O"
 					CONV_STD_LOGIC_VECTOR(18,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(350,10) else --"R"
 					CONV_STD_LOGIC_VECTOR(5,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(366,10) else --"E"
 					CONV_STD_LOGIC_VECTOR(58,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(382,10) else --":"
-					ones_score when pixel_column <= CONV_STD_LOGIC_VECTOR(398,10) else 							--"ones_score"
-					tens_score when pixel_column <= CONV_STD_LOGIC_VECTOR(414,10) else 							--"tens_score"
-					"100000" when pixel_column <= CONV_STD_LOGIC_VECTOR(414,10) else									--" space 
+--					ones_score when pixel_column <= CONV_STD_LOGIC_VECTOR(398,10) else 							--"ones_score"
+--					tens_score when pixel_column <= CONV_STD_LOGIC_VECTOR(414,10) else --"tens_score"
+												
+					"100000" when pixel_column > CONV_STD_LOGIC_VECTOR(382,10) else									--" space 
 					
 			
 					-- for ones 
@@ -93,6 +95,6 @@ BEGIN
 							rom_mux_output =>output_score
 							);
 
-	--output_text <= '1';
+	output_text <= output_score;
 
 END ARCHITECTURE;

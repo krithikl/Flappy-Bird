@@ -8,6 +8,7 @@ ENTITY bouncy_ball IS
 	PORT
 		( SIGNAL sw0, pb2, leftButton, rightButton, clk, vert_sync	: IN std_logic;
          SIGNAL pixel_row, pixel_column	: IN std_logic_vector(9 DOWNTO 0);
+			SIGNAL textOutput : IN std_logic;
 		  SIGNAL red, green, blue 			: OUT std_logic);		
 END bouncy_ball;
 
@@ -35,9 +36,9 @@ ball_on <= '1' when ( ('0' & pixel_column + size >= '0' & ball_x_pos)
 -- Colours for pixel data on video signal
 -- Changing the background and ball colour by pushbuttons
 
-Red <= not pb2;
+Red <= textOutput;
 
-Green <= not sw0;
+Green <= textOutput;
 Blue <=  not ball_on;
 
 
