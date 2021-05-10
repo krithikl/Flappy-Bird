@@ -62,8 +62,8 @@ BEGIN
 					CONV_STD_LOGIC_VECTOR(18,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(350,10) else --"R"
 					CONV_STD_LOGIC_VECTOR(5,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(366,10) else --"E"
 					CONV_STD_LOGIC_VECTOR(58,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(382,10) else --":"
-					ones_score when pixel_column <= CONV_STD_LOGIC_VECTOR(398,10) else 							--"ones_score"
-					tens_score when pixel_column <= CONV_STD_LOGIC_VECTOR(414,10) else 							--"tens_score"
+					--ones_score when pixel_column <= CONV_STD_LOGIC_VECTOR(398,10) else 							--"ones_score"
+					--tens_score when pixel_column <= CONV_STD_LOGIC_VECTOR(414,10) else 							--"tens_score"
 					"100000" when pixel_column <= CONV_STD_LOGIC_VECTOR(414,10) else									--" space 
 					
 			
