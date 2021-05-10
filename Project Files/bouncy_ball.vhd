@@ -36,8 +36,7 @@ ball_on <= '1' when ( ('0' & pixel_column + size >= '0' & ball_x_pos)
 -- Colours for pixel data on video signal
 -- Changing the background and ball colour by pushbuttons
 
-Red <= textOutput;
-
+Red <= sw0;
 Green <= textOutput;
 Blue <=  not ball_on;
 
@@ -59,18 +58,19 @@ begin
 			ball_y_pos <= ball_y_pos + ball_y_motion;
 			
 		elsif (leftButton = '0' or rightButton = '0') then
-			if (ball_y_pos <= size) then 
+			if (ball_y_pos <= size) then
+				ball_y_motion <= - CONV_STD_LOGIC_VECTOR(2,10);
+			elsif (pb2 = '0') then
+				ball_y_motion <= CONV_STD_LOGIC_VECTOR(0,10);
+			elsif (pb2 = '1') then
 				ball_y_motion <= - CONV_STD_LOGIC_VECTOR(2,10);
 			end if;
 			
 			-- Compute next ball Y position
 			ball_y_pos <= ball_y_pos - ball_y_motion;
-		elsif (sw0 = '1') then
-			ball_y_motion <=  CONV_STD_LOGIC_VECTOR(2,10);
-			ball_y_pos <= ball_y_pos + ball_y_motion;
-		end if;
+		
 	end if;
-
+end if;
 end process Move_Ball;
 
 END behavior;
