@@ -1,7 +1,7 @@
 library IEEE;
 use  IEEE.STD_LOGIC_1164.all;
 use  IEEE.STD_LOGIC_ARITH.all;
-use  IEEE.STD_LOGIC_SIGNED.all; --check
+use  IEEE.STD_LOGIC_SIGNED.all; 
 use IEEE.NUMERIC_STD.all; 
 
 
@@ -11,9 +11,7 @@ ENTITY text_display is
 		clock_25Mhz : IN STD_LOGIC;
 		pixel_row, pixel_column: IN STD_LOGIC_VECTOR (9 DOWNTO 0);
 		ones_score, tens_score:IN STD_LOGIC_VECTOR(5 DOWNTO 0);
-		
 		over_text_on : OUT STD_LOGIC;
-		
 		output_text : OUT STD_LOGIC	
 	  );
 END ENTITY text_display;
@@ -34,8 +32,7 @@ ARCHITECTURE BEHAVIOUR of text_display is
 
 	SIGNAL score_display : std_logic_vector(5 downto 0);
 	SIGNAL output_score  : STD_LOGIC := '0';
-	SIGNAL text_output : STD_LOGIC := '0';
-	SIGNAL text_address : std_logic_vector(5 downto 0); 
+ 
 	
 	
 
@@ -43,11 +40,8 @@ BEGIN
 
 
 
-			over_text_on <= '1' when --(text_output = '1' and pixel_column <= CONV_STD_LOGIC_VECTOR(447,10) and pixel_column >= CONV_STD_LOGIC_VECTOR(286,10) 
-					--and pixel_row <= CONV_STD_LOGIC_VECTOR(222,10) and pixel_row >= CONV_STD_LOGIC_VECTOR(221,10)) or
-				(output_score = '1' and pixel_column <= CONV_STD_LOGIC_VECTOR(440,10) and pixel_column >= CONV_STD_LOGIC_VECTOR(286,10) 
-					and pixel_row <= CONV_STD_LOGIC_VECTOR(254,10) and pixel_row >= CONV_STD_LOGIC_VECTOR(240,10)) else	
-			    '0';
+			      over_text_on <= '1' when (output_score = '1' and pixel_column <= CONV_STD_LOGIC_VECTOR(440,10) and pixel_column >= CONV_STD_LOGIC_VECTOR(286,10) 
+					and pixel_row <= CONV_STD_LOGIC_VECTOR(254,10) and pixel_row >= CONV_STD_LOGIC_VECTOR(240,10)) else'0';
 
 
 
@@ -91,13 +85,6 @@ BEGIN
 					
 					;
 
-		text : char_rom PORT MAP(
-					character_address => text_address,
-					font_row=>pixel_row(3 downto 1),
-					font_col=>pixel_column(3 downto 1),
-					clock => clock_25Mhz,
-					rom_mux_output =>text_output
-					); 
 					
 		scoretext : char_rom PORT MAP(
 							character_address => score_display,
