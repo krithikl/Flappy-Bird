@@ -83,11 +83,11 @@ set_global_assignment -name LAST_QUARTUS_VERSION "13.0 SP1"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
 set_location_assignment PIN_G21 -to clk
-set_location_assignment PIN_K21 -to blue_out
-set_location_assignment PIN_J17 -to green_out
+set_location_assignment PIN_K18 -to blue_out
+set_location_assignment PIN_J21 -to green_out
 set_location_assignment PIN_L21 -to horiz_sync_out
 set_location_assignment PIN_L22 -to vert_sync_out
-set_location_assignment PIN_H17 -to red_out
+set_location_assignment PIN_H21 -to red_out
 set_location_assignment PIN_G3 -to pb1
 set_location_assignment PIN_F1 -to pb2
 set_location_assignment PIN_P22 -to mouse_clk

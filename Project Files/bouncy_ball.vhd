@@ -55,7 +55,7 @@ begin
 			end if;
 			
 			-- Compute next ball Y position
-			ball_y_pos <= ball_y_pos + ball_y_motion;
+			ball_y_pos <= ball_y_pos + ball_y_motion - "0000001100";
 			
 		elsif (leftButton = '0' or rightButton = '0') then
 			if (ball_y_pos <= size) then
