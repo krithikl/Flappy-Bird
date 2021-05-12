@@ -1,5 +1,5 @@
 EDA Netlist Writer report for Miniproject
-Mon May 10 13:53:44 2021
+Wed May 12 17:12:59 2021
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -34,7 +34,7 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                                       ;
 +---------------------------+------------------------------------------------------+
-; EDA Netlist Writer Status ; No Output Files Generated - Mon May 10 13:53:44 2021 ;
+; EDA Netlist Writer Status ; No Output Files Generated - Wed May 12 17:12:59 2021 ;
 ; Revision Name             ; Miniproject                                          ;
 ; Top-level Entity Name     ; mainDiagram                                          ;
 ; Family                    ; Cyclone III                                          ;
@@ -47,13 +47,13 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit EDA Netlist Writer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Mon May 10 13:53:44 2021
+    Info: Processing started: Wed May 12 17:12:59 2021
 Info: Command: quartus_eda --read_settings_files=on --write_settings_files=off Miniproject -c Miniproject
 Warning (199027): Can't generate output files. Specify command-line options to generate output files, or update EDA tool settings using GUI or Tcl script.
 Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 4509 megabytes
-    Info: Processing ended: Mon May 10 13:53:46 2021
-    Info: Elapsed time: 00:00:02
+    Info: Processing ended: Wed May 12 17:12:59 2021
+    Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 
 
