@@ -33,6 +33,12 @@ SIGNAL pipeBotYPos			: std_logic_vector(9 DOWNTO 0);
 SiGNAL pipe_x_pos				: std_logic_vector(10 DOWNTO 0);
 SIGNAL pipe_x_motion			: std_logic_vector(10 DOWNTO 0);
 
+
+
+SIGNAL collision : std_logic;
+SIGNAL score : std_logic_vector(5 DOWNTO 0) := "110000";
+
+
 BEGIN           
 
 size <= CONV_STD_LOGIC_VECTOR(8,10);
@@ -133,6 +139,26 @@ begin
 			elsif (pb2 = '1') then
 				ball_y_motion <= - CONV_STD_LOGIC_VECTOR(2,10);
 			end if;
+				
+				
+	 
+--	--	 collision code 
+--
+--	    -- hits the pipe
+--			if (ball_x_pos+size >= pipe_x_pos or ball_y_pos+size <= pipeTopYPos or ball_y_pos-size >= pipeBotYPos) then 
+--				 collision <='1';
+--				 
+--				 -- hits the bottom or top of screen
+--				 elsif (ball_y_pos+size >= CONV_STD_LOGIC_VECTOR(480,10)or ball_y_pos+size <= CONV_STD_LOGIC_VECTOR(0,10))then
+--				  collision<='1';
+--			end if ;
+--
+---- score calculation 
+--			if (collision ='0') then 
+--				score <= score+1;
+--				elsif (collision ='1') then 
+--				 score <= score;
+--			end if; 	
 			
 			-- Compute next ball Y position
 			ball_y_pos <= ball_y_pos - ball_y_motion;
