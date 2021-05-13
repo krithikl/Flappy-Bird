@@ -20,9 +20,12 @@ SIGNAL ball_y_pos				: std_logic_vector(9 DOWNTO 0);
 SiGNAL ball_x_pos				: std_logic_vector(10 DOWNTO 0);
 SIGNAL ball_y_motion			: std_logic_vector(9 DOWNTO 0);
 
-SIGNAL pipe_on					: std_logic;
-SIGNAL pipeSize 				: std_logic_vector(9 DOWNTO 0);  
-SIGNAL pipe_y_pos				: std_logic_vector(9 DOWNTO 0);
+SIGNAL pipeTop1				: std_logic;
+SIGNAL pipeBot1				: std_logic;
+SIGNAL pipeSize 				: std_logic_vector(9 DOWNTO 0);
+SIGNAL pipeYSize 				: std_logic_vector(9 DOWNTO 0); 
+SIGNAL pipeTopYPos			: std_logic_vector(9 DOWNTO 0);
+SIGNAL pipeBotYPos			: std_logic_vector(9 DOWNTO 0);
 SiGNAL pipe_x_pos				: std_logic_vector(10 DOWNTO 0);
 SIGNAL pipe_x_motion			: std_logic_vector(10 DOWNTO 0);
 
@@ -33,8 +36,11 @@ size <= CONV_STD_LOGIC_VECTOR(8,10);
 ball_x_pos <= CONV_STD_LOGIC_VECTOR(250,11);
 
 pipeSize <= CONV_STD_LOGIC_VECTOR(30,10);
+pipeYSize <= CONV_STD_LOGIC_VECTOR(100,10);
 
-pipe_y_pos <= CONV_STD_LOGIC_VECTOR(200,10);
+
+pipeTopYPos <= CONV_STD_LOGIC_VECTOR(94,10);
+pipeBotYPos <= CONV_STD_LOGIC_VECTOR(400,10);
 
 
 
@@ -45,11 +51,17 @@ ball_on <= '1' when ( ('0' & pixel_column + size >= '0' & ball_x_pos)
 					and ('0' & pixel_row <= ball_y_pos + size) )  else	-- y_pos - size <= pixel_row <= y_pos + size
 			  '0';
 			  
-pipe_on <= '1' when ( ('0' & pixel_column + pipeSize + "0000100000">= '0' & pipe_x_pos) 
-					and ('0' & pixel_column <= '0' & pipe_x_pos + pipeSize + "0000100000") 	-- x_pos - size <= pixel_column <= x_pos + size
-					and (pixel_row + pipeSize >= '0' & pipe_y_pos) 
-					and ('0' & pixel_row <= pipe_y_pos + pipeSize) )  else	-- y_pos - size <= pixel_row <= y_pos + size
-			  '0';			  
+pipeTop1 <= '1' when ( ('0' & pixel_column + pipeSize >= '0' & pipe_x_pos) 
+					and ('0' & pixel_column <= '0' & pipe_x_pos + pipeSize) 	-- x_pos - size <= pixel_column <= x_pos + size
+					and (pixel_row + pipeSize + "0001000000" >= '0' & pipeTopYPos) 
+					and ('0' & pixel_row <= pipeTopYPos + pipeSize) )  else	-- y_pos - size <= pixel_row <= y_pos + size
+			  '0';	
+			  
+pipeBot1 <= '1' when ( ('0' & pixel_column + pipeSize >= '0' & pipe_x_pos) 
+					and ('0' & pixel_column <= '0' & pipe_x_pos + pipeSize) 	-- x_pos - size <= pixel_column <= x_pos + size
+					and (pixel_row + pipeSize + "0001000000" >= '0' & pipeBotYPos) 
+					and ('0' & pixel_row <= pipeBotYPos + "0001000000") )  else	-- y_pos - size <= pixel_row <= y_pos + size
+			  '0';		  
 
 
 -- Colours for pixel data on video signal
@@ -59,16 +71,19 @@ pipe_on <= '1' when ( ('0' & pixel_column + pipeSize + "0000100000">= '0' & pipe
 Move_Ball: process (vert_sync)
 variable tick : std_logic := '0';
 begin
-	Red <= (not ball_on) and (not textOutput);
-	Green <= not sw0;
-	Blue <= (not pipe_on);
+--	Red <= (not ball_on) and (not textOutput);
+--	Green <= not sw0;
+--	Blue <= (not pipe_on);
 
+	Red <= (not pipeTop1) and (not pipeBot1);
+	Green <= (not ball_on) and (not textOutput);
+	Blue <= '1';
 
 	-- Move ball once every vertical sync
 	if (rising_edge(vert_sync)) then	
 	
 		if (pb2 = '1') then
-			pipe_x_motion <= CONV_STD_LOGIC_VECTOR(2,11);
+			pipe_x_motion <= CONV_STD_LOGIC_VECTOR(4,11);
 			
 		end if;
 		pipe_x_pos <= pipe_x_pos - pipe_x_motion;
