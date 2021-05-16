@@ -33,11 +33,11 @@ SIGNAL pipeTopYSize 			: std_logic_vector(9 DOWNTO 0);
 SIGNAL pipeBotYSize 			: std_logic_vector(9 DOWNTO 0); 
 SIGNAL pipeTopYPos			: std_logic_vector(9 DOWNTO 0);
 SIGNAL pipeBotYPos			: std_logic_vector(9 DOWNTO 0);
-SiGNAL pipe_x_pos				: std_logic_vector(10 DOWNTO 0);
+SiGNAL pipe_x_pos				: std_logic_vector(10 DOWNTO 0) := "00000000000";
 SIGNAL pipe_x_motion			: std_logic_vector(10 DOWNTO 0);
 
 
-SIGNAL collision : std_logic;
+SIGNAL collision : std_logic := '0';
 SIGNAL score : std_logic_vector(5 DOWNTO 0) := "110000";
 signal pipes : std_logic;
 
@@ -100,65 +100,69 @@ pipes <= (not pipeBot1 and not pipeTop1) or (not pipeBot2 and not pipeTop2) or (
 
 -- Colours for pixel data on video signal
 -- Changing the background and ball colour by pushbuttons
+Red <= not background or ball_on or pipes;
+Green <=  not background or ball_on;
+Blue <= not background or textOutput;
 
 
 Move_Ball: process (vert_sync)
 begin
---	Red <= (not ball_on) and (not textOutput);
---	Green <= not sw0;
---	Blue <= (not pipe_on);
 
---	Red <= not pipes;
---	Green <= (not ball_on) and (not textOutput);
---	Blue <= '0';
-
-	Red <= not background or ball_on or pipes;
-	Green <=  not background or ball_on;
-	Blue <= not background or (textOutput) ;
+		
 
 
 	-- Move ball once every vertical sync
 	if (rising_edge(vert_sync)) then	
-	
-		if (pb2 = '1') then
+
+
+
+
 			pipe_x_motion <= CONV_STD_LOGIC_VECTOR(4,11);
+			pipe_x_pos <= pipe_x_pos - pipe_x_motion;
 			
-		end if;
-		pipe_x_pos <= pipe_x_pos - pipe_x_motion;
-		
-		if (leftButton = '1') then
-			-- Bounce off top or bottom of the screen
-			if (ball_y_pos <= size) then 
-				ball_y_motion <= CONV_STD_LOGIC_VECTOR(2,10);
-			end if;
-			
-			
-			-- Compute next ball Y position
-			ball_y_pos <= ball_y_pos + ball_y_motion - "000000111";
-			
-		elsif (leftButton = '0') then
-			if (ball_y_pos <= size) then
-				ball_y_motion <= - CONV_STD_LOGIC_VECTOR(2,10);
-			elsif ('0' & ball_y_pos >= CONV_STD_LOGIC_VECTOR(479, 10) - size) then
-				ball_y_motion <= CONV_STD_LOGIC_VECTOR(0,10);
-			elsif (pb2 = '0') then
-				ball_y_motion <= CONV_STD_LOGIC_VECTOR(0,10);
-			elsif (pb2 = '1') then
-				ball_y_motion <= - CONV_STD_LOGIC_VECTOR(2,10);
-			end if;
+			if (leftButton = '1') then
+				-- Bounce off top or bottom of the screen
+				if (ball_y_pos <= size) then 
+					ball_y_motion <= CONV_STD_LOGIC_VECTOR(2,10);
+				end if;
+				
+				
+				-- Compute next ball Y position
+				ball_y_pos <= ball_y_pos + ball_y_motion - "000000111";
+				
+			elsif (leftButton = '0') then
+				if (ball_y_pos <= size) then
+					ball_y_motion <= - CONV_STD_LOGIC_VECTOR(2,10);
+				elsif ('0' & ball_y_pos >= CONV_STD_LOGIC_VECTOR(479, 10) - size) then
+					ball_y_motion <= CONV_STD_LOGIC_VECTOR(0,10);
+				elsif (pb2 = '0') then
+					ball_y_motion <= CONV_STD_LOGIC_VECTOR(0,10);
+				elsif (pb2 = '1') then
+					ball_y_motion <= - CONV_STD_LOGIC_VECTOR(2,10);
+				end if;
+
 				
 				
 	 
 --	--	 collision code 
 --
---	    -- hits the pipe
---			if (ball_x_pos+size >= pipe_x_pos or ball_y_pos+size <= pipeTopYPos or ball_y_pos-size >= pipeBotYPos) then 
---				 collision <='1';
+	    -- hits the pipe
+		 -- <= pipeTopYSize/2 + pipeTopYPos OR pipeBotYSize/2 + pipeBotYPos: Checking y dimension for collision
+		 if ((ball_y_pos + size <= CONV_STD_LOGIC_VECTOR(85,10) + pipeTopYPos) OR ((ball_y_pos + size >= CONV_STD_LOGIC_VECTOR(250,10) ))) then 
+			if ((ball_x_pos + size <= pipe_x_pos - pipeSize - ball_x_pos - size - size) and (ball_x_pos + size >= pipe_x_pos - pipeSize - ball_x_pos)) then
+				 collision <='1';
+				 pipe_x_motion <= CONV_STD_LOGIC_VECTOR(0,11);
+				 ball_y_motion <= CONV_STD_LOGIC_VECTOR(0,10);
+			end if;
+		end if;
+
 --				 
---				 -- hits the bottom or top of screen
---				 elsif (ball_y_pos+size >= CONV_STD_LOGIC_VECTOR(480,10)or ball_y_pos+size <= CONV_STD_LOGIC_VECTOR(0,10))then
---				  collision<='1';
---			end if ;
+--				 
+			 -- hits the bottom or top of screen: This part works
+		if (ball_y_pos+size >= CONV_STD_LOGIC_VECTOR(480,10) or ball_y_pos+size <= CONV_STD_LOGIC_VECTOR(0,10))then
+			    collision<='1';
+			    pipe_x_motion <= CONV_STD_LOGIC_VECTOR(0,11);
+		end if ;
 --
 ---- score calculation 
 --			if (collision ='0') then 
