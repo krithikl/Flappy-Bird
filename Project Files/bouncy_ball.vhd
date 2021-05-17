@@ -39,6 +39,8 @@ SIGNAL collision : std_logic := '0';
 SIGNAL score : std_logic_vector(5 DOWNTO 0) := "110000";
 signal pipes : std_logic;
 
+signal ballPadding : std_logic_vector(9 downto 0);
+
 
 BEGIN           
 
@@ -51,6 +53,7 @@ pipeWidth <= CONV_STD_LOGIC_VECTOR(20,10);
 pipeTopGap <= CONV_STD_LOGIC_VECTOR(170,10);
 pipeBotGap <= CONV_STD_LOGIC_VECTOR(250,10);
 
+ballPadding <= CONV_STD_LOGIC_VECTOR(3,10);
 
 ball_on <= '1' when ( ('0' & pixel_column + size >= '0' & ball_x_pos) 
 					and ('0' & pixel_column <= '0' & ball_x_pos + size) 	-- x_pos - size <= pixel_column <= x_pos + size
@@ -87,40 +90,43 @@ pipeTop3 <= '0' when (( '1' & pixel_column + pipeWidth >= '1' & pipe_x_pos + pip
 pipes <= (not pipeBot1 and not pipeTop1) or (not pipeBot2 and not pipeTop2) or (not pipeBot3 and not pipeTop3);
 
 
--- Colours for pixel data on video signal
--- Changing the background and ball colour by pushbuttons
-Red <= not background or ball_on or pipes;
-Green <=  not background or ball_on;
-Blue <= not background or textOutput;
-
 
 Move_Ball: process (vert_sync)
 begin
 
+
+-- Colour signal assignments
+Red <= not background or ball_on or pipes;
+Green <= not background or ball_on;
+-- If collision is 1, display text
+if (collision = '1') then
+	Green <=  not background or ball_on or textOutput;
+end if;
+Blue <= not background;
+
+
 	-- Move ball once every vertical sync
 	if (rising_edge(vert_sync)) then	
-
+		if (collision = '0') then
 			pipe_x_motion <= CONV_STD_LOGIC_VECTOR(4,11);
 			pipe_x_pos <= pipe_x_pos - pipe_x_motion;
-			
-			-- if ball collides with y pos
---			if (((ball_y_pos + size >= pipeBotGap) or (ball_y_pos + size <= pipeTopGap)) or ((ball_x_pos + size >= pipeWidth))) then 
---				pipe_x_motion <= CONV_STD_LOGIC_VECTOR(0,11);
---				ball_y_motion <= CONV_STD_LOGIC_VECTOR(0,10);
---			end if;
+		end if;
 			
 		-- Pipe 1 collision
-		if ((ball_y_pos + size >= pipeBotGap) OR ((ball_y_pos + size <= pipeTopGap))) then 
-			if ((ball_x_pos + size <= pipe_x_pos - pipeWidth - ball_x_pos - size - size) and (ball_x_pos + size >= pipe_x_pos - pipeWidth - ball_x_pos)) then
+		if ((ball_y_pos + size + ballPadding >= pipeBotGap) OR ((ball_y_pos <= pipeTopGap + size))) then 
+			if ((ball_x_pos + size  <= pipe_x_pos - pipeWidth - ball_x_pos - size - size) 
+			and (ball_x_pos + size>= pipe_x_pos + pipeWidth - ball_x_pos)) then
 				 collision <='1';
 				 pipe_x_motion <= CONV_STD_LOGIC_VECTOR(0,11);
 				 ball_y_motion <= CONV_STD_LOGIC_VECTOR(0,10);
+			
 			end if;
 		end if;
 		
 		-- Pipe 2 collision
-		if ((ball_y_pos + size >= pipeBotGap + 80) OR ((ball_y_pos + size <= pipeTopGap + 80))) then 
-			if ((ball_x_pos + size <= pipe_x_pos - pipeWidth - ball_x_pos - size - size + pipeSpacing) and (ball_x_pos + size >= pipe_x_pos - pipeWidth - ball_x_pos + pipeSpacing)) then
+		if ((ball_y_pos + size + ballPadding >= pipeBotGap + 80) OR ((ball_y_pos - size + ballPadding <= pipeTopGap + 80))) then 
+			if ((ball_x_pos + size <= pipe_x_pos - pipeWidth - ball_x_pos - size - size + pipeSpacing) 
+			and (ball_x_pos + size >= pipe_x_pos - pipeWidth - ball_x_pos + pipeSpacing)) then
 				 collision <='1';
 				 pipe_x_motion <= CONV_STD_LOGIC_VECTOR(0,11);
 				 ball_y_motion <= CONV_STD_LOGIC_VECTOR(0,10);
@@ -128,8 +134,9 @@ begin
 		end if;
 		
 		-- Pipe 3 collision
-		if ((ball_y_pos + size >= pipeBotGap - 50) OR ((ball_y_pos + size <= pipeTopGap - 50))) then 
-			if ((ball_x_pos + size <= pipe_x_pos - pipeWidth - ball_x_pos - size - size + pipeSpacing + pipeSpacing) and (ball_x_pos + size >= pipe_x_pos - pipeWidth - ball_x_pos + pipeSpacing + pipeSpacing)) then
+		if ((ball_y_pos + size + ballPadding >= pipeBotGap - 50) OR ((ball_y_pos - size + ballPadding <= pipeTopGap - 50))) then 
+			if ((ball_x_pos + size <= pipe_x_pos - pipeWidth - ball_x_pos - size - size + pipeSpacing + pipeSpacing) 
+			and (ball_x_pos + size >= pipe_x_pos - pipeWidth - ball_x_pos + pipeSpacing + pipeSpacing)) then
 				 collision <='1';
 				 pipe_x_motion <= CONV_STD_LOGIC_VECTOR(0,11);
 				 ball_y_motion <= CONV_STD_LOGIC_VECTOR(0,10);
@@ -137,7 +144,7 @@ begin
 		end if;
 
 			
-			if (leftButton = '1') then
+			if (leftButton = '1' and collision = '0') then
 				-- Bounce off top or bottom of the screen
 				if (ball_y_pos <= size) then 
 					ball_y_motion <= CONV_STD_LOGIC_VECTOR(2,10);
@@ -147,7 +154,7 @@ begin
 				-- Compute next ball Y position
 				ball_y_pos <= ball_y_pos + ball_y_motion - "000000111";
 				
-			elsif (leftButton = '0') then
+			elsif (leftButton = '0' and collision = '0') then
 				if (ball_y_pos <= size) then
 					ball_y_motion <= - CONV_STD_LOGIC_VECTOR(2,10);
 				elsif ('0' & ball_y_pos >= CONV_STD_LOGIC_VECTOR(479, 10) - size) then
