@@ -27,12 +27,10 @@ SIGNAL pipeTop2				: std_logic;
 SIGNAL pipeBot2				: std_logic;
 SIGNAL pipeTop3				: std_logic;
 SIGNAL pipeBot3				: std_logic;
-SIGNAL pipeSpace 				: std_logic_vector(9 DOWNTO 0);
-SIGNAL pipeSize 				: std_logic_vector(9 DOWNTO 0);
-SIGNAL pipeTopYSize 			: std_logic_vector(9 DOWNTO 0); 
-SIGNAL pipeBotYSize 			: std_logic_vector(9 DOWNTO 0); 
-SIGNAL pipeTopYPos			: std_logic_vector(9 DOWNTO 0);
-SIGNAL pipeBotYPos			: std_logic_vector(9 DOWNTO 0);
+SIGNAL pipeSpacing 			: std_logic_vector(9 DOWNTO 0);
+SIGNAL pipeWidth 				: std_logic_vector(9 DOWNTO 0);
+SIGNAL pipeTopGap 			: std_logic_vector(9 DOWNTO 0); 
+SIGNAL pipeBotGap 			: std_logic_vector(9 DOWNTO 0); 
 SiGNAL pipe_x_pos				: std_logic_vector(10 DOWNTO 0) := "00000000000";
 SIGNAL pipe_x_motion			: std_logic_vector(10 DOWNTO 0);
 
@@ -48,15 +46,10 @@ size <= CONV_STD_LOGIC_VECTOR(8,10);
 -- ball_x_pos and ball_y_pos show the (x,y) for the centre of ball
 ball_x_pos <= CONV_STD_LOGIC_VECTOR(250,11);
 
-pipeSpace <= CONV_STD_LOGIC_VECTOR(200,10);
-pipeSize <= CONV_STD_LOGIC_VECTOR(20,10);
-pipeTopYSize <= CONV_STD_LOGIC_VECTOR(170,10);
-pipeBotYSize <= CONV_STD_LOGIC_VECTOR(250,10);
-
-
-pipeTopYPos <= CONV_STD_LOGIC_VECTOR(100,10);
-pipeBotYPos <= CONV_STD_LOGIC_VECTOR(400,10);
-
+pipeSpacing <= CONV_STD_LOGIC_VECTOR(200,10);
+pipeWidth <= CONV_STD_LOGIC_VECTOR(20,10);
+pipeTopGap <= CONV_STD_LOGIC_VECTOR(170,10);
+pipeBotGap <= CONV_STD_LOGIC_VECTOR(250,10);
 
 
 ball_on <= '1' when ( ('0' & pixel_column + size >= '0' & ball_x_pos) 
@@ -69,34 +62,30 @@ background <= '1' when (pixel_row >= 0 and pixel_row <= 479) else
 				  '0';
 			  
 		
-pipeBot1 <= '1' when ( pixel_row >= pipeTopYSize and pixel_row <= pipeBotYSize) else	-- y_pos - size <= pixel_row <= y_pos + size
+pipeBot1 <= '1' when ( pixel_row >= pipeTopGap and pixel_row <= pipeBotGap) else	-- y_pos - size <= pixel_row <= y_pos + size
 			  '0';	
 			  
-pipeTop1 <= '0' when (( '1' & pixel_column + pipeSize >= '1' & pipe_x_pos) and 
-							('1' & pixel_column <= '1' & pipe_x_pos + pipeSize) and
-							(pixel_row + pipeSize >= '1' & pipeTopYPos) and
-							('1' & pixel_row <= pipeTopYPos + pipeSize)) else	-- y_pos - size <= pixel_row <= y_pos + size
+pipeTop1 <= '0' when (( '1' & pixel_column + pipeWidth >= '1' & pipe_x_pos) and 
+							('1' & pixel_column <= '1' & pipe_x_pos + pipeWidth))
+							else	-- y_pos - size <= pixel_row <= y_pos + size
 							'1';	
 							
-pipeBot2 <= '1' when ( pixel_row >= pipeTopYSize + 80 and pixel_row <= pipeBotYSize + 80) else	-- y_pos - size <= pixel_row <= y_pos + size
+pipeBot2 <= '1' when ( pixel_row >= pipeTopGap + 80 and pixel_row <= pipeBotGap + 80) else	-- y_pos - size <= pixel_row <= y_pos + size
 			  '0';	
 			  
-pipeTop2 <= '0' when (( '1' & pixel_column + pipeSize >= '1' & pipe_x_pos + pipeSpace) and 
-							('1' & pixel_column <= '1' & pipe_x_pos + pipeSpace + pipeSize) and
-							(pixel_row + pipeSize >= '1' & pipeTopYPos) and
-							('1' & pixel_row <= pipeTopYPos + pipeSize)) else	-- y_pos - size <= pixel_row <= y_pos + size
+pipeTop2 <= '0' when (( '1' & pixel_column + pipeWidth >= '1' & pipe_x_pos + pipeSpacing) and 
+							('1' & pixel_column <= '1' & pipe_x_pos + pipeSpacing + pipeWidth)) else	-- y_pos - size <= pixel_row <= y_pos + size
 							'1';
 					
-pipeBot3 <= '1' when ( pixel_row >= pipeTopYSize - 50 and pixel_row <= pipeBotYSize - 50) else	-- y_pos - size <= pixel_row <= y_pos + size
+pipeBot3 <= '1' when ( pixel_row >= pipeTopGap - 50 and pixel_row <= pipeBotGap - 50) else	-- y_pos - size <= pixel_row <= y_pos + size
 			  '0';
 			  
-pipeTop3 <= '0' when (( '1' & pixel_column + pipeSize >= '1' & pipe_x_pos + pipeSpace + pipeSpace) and 
-							('1' & pixel_column <= '1' & pipe_x_pos + pipeSpace + pipeSpace + pipeSize) and
-							(pixel_row + pipeSize >= '1' & pipeTopYPos) and
-							('1' & pixel_row <= pipeTopYPos + pipeSize)) else	-- y_pos - size <= pixel_row <= y_pos + size
+pipeTop3 <= '0' when (( '1' & pixel_column + pipeWidth >= '1' & pipe_x_pos + pipeSpacing + pipeSpacing) and 
+							('1' & pixel_column <= '1' & pipe_x_pos + pipeSpacing + pipeSpacing + pipeWidth)) else	-- y_pos - size <= pixel_row <= y_pos + size
 							'1';
 			  
 pipes <= (not pipeBot1 and not pipeTop1) or (not pipeBot2 and not pipeTop2) or (not pipeBot3 and not pipeTop3);
+
 
 -- Colours for pixel data on video signal
 -- Changing the background and ball colour by pushbuttons
@@ -108,17 +97,45 @@ Blue <= not background or textOutput;
 Move_Ball: process (vert_sync)
 begin
 
-		
-
-
 	-- Move ball once every vertical sync
 	if (rising_edge(vert_sync)) then	
 
-
-
-
 			pipe_x_motion <= CONV_STD_LOGIC_VECTOR(4,11);
 			pipe_x_pos <= pipe_x_pos - pipe_x_motion;
+			
+			-- if ball collides with y pos
+--			if (((ball_y_pos + size >= pipeBotGap) or (ball_y_pos + size <= pipeTopGap)) or ((ball_x_pos + size >= pipeWidth))) then 
+--				pipe_x_motion <= CONV_STD_LOGIC_VECTOR(0,11);
+--				ball_y_motion <= CONV_STD_LOGIC_VECTOR(0,10);
+--			end if;
+			
+		-- Pipe 1 collision
+		if ((ball_y_pos + size >= pipeBotGap) OR ((ball_y_pos + size <= pipeTopGap))) then 
+			if ((ball_x_pos + size <= pipe_x_pos - pipeWidth - ball_x_pos - size - size) and (ball_x_pos + size >= pipe_x_pos - pipeWidth - ball_x_pos)) then
+				 collision <='1';
+				 pipe_x_motion <= CONV_STD_LOGIC_VECTOR(0,11);
+				 ball_y_motion <= CONV_STD_LOGIC_VECTOR(0,10);
+			end if;
+		end if;
+		
+		-- Pipe 2 collision
+		if ((ball_y_pos + size >= pipeBotGap + 80) OR ((ball_y_pos + size <= pipeTopGap + 80))) then 
+			if ((ball_x_pos + size <= pipe_x_pos - pipeWidth - ball_x_pos - size - size + pipeSpacing) and (ball_x_pos + size >= pipe_x_pos - pipeWidth - ball_x_pos + pipeSpacing)) then
+				 collision <='1';
+				 pipe_x_motion <= CONV_STD_LOGIC_VECTOR(0,11);
+				 ball_y_motion <= CONV_STD_LOGIC_VECTOR(0,10);
+			end if;
+		end if;
+		
+		-- Pipe 3 collision
+		if ((ball_y_pos + size >= pipeBotGap - 50) OR ((ball_y_pos + size <= pipeTopGap - 50))) then 
+			if ((ball_x_pos + size <= pipe_x_pos - pipeWidth - ball_x_pos - size - size + pipeSpacing + pipeSpacing) and (ball_x_pos + size >= pipe_x_pos - pipeWidth - ball_x_pos + pipeSpacing + pipeSpacing)) then
+				 collision <='1';
+				 pipe_x_motion <= CONV_STD_LOGIC_VECTOR(0,11);
+				 ball_y_motion <= CONV_STD_LOGIC_VECTOR(0,10);
+			end if;
+		end if;
+
 			
 			if (leftButton = '1') then
 				-- Bounce off top or bottom of the screen
@@ -141,28 +158,12 @@ begin
 					ball_y_motion <= - CONV_STD_LOGIC_VECTOR(2,10);
 				end if;
 
-				
-				
-	 
---	--	 collision code 
---
-	    -- hits the pipe
-		 -- <= pipeTopYSize/2 + pipeTopYPos OR pipeBotYSize/2 + pipeBotYPos: Checking y dimension for collision
-		 if ((ball_y_pos + size <= CONV_STD_LOGIC_VECTOR(85,10) + pipeTopYPos) OR ((ball_y_pos + size >= CONV_STD_LOGIC_VECTOR(250,10) ))) then 
-			if ((ball_x_pos + size <= pipe_x_pos - pipeSize - ball_x_pos - size - size) and (ball_x_pos + size >= pipe_x_pos - pipeSize - ball_x_pos)) then
-				 collision <='1';
-				 pipe_x_motion <= CONV_STD_LOGIC_VECTOR(0,11);
-				 ball_y_motion <= CONV_STD_LOGIC_VECTOR(0,10);
-			end if;
-		end if;
-
---				 
---				 
+			 
 			 -- hits the bottom or top of screen: This part works
-		if (ball_y_pos+size >= CONV_STD_LOGIC_VECTOR(480,10) or ball_y_pos+size <= CONV_STD_LOGIC_VECTOR(0,10))then
-			    collision<='1';
-			    pipe_x_motion <= CONV_STD_LOGIC_VECTOR(0,11);
-		end if ;
+--		if (ball_y_pos+size >= CONV_STD_LOGIC_VECTOR(480,10) or ball_y_pos+size <= CONV_STD_LOGIC_VECTOR(0,10))then
+--			    collision<='1';
+--			    pipe_x_motion <= CONV_STD_LOGIC_VECTOR(0,11);
+--		end if ;
 --
 ---- score calculation 
 --			if (collision ='0') then 
