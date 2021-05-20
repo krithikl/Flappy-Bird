@@ -9,7 +9,8 @@ ENTITY bouncy_ball IS
 		( SIGNAL sw0, pb2, leftButton, rightButton, clk, vert_sync	: IN std_logic;
          SIGNAL pixel_row, pixel_column	: IN std_logic_vector(9 DOWNTO 0);
 			SIGNAL textOutput : IN std_logic;
-		  SIGNAL red, green, blue 			: OUT std_logic);		
+		  SIGNAL red, green, blue			: OUT std_logic;
+		  SIGNAL mouseReset 			: OUT std_logic := '0');		
 END bouncy_ball;
 
 architecture behavior of bouncy_ball is
@@ -37,9 +38,11 @@ SIGNAL pipe_x_motion			: std_logic_vector(10 DOWNTO 0);
 
 SIGNAL collision : std_logic := '0';
 SIGNAL score : std_logic_vector(5 DOWNTO 0) := "110000";
+
 signal pipes : std_logic;
 
 signal ballPadding : std_logic_vector(9 downto 0);
+
 
 
 BEGIN           
@@ -61,7 +64,7 @@ ball_on <= '1' when ( ('0' & pixel_column + size >= '0' & ball_x_pos)
 					and ('0' & pixel_row <= ball_y_pos + size) )  else	-- y_pos - size <= pixel_row <= y_pos + size
 			  '0';
 			  
-background <= '1' when (pixel_row >= 0 and pixel_row <= 479) else
+background <= '1' when (pixel_row >= 0 and pixel_row <= 479) or (pixel_column >= 0 and pixel_column <= 639) else
 				  '0';
 			  
 		
@@ -92,18 +95,17 @@ pipes <= (not pipeBot1 and not pipeTop1) or (not pipeBot2 and not pipeTop2) or (
 
 
 Move_Ball: process (vert_sync)
+variable tick : std_logic := '0';
+
 begin
 
-
 -- Colour signal assignments
-Red <= not background or ball_on or pipes;
-Green <= not background or ball_on;
--- If collision is 1, display text
+Red <= (background or ball_on) and (not pipes) and (not textOutput);
+Green <= background or ball_on or pipes;
 if (collision = '1') then
-	Green <=  not background or ball_on or textOutput;
+	Green <=  background or ball_on or pipes or textOutput;
 end if;
-Blue <= not background;
-
+Blue <= background and (not ball_on) and (not pipes) and (not textOutput);
 
 	-- Move ball once every vertical sync
 	if (rising_edge(vert_sync)) then	
@@ -146,13 +148,20 @@ Blue <= not background;
 			
 			if (leftButton = '1' and collision = '0') then
 				-- Bounce off top or bottom of the screen
-				if (ball_y_pos <= size) then 
+				
+				if (ball_y_pos <= size) then
 					ball_y_motion <= CONV_STD_LOGIC_VECTOR(2,10);
-				end if;
+				end if; 
 				
 				
-				-- Compute next ball Y position
-				ball_y_pos <= ball_y_pos + ball_y_motion - "000000111";
+				ball_y_pos <= ball_y_pos + ball_y_motion - "000011111";
+				mouseReset <= '1';
+				
+				
+--			elsif (leftButton = '1' and collision = '0' and tick = '1') then
+--				ball_y_motion <= -CONV_STD_LOGIC_VECTOR(2,10);	
+--				ball_y_pos <= ball_y_pos - ball_y_motion;
+--				
 				
 			elsif (leftButton = '0' and collision = '0') then
 				if (ball_y_pos <= size) then
@@ -164,13 +173,21 @@ Blue <= not background;
 				elsif (pb2 = '1') then
 					ball_y_motion <= - CONV_STD_LOGIC_VECTOR(2,10);
 				end if;
+				-- Compute next ball Y position
+				ball_y_pos <= ball_y_pos - ball_y_motion;
+				
+				mouseReset <= '0';
 
 			 
-			 -- hits the bottom or top of screen: This part works
---		if (ball_y_pos+size >= CONV_STD_LOGIC_VECTOR(480,10) or ball_y_pos+size <= CONV_STD_LOGIC_VECTOR(0,10))then
---			    collision<='1';
---			    pipe_x_motion <= CONV_STD_LOGIC_VECTOR(0,11);
---		end if ;
+				 -- hits the bottom or top of screen: This part works
+			if (ball_y_pos+size >= CONV_STD_LOGIC_VECTOR(480,10) or ball_y_pos+size <= CONV_STD_LOGIC_VECTOR(0,10))then
+					 collision<='1';
+					 pipe_x_motion <= CONV_STD_LOGIC_VECTOR(0,11);
+			end if ;
+			
+			
+				
+				
 --
 ---- score calculation 
 --			if (collision ='0') then 
@@ -179,8 +196,7 @@ Blue <= not background;
 --				 score <= score;
 --			end if; 	
 			
-			-- Compute next ball Y position
-			ball_y_pos <= ball_y_pos - ball_y_motion;
+			
 		
 	end if;
 end if;
