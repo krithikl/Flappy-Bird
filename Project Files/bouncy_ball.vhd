@@ -8,6 +8,13 @@ ENTITY bouncy_ball IS
 	PORT
 		( SIGNAL sw0, pb2, leftButton, rightButton, clk, vert_sync	: IN std_logic;
          SIGNAL pixel_row, pixel_column	: IN std_logic_vector(9 DOWNTO 0);
+		 
+		 
+		 	-- for score increment NEW 
+			SIGNAL score_ones_out, score_tens_out : OUT std_logic_vector(5 downto 0);
+		 
+		 
+		 
 			SIGNAL textOutput : IN std_logic;
 		  SIGNAL red, green, blue			: OUT std_logic;
 		  SIGNAL mouseReset 			: OUT std_logic := '0');		
@@ -34,6 +41,9 @@ SIGNAL pipeTopGap 			: std_logic_vector(9 DOWNTO 0);
 SIGNAL pipeBotGap 			: std_logic_vector(9 DOWNTO 0); 
 SiGNAL pipe_x_pos				: std_logic_vector(10 DOWNTO 0) := "00000000000";
 SIGNAL pipe_x_motion			: std_logic_vector(10 DOWNTO 0);
+
+-- NEW 
+SIGNAL ones_score,tens_score : std_logic_vector(5 downto 0) := "000000";
 
 
 SIGNAL collision : std_logic := '0';
@@ -121,7 +131,17 @@ Blue <= background and (not ball_on) and (not pipes) and (not textOutput);
 				 collision <='1';
 				 pipe_x_motion <= CONV_STD_LOGIC_VECTOR(0,11);
 				 ball_y_motion <= CONV_STD_LOGIC_VECTOR(0,10);
-			
+
+
+		-- NEW (
+			else 
+					ones_score <= ones_score + "000001";
+				-- when ones score overflows, score tens will be incremented 
+					if(ones_score = "111001") then
+						tens_score <= tens_score + "000001";
+						ones_score <= "000000";
+					end if;
+			-- )NEW
 			end if;
 		end if;
 		
