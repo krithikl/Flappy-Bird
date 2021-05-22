@@ -11,6 +11,7 @@ ENTITY text_display is
 		clock_25Mhz : IN STD_LOGIC;
 		pixel_row, pixel_column: IN STD_LOGIC_VECTOR (9 DOWNTO 0);
 		ones_score, tens_score:IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		gameState : in std_LOGIC_VECTOR(1 DOWNTO 0);
 		over_text_on : OUT STD_LOGIC;
 		output_text : OUT STD_LOGIC	
 	  );
@@ -28,6 +29,7 @@ ARCHITECTURE BEHAVIOUR of text_display is
 				clock				: 	IN STD_LOGIC ;
 				rom_mux_output		:OUT STD_LOGIC
 			);
+			
 	end COMPONENT;
 
 	SIGNAL score_display : std_logic_vector(5 downto 0);
@@ -38,13 +40,8 @@ ARCHITECTURE BEHAVIOUR of text_display is
 
 BEGIN							
 
-
-
-			      over_text_on <= '1' when (output_score = '1' and pixel_column <= CONV_STD_LOGIC_VECTOR(335,10) and pixel_column >= CONV_STD_LOGIC_VECTOR(320,10) 
-					and pixel_row <= CONV_STD_LOGIC_VECTOR(45,10) and pixel_row >= CONV_STD_LOGIC_VECTOR(30,10)) else'0';
-
-
-
+		over_text_on <= '1' when (output_score = '1' and pixel_column <= CONV_STD_LOGIC_VECTOR(335,10) and pixel_column >= CONV_STD_LOGIC_VECTOR(320,10) 
+		and pixel_row <= CONV_STD_LOGIC_VECTOR(45,10) and pixel_row >= CONV_STD_LOGIC_VECTOR(30,10)) and gameState = "00" else'0';
 
 	score_display <= 
 --					CONV_STD_LOGIC_VECTOR(19,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(302,10) else --"S"
@@ -87,6 +84,8 @@ BEGIN
 					;
 
 					
+					
+		
 		scoretext : char_rom PORT MAP(
 							character_address => score_display,
 							font_row=>pixel_row(3 downto 1),
