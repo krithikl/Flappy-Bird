@@ -8,22 +8,21 @@ ENTITY bouncy_ball IS
 	PORT
 		( SIGNAL sw0, pb2, leftButton, rightButton, clk, vert_sync	: IN std_logic;
          SIGNAL pixel_row, pixel_column	: IN std_logic_vector(9 DOWNTO 0);
-		 
-		 
 		 	-- for score increment NEW 
-			SIGNAL score_ones_out, score_tens_out : OUT std_logic_vector(5 downto 0) := "110000";
+		  SIGNAL score_ones_out, score_tens_out : OUT std_logic_vector(5 downto 0) := "110000";
 		 
-		 
-		 
-			SIGNAL textOutput : IN std_logic;
-		  SIGNAL red, green, blue			: OUT std_logic;
-		  SIGNAL mouseReset 			: OUT std_logic := '0');		
+		  SIGNAL textOutput 			: IN std_logic;
+		  SIGNAL red, green, blue	: OUT std_logic;
+		  SIGNAL mouseReset 			: OUT std_logic := '0';
+		  SIGNAL gameStateOut      : OUT std_logic_vector(1 downto 0));	
+		  
 END bouncy_ball;
 
 architecture behavior of bouncy_ball is
 
 SIGNAL ball_on					: std_logic;
 SIGNAL background          : std_logic;
+SIGNAL gameOverBackground  : std_logic;
 SIGNAL size 					: std_logic_vector(9 DOWNTO 0);  
 SIGNAL ball_y_pos				: std_logic_vector(9 DOWNTO 0);
 SiGNAL ball_x_pos				: std_logic_vector(10 DOWNTO 0);
@@ -54,6 +53,7 @@ signal pipes : std_logic;
 signal ballPadding : std_logic_vector(9 downto 0);
 signal resetScore : std_logic_vector(5 downto 0) := "110000";
 
+signal gameState : std_logic_vector(1 downto 0) := "00";
 
 
 BEGIN           
@@ -75,6 +75,9 @@ ball_on <= '1' when ( ('0' & pixel_column + size >= '0' & ball_x_pos)
 			  '0';
 			  
 background <= '1' when (pixel_row >= 0 and pixel_row <= 479) or (pixel_column >= 0 and pixel_column <= 639) else
+				  '0';
+
+gameOverBackground <= '1' when (pixel_row >= 0 and pixel_row <= 479) or (pixel_column >= 0 and pixel_column <= 639) else
 				  '0';
 			  
 		
@@ -108,7 +111,6 @@ pipes <= (not pipeBot1 and not pipeTop1) or (not pipeBot2 and not pipeTop2) or (
 
 Move_Ball: process (vert_sync)
 variable tick : std_logic := '0';
-
 begin
 
 -- Colour signal assignments
@@ -117,13 +119,23 @@ Green <=  (background or ball_on or pipes) and (not textOutput);
 Blue <= background and (not ball_on) and (not pipes);
 
 
+if (gameState = "01") then
+	Red <= not gameOverBackground;
+	Green <= not gameOverBackground;
+	Blue <= not gameOverBackground;
+	gameStateOut <= gameState;
+end if;
+
+
 	-- Move ball once every vertical sync
-	if (rising_edge(vert_sync)) then	
-		if (collision = '0') then
+	if (rising_edge(vert_sync)) then
+		if (gameState = "00") then
 			
-			pipe_x_motion <= CONV_STD_LOGIC_VECTOR(4,11);
+			pipe_x_motion <= CONV_STD_LOGIC_VECTOR(1,11);
 			pipe_x_pos <= pipe_x_pos - pipe_x_motion;
 		end if;
+		
+		
 			
 			
 			
@@ -133,7 +145,7 @@ Blue <= background and (not ball_on) and (not pipes);
 			if ((ball_y_pos + size + ballPadding >= pipeBotGap) OR ((ball_y_pos <= pipeTopGap + size))) then
 				if ((ball_x_pos + size  <= pipeXLeft) 
 				and (ball_x_pos + size >= pipeXRight)) then
-					 collision <='1';
+					 gameState <= "01";
 					 pipe_x_motion <= CONV_STD_LOGIC_VECTOR(0,11);
 					 ball_y_motion <= CONV_STD_LOGIC_VECTOR(0,10);
 				elsif (collision = '0' and (ball_x_pos + size <= pipeXLeft)) then
@@ -152,10 +164,10 @@ Blue <= background and (not ball_on) and (not pipes);
 		if ((ball_y_pos + size + ballPadding >= pipeBotGap + 80) OR ((ball_y_pos - size + ballPadding <= pipeTopGap + 80))) then 
 			if ((ball_x_pos + size <= pipeXLeft + pipeSpacing) 
 			and (ball_x_pos + size >= pipeXRight + pipeSpacing)) then
-				 collision <='1';
+				 gameState <= "01";
 				 pipe_x_motion <= CONV_STD_LOGIC_VECTOR(0,11);
 				 ball_y_motion <= CONV_STD_LOGIC_VECTOR(0,10);
-			elsif (collision = '0' and (ball_x_pos + size <= pipeXLeft + pipeSpacing)) then
+			elsif (gameState = "00" and (ball_x_pos + size <= pipeXLeft + pipeSpacing)) then
 				if (ones_score < resetScore + "000010") then
 					ones_score <= ones_score + "000001";
 					else 
@@ -171,9 +183,10 @@ Blue <= background and (not ball_on) and (not pipes);
 			if ((ball_x_pos + size <= pipeXLeft + pipeSpacing + pipeSpacing) 
 				and (ball_x_pos + size >= pipeXRight + pipeSpacing + pipeSpacing)) then
 				 collision <='1';
+				 gameState <= "01";
 				 pipe_x_motion <= CONV_STD_LOGIC_VECTOR(0,11);
 				 ball_y_motion <= CONV_STD_LOGIC_VECTOR(0,10);
-			elsif (collision = '0' and (ball_x_pos + size <= pipeXLeft + pipeSpacing + pipeSpacing)) then
+			elsif (gameState = "00" and (ball_x_pos + size <= pipeXLeft + pipeSpacing + pipeSpacing)) then
 				if (ones_score < resetScore + "000011") then
 					ones_score <= ones_score + "000001";
 					else 
@@ -188,7 +201,7 @@ Blue <= background and (not ball_on) and (not pipes);
 --		end if;
 
 			
-			if (leftButton = '1' and collision = '0') then
+			if (leftButton = '1' and gameState = "00") then
 				-- Bounce off top or bottom of the screen
 				
 				if (ball_y_pos <= size) then
@@ -203,7 +216,7 @@ Blue <= background and (not ball_on) and (not pipes);
 				
 				
 				
-			elsif (leftButton = '0' and collision = '0') then
+			elsif (leftButton = '0' and gameState = "00") then
 				if (ball_y_pos <= size) then
 					ball_y_motion <= - CONV_STD_LOGIC_VECTOR(2,10);
 				elsif ('0' & ball_y_pos >= CONV_STD_LOGIC_VECTOR(479, 10) - size) then

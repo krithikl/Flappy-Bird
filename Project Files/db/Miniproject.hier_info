@@ -5,10 +5,10 @@ sw0 => bouncy_ball:inst.sw0
 pb2 => bouncy_ball:inst.pb2
 mouse_data <> MOUSE:inst3.mouse_data
 mouse_clk <> MOUSE:inst3.mouse_clk
+vert_sync_out <= VGA_SYNC:inst1.vert_sync_out
 green_out <= VGA_SYNC:inst1.green_out
 blue_out <= VGA_SYNC:inst1.blue_out
 horiz_sync_out <= VGA_SYNC:inst1.horiz_sync_out
-vert_sync_out <= VGA_SYNC:inst1.vert_sync_out
 seg0_dec <= seg07.DB_MAX_OUTPUT_PORT_TYPE
 seg1_dec <= seg17.DB_MAX_OUTPUT_PORT_TYPE
 seg0[0] <= bcdToSegment:inst2.sevenSegment[0]
@@ -224,6 +224,7 @@ vert_sync => ball_y_pos[6].CLK
 vert_sync => ball_y_pos[7].CLK
 vert_sync => ball_y_pos[8].CLK
 vert_sync => ball_y_pos[9].CLK
+vert_sync => collision.CLK
 vert_sync => ones_score[0].CLK
 vert_sync => ones_score[1].CLK
 vert_sync => ones_score[2].CLK
@@ -240,7 +241,8 @@ vert_sync => ball_y_motion[6].CLK
 vert_sync => ball_y_motion[7].CLK
 vert_sync => ball_y_motion[8].CLK
 vert_sync => ball_y_motion[9].CLK
-vert_sync => collision.CLK
+vert_sync => gameState[0].CLK
+vert_sync => gameState[1].CLK
 vert_sync => score_ones_out[0]~reg0.CLK
 vert_sync => score_ones_out[1]~reg0.CLK
 vert_sync => score_ones_out[2]~reg0.CLK
@@ -466,6 +468,8 @@ red <= red.DB_MAX_OUTPUT_PORT_TYPE
 green <= green.DB_MAX_OUTPUT_PORT_TYPE
 blue <= blue.DB_MAX_OUTPUT_PORT_TYPE
 mouseReset <= mouseReset~reg0.DB_MAX_OUTPUT_PORT_TYPE
+gameStateOut[0] <= gameStateOut[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+gameStateOut[1] <= gameStateOut[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |mainDiagram|MOUSE:inst3
