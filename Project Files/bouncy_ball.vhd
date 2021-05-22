@@ -14,7 +14,8 @@ ENTITY bouncy_ball IS
 		  SIGNAL textOutput 			: IN std_logic;
 		  SIGNAL red, green, blue	: OUT std_logic;
 		  SIGNAL mouseReset 			: OUT std_logic := '0';
-		  SIGNAL gameStateOut      : OUT std_logic_vector(1 downto 0));	
+		  SIGNAL gameOver      		: OUT std_logic_vector(1 downto 0);
+		  SIGNAL gameStart			: OUT std_logic_vector(1 downto 0));	
 		  
 END bouncy_ball;
 
@@ -123,14 +124,14 @@ if (gameState = "01") then
 	Red <= not gameOverBackground;
 	Green <= not gameOverBackground;
 	Blue <= not gameOverBackground;
-	gameStateOut <= gameState;
+	gameOver <= gameState;
 end if;
 
 
 	-- Move ball once every vertical sync
 	if (rising_edge(vert_sync)) then
 		if (gameState = "00") then
-			
+			gameStart <= gameState;
 			pipe_x_motion <= CONV_STD_LOGIC_VECTOR(1,11);
 			pipe_x_pos <= pipe_x_pos - pipe_x_motion;
 		end if;

@@ -131,9 +131,16 @@ applicable agreement for further details.
 	(port
 		(pt 256 128)
 		(output)
-		(text "gameStateOut[1..0]" (rect 0 0 75 12)(font "Arial" ))
-		(text "gameStateOut[1..0]" (rect 160 123 235 135)(font "Arial" ))
+		(text "gameOver[1..0]" (rect 0 0 62 12)(font "Arial" ))
+		(text "gameOver[1..0]" (rect 173 123 235 135)(font "Arial" ))
 		(line (pt 256 128)(pt 240 128)(line_width 3))
+	)
+	(port
+		(pt 256 144)
+		(output)
+		(text "gameStart[1..0]" (rect 0 0 60 12)(font "Arial" ))
+		(text "gameStart[1..0]" (rect 175 139 235 151)(font "Arial" ))
+		(line (pt 256 144)(pt 240 144)(line_width 3))
 	)
 	(drawing
 		(rectangle (rect 16 16 240 192)(line_width 1))

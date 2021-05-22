@@ -271,6 +271,8 @@ vert_sync => pipe_x_motion[7].CLK
 vert_sync => pipe_x_motion[8].CLK
 vert_sync => pipe_x_motion[9].CLK
 vert_sync => pipe_x_motion[10].CLK
+vert_sync => gameStart[0]~reg0.CLK
+vert_sync => gameStart[1]~reg0.CLK
 pixel_row[0] => Add8.IN20
 pixel_row[0] => LessThan3.IN22
 pixel_row[0] => LessThan4.IN20
@@ -468,8 +470,10 @@ red <= red.DB_MAX_OUTPUT_PORT_TYPE
 green <= green.DB_MAX_OUTPUT_PORT_TYPE
 blue <= blue.DB_MAX_OUTPUT_PORT_TYPE
 mouseReset <= mouseReset~reg0.DB_MAX_OUTPUT_PORT_TYPE
-gameStateOut[0] <= gameStateOut[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
-gameStateOut[1] <= gameStateOut[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+gameOver[0] <= gameOver[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+gameOver[1] <= gameOver[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+gameStart[0] <= gameStart[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+gameStart[1] <= gameStart[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |mainDiagram|MOUSE:inst3
