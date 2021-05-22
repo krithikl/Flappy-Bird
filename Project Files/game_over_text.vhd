@@ -40,7 +40,7 @@ ARCHITECTURE BEHAVIOUR of game_over_display is
 BEGIN							
 	 
 		over_text_on <= '1' when (output_score = '1' and pixel_column <= CONV_STD_LOGIC_VECTOR(500,10) and pixel_column >= CONV_STD_LOGIC_VECTOR(300,10) 
-		and pixel_row <= CONV_STD_LOGIC_VECTOR(45,10) and pixel_row >= CONV_STD_LOGIC_VECTOR(30,10)) and gameState = "01" else'0';
+		and pixel_row <= CONV_STD_LOGIC_VECTOR(45,10) and pixel_row >= CONV_STD_LOGIC_VECTOR(30,10)) else'0';
 				
 					
 	game_over_display <= 
@@ -54,16 +54,12 @@ BEGIN
 					CONV_STD_LOGIC_VECTOR(22,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(398,10) else --"V"
 					CONV_STD_LOGIC_VECTOR(5,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(414,10) else --"E"
 					CONV_STD_LOGIC_VECTOR(18,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(430,10) --"R"
-					
-					--CONV_STD_LOGIC_VECTOR(58,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(382,10) else --":"
-					--ones_score when pixel_column <= CONV_STD_LOGIC_VECTOR(398,10) else 							--"ones_score"
---					tens_score when pixel_column <= CONV_STD_LOGIC_VECTOR(414,10) else 							--"tens_score"
-					--"100000" when pixel_column <= CONV_STD_LOGIC_VECTOR(414,10) else									--" space 
+
 		
 				;
 		
 		scoretext : char_rom PORT MAP(
-							character_address => score_display,
+							character_address => game_over_display,
 							font_row=>pixel_row(3 downto 1),
 							font_col=>pixel_column(3 downto 1),
 							clock => clock_25Mhz,

@@ -12,6 +12,7 @@ ENTITY bouncy_ball IS
 		  SIGNAL score_ones_out, score_tens_out : OUT std_logic_vector(5 downto 0) := "110000";
 		 
 		  SIGNAL textOutput 			: IN std_logic;
+		  SIGNAL gameOverText		: IN std_logic;
 		  SIGNAL red, green, blue	: OUT std_logic;
 		  SIGNAL mouseReset 			: OUT std_logic := '0';
 		  SIGNAL gameOver      		: OUT std_logic_vector(1 downto 0);
@@ -115,16 +116,17 @@ variable tick : std_logic := '0';
 begin
 
 -- Colour signal assignments
-Red <= (background or ball_on) and (not pipes);
+Red <= (background or ball_on) and ((not pipes) or (textOutput));
 Green <=  (background or ball_on or pipes) and (not textOutput);
-Blue <= background and (not ball_on) and (not pipes);
+Blue <= background and (not ball_on) and ((not pipes) or (textOutput));
 
 
 if (gameState = "01") then
-	Red <= not gameOverBackground;
+	gameOver <= gameState;
+	Red <= not gameOverBackground or not gameOverText;
 	Green <= not gameOverBackground;
 	Blue <= not gameOverBackground;
-	gameOver <= gameState;
+	
 end if;
 
 
@@ -235,7 +237,7 @@ end if;
 			 
 				 -- hits the bottom or top of screen: This part works
 			if (ball_y_pos+size >= CONV_STD_LOGIC_VECTOR(480,10) or ball_y_pos+size <= CONV_STD_LOGIC_VECTOR(0,10))then
-					 collision<='1';
+					 gameState <= "01";
 					 pipe_x_motion <= CONV_STD_LOGIC_VECTOR(0,11);
 			end if ;
 			
