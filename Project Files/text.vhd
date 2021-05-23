@@ -39,12 +39,20 @@ ARCHITECTURE BEHAVIOUR of text_display is
 	
 
 BEGIN							
+--
+--		over_text_on <= '1' when (output_score = '1' and pixel_column <= CONV_STD_LOGIC_VECTOR(335,10) and pixel_column >= CONV_STD_LOGIC_VECTOR(320,10) 
+--		and pixel_row <= CONV_STD_LOGIC_VECTOR(45,10) and pixel_row >= CONV_STD_LOGIC_VECTOR(30,10)) and gameState = "00" else'0';
 
 		over_text_on <= '1' when (output_score = '1' and pixel_column <= CONV_STD_LOGIC_VECTOR(335,10) and pixel_column >= CONV_STD_LOGIC_VECTOR(320,10) 
-		and pixel_row <= CONV_STD_LOGIC_VECTOR(45,10) and pixel_row >= CONV_STD_LOGIC_VECTOR(30,10)) and gameState = "00" else'0';
-
+		and pixel_row <= CONV_STD_LOGIC_VECTOR(78,10) and pixel_row >= CONV_STD_LOGIC_VECTOR(30,10)) and gameState = "00" else'0';
+		
+		
 	score_display <= 
 --					CONV_STD_LOGIC_VECTOR(19,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(302,10) else --"S"
+				--	CONV_STD_LOGIC_VECTOR(19,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(19,6) else --"S"
+					CONV_STD_LOGIC_VECTOR(19,6) when ((pixel_column >= CONV_STD_LOGIC_VECTOR(302,10) and pixel_column <= CONV_STD_LOGIC_VECTOR(334,10) and pixel_row >= CONV_STD_LOGIC_VECTOR(46,10) and pixel_row <= CONV_STD_LOGIC_VECTOR(62,10))) else -- S
+					
+				
 --					CONV_STD_LOGIC_VECTOR(3,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(318,10) else --"C"
 --					CONV_STD_LOGIC_VECTOR(15,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(334,10) else --"O"
 --					CONV_STD_LOGIC_VECTOR(18,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(350,10) else --"R"
