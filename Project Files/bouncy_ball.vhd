@@ -132,6 +132,13 @@ end if;
 
 	-- Move ball once every vertical sync
 	if (rising_edge(vert_sync)) then
+	
+		pipe_x_motion <= CONV_STD_LOGIC_VECTOR(1,11);
+		pipe_x_pos <= pipe_x_pos - pipe_x_motion;
+		if (pipe_x_pos <= CONV_STD_LOGIC_VECTOR(4,11)) then 
+			pipe_x_pos <= CONV_STD_LOGIC_VECTOR(640,11);
+		end if;
+
 		if (gameState = "00") then
 			gameStart <= gameState;
 			pipe_x_motion <= CONV_STD_LOGIC_VECTOR(1,11);

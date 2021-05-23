@@ -1,5 +1,5 @@
 Flow report for Miniproject
-Sat May 22 18:04:29 2021
+Sun May 23 13:26:46 2021
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,20 +40,20 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Sat May 22 18:04:26 2021           ;
+; Flow Status                        ; Successful - Sun May 23 13:26:43 2021           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; Miniproject                                     ;
 ; Top-level Entity Name              ; mainDiagram                                     ;
 ; Family                             ; Cyclone III                                     ;
 ; Device                             ; EP3C16F484C6                                    ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 688 / 15,408 ( 4 % )                            ;
-;     Total combinational functions  ; 636 / 15,408 ( 4 % )                            ;
+; Total logic elements               ; 747 / 15,408 ( 5 % )                            ;
+;     Total combinational functions  ; 690 / 15,408 ( 4 % )                            ;
 ;     Dedicated logic registers      ; 205 / 15,408 ( 1 % )                            ;
 ; Total registers                    ; 205                                             ;
 ; Total pins                         ; 26 / 347 ( 7 % )                                ;
 ; Total virtual pins                 ; 0                                               ;
-; Total memory bits                  ; 4,096 / 516,096 ( < 1 % )                       ;
+; Total memory bits                  ; 8,192 / 516,096 ( 2 % )                         ;
 ; Embedded Multiplier 9-bit elements ; 0 / 112 ( 0 % )                                 ;
 ; Total PLLs                         ; 1 / 4 ( 25 % )                                  ;
 +------------------------------------+-------------------------------------------------+
@@ -64,31 +64,31 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/22/2021 18:04:14 ;
+; Start date & time ; 05/23/2021 13:26:28 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Miniproject         ;
 +-------------------+---------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                 ;
-+-------------------------------------+---------------------------------+---------------+-------------+------------+
-; Assignment Name                     ; Value                           ; Default Value ; Entity Name ; Section Id ;
-+-------------------------------------+---------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 167879092229593.162166345407668 ; --            ; --          ; --         ;
-; IP_TOOL_NAME                        ; ALTPLL                          ; --            ; --          ; --         ;
-; IP_TOOL_VERSION                     ; 13.0                            ; --            ; --          ; --         ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                              ; --            ; --          ; --         ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                               ; --            ; --          ; --         ;
-; MISC_FILE                           ; altpll0.bsf                     ; --            ; --          ; --         ;
-; MISC_FILE                           ; altpll0.cmp                     ; --            ; --          ; --         ;
-; MISC_FILE                           ; altpll0.ppf                     ; --            ; --          ; --         ;
-; PARTITION_COLOR                     ; 16764057                        ; --            ; mainDiagram ; Top        ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING           ; --            ; mainDiagram ; Top        ;
-; PARTITION_NETLIST_TYPE              ; SOURCE                          ; --            ; mainDiagram ; Top        ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                    ; --            ; --          ; --         ;
-; TOP_LEVEL_ENTITY                    ; mainDiagram                     ; Miniproject   ; --          ; --         ;
-+-------------------------------------+---------------------------------+---------------+-------------+------------+
++-----------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                ;
++-------------------------------------+--------------------------------+---------------+-------------+------------+
+; Assignment Name                     ; Value                          ; Default Value ; Entity Name ; Section Id ;
++-------------------------------------+--------------------------------+---------------+-------------+------------+
+; COMPILER_SIGNATURE_ID               ; 88470686096857.162173318823524 ; --            ; --          ; --         ;
+; IP_TOOL_NAME                        ; ALTPLL                         ; --            ; --          ; --         ;
+; IP_TOOL_VERSION                     ; 13.0                           ; --            ; --          ; --         ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                             ; --            ; --          ; --         ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                              ; --            ; --          ; --         ;
+; MISC_FILE                           ; altpll0.bsf                    ; --            ; --          ; --         ;
+; MISC_FILE                           ; altpll0.cmp                    ; --            ; --          ; --         ;
+; MISC_FILE                           ; altpll0.ppf                    ; --            ; --          ; --         ;
+; PARTITION_COLOR                     ; 16764057                       ; --            ; mainDiagram ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING          ; --            ; mainDiagram ; Top        ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                         ; --            ; mainDiagram ; Top        ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                   ; --            ; --          ; --         ;
+; TOP_LEVEL_ENTITY                    ; mainDiagram                    ; Miniproject   ; --          ; --         ;
++-------------------------------------+--------------------------------+---------------+-------------+------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -96,11 +96,11 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:03     ; 1.0                     ; 4631 MB             ; 00:00:03                           ;
-; Fitter                    ; 00:00:07     ; 1.0                     ; 4913 MB             ; 00:00:07                           ;
-; Assembler                 ; 00:00:01     ; 1.0                     ; 4544 MB             ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 4590 MB             ; 00:00:02                           ;
-; Total                     ; 00:00:14     ; --                      ; --                  ; 00:00:13                           ;
+; Analysis & Synthesis      ; 00:00:03     ; 1.0                     ; 4632 MB             ; 00:00:03                           ;
+; Fitter                    ; 00:00:08     ; 1.0                     ; 4915 MB             ; 00:00:09                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 4540 MB             ; 00:00:01                           ;
+; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 4595 MB             ; 00:00:02                           ;
+; Total                     ; 00:00:15     ; --                      ; --                  ; 00:00:15                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -109,10 +109,10 @@ applicable agreement for further details.
 +---------------------------+------------------+-----------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; KRITHIK-LAPTOP   ; Windows 7 ; 6.2        ; x86_64         ;
-; Fitter                    ; KRITHIK-LAPTOP   ; Windows 7 ; 6.2        ; x86_64         ;
-; Assembler                 ; KRITHIK-LAPTOP   ; Windows 7 ; 6.2        ; x86_64         ;
-; TimeQuest Timing Analyzer ; KRITHIK-LAPTOP   ; Windows 7 ; 6.2        ; x86_64         ;
+; Analysis & Synthesis      ; LAPTOP-M6M7CE7K  ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter                    ; LAPTOP-M6M7CE7K  ; Windows 7 ; 6.2        ; x86_64         ;
+; Assembler                 ; LAPTOP-M6M7CE7K  ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; LAPTOP-M6M7CE7K  ; Windows 7 ; 6.2        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 
