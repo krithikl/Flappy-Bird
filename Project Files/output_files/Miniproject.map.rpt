@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Miniproject
-Mon May 24 20:28:28 2021
+Mon May 24 20:32:45 2021
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -60,7 +60,7 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon May 24 20:28:28 2021           ;
+; Analysis & Synthesis Status        ; Successful - Mon May 24 20:32:45 2021           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; Miniproject                                     ;
 ; Top-level Entity Name              ; mainDiagram                                     ;
@@ -175,39 +175,39 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                               ;
-+----------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                                 ; Library ;
-+----------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------------------+---------+
-; lives_display_text.vhd           ; yes             ; User VHDL File                         ; C:/Users/shrey/Documents/GitHub/COMPSYS305-Mini-Project/Project Files/lives_display_text.vhd ;         ;
-; main_menu_text.vhd               ; yes             ; User VHDL File                         ; C:/Users/shrey/Documents/GitHub/COMPSYS305-Mini-Project/Project Files/main_menu_text.vhd     ;         ;
-; mainDiagram.bdf                  ; yes             ; User Block Diagram/Schematic File      ; C:/Users/shrey/Documents/GitHub/COMPSYS305-Mini-Project/Project Files/mainDiagram.bdf        ;         ;
-; text.vhd                         ; yes             ; User VHDL File                         ; C:/Users/shrey/Documents/GitHub/COMPSYS305-Mini-Project/Project Files/text.vhd               ;         ;
-; bcdToSegment.vhd                 ; yes             ; User VHDL File                         ; C:/Users/shrey/Documents/GitHub/COMPSYS305-Mini-Project/Project Files/bcdToSegment.vhd       ;         ;
-; altpll0.vhd                      ; yes             ; User Wizard-Generated File             ; C:/Users/shrey/Documents/GitHub/COMPSYS305-Mini-Project/Project Files/altpll0.vhd            ;         ;
-; vga_sync.vhd                     ; yes             ; User VHDL File                         ; C:/Users/shrey/Documents/GitHub/COMPSYS305-Mini-Project/Project Files/vga_sync.vhd           ;         ;
-; mouse.vhd                        ; yes             ; User VHDL File                         ; C:/Users/shrey/Documents/GitHub/COMPSYS305-Mini-Project/Project Files/mouse.vhd              ;         ;
-; char_rom.vhd                     ; yes             ; User VHDL File                         ; C:/Users/shrey/Documents/GitHub/COMPSYS305-Mini-Project/Project Files/char_rom.vhd           ;         ;
-; bouncy_ball.vhd                  ; yes             ; User VHDL File                         ; C:/Users/shrey/Documents/GitHub/COMPSYS305-Mini-Project/Project Files/bouncy_ball.vhd        ;         ;
-; game_over_text2.vhd              ; yes             ; User VHDL File                         ; C:/Users/shrey/Documents/GitHub/COMPSYS305-Mini-Project/Project Files/game_over_text2.vhd    ;         ;
-; altpll.tdf                       ; yes             ; Megafunction                           ; c:/users/shrey/downloads/quartus/libraries/megafunctions/altpll.tdf                          ;         ;
-; aglobal130.inc                   ; yes             ; Megafunction                           ; c:/users/shrey/downloads/quartus/libraries/megafunctions/aglobal130.inc                      ;         ;
-; stratix_pll.inc                  ; yes             ; Megafunction                           ; c:/users/shrey/downloads/quartus/libraries/megafunctions/stratix_pll.inc                     ;         ;
-; stratixii_pll.inc                ; yes             ; Megafunction                           ; c:/users/shrey/downloads/quartus/libraries/megafunctions/stratixii_pll.inc                   ;         ;
-; cycloneii_pll.inc                ; yes             ; Megafunction                           ; c:/users/shrey/downloads/quartus/libraries/megafunctions/cycloneii_pll.inc                   ;         ;
-; db/altpll0_altpll.v              ; yes             ; Auto-Generated Megafunction            ; C:/Users/shrey/Documents/GitHub/COMPSYS305-Mini-Project/Project Files/db/altpll0_altpll.v    ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/users/shrey/downloads/quartus/libraries/megafunctions/altsyncram.tdf                      ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                           ; c:/users/shrey/downloads/quartus/libraries/megafunctions/stratix_ram_block.inc               ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                           ; c:/users/shrey/downloads/quartus/libraries/megafunctions/lpm_mux.inc                         ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                           ; c:/users/shrey/downloads/quartus/libraries/megafunctions/lpm_decode.inc                      ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                           ; c:/users/shrey/downloads/quartus/libraries/megafunctions/a_rdenreg.inc                       ;         ;
-; altrom.inc                       ; yes             ; Megafunction                           ; c:/users/shrey/downloads/quartus/libraries/megafunctions/altrom.inc                          ;         ;
-; altram.inc                       ; yes             ; Megafunction                           ; c:/users/shrey/downloads/quartus/libraries/megafunctions/altram.inc                          ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                           ; c:/users/shrey/downloads/quartus/libraries/megafunctions/altdpram.inc                        ;         ;
-; db/altsyncram_kt91.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/shrey/Documents/GitHub/COMPSYS305-Mini-Project/Project Files/db/altsyncram_kt91.tdf ;         ;
-; tcgrom.mif                       ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/shrey/Documents/GitHub/COMPSYS305-Mini-Project/Project Files/tcgrom.mif             ;         ;
-+----------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                             ;
++-----------------------------------+-----------------+------------------------------------------+---------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path  ; Used in Netlist ; File Type                                ; File Name with Absolute Path                                                                            ; Library ;
++-----------------------------------+-----------------+------------------------------------------+---------------------------------------------------------------------------------------------------------+---------+
+; VHDL FIles/vga_sync.vhd           ; yes             ; User VHDL File                           ; C:/Users/krith/Documents/GitHub/COMPSYS305-Mini-Project/Project Files/VHDL FIles/vga_sync.vhd           ;         ;
+; VHDL FIles/text.vhd               ; yes             ; User VHDL File                           ; C:/Users/krith/Documents/GitHub/COMPSYS305-Mini-Project/Project Files/VHDL FIles/text.vhd               ;         ;
+; VHDL FIles/mouse.vhd              ; yes             ; User VHDL File                           ; C:/Users/krith/Documents/GitHub/COMPSYS305-Mini-Project/Project Files/VHDL FIles/mouse.vhd              ;         ;
+; VHDL FIles/main_menu_text.vhd     ; yes             ; User VHDL File                           ; C:/Users/krith/Documents/GitHub/COMPSYS305-Mini-Project/Project Files/VHDL FIles/main_menu_text.vhd     ;         ;
+; VHDL FIles/lives_display_text.vhd ; yes             ; User VHDL File                           ; C:/Users/krith/Documents/GitHub/COMPSYS305-Mini-Project/Project Files/VHDL FIles/lives_display_text.vhd ;         ;
+; VHDL FIles/game_over_text2.vhd    ; yes             ; User VHDL File                           ; C:/Users/krith/Documents/GitHub/COMPSYS305-Mini-Project/Project Files/VHDL FIles/game_over_text2.vhd    ;         ;
+; VHDL FIles/char_rom.vhd           ; yes             ; User VHDL File                           ; C:/Users/krith/Documents/GitHub/COMPSYS305-Mini-Project/Project Files/VHDL FIles/char_rom.vhd           ;         ;
+; VHDL FIles/bouncy_ball.vhd        ; yes             ; User VHDL File                           ; C:/Users/krith/Documents/GitHub/COMPSYS305-Mini-Project/Project Files/VHDL FIles/bouncy_ball.vhd        ;         ;
+; VHDL FIles/bcdToSegment.vhd       ; yes             ; User VHDL File                           ; C:/Users/krith/Documents/GitHub/COMPSYS305-Mini-Project/Project Files/VHDL FIles/bcdToSegment.vhd       ;         ;
+; VHDL FIles/altpll0.vhd            ; yes             ; User Wizard-Generated File               ; C:/Users/krith/Documents/GitHub/COMPSYS305-Mini-Project/Project Files/VHDL FIles/altpll0.vhd            ;         ;
+; maindiagram.bdf                   ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/krith/Documents/GitHub/COMPSYS305-Mini-Project/Project Files/maindiagram.bdf                   ;         ;
+; altpll.tdf                        ; yes             ; Megafunction                             ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altpll.tdf                                            ;         ;
+; aglobal130.inc                    ; yes             ; Megafunction                             ; c:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc                                        ;         ;
+; stratix_pll.inc                   ; yes             ; Megafunction                             ; c:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_pll.inc                                       ;         ;
+; stratixii_pll.inc                 ; yes             ; Megafunction                             ; c:/altera/13.0sp1/quartus/libraries/megafunctions/stratixii_pll.inc                                     ;         ;
+; cycloneii_pll.inc                 ; yes             ; Megafunction                             ; c:/altera/13.0sp1/quartus/libraries/megafunctions/cycloneii_pll.inc                                     ;         ;
+; db/altpll0_altpll.v               ; yes             ; Auto-Generated Megafunction              ; C:/Users/krith/Documents/GitHub/COMPSYS305-Mini-Project/Project Files/db/altpll0_altpll.v               ;         ;
+; altsyncram.tdf                    ; yes             ; Megafunction                             ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altsyncram.tdf                                        ;         ;
+; stratix_ram_block.inc             ; yes             ; Megafunction                             ; c:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_ram_block.inc                                 ;         ;
+; lpm_mux.inc                       ; yes             ; Megafunction                             ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mux.inc                                           ;         ;
+; lpm_decode.inc                    ; yes             ; Megafunction                             ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_decode.inc                                        ;         ;
+; a_rdenreg.inc                     ; yes             ; Megafunction                             ; c:/altera/13.0sp1/quartus/libraries/megafunctions/a_rdenreg.inc                                         ;         ;
+; altrom.inc                        ; yes             ; Megafunction                             ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altrom.inc                                            ;         ;
+; altram.inc                        ; yes             ; Megafunction                             ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altram.inc                                            ;         ;
+; altdpram.inc                      ; yes             ; Megafunction                             ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altdpram.inc                                          ;         ;
+; db/altsyncram_kt91.tdf            ; yes             ; Auto-Generated Megafunction              ; C:/Users/krith/Documents/GitHub/COMPSYS305-Mini-Project/Project Files/db/altsyncram_kt91.tdf            ;         ;
+; tcgrom.mif                        ; yes             ; Auto-Found Memory Initialization File    ; C:/Users/krith/Documents/GitHub/COMPSYS305-Mini-Project/Project Files/tcgrom.mif                        ;         ;
++-----------------------------------+-----------------+------------------------------------------+---------------------------------------------------------------------------------------------------------+---------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------+
@@ -285,13 +285,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis IP Cores Summary                                                                                                                                          ;
-+--------+--------------+---------+--------------+--------------+----------------------------+-----------------------------------------------------------------------------------+
-; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance            ; IP Include File                                                                   ;
-+--------+--------------+---------+--------------+--------------+----------------------------+-----------------------------------------------------------------------------------+
-; Altera ; ALTPLL       ; 13.0    ; N/A          ; N/A          ; |mainDiagram|altpll0:inst6 ; C:/Users/shrey/Documents/GitHub/COMPSYS305-Mini-Project/Project Files/altpll0.vhd ;
-+--------+--------------+---------+--------------+--------------+----------------------------+-----------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                                                                     ;
++--------+--------------+---------+--------------+--------------+----------------------------+----------------------------------------------------------------------------------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance            ; IP Include File                                                                              ;
++--------+--------------+---------+--------------+--------------+----------------------------+----------------------------------------------------------------------------------------------+
+; Altera ; ALTPLL       ; N/A     ; N/A          ; N/A          ; |mainDiagram|altpll0:inst6 ; C:/Users/krith/Documents/GitHub/COMPSYS305-Mini-Project/Project Files/VHDL FIles/altpll0.vhd ;
++--------+--------------+---------+--------------+--------------+----------------------------+----------------------------------------------------------------------------------------------+
 
 
 Encoding Type:  One-Hot
@@ -1169,7 +1169,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:03     ;
+; Top            ; 00:00:04     ;
 +----------------+--------------+
 
 
@@ -1179,43 +1179,47 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Mon May 24 20:28:23 2021
+    Info: Processing started: Mon May 24 20:32:39 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Miniproject -c Miniproject
 Warning (20028): Parallel compilation is not licensed and has been disabled
-Info (12021): Found 2 design units, including 1 entities, in source file lives_display_text.vhd
-    Info (12022): Found design unit 1: lives_display-BEHAVIOUR
-    Info (12023): Found entity 1: lives_display
-Info (12021): Found 2 design units, including 1 entities, in source file main_menu_text.vhd
-    Info (12022): Found design unit 1: main_menu_display-BEHAVIOUR
-    Info (12023): Found entity 1: main_menu_display
-Info (12021): Found 1 design units, including 1 entities, in source file maindiagram.bdf
-    Info (12023): Found entity 1: mainDiagram
-Info (12021): Found 2 design units, including 1 entities, in source file text.vhd
-    Info (12022): Found design unit 1: text_display-BEHAVIOUR
-    Info (12023): Found entity 1: text_display
-Info (12021): Found 2 design units, including 1 entities, in source file bcdtosegment.vhd
-    Info (12022): Found design unit 1: bcdToSegment-beh
-    Info (12023): Found entity 1: bcdToSegment
-Info (12021): Found 2 design units, including 1 entities, in source file altpll0.vhd
-    Info (12022): Found design unit 1: altpll0-SYN
-    Info (12023): Found entity 1: altpll0
-Info (12021): Found 2 design units, including 1 entities, in source file vga_sync.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file vhdl files/vga_sync.vhd
     Info (12022): Found design unit 1: VGA_SYNC-a
     Info (12023): Found entity 1: VGA_SYNC
-Info (12021): Found 2 design units, including 1 entities, in source file mouse.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file vhdl files/text.vhd
+    Info (12022): Found design unit 1: text_display-BEHAVIOUR
+    Info (12023): Found entity 1: text_display
+Info (12021): Found 2 design units, including 1 entities, in source file vhdl files/mouse.vhd
     Info (12022): Found design unit 1: MOUSE-behavior
     Info (12023): Found entity 1: MOUSE
-Info (12021): Found 2 design units, including 1 entities, in source file char_rom.vhd
-    Info (12022): Found design unit 1: char_rom-SYN
-    Info (12023): Found entity 1: char_rom
-Info (12021): Found 2 design units, including 1 entities, in source file bouncy_ball.vhd
-    Info (12022): Found design unit 1: bouncy_ball-behavior
-    Info (12023): Found entity 1: bouncy_ball
-Info (12021): Found 1 design units, including 1 entities, in source file testtext.bdf
-    Info (12023): Found entity 1: testText
-Info (12021): Found 2 design units, including 1 entities, in source file game_over_text2.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file vhdl files/main_menu_text.vhd
+    Info (12022): Found design unit 1: main_menu_display-BEHAVIOUR
+    Info (12023): Found entity 1: main_menu_display
+Info (12021): Found 2 design units, including 1 entities, in source file vhdl files/lives_display_text.vhd
+    Info (12022): Found design unit 1: lives_display-BEHAVIOUR
+    Info (12023): Found entity 1: lives_display
+Info (12021): Found 2 design units, including 1 entities, in source file vhdl files/game_over_text2.vhd
     Info (12022): Found design unit 1: game_over_display-BEHAVIOUR
     Info (12023): Found entity 1: game_over_display
+Info (12021): Found 2 design units, including 1 entities, in source file vhdl files/char_rom.vhd
+    Info (12022): Found design unit 1: char_rom-SYN
+    Info (12023): Found entity 1: char_rom
+Info (12021): Found 2 design units, including 1 entities, in source file vhdl files/bouncy_ball.vhd
+    Info (12022): Found design unit 1: bouncy_ball-behavior
+    Info (12023): Found entity 1: bouncy_ball
+Info (12021): Found 2 design units, including 1 entities, in source file vhdl files/bigbox.vhd
+    Info (12022): Found design unit 1: box-behavior
+    Info (12023): Found entity 1: box
+Info (12021): Found 2 design units, including 1 entities, in source file vhdl files/bcdtosegment.vhd
+    Info (12022): Found design unit 1: bcdToSegment-beh
+    Info (12023): Found entity 1: bcdToSegment
+Info (12021): Found 2 design units, including 1 entities, in source file vhdl files/ball.vhd
+    Info (12022): Found design unit 1: ball-behavior
+    Info (12023): Found entity 1: ball
+Info (12021): Found 2 design units, including 1 entities, in source file vhdl files/altpll0.vhd
+    Info (12022): Found design unit 1: altpll0-SYN
+    Info (12023): Found entity 1: altpll0
+Warning (12125): Using design file maindiagram.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: mainDiagram
 Info (12127): Elaborating entity "mainDiagram" for the top level hierarchy
 Warning (275085): Found inconsistent dimensions for element "livesText"
 Warning (275085): Found inconsistent dimensions for element "livesText"
@@ -1426,10 +1430,10 @@ Info (21057): Implemented 999 device resources after synthesis - the final resou
     Info (21061): Implemented 948 logic cells
     Info (21064): Implemented 24 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 78 warnings
-    Info: Peak virtual memory: 4652 megabytes
-    Info: Processing ended: Mon May 24 20:28:28 2021
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:05
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 79 warnings
+    Info: Peak virtual memory: 4648 megabytes
+    Info: Processing ended: Mon May 24 20:32:45 2021
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:06
 
 
