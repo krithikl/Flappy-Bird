@@ -60,7 +60,7 @@ signal pipe2XRight 			: std_logic_vector(10 downto 0) := pipe2_x_pos + pipeWidth
 SIGNAL ones_score,tens_score : std_logic_vector(5 downto 0) := "110000";
 
 -- NEW 
-SIGNAL lives : std_logic_vector(5 DOWNTO 0) := "101100"; 
+SIGNAL lives : std_logic_vector(5 DOWNTO 0) := "110011"; --3 
 
 SIGNAL collision : std_logic := '0';
 signal pipes : std_logic;

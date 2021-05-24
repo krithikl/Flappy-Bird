@@ -53,12 +53,19 @@ BEGIN
 					CONV_STD_LOGIC_VECTOR(9,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(337,10) else --"I"
 					CONV_STD_LOGIC_VECTOR(22,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(353,10) else --"V"
 					CONV_STD_LOGIC_VECTOR(5,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(369,10) else --"E"
-					CONV_STD_LOGIC_VECTOR(19,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(385,10)--"S"
-					--lives when pixel_column <= CONV_STD_LOGIC_VECTOR(102,10) 					--"number of lives"
+					CONV_STD_LOGIC_VECTOR(19,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(385,10)else --"S"
+					lives when pixel_column <= CONV_STD_LOGIC_VECTOR(102,10) else				--"number of lives"
 					
-					;
+					
+
+	-- number of lives
+					CONV_STD_LOGIC_VECTOR(48,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(446,10) AND lives = "110000" else --"0"
+					CONV_STD_LOGIC_VECTOR(49,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(446,10) AND lives = "110001" else --"1"
+			      CONV_STD_LOGIC_VECTOR(50,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(446,10) AND lives = "110010" else --"2"
+					CONV_STD_LOGIC_VECTOR(51,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(446,10) AND lives = "110011"  --"3"
 
 					
+						;
 					
 		
 		scoretext : char_rom PORT MAP(
