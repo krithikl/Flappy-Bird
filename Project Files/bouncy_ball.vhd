@@ -120,7 +120,7 @@ pipeTop3 <= '0' when (( '1' & pixel_column + pipeWidth >= '1' & pipe_x_pos + pip
 			  
 pipes <= (not pipeBot1 and not pipeTop1) or (not pipeBot2 and not pipeTop2) or (not pipeBot3 and not pipeTop3);
 
-
+--pipes <= (not pipeBot1 and not pipeTop1);
 
 Move_Ball: process (vert_sync)
 variable tick : std_logic := '0';
@@ -153,8 +153,13 @@ begin
 			end if;
 			if (gameState = "01") then
 				gameStart <= gameState;
-				pipe_x_motion <= CONV_STD_LOGIC_VECTOR(1,11);
+				pipe_x_motion <= CONV_STD_LOGIC_VECTOR(4,11);
 				pipe_x_pos <= pipe_x_pos - pipe_x_motion;
+				if((pipe_x_pos + pipeWidth) <=  '1' & CONV_STD_LOGIC_VECTOR(0,10)) then  --40
+					pipe_x_pos <= '1' & CONV_STD_LOGIC_VECTOR(640,10) + pipeWidth; --500
+					--pipe_x_pos <= pipe_x_pos - pipe_x_motion;
+				end if; 
+				
 			end if;
 
 			
@@ -187,7 +192,7 @@ begin
 				
 
 
-			--Pipe 2 collision
+--			--Pipe 2 collision
 			if ((ball_y_pos + size + ballPadding >= pipeBotGap + 80) OR ((ball_y_pos - size + ballPadding <= pipeTopGap + 80))) then 
 				if ((ball_x_pos + size <= pipeXLeft + pipeSpacing) 
 				and (ball_x_pos + size >= pipeXRight + pipeSpacing)) then
@@ -202,9 +207,9 @@ begin
 					end if;
 				end if;
 			end if;
-			
-			
-			
+--			
+--			
+--			
 			-- Pipe 3 collision
 			if ((ball_y_pos + size + ballPadding >= pipeBotGap - 50) OR ((ball_y_pos - size + ballPadding <= pipeTopGap - 50))) then 
 				if ((ball_x_pos + size <= pipeXLeft + pipeSpacing + pipeSpacing) 
