@@ -101,6 +101,13 @@ applicable agreement for further details.
 		(line (pt 0 192)(pt 16 192)(line_width 1))
 	)
 	(port
+		(pt 0 208)
+		(input)
+		(text "livesText" (rect 0 0 35 12)(font "Arial" ))
+		(text "livesText" (rect 21 203 56 215)(font "Arial" ))
+		(line (pt 0 208)(pt 16 208)(line_width 1))
+	)
+	(port
 		(pt 256 32)
 		(output)
 		(text "score_ones_out[5..0]" (rect 0 0 84 12)(font "Arial" ))
@@ -155,6 +162,13 @@ applicable agreement for further details.
 		(text "gameStart[1..0]" (rect 0 0 60 12)(font "Arial" ))
 		(text "gameStart[1..0]" (rect 175 139 235 151)(font "Arial" ))
 		(line (pt 256 144)(pt 240 144)(line_width 3))
+	)
+	(port
+		(pt 256 160)
+		(output)
+		(text "lives_out[5..0]" (rect 0 0 55 12)(font "Arial" ))
+		(text "lives_out[5..0]" (rect 180 155 235 167)(font "Arial" ))
+		(line (pt 256 160)(pt 240 160)(line_width 3))
 	)
 	(drawing
 		(rectangle (rect 16 16 240 224)(line_width 1))
