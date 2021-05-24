@@ -8,7 +8,7 @@ ENTITY bouncy_ball IS
 	PORT
 		( SIGNAL sw0, pb2, leftButton, rightButton, clk, vert_sync	: IN std_logic;
          SIGNAL pixel_row, pixel_column	: IN std_logic_vector(9 DOWNTO 0);
-		 	-- for score increment NEW 
+		 	
 		  SIGNAL score_ones_out, score_tens_out : OUT std_logic_vector(5 downto 0) := "110000";
 		 
 		  SIGNAL textOutput 			: IN std_logic;
@@ -16,6 +16,10 @@ ENTITY bouncy_ball IS
 		  SIGNAL mainmenuText		: IN std_logic;
 		  SIGNAL red, green, blue	: OUT std_logic;
 		  SIGNAL mouseReset 			: OUT std_logic := '0';
+		  
+		  SIGNAL lives_out : OUT std_logic_vector(5 downto 0);
+		 
+		 
 		  SIGNAL gameOver      		: OUT std_logic_vector(1 downto 0);
 		  SIGNAL gameStart			: OUT std_logic_vector(1 downto 0));	
 		  
@@ -50,6 +54,8 @@ signal pipeXRight 			: std_logic_vector(10 downto 0) := pipe_x_pos + pipeWidth -
 
 SIGNAL ones_score,tens_score : std_logic_vector(5 downto 0) := "110000";
 
+-- NEW 
+SIGNAL lives : std_logic_vector(5 DOWNTO 0) := "101100"; 
 
 SIGNAL collision : std_logic := '0';
 signal pipes : std_logic;
@@ -156,6 +162,7 @@ begin
 				
 			-- Pipe 1 collision
 				score_ones_out <= ones_score;
+				lives_out <= lives; 
 				
 				if ((ball_y_pos + size + ballPadding >= pipeBotGap) OR ((ball_y_pos <= pipeTopGap + size))) then
 					if ((ball_x_pos + size  <= pipeXLeft) 
@@ -163,6 +170,11 @@ begin
 						 gameState <= "11";
 						 pipe_x_motion <= CONV_STD_LOGIC_VECTOR(0,11);
 						 ball_y_motion <= CONV_STD_LOGIC_VECTOR(0,10);
+
+						 --decreases lives if collision occurs  
+						  lives <= lives - "000001"; 
+
+
 					elsif (gamestate = "01" and (ball_x_pos + size <= pipeXLeft)) then
 						if (ones_score < resetScore + "000001") then
 							ones_score <= ones_score + "000001";
