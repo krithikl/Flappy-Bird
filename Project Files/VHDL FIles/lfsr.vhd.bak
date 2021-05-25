@@ -23,7 +23,8 @@ SIGNAL rand_num: STD_LOGIC_VECTOR (7 DOWNTO 0):= "01111111";
 		variable temp : STD_LOGIC:= '0';
 		BEGIN 
 			if (rising_edge(clk)) then
-					--rand_num <= "10101111"; 
+					rand_num <= "10101111"; 
+				else 
 					temp := rand_num(6) XOR rand_num(4) XOR rand_num(3) XOR rand_num(2) XOR rand_num(0);
 					rand_num<= temp & rand_num(7 DOWNTO 1);
 			end if;
