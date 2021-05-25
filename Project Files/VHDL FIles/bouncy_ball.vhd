@@ -378,7 +378,7 @@ begin
 						gameState <= "11";
 						ball_y_pos <= CONV_STD_LOGIC_VECTOR(50,10);
 						pipe1_x_pos <= CONV_STD_LOGIC_VECTOR(0,11);
-						pipe2_x_pos <= CONV_STD_LOGIC_VECTOR(250,11);
+						pipe2_x_pos <= CONV_STD_LOGIC_VECTOR(0,11);
 						ball_y_motion <= CONV_STD_LOGIC_VECTOR(0,10);
 						pipe_x_motion <= CONV_STD_LOGIC_VECTOR(0,11);
 						ones_score <= "110000";
