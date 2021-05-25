@@ -29,7 +29,7 @@ SIGNAL rand_num: STD_LOGIC_VECTOR (7 DOWNTO 0):= "01111111";
 					rand_num<= temp & rand_num(7 DOWNTO 1);
 			end if;
 		end process;
-	output <= ('0' & rand_num )+ CONV_STD_LOGIC_VECTOR(100,9);
+	output <= rand_num;
 end behavior;
 					
 		

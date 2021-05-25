@@ -11,23 +11,35 @@ ENTITY bouncy_ball IS
 		 	
 		  SIGNAL score_ones_out, score_tens_out : OUT std_logic_vector(5 downto 0) := "110000";
 		 
-		  SIGNAL textOutput 			: IN std_logic;
-		  SIGNAL gameOverText		: IN std_logic;
-		  SIGNAL mainmenuText		: IN std_logic;
-		  signal livesText			: IN std_logic;
-		  SIGNAL red, green, blue	: OUT std_logic;
-		  SIGNAL mouseReset 			: OUT std_logic := '0';
+		  SIGNAL textOutput 			: IN std_logic; 
+		  SIGNAL gameOverText		: IN std_logic; 
+		  SIGNAL mainmenuText		: IN std_logic; 
+		  signal livesText			: IN std_logic; 
+		  SIGNAL red, green, blue	: OUT std_logic; 
+		  SIGNAL mouseReset 			: OUT std_logic := '0'; 
 		  
 		
 		 
 		 
-		  SIGNAL gameOver      		: OUT std_logic_vector(1 downto 0);
-		  SIGNAL gameStart			: OUT std_logic_vector(1 downto 0);
-		  SIGNAL lives_out : OUT std_logic_vector(5 downto 0));
+		  SIGNAL gameOver      		: OUT std_logic_vector(1 downto 0); 
+		  SIGNAL gameStart			: OUT std_logic_vector(1 downto 0); 
+		  SIGNAL lives_out : OUT std_logic_vector(5 downto 0)); 
 		  
 END bouncy_ball;
 
 architecture behavior of bouncy_ball is
+
+
+
+component lfsr is
+port
+(
+    clk : in std_logic;
+    output : out std_logic_vector(7 downto 0)
+);
+end component lfsr;
+
+
 
 SIGNAL ball_on					: std_logic;
 SIGNAL background          : std_logic;
@@ -203,7 +215,7 @@ begin
 							
 					end if;
 				end if;
-				
+						
 
 
 --			--Pipe 2 collision
