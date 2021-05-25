@@ -74,8 +74,13 @@ signal resetScore : std_logic_vector(5 downto 0) := "110000";
 
 signal gameState : std_logic_vector(1 downto 0) := "00";
 
-SIGNAL rand_num: STD_LOGIC_VECTOR (7 DOWNTO 0):= "01111111";
-signal temp : std_logic := '0';
+SIGNAL rand_num1: STD_LOGIC_VECTOR (7 DOWNTO 0):= "01111111";
+SIGNAL rand_num_variable1: STD_LOGIC_VECTOR (6 DOWNTO 0):= "1111111";
+signal temp1 : std_logic := '0';
+
+SIGNAL rand_num2: STD_LOGIC_VECTOR (7 DOWNTO 0):= "01111111";
+SIGNAL rand_num_variable2: STD_LOGIC_VECTOR (6 DOWNTO 0):= "0101010";
+signal temp2 : std_logic := '0';
 
 BEGIN           
 
@@ -90,8 +95,9 @@ pipeBotGap <= CONV_STD_LOGIC_VECTOR(250,10);
 ballPadding <= CONV_STD_LOGIC_VECTOR(3,10);
 
 
-temp <= rand_num(6) XOR rand_num(4) XOR rand_num(3) XOR rand_num(2) XOR rand_num(0);
-rand_num <= temp & rand_num(7 DOWNTO 1);
+--temp <= rand_num(6) XOR rand_num(4) XOR rand_num(3) XOR rand_num(2) XOR rand_num(0);
+--rand_num <= temp & rand_num_variable;
+--rand_num <= "00001111";
 
 ball_on <= '1' when ( ('0' & pixel_column + size >= '0' & ball_x_pos) 
 					and ('0' & pixel_column <= '0' & ball_x_pos + size) 	-- x_pos - size <= pixel_column <= x_pos + size
@@ -109,7 +115,7 @@ mainMenuBackground <= '1' when (pixel_row >= 0 and pixel_row <= 479) or (pixel_c
 				  '0';
 			  
 		
-pipeBot1 <= '1' when ( pixel_row >= pipeTopGap and pixel_row <= pipeBotGap) 
+pipeBot1 <= '1' when ( pixel_row >= pipeTopGap + rand_num1 and pixel_row <= pipeBotGap + rand_num1) 
 				else	-- y_pos - size <= pixel_row <= y_pos + size
 			  '0';
 			  
@@ -119,7 +125,7 @@ pipeTop1 <= '0' when (( '1' & pixel_column + pipeWidth >= '1' & pipe1_x_pos) and
 							else	-- y_pos - size <= pixel_row <= y_pos + size
 							'1';	
 							
-pipeBot2 <= '1' when ( pixel_row >= pipeTopGap + rand_num and pixel_row <= pipeBotGap + rand_num) else	-- y_pos - size <= pixel_row <= y_pos + size
+pipeBot2 <= '1' when ( pixel_row >= pipeTopGap + rand_num2 and pixel_row <= pipeBotGap + rand_num2) else	-- y_pos - size <= pixel_row <= y_pos + size
 			  '0';	
 			  
 pipeTop2 <= '0' when (( '1' & pixel_column + pipeWidth >= '1' & pipe2_x_pos + pipeSpacing) and 
@@ -201,10 +207,14 @@ begin
 				pipe2_x_pos <= pipe2_x_pos - pipe_x_motion;
 				if((pipe1_x_pos + pipeWidth) <=  '1' & CONV_STD_LOGIC_VECTOR(0,10)) then  
 					pipe1_x_pos <= '1' & CONV_STD_LOGIC_VECTOR(640,10) + pipeWidth + pipeSpacing;
+					temp1 <= rand_num1(6) XOR rand_num1(4) XOR rand_num1(3) XOR rand_num1(2) XOR rand_num1(0);
+					rand_num1 <= temp1 & rand_num_variable1;
 					incrementScore := '0';	
 				end if;
 				if((pipe2_x_pos + pipeWidth + pipeSpacing) <=  '1' & CONV_STD_LOGIC_VECTOR(0,10)) then  
 					pipe2_x_pos <= '1' & CONV_STD_LOGIC_VECTOR(640,10) + pipeWidth;
+					temp2 <= rand_num2(6) XOR rand_num2(4) XOR rand_num2(3) XOR rand_num2(2) XOR rand_num2(0);
+					rand_num2 <= temp2 & rand_num_variable2;
 					incrementScore2 := '0';	
 				end if;
 			end if;
@@ -217,7 +227,7 @@ begin
 				score_ones_out <= ones_score;
 				lives_out <= lives; 
 
-				if ((ball_y_pos + size + ballPadding >= pipeBotGap) OR ((ball_y_pos <= pipeTopGap + size))) then
+				if ((ball_y_pos + size + ballPadding >= pipeBotGap + rand_num1) OR ((ball_y_pos <= pipeTopGap + size + rand_num1))) then
 					if ((ball_x_pos + size  <= pipe1XLeft) 
 					and (ball_x_pos + size >= pipe1XRight)) then
 						if (gameState = "10") then
@@ -254,7 +264,7 @@ begin
 						
 
 --			--Pipe 2 collision
-			if ((ball_y_pos + size + ballPadding >= pipeBotGap + rand_num) OR (ball_y_pos - size + ballPadding <= pipeTopGap + rand_num)) then
+			if ((ball_y_pos + size + ballPadding >= pipeBotGap + rand_num2) OR (ball_y_pos - size + ballPadding <= pipeTopGap + rand_num2)) then
 				if ((ball_x_pos + size <= pipe2XLeft + pipeSpacing) 
 				and (ball_x_pos + size >= pipe2XRight + pipeSpacing)) then
 					 if (gameState = "10") then
