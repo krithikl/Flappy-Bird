@@ -193,6 +193,7 @@ begin
 			-- Initialise to normal game mode
 			if (sw0 = '0' and rightButton = '1') then
 				gameState <= "01";
+				ball_y_pos <= CONV_STD_LOGIC_VECTOR(50,10);
 			end if;
 			
 			if (pb2 = '0' and gameState = "11") then
@@ -267,13 +268,6 @@ begin
 				if ((ball_x_pos + size  <= pipe1XLeft) 
 				and (ball_x_pos + size >= pipe1XRight)) then
 					if (gameState = "10" and collision = '0') then
-						-- ball_y_pos <= CONV_STD_LOGIC_VECTOR(50,10);
-						-- pipe1_x_pos <= CONV_STD_LOGIC_VECTOR(0,11);
-						-- pipe2_x_pos <= CONV_STD_LOGIC_VECTOR(0,11);
-						-- pipe_x_motion <= CONV_STD_LOGIC_VECTOR(0,11);
-						-- ball_y_motion <= CONV_STD_LOGIC_VECTOR(0,10);
-						-- ones_score <= "110000";
-						-- totalScore <= 0;
 
 						--decreases lives if collision occurs  
 						lives <= lives - "0001"; 
@@ -311,13 +305,6 @@ begin
 				if ((ball_x_pos + size <= pipe2XLeft + pipeSpacing) 
 				and (ball_x_pos + size >= pipe2XRight + pipeSpacing)) then
 					 if (gameState = "10" and collision = '0') then
-							--  ball_y_pos <= CONV_STD_LOGIC_VECTOR(50,10);
-							--  pipe1_x_pos <= CONV_STD_LOGIC_VECTOR(0,11);
-							--  pipe2_x_pos <= CONV_STD_LOGIC_VECTOR(0,11);
-							--  pipe_x_motion <= CONV_STD_LOGIC_VECTOR(0,11);
-							--  ball_y_motion <= CONV_STD_LOGIC_VECTOR(0,10);
-							--  ones_score <= "110000";
-							--  totalScore <= 0;
 
 							--decreases lives if collision occurs  
 						 	lives <= lives - "0001"; 
@@ -381,13 +368,6 @@ begin
 					 -- hits the bottom or top of screen: This part works
 				if (ball_y_pos+size >= CONV_STD_LOGIC_VECTOR(480,10) or ball_y_pos+size <= CONV_STD_LOGIC_VECTOR(0,10))then
 					if (gameState = "10" and collision = '0') then
-						-- ball_y_pos <= CONV_STD_LOGIC_VECTOR(50,10);
-						-- pipe1_x_pos <= CONV_STD_LOGIC_VECTOR(0,11);
-						-- pipe2_x_pos <= CONV_STD_LOGIC_VECTOR(250,11);
-						-- ball_y_motion <= CONV_STD_LOGIC_VECTOR(0,10);
-						-- pipe_x_motion <= CONV_STD_LOGIC_VECTOR(0,11);
-						-- ones_score <= "110000";
-						-- totalScore <= 0;
 
 						--decreases lives if collision occurs  
 						lives <= lives - "0001";
