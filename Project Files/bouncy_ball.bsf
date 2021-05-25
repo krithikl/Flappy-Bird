@@ -103,23 +103,16 @@ applicable agreement for further details.
 	(port
 		(pt 0 208)
 		(input)
-		(text "livesText" (rect 0 0 35 12)(font "Arial" ))
-		(text "livesText" (rect 21 203 56 215)(font "Arial" ))
-		(line (pt 0 208)(pt 16 208)(line_width 1))
+		(text "randNum[7..0]" (rect 0 0 57 12)(font "Arial" ))
+		(text "randNum[7..0]" (rect 21 203 78 215)(font "Arial" ))
+		(line (pt 0 208)(pt 16 208)(line_width 3))
 	)
 	(port
 		(pt 0 224)
 		(input)
-		(text "randNum[7..0]" (rect 0 0 57 12)(font "Arial" ))
-		(text "randNum[7..0]" (rect 21 219 78 231)(font "Arial" ))
-		(line (pt 0 224)(pt 16 224)(line_width 3))
-	)
-	(port
-		(pt 0 240)
-		(input)
 		(text "gameModeText" (rect 0 0 62 12)(font "Arial" ))
-		(text "gameModeText" (rect 21 235 83 247)(font "Arial" ))
-		(line (pt 0 240)(pt 16 240)(line_width 1))
+		(text "gameModeText" (rect 21 219 83 231)(font "Arial" ))
+		(line (pt 0 224)(pt 16 224)(line_width 1))
 	)
 	(port
 		(pt 256 32)
@@ -180,8 +173,8 @@ applicable agreement for further details.
 	(port
 		(pt 256 160)
 		(output)
-		(text "lives_out[5..0]" (rect 0 0 55 12)(font "Arial" ))
-		(text "lives_out[5..0]" (rect 180 155 235 167)(font "Arial" ))
+		(text "lives_out[3..0]" (rect 0 0 55 12)(font "Arial" ))
+		(text "lives_out[3..0]" (rect 180 155 235 167)(font "Arial" ))
 		(line (pt 256 160)(pt 240 160)(line_width 3))
 	)
 	(drawing

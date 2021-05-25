@@ -1,5 +1,5 @@
 Flow report for Miniproject
-Tue May 25 19:11:07 2021
+Tue May 25 19:22:01 2021
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,17 +40,17 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Tue May 25 19:11:03 2021           ;
+; Flow Status                        ; Successful - Tue May 25 19:21:58 2021           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; Miniproject                                     ;
 ; Top-level Entity Name              ; mainDiagram                                     ;
 ; Family                             ; Cyclone III                                     ;
 ; Device                             ; EP3C16F484C6                                    ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 1,049 / 15,408 ( 7 % )                          ;
-;     Total combinational functions  ; 991 / 15,408 ( 6 % )                            ;
-;     Dedicated logic registers      ; 223 / 15,408 ( 1 % )                            ;
-; Total registers                    ; 223                                             ;
+; Total logic elements               ; 970 / 15,408 ( 6 % )                            ;
+;     Total combinational functions  ; 930 / 15,408 ( 6 % )                            ;
+;     Dedicated logic registers      ; 176 / 15,408 ( 1 % )                            ;
+; Total registers                    ; 176                                             ;
 ; Total pins                         ; 26 / 347 ( 7 % )                                ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 16,384 / 516,096 ( 3 % )                        ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/25/2021 19:10:45 ;
+; Start date & time ; 05/25/2021 19:21:43 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Miniproject         ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+---------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 88470686096857.162192664514360        ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 167879092229593.162192730314552       ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                     ; --            ; --          ; --         ;
 ; PARTITION_COLOR                     ; 16764057                              ; --            ; mainDiagram ; Top        ;
@@ -93,11 +93,11 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:06     ; 1.0                     ; 4648 MB             ; 00:00:06                           ;
-; Fitter                    ; 00:00:10     ; 1.0                     ; 4909 MB             ; 00:00:10                           ;
-; Assembler                 ; 00:00:01     ; 1.0                     ; 4540 MB             ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 4600 MB             ; 00:00:03                           ;
-; Total                     ; 00:00:20     ; --                      ; --                  ; 00:00:20                           ;
+; Analysis & Synthesis      ; 00:00:04     ; 1.0                     ; 4647 MB             ; 00:00:04                           ;
+; Fitter                    ; 00:00:08     ; 1.0                     ; 4913 MB             ; 00:00:08                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 4544 MB             ; 00:00:01                           ;
+; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 4597 MB             ; 00:00:02                           ;
+; Total                     ; 00:00:16     ; --                      ; --                  ; 00:00:15                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -106,10 +106,10 @@ applicable agreement for further details.
 +---------------------------+------------------+-----------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; LAPTOP-M6M7CE7K  ; Windows 7 ; 6.2        ; x86_64         ;
-; Fitter                    ; LAPTOP-M6M7CE7K  ; Windows 7 ; 6.2        ; x86_64         ;
-; Assembler                 ; LAPTOP-M6M7CE7K  ; Windows 7 ; 6.2        ; x86_64         ;
-; TimeQuest Timing Analyzer ; LAPTOP-M6M7CE7K  ; Windows 7 ; 6.2        ; x86_64         ;
+; Analysis & Synthesis      ; KRITHIK-LAPTOP   ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter                    ; KRITHIK-LAPTOP   ; Windows 7 ; 6.2        ; x86_64         ;
+; Assembler                 ; KRITHIK-LAPTOP   ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; KRITHIK-LAPTOP   ; Windows 7 ; 6.2        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 

@@ -13,8 +13,7 @@ ENTITY bouncy_ball IS
 		 
 		  SIGNAL textOutput 			: IN std_logic; 
 		  SIGNAL gameOverText		: IN std_logic; 
-		  SIGNAL mainmenuText		: IN std_logic; 
-		  signal livesText			: IN std_logic; 
+		  SIGNAL mainmenuText		: IN std_logic;  
 		  signal randNum				: IN std_logic_vector(7 downto 0);
 		  signal gameModeText		: IN std_logic;
 		  SIGNAL red, green, blue	: OUT std_logic; 
@@ -25,7 +24,7 @@ ENTITY bouncy_ball IS
 		 
 		  SIGNAL gameOver      		: OUT std_logic_vector(1 downto 0); 
 		  SIGNAL gameStart			: OUT std_logic_vector(1 downto 0); 
-		  SIGNAL lives_out : OUT std_logic_vector(5 downto 0)); 
+		  SIGNAL lives_out 			: OUT std_logic_vector(3 downto 0)); 
 		  
 END bouncy_ball;
 
@@ -64,7 +63,7 @@ signal pipe2XRight 			: std_logic_vector(10 downto 0) := pipe2_x_pos + pipeWidth
 SIGNAL ones_score,tens_score : std_logic_vector(5 downto 0) := "110000";
 
 -- NEW 
-SIGNAL lives : std_logic_vector(5 DOWNTO 0) := "110011"; --3 
+SIGNAL lives : std_logic_vector(3 DOWNTO 0) := "0011"; --3 
 
 SIGNAL collision : std_logic := '0';
 signal pipes : std_logic;
@@ -95,9 +94,6 @@ pipeBotGap <= CONV_STD_LOGIC_VECTOR(250,10);
 ballPadding <= CONV_STD_LOGIC_VECTOR(3,10);
 
 
---temp <= rand_num(6) XOR rand_num(4) XOR rand_num(3) XOR rand_num(2) XOR rand_num(0);
---rand_num <= temp & rand_num_variable;
---rand_num <= "00001111";
 
 ball_on <= '1' when ( ('0' & pixel_column + size >= '0' & ball_x_pos) 
 					and ('0' & pixel_column <= '0' & ball_x_pos + size) 	-- x_pos - size <= pixel_column <= x_pos + size
@@ -131,13 +127,6 @@ pipeBot2 <= '1' when ( pixel_row >= pipeTopGap + rand_num2 and pixel_row <= pipe
 pipeTop2 <= '0' when (( '1' & pixel_column + pipeWidth >= '1' & pipe2_x_pos + pipeSpacing) and 
 							('1' & pixel_column <= '1' & pipe2_x_pos + pipeSpacing + pipeWidth)) else	-- y_pos - size <= pixel_row <= y_pos + size
 							'1';
---					
---pipeBot3 <= '1' when ( pixel_row >= pipeTopGap - 50 and pixel_row <= pipeBotGap - 50) else	-- y_pos - size <= pixel_row <= y_pos + size
---			  '0';
---			  
---pipeTop3 <= '0' when (( '1' & pixel_column + pipeWidth >= '1' & pipe_x_pos + pipeSpacing + pipeSpacing) and 
---							('1' & pixel_column <= '1' & pipe_x_pos + pipeSpacing + pipeSpacing + pipeWidth)) else	-- y_pos - size <= pixel_row <= y_pos + size
---							'1';
 
 pipes <= ((not pipeBot1 and not pipeTop1) or (not pipeBot2 and not pipeTop2));
 
@@ -150,13 +139,14 @@ variable incrementScore2 : std_logic := '0';
 
 begin
 	
-		-- Main menu
+		-- Main menu selection of training mode
 		if (gameState = "00" and sw0 = '1') then
 			Red <= not mainMenuBackground or not mainMenuText;
 			Green <= not mainMenuBackground;
 			Blue <= not mainMenuBackground;
 		end if;
 		
+		-- Main Menu selection of normal mode
 		if (gameState = "00" and sw0 = '0') then
 			Red <= not mainMenuBackground or not gameModeText;
 			Green <= not mainMenuBackground;
@@ -184,12 +174,11 @@ begin
 			Green <= not gameOverBackground;
 			Blue <= not gameOverBackground;
 		end if;
-			
-		
 
 
 		-- Move ball once every vertical sync
 		if (rising_edge(vert_sync)) then
+
 			-- Initialise to training mode
 			if (sw0 = '1' and rightButton = '1') then
 				gameState <= "10";
@@ -226,6 +215,11 @@ begin
 			-- Pipe 1 collision
 				score_ones_out <= ones_score;
 				lives_out <= lives; 
+				
+				-- Game over if lives gone
+				if (lives = "0000") then
+					gameState <= "11";
+				end if;
 
 				if ((ball_y_pos + size + ballPadding >= pipeBotGap + rand_num1) OR ((ball_y_pos <= pipeTopGap + size + rand_num1))) then
 					if ((ball_x_pos + size  <= pipe1XLeft) 
@@ -237,6 +231,9 @@ begin
 							pipe_x_motion <= CONV_STD_LOGIC_VECTOR(0,11);
 							ball_y_motion <= CONV_STD_LOGIC_VECTOR(0,10);
 							ones_score <= "110000";
+
+							--decreases lives if collision occurs  
+							lives <= lives - "0001"; 
 						end if;
 						
 						if (gameState = "01") then
@@ -249,8 +246,7 @@ begin
 							 ones_score <= "110000";
 						end if;
 
-						 --decreases lives if collision occurs  
-						 lives <= lives - "000001"; 
+						 
 					end if;
 --				elsif ((ball_y_pos + size + ballPadding <= pipeBotGap) OR ((ball_y_pos >= pipeTopGap + size))) then
 					if ((gamestate = "01" or gameState = "10") and (ball_x_pos + size <= pipe1XLeft)) then
@@ -274,6 +270,9 @@ begin
 							 pipe_x_motion <= CONV_STD_LOGIC_VECTOR(0,11);
 							 ball_y_motion <= CONV_STD_LOGIC_VECTOR(0,10);
 							 ones_score <= "110000";
+
+							--decreases lives if collision occurs  
+						 	lives <= lives - "0001"; 
 							 
 						end if;
 						
@@ -330,28 +329,27 @@ begin
 					 -- hits the bottom or top of screen: This part works
 				if (ball_y_pos+size >= CONV_STD_LOGIC_VECTOR(480,10) or ball_y_pos+size <= CONV_STD_LOGIC_VECTOR(0,10))then
 					if (gameState = "01") then
-						 gameState <= "11";
-						 ball_y_pos <= CONV_STD_LOGIC_VECTOR(50,10);
-						 pipe1_x_pos <= CONV_STD_LOGIC_VECTOR(0,11);
-						 pipe2_x_pos <= CONV_STD_LOGIC_VECTOR(250,11);
-						 ball_y_motion <= CONV_STD_LOGIC_VECTOR(0,10);
-						 pipe_x_motion <= CONV_STD_LOGIC_VECTOR(0,11);
-						 ones_score <= "110000";
+						gameState <= "11";
+						ball_y_pos <= CONV_STD_LOGIC_VECTOR(50,10);
+						pipe1_x_pos <= CONV_STD_LOGIC_VECTOR(0,11);
+						pipe2_x_pos <= CONV_STD_LOGIC_VECTOR(250,11);
+						ball_y_motion <= CONV_STD_LOGIC_VECTOR(0,10);
+						pipe_x_motion <= CONV_STD_LOGIC_VECTOR(0,11);
+						ones_score <= "110000";
 					end if;
 					
 					if (gameState = "10") then
-						 ball_y_pos <= CONV_STD_LOGIC_VECTOR(50,10);
-						 pipe1_x_pos <= CONV_STD_LOGIC_VECTOR(0,11);
-						 pipe2_x_pos <= CONV_STD_LOGIC_VECTOR(250,11);
-						 ball_y_motion <= CONV_STD_LOGIC_VECTOR(0,10);
-						 pipe_x_motion <= CONV_STD_LOGIC_VECTOR(0,11);
-						 ones_score <= "110000";
+						ball_y_pos <= CONV_STD_LOGIC_VECTOR(50,10);
+						pipe1_x_pos <= CONV_STD_LOGIC_VECTOR(0,11);
+						pipe2_x_pos <= CONV_STD_LOGIC_VECTOR(250,11);
+						ball_y_motion <= CONV_STD_LOGIC_VECTOR(0,10);
+						pipe_x_motion <= CONV_STD_LOGIC_VECTOR(0,11);
+						ones_score <= "110000";
+
+						--decreases lives if collision occurs  
+						lives <= lives - "0001"; 
 					end if;
 				end if ;
-				
-				
-				
-				
 
 	end if;
 end if;
