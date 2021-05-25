@@ -187,6 +187,7 @@ begin
 			-- Initialise to training mode
 			if (sw0 = '1' and rightButton = '1') then
 				gameState <= "10";
+				ball_y_pos <= CONV_STD_LOGIC_VECTOR(50, 10);
 			end if;
 			
 			-- Initialise to normal game mode
@@ -208,18 +209,21 @@ begin
 				gameStart <= gameState;
 				pipe_x_motion <= CONV_STD_LOGIC_VECTOR(2,11);
 
-
-				if (totalScore >= 5 and totalScore < 10) then
+				if (gameState = "01") then
 					pipe_x_motion <= CONV_STD_LOGIC_VECTOR(3,11);
-				elsif (totalScore >= 10 and totalScore < 15) then
-					pipe_x_motion <= CONV_STD_LOGIC_VECTOR(5,11);
-				elsif (totalScore >= 15 and totalScore < 20) then
-					pipe_x_motion <= CONV_STD_LOGIC_VECTOR(8,11);
+					if (totalScore >= 5 and totalScore < 10) then
+						pipe_x_motion <= CONV_STD_LOGIC_VECTOR(4,11);
+					elsif (totalScore >= 10 and totalScore < 15) then
+						pipe_x_motion <= CONV_STD_LOGIC_VECTOR(5,11);
+					elsif (totalScore >= 15 and totalScore < 20) then
+						pipe_x_motion <= CONV_STD_LOGIC_VECTOR(7,11);
+					end if;
 				end if;
 
 
 				pipe1_x_pos <= pipe1_x_pos - pipe_x_motion;
 				pipe2_x_pos <= pipe2_x_pos - pipe_x_motion;
+				
 				if((pipe1_x_pos + pipeWidth) <=  '1' & CONV_STD_LOGIC_VECTOR(0,10)) then  
 					pipe1_x_pos <= '1' & CONV_STD_LOGIC_VECTOR(640,10) + pipeWidth + pipeSpacing;
 					temp1 <= rand_num1(6) XOR rand_num1(4) XOR rand_num1(3) XOR rand_num1(2) XOR rand_num1(0);
@@ -296,7 +300,6 @@ begin
 						incrementScore := '1';
 						-- ones_score <= ones_Score + "000001";
 						totalScore <= totalScore + 1;
-						collision := '0';
 					end if;
 						
 				end if;
@@ -334,7 +337,7 @@ begin
 
 						end if;
 				elsif ((gamestate = "01" or gameState = "10") and (ball_x_pos + size <= pipe2XLeft + pipeSpacing)) then
-					
+					collision := '0';
 					if (incrementScore2 = '0') then
 						incrementScore2 := '1';
 						-- ones_score <= ones_Score + "000001";
