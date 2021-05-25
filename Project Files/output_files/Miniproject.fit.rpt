@@ -1,5 +1,5 @@
 Fitter report for Miniproject
-Tue May 25 21:26:46 2021
+Tue May 25 21:49:06 2021
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -77,15 +77,15 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                       ;
 +------------------------------------+-------------------------------------------------+
-; Fitter Status                      ; Successful - Tue May 25 21:26:46 2021           ;
+; Fitter Status                      ; Successful - Tue May 25 21:49:06 2021           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; Miniproject                                     ;
 ; Top-level Entity Name              ; mainDiagram                                     ;
 ; Family                             ; Cyclone III                                     ;
 ; Device                             ; EP3C16F484C6                                    ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 1,057 / 15,408 ( 7 % )                          ;
-;     Total combinational functions  ; 1,014 / 15,408 ( 7 % )                          ;
+; Total logic elements               ; 1,037 / 15,408 ( 7 % )                          ;
+;     Total combinational functions  ; 1,000 / 15,408 ( 6 % )                          ;
 ;     Dedicated logic registers      ; 208 / 15,408 ( 1 % )                            ;
 ; Total registers                    ; 208                                             ;
 ; Total pins                         ; 26 / 347 ( 7 % )                                ;
@@ -223,8 +223,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Type                ; Value                  ;
 +---------------------+------------------------+
 ; Placement (by node) ;                        ;
-;     -- Requested    ; 0 / 1322 ( 0.00 % )    ;
-;     -- Achieved     ; 0 / 1322 ( 0.00 % )    ;
+;     -- Requested    ; 0 / 1308 ( 0.00 % )    ;
+;     -- Achieved     ; 0 / 1308 ( 0.00 % )    ;
 ;                     ;                        ;
 ; Routing (by net)    ;                        ;
 ;     -- Requested    ; 0 / 0 ( 0.00 % )       ;
@@ -247,7 +247,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 ; Partition Name                 ; # Nodes ; # Preserved Nodes ; Preservation Level Used ; Netlist Type Used ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
-; Top                            ; 1310    ; 0                 ; N/A                     ; Source File       ;
+; Top                            ; 1296    ; 0                 ; N/A                     ; Source File       ;
 ; hard_block:auto_generated_inst ; 12      ; 0                 ; N/A                     ; Source File       ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 
@@ -255,7 +255,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in C:/Users/krith/Documents/GitHub/COMPSYS305-Mini-Project/Project Files/output_files/Miniproject.pin.
+The pin-out file can be found in C:/Users/krith/Documents/University/Year 3/COMPSYS 305/Mini-project/Project Files/output_files/Miniproject.pin.
 
 
 +------------------------------------------------------------------------+
@@ -263,26 +263,26 @@ The pin-out file can be found in C:/Users/krith/Documents/GitHub/COMPSYS305-Mini
 +---------------------------------------------+--------------------------+
 ; Resource                                    ; Usage                    ;
 +---------------------------------------------+--------------------------+
-; Total logic elements                        ; 1,057 / 15,408 ( 7 % )   ;
-;     -- Combinational with no register       ; 849                      ;
-;     -- Register only                        ; 43                       ;
-;     -- Combinational with a register        ; 165                      ;
+; Total logic elements                        ; 1,037 / 15,408 ( 7 % )   ;
+;     -- Combinational with no register       ; 829                      ;
+;     -- Register only                        ; 37                       ;
+;     -- Combinational with a register        ; 171                      ;
 ;                                             ;                          ;
 ; Logic element usage by number of LUT inputs ;                          ;
-;     -- 4 input functions                    ; 472                      ;
-;     -- 3 input functions                    ; 215                      ;
-;     -- <=2 input functions                  ; 327                      ;
-;     -- Register only                        ; 43                       ;
+;     -- 4 input functions                    ; 458                      ;
+;     -- 3 input functions                    ; 209                      ;
+;     -- <=2 input functions                  ; 333                      ;
+;     -- Register only                        ; 37                       ;
 ;                                             ;                          ;
 ; Logic elements by mode                      ;                          ;
-;     -- normal mode                          ; 716                      ;
+;     -- normal mode                          ; 702                      ;
 ;     -- arithmetic mode                      ; 298                      ;
 ;                                             ;                          ;
 ; Total registers*                            ; 208 / 17,068 ( 1 % )     ;
 ;     -- Dedicated logic registers            ; 208 / 15,408 ( 1 % )     ;
 ;     -- I/O registers                        ; 0 / 1,660 ( 0 % )        ;
 ;                                             ;                          ;
-; Total LABs:  partially or completely used   ; 84 / 963 ( 9 % )         ;
+; Total LABs:  partially or completely used   ; 77 / 963 ( 8 % )         ;
 ; Virtual pins                                ; 0                        ;
 ; I/O pins                                    ; 26 / 347 ( 7 % )         ;
 ;     -- Clock pins                           ; 1 / 8 ( 13 % )           ;
@@ -299,11 +299,11 @@ The pin-out file can be found in C:/Users/krith/Documents/GitHub/COMPSYS305-Mini
 ; CRC blocks                                  ; 0 / 1 ( 0 % )            ;
 ; ASMI blocks                                 ; 0 / 1 ( 0 % )            ;
 ; Impedance control blocks                    ; 0 / 4 ( 0 % )            ;
-; Average interconnect usage (total/H/V)      ; 1% / 1% / 2%             ;
-; Peak interconnect usage (total/H/V)         ; 12% / 10% / 15%          ;
+; Average interconnect usage (total/H/V)      ; 2% / 2% / 2%             ;
+; Peak interconnect usage (total/H/V)         ; 17% / 17% / 17%          ;
 ; Maximum fan-out                             ; 90                       ;
-; Highest non-global fan-out                  ; 52                       ;
-; Total fan-out                               ; 3893                     ;
+; Highest non-global fan-out                  ; 48                       ;
+; Total fan-out                               ; 3834                     ;
 ; Average fan-out                             ; 2.92                     ;
 +---------------------------------------------+--------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
@@ -317,25 +317,25 @@ The pin-out file can be found in C:/Users/krith/Documents/GitHub/COMPSYS305-Mini
 +---------------------------------------------+----------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                  ; Low                            ;
 ;                                             ;                      ;                                ;
-; Total logic elements                        ; 1057 / 15408 ( 7 % ) ; 0 / 15408 ( 0 % )              ;
-;     -- Combinational with no register       ; 849                  ; 0                              ;
-;     -- Register only                        ; 43                   ; 0                              ;
-;     -- Combinational with a register        ; 165                  ; 0                              ;
+; Total logic elements                        ; 1037 / 15408 ( 7 % ) ; 0 / 15408 ( 0 % )              ;
+;     -- Combinational with no register       ; 829                  ; 0                              ;
+;     -- Register only                        ; 37                   ; 0                              ;
+;     -- Combinational with a register        ; 171                  ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Logic element usage by number of LUT inputs ;                      ;                                ;
-;     -- 4 input functions                    ; 472                  ; 0                              ;
-;     -- 3 input functions                    ; 215                  ; 0                              ;
-;     -- <=2 input functions                  ; 327                  ; 0                              ;
-;     -- Register only                        ; 43                   ; 0                              ;
+;     -- 4 input functions                    ; 458                  ; 0                              ;
+;     -- 3 input functions                    ; 209                  ; 0                              ;
+;     -- <=2 input functions                  ; 333                  ; 0                              ;
+;     -- Register only                        ; 37                   ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Logic elements by mode                      ;                      ;                                ;
-;     -- normal mode                          ; 716                  ; 0                              ;
+;     -- normal mode                          ; 702                  ; 0                              ;
 ;     -- arithmetic mode                      ; 298                  ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Total registers                             ; 208                  ; 0                              ;
 ;     -- Dedicated logic registers            ; 208 / 15408 ( 1 % )  ; 0 / 15408 ( 0 % )              ;
 ;                                             ;                      ;                                ;
-; Total LABs:  partially or completely used   ; 84 / 963 ( 9 % )     ; 0 / 963 ( 0 % )                ;
+; Total LABs:  partially or completely used   ; 77 / 963 ( 8 % )     ; 0 / 963 ( 0 % )                ;
 ;                                             ;                      ;                                ;
 ; Virtual pins                                ; 0                    ; 0                              ;
 ; I/O pins                                    ; 26                   ; 0                              ;
@@ -353,8 +353,8 @@ The pin-out file can be found in C:/Users/krith/Documents/GitHub/COMPSYS305-Mini
 ;     -- Registered Output Connections        ; 0                    ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Internal Connections                        ;                      ;                                ;
-;     -- Total Connections                    ; 3902                 ; 88                             ;
-;     -- Registered Connections               ; 1302                 ; 0                              ;
+;     -- Total Connections                    ; 3843                 ; 88                             ;
+;     -- Registered Connections               ; 1265                 ; 0                              ;
 ;                                             ;                      ;                                ;
 ; External Connections                        ;                      ;                                ;
 ;     -- Top                                  ; 4                    ; 81                             ;
@@ -388,7 +388,7 @@ The pin-out file can be found in C:/Users/krith/Documents/GitHub/COMPSYS305-Mini
 +------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+
 ; clk  ; G21   ; 6        ; 41           ; 15           ; 0            ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
 ; pb2  ; F1    ; 1        ; 0            ; 23           ; 0            ; 2                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
-; sw0  ; J6    ; 1        ; 0            ; 24           ; 0            ; 4                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; sw0  ; J6    ; 1        ; 0            ; 24           ; 0            ; 3                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
 +------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+
 
 
@@ -1030,27 +1030,27 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +----------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+-------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                   ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                                                                     ; Library Name ;
 +----------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+-------------------------------------------------------------------------------------------------------------------------+--------------+
-; |mainDiagram                                 ; 1057 (1)    ; 208 (0)                   ; 0 (0)         ; 16384       ; 4    ; 0            ; 0       ; 0         ; 26   ; 0            ; 849 (1)      ; 43 (0)            ; 165 (0)          ; |mainDiagram                                                                                                            ; work         ;
-;    |MOUSE:inst3|                             ; 79 (79)     ; 65 (65)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 14 (14)      ; 24 (24)           ; 41 (41)          ; |mainDiagram|MOUSE:inst3                                                                                                ; work         ;
-;    |VGA_SYNC:inst1|                          ; 83 (83)     ; 48 (48)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 35 (35)      ; 11 (11)           ; 37 (37)          ; |mainDiagram|VGA_SYNC:inst1                                                                                             ; work         ;
+; |mainDiagram                                 ; 1037 (1)    ; 208 (0)                   ; 0 (0)         ; 16384       ; 4    ; 0            ; 0       ; 0         ; 26   ; 0            ; 829 (1)      ; 37 (0)            ; 171 (0)          ; |mainDiagram                                                                                                            ; work         ;
+;    |MOUSE:inst3|                             ; 78 (78)     ; 65 (65)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 13 (13)      ; 24 (24)           ; 41 (41)          ; |mainDiagram|MOUSE:inst3                                                                                                ; work         ;
+;    |VGA_SYNC:inst1|                          ; 81 (81)     ; 48 (48)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 33 (33)      ; 7 (7)             ; 41 (41)          ; |mainDiagram|VGA_SYNC:inst1                                                                                             ; work         ;
 ;    |altpll0:inst6|                           ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |mainDiagram|altpll0:inst6                                                                                              ; work         ;
 ;       |altpll:altpll_component|              ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |mainDiagram|altpll0:inst6|altpll:altpll_component                                                                      ; work         ;
 ;          |altpll0_altpll:auto_generated|     ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |mainDiagram|altpll0:inst6|altpll:altpll_component|altpll0_altpll:auto_generated                                        ; work         ;
-;    |bcdToSegment:inst2|                      ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; |mainDiagram|bcdToSegment:inst2                                                                                         ; work         ;
-;    |bouncy_ball:inst|                        ; 594 (594)   ; 95 (95)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 493 (493)    ; 8 (8)             ; 93 (93)          ; |mainDiagram|bouncy_ball:inst                                                                                           ; work         ;
-;    |game_mode_display:inst11|                ; 104 (100)   ; 0 (0)                     ; 0 (0)         ; 4096        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 102 (98)     ; 0 (0)             ; 2 (2)            ; |mainDiagram|game_mode_display:inst11                                                                                   ; work         ;
+;    |bcdToSegment:inst2|                      ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 2 (2)            ; |mainDiagram|bcdToSegment:inst2                                                                                         ; work         ;
+;    |bouncy_ball:inst|                        ; 582 (582)   ; 95 (95)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 481 (481)    ; 6 (6)             ; 95 (95)          ; |mainDiagram|bouncy_ball:inst                                                                                           ; work         ;
+;    |game_mode_display:inst11|                ; 102 (98)    ; 0 (0)                     ; 0 (0)         ; 4096        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 102 (98)     ; 0 (0)             ; 0 (0)            ; |mainDiagram|game_mode_display:inst11                                                                                   ; work         ;
 ;       |char_rom:scoretext|                   ; 4 (4)       ; 0 (0)                     ; 0 (0)         ; 4096        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; |mainDiagram|game_mode_display:inst11|char_rom:scoretext                                                                ; work         ;
 ;          |altsyncram:altsyncram_component|   ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 4096        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |mainDiagram|game_mode_display:inst11|char_rom:scoretext|altsyncram:altsyncram_component                                ; work         ;
 ;             |altsyncram_kt91:auto_generated| ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 4096        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |mainDiagram|game_mode_display:inst11|char_rom:scoretext|altsyncram:altsyncram_component|altsyncram_kt91:auto_generated ; work         ;
-;    |game_over_display:inst5|                 ; 35 (31)     ; 0 (0)                     ; 0 (0)         ; 4096        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 35 (31)      ; 0 (0)             ; 0 (0)            ; |mainDiagram|game_over_display:inst5                                                                                    ; work         ;
+;    |game_over_display:inst5|                 ; 35 (31)     ; 0 (0)                     ; 0 (0)         ; 4096        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 32 (28)      ; 0 (0)             ; 3 (3)            ; |mainDiagram|game_over_display:inst5                                                                                    ; work         ;
 ;       |char_rom:scoretext|                   ; 4 (4)       ; 0 (0)                     ; 0 (0)         ; 4096        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; |mainDiagram|game_over_display:inst5|char_rom:scoretext                                                                 ; work         ;
 ;          |altsyncram:altsyncram_component|   ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 4096        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |mainDiagram|game_over_display:inst5|char_rom:scoretext|altsyncram:altsyncram_component                                 ; work         ;
 ;             |altsyncram_kt91:auto_generated| ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 4096        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |mainDiagram|game_over_display:inst5|char_rom:scoretext|altsyncram:altsyncram_component|altsyncram_kt91:auto_generated  ; work         ;
-;    |main_menu_display:inst7|                 ; 128 (124)   ; 0 (0)                     ; 0 (0)         ; 4096        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 125 (121)    ; 0 (0)             ; 3 (3)            ; |mainDiagram|main_menu_display:inst7                                                                                    ; work         ;
+;    |main_menu_display:inst7|                 ; 128 (124)   ; 0 (0)                     ; 0 (0)         ; 4096        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 127 (123)    ; 0 (0)             ; 1 (1)            ; |mainDiagram|main_menu_display:inst7                                                                                    ; work         ;
 ;       |char_rom:scoretext|                   ; 4 (4)       ; 0 (0)                     ; 0 (0)         ; 4096        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; |mainDiagram|main_menu_display:inst7|char_rom:scoretext                                                                 ; work         ;
 ;          |altsyncram:altsyncram_component|   ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 4096        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |mainDiagram|main_menu_display:inst7|char_rom:scoretext|altsyncram:altsyncram_component                                 ; work         ;
 ;             |altsyncram_kt91:auto_generated| ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 4096        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |mainDiagram|main_menu_display:inst7|char_rom:scoretext|altsyncram:altsyncram_component|altsyncram_kt91:auto_generated  ; work         ;
-;    |text_display:inst13|                     ; 42 (38)     ; 0 (0)                     ; 0 (0)         ; 4096        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 37 (33)      ; 0 (0)             ; 5 (5)            ; |mainDiagram|text_display:inst13                                                                                        ; work         ;
+;    |text_display:inst13|                     ; 43 (39)     ; 0 (0)                     ; 0 (0)         ; 4096        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 35 (31)      ; 0 (0)             ; 8 (8)            ; |mainDiagram|text_display:inst13                                                                                        ; work         ;
 ;       |char_rom:scoretext|                   ; 4 (4)       ; 0 (0)                     ; 0 (0)         ; 4096        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; |mainDiagram|text_display:inst13|char_rom:scoretext                                                                     ; work         ;
 ;          |altsyncram:altsyncram_component|   ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 4096        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |mainDiagram|text_display:inst13|char_rom:scoretext|altsyncram:altsyncram_component                                     ; work         ;
 ;             |altsyncram_kt91:auto_generated| ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 4096        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |mainDiagram|text_display:inst13|char_rom:scoretext|altsyncram:altsyncram_component|altsyncram_kt91:auto_generated      ; work         ;
@@ -1086,33 +1086,32 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; seg1[0]        ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; mouse_data     ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; mouse_clk      ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; sw0            ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; sw0            ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; pb2            ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; clk            ; Input    ; --            ; --            ; --                    ; --  ; --   ;
 +----------------+----------+---------------+---------------+-----------------------+-----+------+
 
 
-+------------------------------------------------------------------------+
-; Pad To Core Delay Chain Fanout                                         ;
-+------------------------------------------+-------------------+---------+
-; Source Pin / Fanout                      ; Pad To Core Index ; Setting ;
-+------------------------------------------+-------------------+---------+
-; mouse_data                               ;                   ;         ;
-;      - MOUSE:inst3|READ_CHAR~0           ; 0                 ; 6       ;
-;      - MOUSE:inst3|iready_set~0          ; 0                 ; 6       ;
-;      - MOUSE:inst3|SHIFTIN[8]~feeder     ; 0                 ; 6       ;
-; mouse_clk                                ;                   ;         ;
-;      - MOUSE:inst3|filter[0]~feeder      ; 0                 ; 6       ;
-; sw0                                      ;                   ;         ;
-;      - bouncy_ball:inst|red~7            ; 0                 ; 6       ;
-;      - bouncy_ball:inst|red~8            ; 0                 ; 6       ;
-;      - bouncy_ball:inst|gameState~5      ; 0                 ; 6       ;
-;      - bouncy_ball:inst|gameState~8      ; 0                 ; 6       ;
-; pb2                                      ;                   ;         ;
-;      - bouncy_ball:inst|gameState~4      ; 0                 ; 6       ;
-;      - bouncy_ball:inst|ball_y_motion~12 ; 0                 ; 6       ;
-; clk                                      ;                   ;         ;
-+------------------------------------------+-------------------+---------+
++-----------------------------------------------------------------------+
+; Pad To Core Delay Chain Fanout                                        ;
++-----------------------------------------+-------------------+---------+
+; Source Pin / Fanout                     ; Pad To Core Index ; Setting ;
++-----------------------------------------+-------------------+---------+
+; mouse_data                              ;                   ;         ;
+;      - MOUSE:inst3|READ_CHAR~0          ; 0                 ; 6       ;
+;      - MOUSE:inst3|iready_set~0         ; 0                 ; 6       ;
+;      - MOUSE:inst3|SHIFTIN[8]           ; 0                 ; 6       ;
+; mouse_clk                               ;                   ;         ;
+;      - MOUSE:inst3|filter[0]~feeder     ; 0                 ; 6       ;
+; sw0                                     ;                   ;         ;
+;      - bouncy_ball:inst|red~7           ; 1                 ; 6       ;
+;      - bouncy_ball:inst|red~8           ; 1                 ; 6       ;
+;      - bouncy_ball:inst|Move_Ball~13    ; 1                 ; 6       ;
+; pb2                                     ;                   ;         ;
+;      - bouncy_ball:inst|Move_Ball~14    ; 0                 ; 6       ;
+;      - bouncy_ball:inst|ball_y_motion~7 ; 0                 ; 6       ;
+; clk                                     ;                   ;         ;
++-----------------------------------------+-------------------+---------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1120,34 +1119,35 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------------------------------+--------------------+---------+---------------+--------+----------------------+------------------+---------------------------+
 ; Name                                                                                 ; Location           ; Fan-Out ; Usage         ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +--------------------------------------------------------------------------------------+--------------------+---------+---------------+--------+----------------------+------------------+---------------------------+
-; MOUSE:inst3|MOUSE_CLK_FILTER                                                         ; FF_X40_Y15_N21     ; 37      ; Clock         ; yes    ; Global Clock         ; GCLK7            ; --                        ;
-; MOUSE:inst3|MOUSE_DATA_BUF~0                                                         ; LCCOMB_X29_Y14_N4  ; 10      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; MOUSE:inst3|PACKET_CHAR1[0]~1                                                        ; LCCOMB_X27_Y16_N22 ; 2       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; MOUSE:inst3|PACKET_COUNT[1]~0                                                        ; LCCOMB_X28_Y18_N24 ; 6       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; MOUSE:inst3|SHIFTIN[0]~2                                                             ; LCCOMB_X27_Y16_N24 ; 9       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; MOUSE:inst3|WideOr4                                                                  ; LCCOMB_X28_Y14_N26 ; 1       ; Output enable ; no     ; --                   ; --               ; --                        ;
-; MOUSE:inst3|left_button~2                                                            ; LCCOMB_X28_Y18_N14 ; 2       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; MOUSE:inst3|mouse_state.INHIBIT_TRANS                                                ; FF_X29_Y16_N1      ; 17      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; MOUSE:inst3|mouse_state.WAIT_OUTPUT_READY                                            ; FF_X28_Y14_N9      ; 12      ; Output enable ; no     ; --                   ; --               ; --                        ;
-; MOUSE:inst3|output_ready~0                                                           ; LCCOMB_X28_Y14_N22 ; 5       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; MOUSE:inst3|send_data                                                                ; FF_X28_Y14_N13     ; 17      ; Async. clear  ; no     ; --                   ; --               ; --                        ;
-; VGA_SYNC:inst1|LessThan6~0                                                           ; LCCOMB_X32_Y17_N22 ; 11      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; VGA_SYNC:inst1|LessThan7~1                                                           ; LCCOMB_X31_Y23_N20 ; 10      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; VGA_SYNC:inst1|v_count[6]~1                                                          ; LCCOMB_X32_Y17_N10 ; 10      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; VGA_SYNC:inst1|vert_sync_out                                                         ; FF_X27_Y17_N21     ; 7       ; Clock         ; no     ; --                   ; --               ; --                        ;
-; VGA_SYNC:inst1|vert_sync_out                                                         ; FF_X27_Y17_N21     ; 90      ; Clock         ; yes    ; Global Clock         ; GCLK5            ; --                        ;
+; MOUSE:inst3|MOUSE_CLK_FILTER                                                         ; FF_X40_Y15_N25     ; 37      ; Clock         ; yes    ; Global Clock         ; GCLK7            ; --                        ;
+; MOUSE:inst3|MOUSE_DATA_BUF~0                                                         ; LCCOMB_X33_Y12_N4  ; 10      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; MOUSE:inst3|PACKET_CHAR1[0]~0                                                        ; LCCOMB_X29_Y16_N28 ; 2       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; MOUSE:inst3|PACKET_COUNT[1]~0                                                        ; LCCOMB_X30_Y16_N2  ; 7       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; MOUSE:inst3|SHIFTIN[0]~3                                                             ; LCCOMB_X29_Y16_N10 ; 9       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; MOUSE:inst3|WideOr4                                                                  ; LCCOMB_X32_Y12_N30 ; 1       ; Output enable ; no     ; --                   ; --               ; --                        ;
+; MOUSE:inst3|left_button~0                                                            ; LCCOMB_X30_Y16_N6  ; 2       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; MOUSE:inst3|mouse_state.INHIBIT_TRANS                                                ; FF_X32_Y16_N1      ; 17      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; MOUSE:inst3|mouse_state.WAIT_OUTPUT_READY                                            ; FF_X32_Y12_N9      ; 11      ; Output enable ; no     ; --                   ; --               ; --                        ;
+; MOUSE:inst3|output_ready~0                                                           ; LCCOMB_X32_Y12_N20 ; 5       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; MOUSE:inst3|send_data                                                                ; FF_X32_Y12_N1      ; 17      ; Async. clear  ; no     ; --                   ; --               ; --                        ;
+; VGA_SYNC:inst1|LessThan6~0                                                           ; LCCOMB_X20_Y13_N6  ; 11      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; VGA_SYNC:inst1|LessThan7~1                                                           ; LCCOMB_X30_Y15_N12 ; 10      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; VGA_SYNC:inst1|v_count[4]~1                                                          ; LCCOMB_X29_Y14_N2  ; 10      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; VGA_SYNC:inst1|vert_sync_out                                                         ; FF_X22_Y13_N15     ; 7       ; Clock         ; no     ; --                   ; --               ; --                        ;
+; VGA_SYNC:inst1|vert_sync_out                                                         ; FF_X22_Y13_N15     ; 90      ; Clock         ; yes    ; Global Clock         ; GCLK5            ; --                        ;
 ; altpll0:inst6|altpll:altpll_component|altpll0_altpll:auto_generated|wire_pll1_clk[0] ; PLL_2              ; 80      ; Clock         ; yes    ; Global Clock         ; GCLK8            ; --                        ;
-; bouncy_ball:inst|ball_y_motion[2]~14                                                 ; LCCOMB_X31_Y18_N16 ; 2       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; bouncy_ball:inst|ball_y_pos~27                                                       ; LCCOMB_X31_Y18_N10 ; 3       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; bouncy_ball:inst|blue~0                                                              ; LCCOMB_X28_Y21_N12 ; 52      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; bouncy_ball:inst|lives~7                                                             ; LCCOMB_X28_Y20_N18 ; 2       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; bouncy_ball:inst|mouseReset                                                          ; FF_X28_Y16_N1      ; 31      ; Async. clear  ; no     ; --                   ; --               ; --                        ;
-; bouncy_ball:inst|pipe1_x_pos~0                                                       ; LCCOMB_X27_Y20_N2  ; 32      ; Sync. clear   ; no     ; --                   ; --               ; --                        ;
-; bouncy_ball:inst|rand_num1[7]~0                                                      ; LCCOMB_X21_Y21_N4  ; 3       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; bouncy_ball:inst|rand_num2[0]~0                                                      ; LCCOMB_X28_Y16_N2  ; 4       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; bouncy_ball:inst|totalScore~107                                                      ; LCCOMB_X27_Y21_N10 ; 32      ; Sync. load    ; no     ; --                   ; --               ; --                        ;
+; bouncy_ball:inst|ball_y_motion[2]~9                                                  ; LCCOMB_X26_Y18_N22 ; 2       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; bouncy_ball:inst|ball_y_pos~24                                                       ; LCCOMB_X27_Y16_N6  ; 3       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; bouncy_ball:inst|ball_y_pos~9                                                        ; LCCOMB_X28_Y16_N18 ; 7       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; bouncy_ball:inst|blue~0                                                              ; LCCOMB_X27_Y17_N26 ; 35      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; bouncy_ball:inst|incrementScore~0                                                    ; LCCOMB_X24_Y15_N28 ; 3       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; bouncy_ball:inst|lives[3]~7                                                          ; LCCOMB_X28_Y17_N8  ; 4       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; bouncy_ball:inst|mouseReset                                                          ; FF_X31_Y16_N1      ; 31      ; Async. clear  ; no     ; --                   ; --               ; --                        ;
+; bouncy_ball:inst|pipe1_x_pos~8                                                       ; LCCOMB_X26_Y16_N14 ; 32      ; Sync. clear   ; no     ; --                   ; --               ; --                        ;
+; bouncy_ball:inst|rand_num2[0]~0                                                      ; LCCOMB_X20_Y18_N30 ; 5       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; bouncy_ball:inst|totalScore~100                                                      ; LCCOMB_X24_Y17_N30 ; 32      ; Sync. load    ; no     ; --                   ; --               ; --                        ;
 ; clk                                                                                  ; PIN_G21            ; 1       ; Clock         ; no     ; --                   ; --               ; --                        ;
-; text_display:inst13|score_display[0]~3                                               ; LCCOMB_X24_Y17_N22 ; 6       ; Latch enable  ; yes    ; Global Clock         ; GCLK12           ; --                        ;
+; text_display:inst13|score_display[0]~3                                               ; LCCOMB_X22_Y13_N16 ; 6       ; Latch enable  ; yes    ; Global Clock         ; GCLK15           ; --                        ;
 +--------------------------------------------------------------------------------------+--------------------+---------+---------------+--------+----------------------+------------------+---------------------------+
 
 
@@ -1156,10 +1156,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------------------------------+--------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 ; Name                                                                                 ; Location           ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +--------------------------------------------------------------------------------------+--------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; MOUSE:inst3|MOUSE_CLK_FILTER                                                         ; FF_X40_Y15_N21     ; 37      ; 0                                    ; Global Clock         ; GCLK7            ; --                        ;
-; VGA_SYNC:inst1|vert_sync_out                                                         ; FF_X27_Y17_N21     ; 90      ; 38                                   ; Global Clock         ; GCLK5            ; --                        ;
-; altpll0:inst6|altpll:altpll_component|altpll0_altpll:auto_generated|wire_pll1_clk[0] ; PLL_2              ; 80      ; 7                                    ; Global Clock         ; GCLK8            ; --                        ;
-; text_display:inst13|score_display[0]~3                                               ; LCCOMB_X24_Y17_N22 ; 6       ; 0                                    ; Global Clock         ; GCLK12           ; --                        ;
+; MOUSE:inst3|MOUSE_CLK_FILTER                                                         ; FF_X40_Y15_N25     ; 37      ; 0                                    ; Global Clock         ; GCLK7            ; --                        ;
+; VGA_SYNC:inst1|vert_sync_out                                                         ; FF_X22_Y13_N15     ; 90      ; 46                                   ; Global Clock         ; GCLK5            ; --                        ;
+; altpll0:inst6|altpll:altpll_component|altpll0_altpll:auto_generated|wire_pll1_clk[0] ; PLL_2              ; 80      ; 4                                    ; Global Clock         ; GCLK8            ; --                        ;
+; text_display:inst13|score_display[0]~3                                               ; LCCOMB_X22_Y13_N16 ; 6       ; 0                                    ; Global Clock         ; GCLK15           ; --                        ;
 +--------------------------------------------------------------------------------------+--------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 
 
@@ -1168,119 +1168,111 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------+---------+
 ; Name                                               ; Fan-Out ;
 +----------------------------------------------------+---------+
-; bouncy_ball:inst|blue~0                            ; 52      ;
 ; VGA_SYNC:inst1|pixel_column[6]                     ; 48      ;
-; bouncy_ball:inst|gameState[1]                      ; 40      ;
-; bouncy_ball:inst|gameState[0]                      ; 39      ;
-; game_mode_display:inst11|game_mode_display~22      ; 36      ;
+; game_mode_display:inst11|game_mode_display~20      ; 36      ;
+; bouncy_ball:inst|blue~0                            ; 35      ;
+; game_over_display:inst5|LessThan0~1                ; 34      ;
 ; VGA_SYNC:inst1|pixel_column[5]                     ; 34      ;
-; game_over_display:inst5|LessThan0~1                ; 33      ;
+; bouncy_ball:inst|gameState[1]                      ; 33      ;
 ; ~GND                                               ; 32      ;
-; bouncy_ball:inst|totalScore~107                    ; 32      ;
-; bouncy_ball:inst|pipe1_x_pos~0                     ; 32      ;
+; bouncy_ball:inst|pipe1_x_pos~8                     ; 32      ;
+; bouncy_ball:inst|totalScore~100                    ; 32      ;
+; bouncy_ball:inst|gameState[0]                      ; 32      ;
 ; bouncy_ball:inst|mouseReset                        ; 31      ;
-; VGA_SYNC:inst1|pixel_column[7]                     ; 31      ;
-; game_mode_display:inst11|game_mode_display~25      ; 28      ;
-; VGA_SYNC:inst1|pixel_column[8]                     ; 25      ;
-; game_mode_display:inst11|game_mode_display[0]~48   ; 24      ;
-; game_mode_display:inst11|game_mode_display~23      ; 24      ;
-; VGA_SYNC:inst1|pixel_column[9]                     ; 23      ;
-; bouncy_ball:inst|Equal2~0                          ; 22      ;
+; VGA_SYNC:inst1|pixel_column[7]                     ; 30      ;
+; game_mode_display:inst11|game_mode_display~23      ; 28      ;
+; game_mode_display:inst11|game_mode_display[0]~46   ; 24      ;
+; game_mode_display:inst11|game_mode_display~21      ; 24      ;
+; VGA_SYNC:inst1|pixel_column[8]                     ; 24      ;
+; VGA_SYNC:inst1|pixel_column[9]                     ; 22      ;
+; MOUSE:inst3|left_button                            ; 21      ;
 ; VGA_SYNC:inst1|pixel_column[4]                     ; 21      ;
 ; VGA_SYNC:inst1|pixel_column[2]                     ; 20      ;
 ; VGA_SYNC:inst1|pixel_column[1]                     ; 19      ;
 ; MOUSE:inst3|send_data                              ; 17      ;
 ; main_menu_display:inst7|LessThan20~0               ; 17      ;
 ; MOUSE:inst3|mouse_state.INHIBIT_TRANS              ; 17      ;
+; bouncy_ball:inst|Add24~0                           ; 16      ;
 ; bouncy_ball:inst|ball_y_motion[2]                  ; 16      ;
-; MOUSE:inst3|left_button                            ; 16      ;
 ; game_over_display:inst5|LessThan0~2                ; 16      ;
 ; main_menu_display:inst7|LessThan25~0               ; 15      ;
-; bouncy_ball:inst|gameState~2                       ; 15      ;
 ; main_menu_display:inst7|LessThan22~0               ; 15      ;
 ; game_over_display:inst5|LessThan0~0                ; 14      ;
 ; VGA_SYNC:inst1|pixel_row[3]                        ; 14      ;
 ; VGA_SYNC:inst1|pixel_row[5]                        ; 14      ;
+; bouncy_ball:inst|gameState~0                       ; 13      ;
 ; text_display:inst13|LessThan0~0                    ; 13      ;
 ; VGA_SYNC:inst1|pixel_row[4]                        ; 13      ;
 ; VGA_SYNC:inst1|pixel_row[8]                        ; 13      ;
-; MOUSE:inst3|mouse_state.WAIT_OUTPUT_READY          ; 12      ;
 ; VGA_SYNC:inst1|pixel_row[2]                        ; 12      ;
 ; VGA_SYNC:inst1|pixel_column[3]                     ; 12      ;
-; bouncy_ball:inst|Add24~47                          ; 11      ;
+; MOUSE:inst3|mouse_state.WAIT_OUTPUT_READY          ; 11      ;
+; bouncy_ball:inst|Equal2~1                          ; 11      ;
 ; VGA_SYNC:inst1|LessThan6~0                         ; 11      ;
-; bouncy_ball:inst|ball_y_pos[0]                     ; 11      ;
 ; VGA_SYNC:inst1|pixel_row[1]                        ; 11      ;
-; bouncy_ball:inst|ball_y_pos[2]                     ; 11      ;
 ; VGA_SYNC:inst1|pixel_row[6]                        ; 11      ;
 ; VGA_SYNC:inst1|pixel_row[7]                        ; 11      ;
 ; MOUSE:inst3|MOUSE_DATA_BUF~0                       ; 10      ;
-; VGA_SYNC:inst1|v_count[6]~1                        ; 10      ;
+; VGA_SYNC:inst1|v_count[4]~1                        ; 10      ;
 ; VGA_SYNC:inst1|LessThan7~1                         ; 10      ;
 ; bouncy_ball:inst|ball_y_pos[1]                     ; 10      ;
-; bouncy_ball:inst|ball_y_pos[7]                     ; 10      ;
-; bouncy_ball:inst|ball_y_pos[8]                     ; 10      ;
-; MOUSE:inst3|SHIFTIN[0]~2                           ; 9       ;
-; game_mode_display:inst11|game_mode_display~95      ; 9       ;
-; game_mode_display:inst11|game_mode_display~94      ; 9       ;
-; game_mode_display:inst11|game_mode_display~47      ; 9       ;
+; bouncy_ball:inst|ball_y_pos[2]                     ; 10      ;
+; MOUSE:inst3|SHIFTIN[0]~3                           ; 9       ;
+; game_mode_display:inst11|game_mode_display~92      ; 9       ;
+; game_mode_display:inst11|game_mode_display~91      ; 9       ;
+; game_mode_display:inst11|game_mode_display~45      ; 9       ;
 ; main_menu_display:inst7|LessThan15~0               ; 9       ;
 ; main_menu_display:inst7|LessThan24~0               ; 9       ;
-; bouncy_ball:inst|Add24~25                          ; 9       ;
+; bouncy_ball:inst|Add24~24                          ; 9       ;
 ; game_over_display:inst5|game_over_display[5]~6     ; 9       ;
-; bouncy_ball:inst|rand_num2[0]                      ; 9       ;
-; bouncy_ball:inst|ball_y_pos[3]                     ; 9       ;
-; bouncy_ball:inst|ball_y_pos[6]                     ; 9       ;
-; bouncy_ball:inst|collision~8                       ; 8       ;
+; bouncy_ball:inst|ball_y_pos[0]                     ; 9       ;
+; bouncy_ball:inst|ball_y_pos[7]                     ; 9       ;
+; bouncy_ball:inst|ball_y_pos[8]                     ; 9       ;
+; bouncy_ball:inst|Move_Ball~17                      ; 8       ;
 ; main_menu_display:inst7|LessThan19~1               ; 8       ;
 ; bouncy_ball:inst|score_ones_out[2]                 ; 8       ;
 ; bouncy_ball:inst|score_ones_out[1]                 ; 8       ;
 ; VGA_SYNC:inst1|v_count[2]~0                        ; 8       ;
-; bouncy_ball:inst|gameState~3                       ; 8       ;
-; bouncy_ball:inst|ball_y_pos[9]~12                  ; 8       ;
-; bouncy_ball:inst|ball_y_pos~10                     ; 8       ;
+; bouncy_ball:inst|ball_y_motion[2]~2                ; 8       ;
+; bouncy_ball:inst|ball_y_pos[9]~6                   ; 8       ;
+; bouncy_ball:inst|Equal2~0                          ; 8       ;
+; text_display:inst13|LessThan4~2                    ; 8       ;
+; bouncy_ball:inst|rand_num2[0]                      ; 8       ;
 ; bouncy_ball:inst|pipe2_x_pos[1]                    ; 8       ;
 ; bouncy_ball:inst|pipe1_x_pos[1]                    ; 8       ;
+; bouncy_ball:inst|ball_y_pos[3]                     ; 8       ;
 ; bouncy_ball:inst|ball_y_pos[4]                     ; 8       ;
 ; bouncy_ball:inst|ball_y_pos[5]                     ; 8       ;
-; bouncy_ball:inst|ball_y_pos[9]                     ; 8       ;
-; bouncy_ball:inst|ball_y_pos[9]~43                  ; 7       ;
-; MOUSE:inst3|READ_CHAR                              ; 7       ;
-; bouncy_ball:inst|ball_y_pos~26                     ; 7       ;
+; bouncy_ball:inst|ball_y_pos[6]                     ; 8       ;
+; bouncy_ball:inst|ball_y_pos~22                     ; 7       ;
+; MOUSE:inst3|LessThan1~0                            ; 7       ;
+; MOUSE:inst3|PACKET_COUNT[1]~0                      ; 7       ;
+; bouncy_ball:inst|ball_y_pos~9                      ; 7       ;
+; bouncy_ball:inst|gameState~2                       ; 7       ;
+; bouncy_ball:inst|Move_Ball~11                      ; 7       ;
 ; VGA_SYNC:inst1|h_count[5]                          ; 7       ;
 ; VGA_SYNC:inst1|h_count[8]                          ; 7       ;
 ; VGA_SYNC:inst1|h_count[7]                          ; 7       ;
-; bouncy_ball:inst|lives[0]                          ; 7       ;
-; text_display:inst13|LessThan4~2                    ; 7       ;
 ; bouncy_ball:inst|pipe2_x_pos[2]                    ; 7       ;
 ; bouncy_ball:inst|pipe1_x_pos[2]                    ; 7       ;
 ; VGA_SYNC:inst1|pixel_row[0]                        ; 7       ;
+; bouncy_ball:inst|ball_y_pos[9]                     ; 7       ;
 ; bouncy_ball:inst|lives_out[3]                      ; 7       ;
 ; bouncy_ball:inst|lives_out[2]                      ; 7       ;
 ; bouncy_ball:inst|lives_out[1]                      ; 7       ;
 ; bouncy_ball:inst|lives_out[0]                      ; 7       ;
-; game_mode_display:inst11|game_mode_display~98      ; 6       ;
-; MOUSE:inst3|PACKET_COUNT[1]~0                      ; 6       ;
-; MOUSE:inst3|LessThan1~0                            ; 6       ;
+; game_mode_display:inst11|game_mode_display~95      ; 6       ;
 ; main_menu_display:inst7|LessThan24~1               ; 6       ;
-; game_mode_display:inst11|game_mode_display~52      ; 6       ;
+; game_mode_display:inst11|game_mode_display~50      ; 6       ;
 ; main_menu_display:inst7|main_menu_display[3]~32    ; 6       ;
-; game_mode_display:inst11|game_mode_display[5]~46   ; 6       ;
+; game_mode_display:inst11|game_mode_display[5]~44   ; 6       ;
 ; main_menu_display:inst7|LessThan23~0               ; 6       ;
-; game_mode_display:inst11|game_mode_display~31      ; 6       ;
+; game_mode_display:inst11|game_mode_display~29      ; 6       ;
 ; main_menu_display:inst7|LessThan17~0               ; 6       ;
 ; text_display:inst13|Equal4~0                       ; 6       ;
-; MOUSE:inst3|INCNT[3]                               ; 6       ;
-; MOUSE:inst3|INCNT[0]                               ; 6       ;
-; MOUSE:inst3|INCNT[1]                               ; 6       ;
-; bouncy_ball:inst|pipe2_x_pos~5                     ; 6       ;
-; bouncy_ball:inst|Move_Ball~17                      ; 6       ;
-; bouncy_ball:inst|Move_Ball~8                       ; 6       ;
+; bouncy_ball:inst|pipe2_x_pos~17                    ; 6       ;
 ; VGA_SYNC:inst1|h_count[2]                          ; 6       ;
 ; VGA_SYNC:inst1|h_count[9]                          ; 6       ;
-; bouncy_ball:inst|lives[2]                          ; 6       ;
-; bouncy_ball:inst|lives[1]                          ; 6       ;
-; bouncy_ball:inst|rand_num2[7]                      ; 6       ;
 ; bouncy_ball:inst|pipe2_x_pos[0]                    ; 6       ;
 ; bouncy_ball:inst|pipe2_x_pos[3]                    ; 6       ;
 ; bouncy_ball:inst|pipe1_x_pos[0]                    ; 6       ;
@@ -1301,23 +1293,25 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; MOUSE:inst3|OUTCNT[1]                              ; 5       ;
 ; MOUSE:inst3|OUTCNT[2]                              ; 5       ;
 ; MOUSE:inst3|OUTCNT[3]                              ; 5       ;
-; game_mode_display:inst11|game_mode_display~51      ; 5       ;
-; main_menu_display:inst7|main_menu_display[0]~20    ; 5       ;
-; game_mode_display:inst11|game_mode_display[0]~29   ; 5       ;
-; game_mode_display:inst11|game_mode_display[0]~28   ; 5       ;
+; game_mode_display:inst11|game_mode_display~49      ; 5       ;
+; main_menu_display:inst7|main_menu_display[5]~20    ; 5       ;
+; game_mode_display:inst11|game_mode_display[0]~27   ; 5       ;
+; game_mode_display:inst11|game_mode_display[0]~26   ; 5       ;
 ; main_menu_display:inst7|main_menu_display[1]~13    ; 5       ;
 ; text_display:inst13|LessThan5~0                    ; 5       ;
-; MOUSE:inst3|INCNT[2]                               ; 5       ;
+; MOUSE:inst3|INCNT[3]                               ; 5       ;
+; MOUSE:inst3|INCNT[0]                               ; 5       ;
+; MOUSE:inst3|INCNT[1]                               ; 5       ;
+; MOUSE:inst3|READ_CHAR                              ; 5       ;
 ; VGA_SYNC:inst1|Equal0~1                            ; 5       ;
 ; VGA_SYNC:inst1|Equal0~0                            ; 5       ;
-; bouncy_ball:inst|lives[3]~4                        ; 5       ;
+; bouncy_ball:inst|collision~6                       ; 5       ;
+; bouncy_ball:inst|rand_num2[0]~0                    ; 5       ;
 ; bouncy_ball:inst|LessThan23~3                      ; 5       ;
 ; VGA_SYNC:inst1|v_count[2]                          ; 5       ;
+; bouncy_ball:inst|ball_y_pos~14                     ; 5       ;
+; bouncy_ball:inst|Move_Ball~3                       ; 5       ;
 ; bouncy_ball:inst|LessThan30~2                      ; 5       ;
-; bouncy_ball:inst|LessThan31~2                      ; 5       ;
-; MOUSE:inst3|right_button                           ; 5       ;
-; bouncy_ball:inst|collision~4                       ; 5       ;
-; bouncy_ball:inst|Equal4~0                          ; 5       ;
 ; VGA_SYNC:inst1|v_count[3]                          ; 5       ;
 ; VGA_SYNC:inst1|v_count[4]                          ; 5       ;
 ; VGA_SYNC:inst1|v_count[7]                          ; 5       ;
@@ -1331,8 +1325,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; VGA_SYNC:inst1|h_count[3]                          ; 5       ;
 ; VGA_SYNC:inst1|h_count[4]                          ; 5       ;
 ; bouncy_ball:inst|lives[3]                          ; 5       ;
+; bouncy_ball:inst|lives[0]                          ; 5       ;
 ; bouncy_ball:inst|LessThan5~0                       ; 5       ;
 ; main_menu_display:inst7|LessThan3~1                ; 5       ;
+; bouncy_ball:inst|rand_num2[7]                      ; 5       ;
 ; bouncy_ball:inst|pipe2_x_pos[4]                    ; 5       ;
 ; bouncy_ball:inst|pipe2_x_pos[5]                    ; 5       ;
 ; bouncy_ball:inst|pipe2_x_pos[6]                    ; 5       ;
@@ -1341,39 +1337,40 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; bouncy_ball:inst|pipe2_x_pos[9]                    ; 5       ;
 ; bouncy_ball:inst|pipe2_x_pos[10]                   ; 5       ;
 ; bouncy_ball:inst|totalScore[1]                     ; 5       ;
-; bouncy_ball:inst|Add39~12                          ; 5       ;
-; sw0~input                                          ; 4       ;
-; bouncy_ball:inst|Move_Ball~21                      ; 4       ;
-; game_mode_display:inst11|game_mode_display~97      ; 4       ;
-; game_mode_display:inst11|game_mode_display~96      ; 4       ;
-; text_display:inst13|LessThan4~5                    ; 4       ;
-; bouncy_ball:inst|gameState~11                      ; 4       ;
+; bouncy_ball:inst|Add15~12                          ; 5       ;
+; game_mode_display:inst11|game_mode_display~94      ; 4       ;
+; game_mode_display:inst11|game_mode_display~93      ; 4       ;
 ; MOUSE:inst3|OUTCNT[0]                              ; 4       ;
-; game_mode_display:inst11|game_mode_display~56      ; 4       ;
 ; game_mode_display:inst11|game_mode_display~54      ; 4       ;
-; game_mode_display:inst11|game_mode_display~53      ; 4       ;
-; game_mode_display:inst11|game_mode_display~49      ; 4       ;
+; game_mode_display:inst11|game_mode_display~52      ; 4       ;
+; game_mode_display:inst11|game_mode_display~51      ; 4       ;
+; game_mode_display:inst11|game_mode_display~47      ; 4       ;
 ; main_menu_display:inst7|main_menu_display[0]~24    ; 4       ;
-; main_menu_display:inst7|main_menu_display[0]~23    ; 4       ;
-; main_menu_display:inst7|main_menu_display[0]~22    ; 4       ;
+; main_menu_display:inst7|main_menu_display[5]~23    ; 4       ;
+; main_menu_display:inst7|main_menu_display[5]~22    ; 4       ;
 ; text_display:inst13|LessThan0~1                    ; 4       ;
-; main_menu_display:inst7|main_menu_display[1]~15    ; 4       ;
+; main_menu_display:inst7|main_menu_display[3]~15    ; 4       ;
 ; main_menu_display:inst7|LessThan19~0               ; 4       ;
 ; main_menu_display:inst7|main_menu_display[4]~14    ; 4       ;
-; main_menu_display:inst7|LessThan22~1               ; 4       ;
+; text_display:inst13|LessThan1~0                    ; 4       ;
+; text_display:inst13|LessThan4~4                    ; 4       ;
 ; bouncy_ball:inst|score_ones_out[0]                 ; 4       ;
 ; bouncy_ball:inst|LessThan18~8                      ; 4       ;
-; bouncy_ball:inst|pipe_x_motion~4                   ; 4       ;
+; bouncy_ball:inst|pipe_x_motion~7                   ; 4       ;
 ; bouncy_ball:inst|LessThan18~6                      ; 4       ;
-; MOUSE:inst3|PACKET_COUNT[1]                        ; 4       ;
+; MOUSE:inst3|INCNT[2]                               ; 4       ;
 ; MOUSE:inst3|PACKET_COUNT[0]                        ; 4       ;
+; MOUSE:inst3|PACKET_COUNT[1]                        ; 4       ;
 ; VGA_SYNC:inst1|process_0~11                        ; 4       ;
-; bouncy_ball:inst|Equal2~1                          ; 4       ;
-; bouncy_ball:inst|rand_num2[0]~0                    ; 4       ;
-; bouncy_ball:inst|LessThan22~2                      ; 4       ;
-; bouncy_ball:inst|LessThan22~1                      ; 4       ;
-; bouncy_ball:inst|LessThan22~0                      ; 4       ;
-; bouncy_ball:inst|LessThan26~2                      ; 4       ;
+; bouncy_ball:inst|lives[3]~7                        ; 4       ;
+; bouncy_ball:inst|lives~4                           ; 4       ;
+; bouncy_ball:inst|totalScore~32                     ; 4       ;
+; bouncy_ball:inst|LessThan22~3                      ; 4       ;
+; bouncy_ball:inst|collision~2                       ; 4       ;
+; bouncy_ball:inst|LessThan24~3                      ; 4       ;
+; bouncy_ball:inst|Move_Ball~12                      ; 4       ;
+; bouncy_ball:inst|Move_Ball~2                       ; 4       ;
+; bouncy_ball:inst|lives[1]                          ; 4       ;
 ; main_menu_display:inst7|LessThan2~2                ; 4       ;
 ; main_menu_display:inst7|LessThan0~0                ; 4       ;
 ; bouncy_ball:inst|rand_num1[7]                      ; 4       ;
@@ -1381,53 +1378,65 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; bouncy_ball:inst|totalScore[0]                     ; 4       ;
 ; bouncy_ball:inst|Add30~16                          ; 4       ;
 ; bouncy_ball:inst|Add18~16                          ; 4       ;
+; bouncy_ball:inst|Add15~10                          ; 4       ;
+; bouncy_ball:inst|Add15~8                           ; 4       ;
+; bouncy_ball:inst|Add15~6                           ; 4       ;
 ; bouncy_ball:inst|Add15~4                           ; 4       ;
+; sw0~input                                          ; 3       ;
 ; mouse_data~input                                   ; 3       ;
-; game_mode_display:inst11|game_mode_display[5]~101  ; 3       ;
-; main_menu_display:inst7|main_menu_display[0]~85    ; 3       ;
-; main_menu_display:inst7|main_menu_display[0]~84    ; 3       ;
+; game_mode_display:inst11|game_mode_display[5]~97   ; 3       ;
+; main_menu_display:inst7|main_menu_display[0]~86    ; 3       ;
+; main_menu_display:inst7|main_menu_display[5]~85    ; 3       ;
+; text_display:inst13|LessThan4~5                    ; 3       ;
+; bouncy_ball:inst|ball_y_pos~24                     ; 3       ;
 ; MOUSE:inst3|iready_set                             ; 3       ;
-; bouncy_ball:inst|\Move_Ball:incrementScore         ; 3       ;
 ; MOUSE:inst3|filter[2]                              ; 3       ;
 ; MOUSE:inst3|LessThan0~0                            ; 3       ;
 ; MOUSE:inst3|send_char                              ; 3       ;
-; game_mode_display:inst11|game_mode_display[3]~69   ; 3       ;
-; game_mode_display:inst11|game_mode_display~60      ; 3       ;
-; main_menu_display:inst7|main_menu_display[4]~74    ; 3       ;
-; main_menu_display:inst7|main_menu_display[3]~61    ; 3       ;
-; main_menu_display:inst7|main_menu_display[2]~57    ; 3       ;
+; game_mode_display:inst11|game_mode_display[3]~66   ; 3       ;
+; game_mode_display:inst11|game_mode_display~57      ; 3       ;
+; main_menu_display:inst7|main_menu_display[4]~75    ; 3       ;
+; main_menu_display:inst7|main_menu_display[3]~62    ; 3       ;
+; main_menu_display:inst7|main_menu_display[2]~58    ; 3       ;
 ; main_menu_display:inst7|main_menu_display[5]~29    ; 3       ;
 ; main_menu_display:inst7|main_menu_display[0]~25    ; 3       ;
-; game_mode_display:inst11|game_mode_display[0]~37   ; 3       ;
+; game_mode_display:inst11|game_mode_display[0]~35   ; 3       ;
 ; main_menu_display:inst7|main_menu_display[1]~16    ; 3       ;
 ; main_menu_display:inst7|LessThan11~2               ; 3       ;
+; text_display:inst13|LessThan5~1                    ; 3       ;
 ; bouncy_ball:inst|score_ones_out[5]                 ; 3       ;
 ; bouncy_ball:inst|score_ones_out[4]                 ; 3       ;
 ; bouncy_ball:inst|score_ones_out[3]                 ; 3       ;
-; text_display:inst13|LessThan4~4                    ; 3       ;
 ; bouncy_ball:inst|LessThan16~1                      ; 3       ;
-; bouncy_ball:inst|pipe_x_motion~0                   ; 3       ;
-; bouncy_ball:inst|ball_y_motion[2]~11               ; 3       ;
+; bouncy_ball:inst|ball_y_motion[2]~6                ; 3       ;
 ; MOUSE:inst3|MOUSE_CLK_FILTER                       ; 3       ;
 ; VGA_SYNC:inst1|Equal0~2                            ; 3       ;
 ; MOUSE:inst3|mouse_state.LOAD_COMMAND2              ; 3       ;
 ; MOUSE:inst3|mouse_state.LOAD_COMMAND               ; 3       ;
-; bouncy_ball:inst|totalScore~36                     ; 3       ;
-; bouncy_ball:inst|collision~6                       ; 3       ;
-; bouncy_ball:inst|Move_Ball~18                      ; 3       ;
-; bouncy_ball:inst|gameState~4                       ; 3       ;
+; bouncy_ball:inst|incrementScore2~2                 ; 3       ;
+; bouncy_ball:inst|\Move_Ball:incrementScore2        ; 3       ;
+; bouncy_ball:inst|collision~3                       ; 3       ;
+; bouncy_ball:inst|LessThan26~4                      ; 3       ;
+; bouncy_ball:inst|\Move_Ball:incrementScore         ; 3       ;
+; bouncy_ball:inst|Move_Ball~14                      ; 3       ;
 ; bouncy_ball:inst|LessThan23~2                      ; 3       ;
 ; bouncy_ball:inst|LessThan23~1                      ; 3       ;
 ; bouncy_ball:inst|LessThan23~0                      ; 3       ;
-; bouncy_ball:inst|LessThan22~3                      ; 3       ;
 ; bouncy_ball:inst|pipe_x_motion[0]                  ; 3       ;
 ; bouncy_ball:inst|pipe_x_motion[1]                  ; 3       ;
 ; bouncy_ball:inst|pipe_x_motion[2]                  ; 3       ;
-; bouncy_ball:inst|rand_num1[7]~0                    ; 3       ;
+; bouncy_ball:inst|incrementScore~0                  ; 3       ;
+; bouncy_ball:inst|LessThan22~2                      ; 3       ;
+; bouncy_ball:inst|LessThan22~1                      ; 3       ;
+; bouncy_ball:inst|LessThan22~0                      ; 3       ;
 ; VGA_SYNC:inst1|v_count[0]                          ; 3       ;
 ; VGA_SYNC:inst1|v_count[1]                          ; 3       ;
-; bouncy_ball:inst|ball_y_pos~27                     ; 3       ;
-; bouncy_ball:inst|Move_Ball~9                       ; 3       ;
+; MOUSE:inst3|right_button                           ; 3       ;
+; bouncy_ball:inst|LessThan26~1                      ; 3       ;
+; bouncy_ball:inst|LessThan31~2                      ; 3       ;
+; bouncy_ball:inst|LessThan35~2                      ; 3       ;
+; bouncy_ball:inst|LessThan34~0                      ; 3       ;
+; bouncy_ball:inst|lives[2]                          ; 3       ;
 ; VGA_SYNC:inst1|video_on_h                          ; 3       ;
 ; VGA_SYNC:inst1|video_on_v                          ; 3       ;
 ; main_menu_display:inst7|LessThan2~1                ; 3       ;
@@ -1441,20 +1450,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; bouncy_ball:inst|totalScore[31]                    ; 3       ;
 ; bouncy_ball:inst|totalScore[30]                    ; 3       ;
 ; bouncy_ball:inst|totalScore[29]                    ; 3       ;
-; bouncy_ball:inst|Add37~10                          ; 3       ;
 ; bouncy_ball:inst|Add3~10                           ; 3       ;
-; bouncy_ball:inst|Add30~14                          ; 3       ;
-; bouncy_ball:inst|Add30~12                          ; 3       ;
 ; bouncy_ball:inst|Add30~6                           ; 3       ;
+; bouncy_ball:inst|Add37~10                          ; 3       ;
+; bouncy_ball:inst|Add39~12                          ; 3       ;
 ; bouncy_ball:inst|Add22~14                          ; 3       ;
 ; bouncy_ball:inst|Add22~6                           ; 3       ;
 ; bouncy_ball:inst|Add22~4                           ; 3       ;
 ; bouncy_ball:inst|Add18~10                          ; 3       ;
 ; bouncy_ball:inst|Add18~8                           ; 3       ;
-; bouncy_ball:inst|Add15~12                          ; 3       ;
-; bouncy_ball:inst|Add15~10                          ; 3       ;
-; bouncy_ball:inst|Add15~8                           ; 3       ;
-; bouncy_ball:inst|Add15~6                           ; 3       ;
 ; bouncy_ball:inst|Add15~2                           ; 3       ;
 ; bouncy_ball:inst|Add15~0                           ; 3       ;
 ; pb2~input                                          ; 2       ;
@@ -1483,109 +1487,115 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; text_display:inst13|score_display[1]               ; 2       ;
 ; text_display:inst13|score_display[0]               ; 2       ;
 ; game_over_display:inst5|game_over_display[1]~13    ; 2       ;
-; game_mode_display:inst11|game_mode_display[5]~103  ; 2       ;
-; game_mode_display:inst11|game_mode_display[0]~102  ; 2       ;
-; main_menu_display:inst7|main_menu_display[5]~89    ; 2       ;
-; main_menu_display:inst7|main_menu_display[3]~88    ; 2       ;
-; game_mode_display:inst11|game_mode_display~100     ; 2       ;
-; game_mode_display:inst11|game_mode_display~99      ; 2       ;
+; game_mode_display:inst11|game_mode_display[5]~99   ; 2       ;
+; game_mode_display:inst11|game_mode_display[0]~98   ; 2       ;
+; main_menu_display:inst7|main_menu_display[5]~90    ; 2       ;
+; main_menu_display:inst7|main_menu_display[3]~89    ; 2       ;
+; game_mode_display:inst11|game_mode_display~96      ; 2       ;
 ; main_menu_display:inst7|LessThan9~4                ; 2       ;
-; bouncy_ball:inst|ball_y_motion[2]~18               ; 2       ;
-; bouncy_ball:inst|ball_y_motion[2]~17               ; 2       ;
-; bouncy_ball:inst|ball_y_motion[2]~16               ; 2       ;
+; bouncy_ball:inst|pipe_x_motion~17                  ; 2       ;
+; bouncy_ball:inst|incrementScore2~4                 ; 2       ;
+; bouncy_ball:inst|ball_y_motion[2]~11               ; 2       ;
 ; MOUSE:inst3|mouse_state.WAIT_CMD_ACK               ; 2       ;
 ; MOUSE:inst3|inhibit_wait_count[0]                  ; 2       ;
 ; MOUSE:inst3|mouse_state.INPUT_PACKETS              ; 2       ;
-; bouncy_ball:inst|totalScore~43                     ; 2       ;
-; bouncy_ball:inst|totalScore~42                     ; 2       ;
-; bouncy_ball:inst|\Move_Ball:incrementScore2        ; 2       ;
-; bouncy_ball:inst|totalScore~41                     ; 2       ;
+; bouncy_ball:inst|totalScore~37                     ; 2       ;
+; bouncy_ball:inst|totalScore~36                     ; 2       ;
+; bouncy_ball:inst|totalScore~35                     ; 2       ;
+; MOUSE:inst3|SHIFTIN[1]                             ; 2       ;
 ; MOUSE:inst3|filter[6]                              ; 2       ;
 ; MOUSE:inst3|filter[1]                              ; 2       ;
 ; MOUSE:inst3|filter[0]                              ; 2       ;
 ; MOUSE:inst3|filter[5]                              ; 2       ;
 ; MOUSE:inst3|filter[3]                              ; 2       ;
 ; MOUSE:inst3|filter[4]                              ; 2       ;
-; MOUSE:inst3|PACKET_CHAR1[0]~1                      ; 2       ;
-; MOUSE:inst3|SHIFTIN[1]                             ; 2       ;
+; MOUSE:inst3|PACKET_CHAR1[0]~0                      ; 2       ;
+; MOUSE:inst3|SHIFTIN[0]~2                           ; 2       ;
 ; MOUSE:inst3|output_ready                           ; 2       ;
 ; game_over_display:inst5|game_over_display[5]~12    ; 2       ;
 ; game_over_display:inst5|game_over_display[4]~11    ; 2       ;
 ; game_over_display:inst5|game_over_display[3]~10    ; 2       ;
 ; game_over_display:inst5|game_over_display[2]~9     ; 2       ;
-; game_over_display:inst5|game_over_display[4]~8     ; 2       ;
+; game_over_display:inst5|game_over_display[1]~8     ; 2       ;
 ; game_over_display:inst5|game_over_display[0]~7     ; 2       ;
-; game_mode_display:inst11|game_mode_display[5]~92   ; 2       ;
-; game_mode_display:inst11|game_mode_display[4]~87   ; 2       ;
-; game_mode_display:inst11|game_mode_display[3]~83   ; 2       ;
-; game_mode_display:inst11|game_mode_display[2]~81   ; 2       ;
-; game_mode_display:inst11|game_mode_display[1]~75   ; 2       ;
-; game_mode_display:inst11|game_mode_display[4]~68   ; 2       ;
-; game_mode_display:inst11|game_mode_display[0]~67   ; 2       ;
-; main_menu_display:inst7|main_menu_display[5]~83    ; 2       ;
-; main_menu_display:inst7|main_menu_display[5]~81    ; 2       ;
-; main_menu_display:inst7|main_menu_display[5]~79    ; 2       ;
+; game_mode_display:inst11|game_mode_display[5]~89   ; 2       ;
+; game_mode_display:inst11|game_mode_display[4]~84   ; 2       ;
+; game_mode_display:inst11|game_mode_display[3]~80   ; 2       ;
+; game_mode_display:inst11|game_mode_display[2]~78   ; 2       ;
+; game_mode_display:inst11|game_mode_display[1]~72   ; 2       ;
+; game_mode_display:inst11|game_mode_display[4]~65   ; 2       ;
+; game_mode_display:inst11|game_mode_display[0]~64   ; 2       ;
+; main_menu_display:inst7|main_menu_display[5]~84    ; 2       ;
+; main_menu_display:inst7|main_menu_display[5]~82    ; 2       ;
+; main_menu_display:inst7|main_menu_display[5]~80    ; 2       ;
+; main_menu_display:inst7|main_menu_display[5]~77    ; 2       ;
 ; main_menu_display:inst7|main_menu_display[5]~76    ; 2       ;
-; main_menu_display:inst7|main_menu_display[5]~75    ; 2       ;
+; main_menu_display:inst7|main_menu_display[4]~74    ; 2       ;
+; game_mode_display:inst11|game_mode_display[5]~56   ; 2       ;
 ; main_menu_display:inst7|main_menu_display[4]~73    ; 2       ;
-; game_mode_display:inst11|game_mode_display[5]~59   ; 2       ;
-; main_menu_display:inst7|main_menu_display[4]~72    ; 2       ;
-; main_menu_display:inst7|main_menu_display[4]~70    ; 2       ;
-; main_menu_display:inst7|main_menu_display[3]~69    ; 2       ;
+; main_menu_display:inst7|main_menu_display[4]~71    ; 2       ;
+; main_menu_display:inst7|main_menu_display[3]~70    ; 2       ;
+; main_menu_display:inst7|main_menu_display[3]~68    ; 2       ;
 ; main_menu_display:inst7|main_menu_display[3]~67    ; 2       ;
-; main_menu_display:inst7|main_menu_display[3]~66    ; 2       ;
-; main_menu_display:inst7|main_menu_display[3]~64    ; 2       ;
-; main_menu_display:inst7|main_menu_display[4]~62    ; 2       ;
-; game_mode_display:inst11|game_mode_display~58      ; 2       ;
-; main_menu_display:inst7|main_menu_display[1]~60    ; 2       ;
-; main_menu_display:inst7|main_menu_display[3]~58    ; 2       ;
-; main_menu_display:inst7|main_menu_display[2]~56    ; 2       ;
-; main_menu_display:inst7|main_menu_display[2]~54    ; 2       ;
-; main_menu_display:inst7|main_menu_display[2]~50    ; 2       ;
+; main_menu_display:inst7|main_menu_display[3]~65    ; 2       ;
+; main_menu_display:inst7|main_menu_display[4]~63    ; 2       ;
+; game_mode_display:inst11|game_mode_display~55      ; 2       ;
+; main_menu_display:inst7|main_menu_display[3]~61    ; 2       ;
+; main_menu_display:inst7|main_menu_display[3]~59    ; 2       ;
+; main_menu_display:inst7|main_menu_display[2]~57    ; 2       ;
+; main_menu_display:inst7|main_menu_display[2]~55    ; 2       ;
+; main_menu_display:inst7|main_menu_display[2]~51    ; 2       ;
 ; main_menu_display:inst7|main_menu_display[2]~49    ; 2       ;
-; game_mode_display:inst11|game_mode_display~57      ; 2       ;
 ; main_menu_display:inst7|main_menu_display[2]~48    ; 2       ;
 ; main_menu_display:inst7|main_menu_display[2]~47    ; 2       ;
 ; main_menu_display:inst7|main_menu_display[1]~46    ; 2       ;
 ; main_menu_display:inst7|main_menu_display[1]~44    ; 2       ;
-; game_mode_display:inst11|game_mode_display[1]~55   ; 2       ;
+; game_mode_display:inst11|game_mode_display[1]~53   ; 2       ;
 ; main_menu_display:inst7|main_menu_display[1]~39    ; 2       ;
 ; main_menu_display:inst7|main_menu_display[1]~38    ; 2       ;
 ; main_menu_display:inst7|main_menu_display[1]~37    ; 2       ;
 ; main_menu_display:inst7|main_menu_display[0]~36    ; 2       ;
 ; main_menu_display:inst7|main_menu_display[0]~33    ; 2       ;
 ; main_menu_display:inst7|LessThan17~1               ; 2       ;
-; game_mode_display:inst11|game_mode_display~50      ; 2       ;
+; game_mode_display:inst11|game_mode_display~48      ; 2       ;
 ; main_menu_display:inst7|main_menu_display[0]~28    ; 2       ;
-; main_menu_display:inst7|main_menu_display[0]~18    ; 2       ;
-; game_mode_display:inst11|game_mode_display~45      ; 2       ;
+; main_menu_display:inst7|main_menu_display[5]~18    ; 2       ;
 ; game_mode_display:inst11|game_mode_display~43      ; 2       ;
-; game_mode_display:inst11|game_mode_display~42      ; 2       ;
-; game_mode_display:inst11|game_mode_display[5]~26   ; 2       ;
-; game_mode_display:inst11|game_mode_display~24      ; 2       ;
+; game_mode_display:inst11|game_mode_display~41      ; 2       ;
+; game_mode_display:inst11|game_mode_display~40      ; 2       ;
+; game_mode_display:inst11|game_mode_display[0]~33   ; 2       ;
+; game_mode_display:inst11|game_mode_display[5]~24   ; 2       ;
+; game_mode_display:inst11|game_mode_display~22      ; 2       ;
 ; main_menu_display:inst7|LessThan9~2                ; 2       ;
-; main_menu_display:inst7|main_menu_display[0]~12    ; 2       ;
-; text_display:inst13|LessThan5~1                    ; 2       ;
+; main_menu_display:inst7|main_menu_display[5]~12    ; 2       ;
 ; text_display:inst13|score_display[1]~7             ; 2       ;
 ; text_display:inst13|score_display[1]~6             ; 2       ;
 ; text_display:inst13|Equal11~0                      ; 2       ;
 ; text_display:inst13|score_display[0]~1             ; 2       ;
 ; bouncy_ball:inst|LessThan20~1                      ; 2       ;
-; bouncy_ball:inst|pipe_x_motion~1                   ; 2       ;
-; bouncy_ball:inst|ball_y_motion[2]~14               ; 2       ;
-; bouncy_ball:inst|ball_y_motion~13                  ; 2       ;
-; MOUSE:inst3|left_button~2                          ; 2       ;
+; bouncy_ball:inst|pipe_x_motion~5                   ; 2       ;
+; bouncy_ball:inst|pipe_x_motion~4                   ; 2       ;
+; bouncy_ball:inst|ball_y_motion[2]~9                ; 2       ;
+; bouncy_ball:inst|ball_y_motion~8                   ; 2       ;
+; MOUSE:inst3|left_button~0                          ; 2       ;
 ; VGA_SYNC:inst1|Equal1~0                            ; 2       ;
-; bouncy_ball:inst|lives~7                           ; 2       ;
-; bouncy_ball:inst|lives[3]~2                        ; 2       ;
+; bouncy_ball:inst|lives~3                           ; 2       ;
+; bouncy_ball:inst|collision~8                       ; 2       ;
 ; bouncy_ball:inst|collision~7                       ; 2       ;
+; bouncy_ball:inst|lives[3]~0                        ; 2       ;
+; bouncy_ball:inst|gameState~7                       ; 2       ;
+; bouncy_ball:inst|gameState~5                       ; 2       ;
+; bouncy_ball:inst|gameState~4                       ; 2       ;
 ; bouncy_ball:inst|\Move_Ball:collision              ; 2       ;
-; bouncy_ball:inst|gameState~6                       ; 2       ;
-; bouncy_ball:inst|ball_y_motion[1]                  ; 2       ;
+; bouncy_ball:inst|Move_Ball~13                      ; 2       ;
+; bouncy_ball:inst|gameState~3                       ; 2       ;
+; bouncy_ball:inst|ball_y_pos~8                      ; 2       ;
+; bouncy_ball:inst|LessThan26~2                      ; 2       ;
 ; bouncy_ball:inst|LessThan26~0                      ; 2       ;
-; bouncy_ball:inst|Move_Ball~4                       ; 2       ;
-; bouncy_ball:inst|Move_Ball~3                       ; 2       ;
+; bouncy_ball:inst|LessThan27~3                      ; 2       ;
+; bouncy_ball:inst|LessThan27~2                      ; 2       ;
 ; bouncy_ball:inst|LessThan24~0                      ; 2       ;
+; bouncy_ball:inst|ball_y_motion[1]                  ; 2       ;
 ; VGA_SYNC:inst1|LessThan7~0                         ; 2       ;
 ; text_display:inst13|LessThan4~3                    ; 2       ;
 ; main_menu_display:inst7|LessThan3~3                ; 2       ;
@@ -1599,41 +1609,25 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; bouncy_ball:inst|totalScore[27]                    ; 2       ;
 ; bouncy_ball:inst|totalScore[26]                    ; 2       ;
 ; bouncy_ball:inst|totalScore[25]                    ; 2       ;
-; bouncy_ball:inst|totalScore[16]                    ; 2       ;
-; bouncy_ball:inst|totalScore[15]                    ; 2       ;
 ; bouncy_ball:inst|totalScore[20]                    ; 2       ;
 ; bouncy_ball:inst|totalScore[19]                    ; 2       ;
 ; bouncy_ball:inst|totalScore[18]                    ; 2       ;
 ; bouncy_ball:inst|totalScore[17]                    ; 2       ;
+; bouncy_ball:inst|totalScore[16]                    ; 2       ;
+; bouncy_ball:inst|totalScore[15]                    ; 2       ;
 ; bouncy_ball:inst|totalScore[14]                    ; 2       ;
 ; bouncy_ball:inst|totalScore[13]                    ; 2       ;
+; bouncy_ball:inst|totalScore[6]                     ; 2       ;
 ; bouncy_ball:inst|totalScore[12]                    ; 2       ;
 ; bouncy_ball:inst|totalScore[11]                    ; 2       ;
 ; bouncy_ball:inst|totalScore[10]                    ; 2       ;
 ; bouncy_ball:inst|totalScore[9]                     ; 2       ;
 ; bouncy_ball:inst|totalScore[8]                     ; 2       ;
 ; bouncy_ball:inst|totalScore[7]                     ; 2       ;
-; bouncy_ball:inst|totalScore[6]                     ; 2       ;
 ; bouncy_ball:inst|totalScore[24]                    ; 2       ;
 ; bouncy_ball:inst|totalScore[23]                    ; 2       ;
 ; bouncy_ball:inst|totalScore[22]                    ; 2       ;
 ; bouncy_ball:inst|totalScore[21]                    ; 2       ;
-; bouncy_ball:inst|Add37~16                          ; 2       ;
-; bouncy_ball:inst|Add37~14                          ; 2       ;
-; bouncy_ball:inst|Add37~12                          ; 2       ;
-; bouncy_ball:inst|Add37~8                           ; 2       ;
-; bouncy_ball:inst|Add37~6                           ; 2       ;
-; bouncy_ball:inst|Add37~4                           ; 2       ;
-; bouncy_ball:inst|Add37~2                           ; 2       ;
-; bouncy_ball:inst|Add10~16                          ; 2       ;
-; bouncy_ball:inst|Add10~14                          ; 2       ;
-; bouncy_ball:inst|Add10~12                          ; 2       ;
-; bouncy_ball:inst|Add10~10                          ; 2       ;
-; bouncy_ball:inst|Add10~8                           ; 2       ;
-; bouncy_ball:inst|Add10~6                           ; 2       ;
-; bouncy_ball:inst|Add10~4                           ; 2       ;
-; bouncy_ball:inst|Add10~2                           ; 2       ;
-; bouncy_ball:inst|Add10~0                           ; 2       ;
 ; bouncy_ball:inst|Add3~12                           ; 2       ;
 ; bouncy_ball:inst|Add3~8                            ; 2       ;
 ; bouncy_ball:inst|Add3~6                            ; 2       ;
@@ -1650,9 +1644,27 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; bouncy_ball:inst|Add4~2                            ; 2       ;
 ; bouncy_ball:inst|Add4~0                            ; 2       ;
 ; bouncy_ball:inst|Add30~18                          ; 2       ;
+; bouncy_ball:inst|Add30~14                          ; 2       ;
+; bouncy_ball:inst|Add30~12                          ; 2       ;
 ; bouncy_ball:inst|Add30~10                          ; 2       ;
 ; bouncy_ball:inst|Add30~8                           ; 2       ;
 ; bouncy_ball:inst|Add30~4                           ; 2       ;
+; bouncy_ball:inst|Add37~16                          ; 2       ;
+; bouncy_ball:inst|Add37~14                          ; 2       ;
+; bouncy_ball:inst|Add37~12                          ; 2       ;
+; bouncy_ball:inst|Add37~8                           ; 2       ;
+; bouncy_ball:inst|Add37~6                           ; 2       ;
+; bouncy_ball:inst|Add37~4                           ; 2       ;
+; bouncy_ball:inst|Add37~2                           ; 2       ;
+; bouncy_ball:inst|Add10~16                          ; 2       ;
+; bouncy_ball:inst|Add10~14                          ; 2       ;
+; bouncy_ball:inst|Add10~12                          ; 2       ;
+; bouncy_ball:inst|Add10~10                          ; 2       ;
+; bouncy_ball:inst|Add10~8                           ; 2       ;
+; bouncy_ball:inst|Add10~6                           ; 2       ;
+; bouncy_ball:inst|Add10~4                           ; 2       ;
+; bouncy_ball:inst|Add10~2                           ; 2       ;
+; bouncy_ball:inst|Add10~0                           ; 2       ;
 ; bouncy_ball:inst|Add22~12                          ; 2       ;
 ; bouncy_ball:inst|Add22~10                          ; 2       ;
 ; bouncy_ball:inst|Add22~8                           ; 2       ;
@@ -1676,12 +1688,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; MOUSE:inst3|SHIFTOUT[2]~0                          ; 1       ;
 ; bouncy_ball:inst|score_ones_out[5]~1               ; 1       ;
 ; bouncy_ball:inst|score_ones_out[4]~0               ; 1       ;
-; bouncy_ball:inst|Move_Ball~20                      ; 1       ;
-; MOUSE:inst3|iready_set~1                           ; 1       ;
-; MOUSE:inst3|iready_set~0                           ; 1       ;
 ; game_over_display:inst5|game_over_display[1]~3     ; 1       ;
-; bouncy_ball:inst|totalScore~113                    ; 1       ;
-; bouncy_ball:inst|collision~9                       ; 1       ;
 ; game_over_display:inst5|comb~23                    ; 1       ;
 ; game_over_display:inst5|comb~22                    ; 1       ;
 ; game_over_display:inst5|comb~21                    ; 1       ;
@@ -1690,16 +1697,19 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; game_over_display:inst5|comb~18                    ; 1       ;
 ; main_menu_display:inst7|comb~15                    ; 1       ;
 ; main_menu_display:inst7|comb~14                    ; 1       ;
+; main_menu_display:inst7|main_menu_display[0]~88    ; 1       ;
 ; main_menu_display:inst7|main_menu_display[0]~87    ; 1       ;
-; main_menu_display:inst7|main_menu_display[0]~86    ; 1       ;
 ; main_menu_display:inst7|LessThan11~3               ; 1       ;
-; bouncy_ball:inst|ball_y_motion~19                  ; 1       ;
-; bouncy_ball:inst|lives~9                           ; 1       ;
-; bouncy_ball:inst|totalScore~112                    ; 1       ;
-; bouncy_ball:inst|ball_y_pos~42                     ; 1       ;
-; bouncy_ball:inst|ball_y_pos~41                     ; 1       ;
-; bouncy_ball:inst|ball_y_pos~40                     ; 1       ;
-; game_mode_display:inst11|game_mode_display~93      ; 1       ;
+; bouncy_ball:inst|collision~10                      ; 1       ;
+; bouncy_ball:inst|pipe_x_motion~18                  ; 1       ;
+; bouncy_ball:inst|pipe2_x_pos~34                    ; 1       ;
+; bouncy_ball:inst|pipe2_x_pos~33                    ; 1       ;
+; bouncy_ball:inst|pipe2_x_pos~32                    ; 1       ;
+; bouncy_ball:inst|pipe2_x_pos~31                    ; 1       ;
+; bouncy_ball:inst|pipe2_x_pos~30                    ; 1       ;
+; bouncy_ball:inst|pipe2_x_pos~29                    ; 1       ;
+; bouncy_ball:inst|ball_y_pos~23                     ; 1       ;
+; game_mode_display:inst11|game_mode_display~90      ; 1       ;
 ; MOUSE:inst3|SHIFTOUT[9]                            ; 1       ;
 ; MOUSE:inst3|SHIFTIN[8]                             ; 1       ;
 ; MOUSE:inst3|SHIFTOUT[8]                            ; 1       ;
@@ -1711,15 +1721,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; MOUSE:inst3|SHIFTOUT[5]                            ; 1       ;
 ; MOUSE:inst3|SHIFTIN[4]                             ; 1       ;
 ; MOUSE:inst3|Selector4~0                            ; 1       ;
+; MOUSE:inst3|iready_set~1                           ; 1       ;
+; MOUSE:inst3|iready_set~0                           ; 1       ;
 ; MOUSE:inst3|SHIFTOUT[4]                            ; 1       ;
 ; MOUSE:inst3|SHIFTIN[3]                             ; 1       ;
 ; MOUSE:inst3|inhibit_wait_count[0]~33               ; 1       ;
 ; MOUSE:inst3|OUTCNT~3                               ; 1       ;
 ; MOUSE:inst3|mouse_state.INPUT_PACKETS~0            ; 1       ;
 ; MOUSE:inst3|SHIFTOUT[3]                            ; 1       ;
-; bouncy_ball:inst|incrementScore2~1                 ; 1       ;
-; bouncy_ball:inst|incrementScore2~0                 ; 1       ;
-; bouncy_ball:inst|incrementScore~0                  ; 1       ;
 ; MOUSE:inst3|SHIFTIN[2]                             ; 1       ;
 ; MOUSE:inst3|OUTCNT~2                               ; 1       ;
 ; MOUSE:inst3|OUTCNT~1                               ; 1       ;
@@ -1728,31 +1737,29 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; MOUSE:inst3|Selector6~1                            ; 1       ;
 ; MOUSE:inst3|Selector6~0                            ; 1       ;
 ; MOUSE:inst3|SHIFTOUT[2]                            ; 1       ;
-; bouncy_ball:inst|totalScore~106                    ; 1       ;
-; bouncy_ball:inst|totalScore~105                    ; 1       ;
-; bouncy_ball:inst|totalScore~104                    ; 1       ;
-; bouncy_ball:inst|totalScore~40                     ; 1       ;
-; bouncy_ball:inst|totalScore~39                     ; 1       ;
-; bouncy_ball:inst|totalScore~38                     ; 1       ;
-; bouncy_ball:inst|totalScore~37                     ; 1       ;
-; MOUSE:inst3|SHIFTIN[0]                             ; 1       ;
+; bouncy_ball:inst|totalScore~99                     ; 1       ;
+; bouncy_ball:inst|totalScore~98                     ; 1       ;
+; bouncy_ball:inst|Equal0~0                          ; 1       ;
+; bouncy_ball:inst|totalScore~34                     ; 1       ;
+; bouncy_ball:inst|totalScore~33                     ; 1       ;
 ; MOUSE:inst3|INCNT~3                                ; 1       ;
-; MOUSE:inst3|PACKET_COUNT[1]~2                      ; 1       ;
 ; MOUSE:inst3|INCNT~2                                ; 1       ;
 ; MOUSE:inst3|INCNT~1                                ; 1       ;
 ; MOUSE:inst3|INCNT~0                                ; 1       ;
-; MOUSE:inst3|PACKET_COUNT[0]~1                      ; 1       ;
 ; MOUSE:inst3|READ_CHAR~0                            ; 1       ;
+; MOUSE:inst3|PACKET_COUNT[0]~2                      ; 1       ;
+; MOUSE:inst3|PACKET_COUNT[1]~1                      ; 1       ;
 ; MOUSE:inst3|MOUSE_CLK_FILTER~3                     ; 1       ;
 ; MOUSE:inst3|MOUSE_CLK_FILTER~2                     ; 1       ;
 ; MOUSE:inst3|MOUSE_CLK_FILTER~1                     ; 1       ;
 ; MOUSE:inst3|MOUSE_CLK_FILTER~0                     ; 1       ;
 ; MOUSE:inst3|filter[7]                              ; 1       ;
-; MOUSE:inst3|PACKET_CHAR1[0]~0                      ; 1       ;
+; MOUSE:inst3|SHIFTIN[0]                             ; 1       ;
 ; MOUSE:inst3|Selector1~0                            ; 1       ;
 ; MOUSE:inst3|Selector0~0                            ; 1       ;
 ; MOUSE:inst3|Selector3~0                            ; 1       ;
 ; MOUSE:inst3|SHIFTOUT[1]                            ; 1       ;
+; bouncy_ball:inst|incrementScore2~3                 ; 1       ;
 ; game_over_display:inst5|comb~17                    ; 1       ;
 ; game_over_display:inst5|comb~16                    ; 1       ;
 ; game_over_display:inst5|comb~15                    ; 1       ;
@@ -1761,60 +1768,61 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; game_over_display:inst5|comb~12                    ; 1       ;
 ; game_mode_display:inst11|comb~11                   ; 1       ;
 ; game_mode_display:inst11|comb~10                   ; 1       ;
-; game_mode_display:inst11|game_mode_display[5]~91   ; 1       ;
-; game_mode_display:inst11|game_mode_display[5]~90   ; 1       ;
-; game_mode_display:inst11|game_mode_display[5]~89   ; 1       ;
 ; game_mode_display:inst11|game_mode_display[5]~88   ; 1       ;
+; game_mode_display:inst11|game_mode_display[5]~87   ; 1       ;
+; game_mode_display:inst11|game_mode_display[5]~86   ; 1       ;
+; game_mode_display:inst11|game_mode_display[5]~85   ; 1       ;
 ; game_mode_display:inst11|comb~9                    ; 1       ;
 ; game_mode_display:inst11|comb~8                    ; 1       ;
-; game_mode_display:inst11|game_mode_display[4]~86   ; 1       ;
-; game_mode_display:inst11|game_mode_display[4]~85   ; 1       ;
-; game_mode_display:inst11|game_mode_display[4]~84   ; 1       ;
+; game_mode_display:inst11|game_mode_display[4]~83   ; 1       ;
+; game_mode_display:inst11|game_mode_display[4]~82   ; 1       ;
+; game_mode_display:inst11|game_mode_display[4]~81   ; 1       ;
 ; game_mode_display:inst11|comb~7                    ; 1       ;
 ; game_mode_display:inst11|comb~6                    ; 1       ;
-; game_mode_display:inst11|game_mode_display[3]~82   ; 1       ;
+; game_mode_display:inst11|game_mode_display[3]~79   ; 1       ;
 ; game_mode_display:inst11|comb~5                    ; 1       ;
 ; game_mode_display:inst11|comb~4                    ; 1       ;
-; game_mode_display:inst11|game_mode_display[2]~80   ; 1       ;
-; game_mode_display:inst11|game_mode_display[2]~79   ; 1       ;
-; game_mode_display:inst11|game_mode_display[2]~78   ; 1       ;
 ; game_mode_display:inst11|game_mode_display[2]~77   ; 1       ;
 ; game_mode_display:inst11|game_mode_display[2]~76   ; 1       ;
+; game_mode_display:inst11|game_mode_display[2]~75   ; 1       ;
+; game_mode_display:inst11|game_mode_display[2]~74   ; 1       ;
+; game_mode_display:inst11|game_mode_display[2]~73   ; 1       ;
 ; game_mode_display:inst11|comb~3                    ; 1       ;
 ; game_mode_display:inst11|comb~2                    ; 1       ;
-; game_mode_display:inst11|game_mode_display[1]~74   ; 1       ;
-; game_mode_display:inst11|game_mode_display[1]~73   ; 1       ;
-; game_mode_display:inst11|game_mode_display[1]~72   ; 1       ;
 ; game_mode_display:inst11|game_mode_display[1]~71   ; 1       ;
 ; game_mode_display:inst11|game_mode_display[1]~70   ; 1       ;
+; game_mode_display:inst11|game_mode_display[1]~69   ; 1       ;
+; game_mode_display:inst11|game_mode_display[1]~68   ; 1       ;
+; game_mode_display:inst11|game_mode_display[1]~67   ; 1       ;
 ; game_mode_display:inst11|comb~1                    ; 1       ;
 ; game_mode_display:inst11|comb~0                    ; 1       ;
-; game_mode_display:inst11|game_mode_display[0]~66   ; 1       ;
-; game_mode_display:inst11|game_mode_display[0]~65   ; 1       ;
-; game_mode_display:inst11|game_mode_display[0]~64   ; 1       ;
 ; game_mode_display:inst11|game_mode_display[0]~63   ; 1       ;
 ; game_mode_display:inst11|game_mode_display[0]~62   ; 1       ;
 ; game_mode_display:inst11|game_mode_display[0]~61   ; 1       ;
+; game_mode_display:inst11|game_mode_display[0]~60   ; 1       ;
+; game_mode_display:inst11|game_mode_display[0]~59   ; 1       ;
+; game_mode_display:inst11|game_mode_display[0]~58   ; 1       ;
 ; main_menu_display:inst7|comb~13                    ; 1       ;
 ; main_menu_display:inst7|comb~12                    ; 1       ;
-; main_menu_display:inst7|main_menu_display[5]~82    ; 1       ;
-; main_menu_display:inst7|main_menu_display[5]~80    ; 1       ;
+; main_menu_display:inst7|main_menu_display[5]~83    ; 1       ;
+; main_menu_display:inst7|main_menu_display[5]~81    ; 1       ;
+; main_menu_display:inst7|main_menu_display[5]~79    ; 1       ;
 ; main_menu_display:inst7|main_menu_display[5]~78    ; 1       ;
-; main_menu_display:inst7|main_menu_display[5]~77    ; 1       ;
-; main_menu_display:inst7|main_menu_display[4]~71    ; 1       ;
+; main_menu_display:inst7|main_menu_display[4]~72    ; 1       ;
 ; main_menu_display:inst7|comb~11                    ; 1       ;
 ; main_menu_display:inst7|comb~10                    ; 1       ;
-; main_menu_display:inst7|main_menu_display[3]~68    ; 1       ;
+; main_menu_display:inst7|main_menu_display[3]~69    ; 1       ;
 ; main_menu_display:inst7|LessThan9~3                ; 1       ;
-; main_menu_display:inst7|main_menu_display[3]~65    ; 1       ;
-; main_menu_display:inst7|main_menu_display[3]~63    ; 1       ;
-; main_menu_display:inst7|main_menu_display[3]~59    ; 1       ;
+; main_menu_display:inst7|main_menu_display[3]~66    ; 1       ;
+; main_menu_display:inst7|main_menu_display[3]~64    ; 1       ;
+; main_menu_display:inst7|main_menu_display[3]~60    ; 1       ;
 ; main_menu_display:inst7|comb~9                     ; 1       ;
 ; main_menu_display:inst7|comb~8                     ; 1       ;
-; main_menu_display:inst7|main_menu_display[2]~55    ; 1       ;
+; main_menu_display:inst7|main_menu_display[2]~56    ; 1       ;
+; main_menu_display:inst7|main_menu_display[2]~54    ; 1       ;
 ; main_menu_display:inst7|main_menu_display[2]~53    ; 1       ;
 ; main_menu_display:inst7|main_menu_display[2]~52    ; 1       ;
-; main_menu_display:inst7|main_menu_display[2]~51    ; 1       ;
+; main_menu_display:inst7|main_menu_display[2]~50    ; 1       ;
 ; main_menu_display:inst7|comb~7                     ; 1       ;
 ; main_menu_display:inst7|comb~6                     ; 1       ;
 ; main_menu_display:inst7|main_menu_display[1]~45    ; 1       ;
@@ -1830,28 +1838,31 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; main_menu_display:inst7|main_menu_display[0]~30    ; 1       ;
 ; main_menu_display:inst7|main_menu_display[0]~27    ; 1       ;
 ; main_menu_display:inst7|main_menu_display[0]~26    ; 1       ;
-; main_menu_display:inst7|main_menu_display[0]~21    ; 1       ;
-; main_menu_display:inst7|main_menu_display[0]~19    ; 1       ;
-; main_menu_display:inst7|main_menu_display[0]~17    ; 1       ;
-; game_mode_display:inst11|game_mode_display~44      ; 1       ;
-; game_mode_display:inst11|game_mode_display[0]~41   ; 1       ;
-; game_mode_display:inst11|game_mode_display[0]~40   ; 1       ;
-; game_mode_display:inst11|game_mode_display~39      ; 1       ;
+; main_menu_display:inst7|main_menu_display[5]~21    ; 1       ;
+; main_menu_display:inst7|main_menu_display[5]~19    ; 1       ;
+; main_menu_display:inst7|main_menu_display[5]~17    ; 1       ;
+; game_mode_display:inst11|game_mode_display~42      ; 1       ;
+; game_mode_display:inst11|game_mode_display[0]~39   ; 1       ;
 ; game_mode_display:inst11|game_mode_display[0]~38   ; 1       ;
+; game_mode_display:inst11|game_mode_display~37      ; 1       ;
 ; game_mode_display:inst11|game_mode_display[0]~36   ; 1       ;
-; game_mode_display:inst11|game_mode_display[0]~35   ; 1       ;
 ; game_mode_display:inst11|game_mode_display[0]~34   ; 1       ;
-; game_mode_display:inst11|game_mode_display[0]~33   ; 1       ;
 ; game_mode_display:inst11|game_mode_display[0]~32   ; 1       ;
+; game_mode_display:inst11|game_mode_display[0]~31   ; 1       ;
 ; game_mode_display:inst11|game_mode_display[0]~30   ; 1       ;
-; game_mode_display:inst11|game_mode_display[0]~27   ; 1       ;
+; game_mode_display:inst11|game_mode_display[0]~28   ; 1       ;
+; game_mode_display:inst11|game_mode_display[0]~25   ; 1       ;
 ; main_menu_display:inst7|LessThan5~0                ; 1       ;
 ; main_menu_display:inst7|LessThan6~1                ; 1       ;
 ; main_menu_display:inst7|LessThan6~0                ; 1       ;
+; bouncy_ball:inst|collision~9                       ; 1       ;
+; bouncy_ball:inst|incrementScore~1                  ; 1       ;
+; bouncy_ball:inst|Move_Ball~16                      ; 1       ;
+; bouncy_ball:inst|Move_Ball~15                      ; 1       ;
 ; text_display:inst13|score_display[5]~18            ; 1       ;
 ; text_display:inst13|score_display[4]~17            ; 1       ;
 ; text_display:inst13|score_display[3]~16            ; 1       ;
-; text_display:inst13|score_display~15               ; 1       ;
+; text_display:inst13|score_display[3]~15            ; 1       ;
 ; text_display:inst13|score_display[3]~14            ; 1       ;
 ; text_display:inst13|score_display[3]~13            ; 1       ;
 ; text_display:inst13|score_display[2]~12            ; 1       ;
@@ -1863,40 +1874,37 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; text_display:inst13|score_display[1]~4             ; 1       ;
 ; text_display:inst13|score_display[0]~2             ; 1       ;
 ; text_display:inst13|score_display[0]~0             ; 1       ;
+; bouncy_ball:inst|pipe_x_motion~16                  ; 1       ;
+; bouncy_ball:inst|pipe_x_motion~15                  ; 1       ;
+; bouncy_ball:inst|pipe_x_motion~14                  ; 1       ;
+; bouncy_ball:inst|pipe_x_motion~13                  ; 1       ;
 ; bouncy_ball:inst|pipe_x_motion~12                  ; 1       ;
 ; bouncy_ball:inst|pipe_x_motion~11                  ; 1       ;
 ; bouncy_ball:inst|pipe_x_motion~10                  ; 1       ;
 ; bouncy_ball:inst|pipe_x_motion~9                   ; 1       ;
-; bouncy_ball:inst|pipe_x_motion~8                   ; 1       ;
-; bouncy_ball:inst|pipe_x_motion~7                   ; 1       ;
-; bouncy_ball:inst|pipe_x_motion~6                   ; 1       ;
 ; bouncy_ball:inst|LessThan16~0                      ; 1       ;
-; bouncy_ball:inst|pipe_x_motion~5                   ; 1       ;
+; bouncy_ball:inst|pipe_x_motion~8                   ; 1       ;
 ; bouncy_ball:inst|LessThan20~0                      ; 1       ;
 ; bouncy_ball:inst|LessThan18~7                      ; 1       ;
-; bouncy_ball:inst|pipe_x_motion~3                   ; 1       ;
+; bouncy_ball:inst|pipe_x_motion~6                   ; 1       ;
 ; bouncy_ball:inst|LessThan18~5                      ; 1       ;
 ; bouncy_ball:inst|LessThan18~4                      ; 1       ;
 ; bouncy_ball:inst|LessThan18~3                      ; 1       ;
 ; bouncy_ball:inst|LessThan18~2                      ; 1       ;
 ; bouncy_ball:inst|LessThan18~1                      ; 1       ;
 ; bouncy_ball:inst|LessThan18~0                      ; 1       ;
-; bouncy_ball:inst|pipe_x_motion~2                   ; 1       ;
 ; VGA_SYNC:inst1|v_count~11                          ; 1       ;
 ; VGA_SYNC:inst1|v_count~10                          ; 1       ;
 ; VGA_SYNC:inst1|v_count[2]~9                        ; 1       ;
-; bouncy_ball:inst|ball_y_motion~15                  ; 1       ;
-; bouncy_ball:inst|Move_Ball~19                      ; 1       ;
-; bouncy_ball:inst|ball_y_motion~12                  ; 1       ;
+; MOUSE:inst3|PACKET_CHAR1[1]                        ; 1       ;
+; bouncy_ball:inst|ball_y_motion~10                  ; 1       ;
+; bouncy_ball:inst|ball_y_motion~7                   ; 1       ;
 ; bouncy_ball:inst|LessThan32~1                      ; 1       ;
 ; bouncy_ball:inst|LessThan32~0                      ; 1       ;
-; bouncy_ball:inst|ball_y_motion~10                  ; 1       ;
-; bouncy_ball:inst|ball_y_motion~9                   ; 1       ;
-; bouncy_ball:inst|ball_y_motion~8                   ; 1       ;
+; bouncy_ball:inst|ball_y_motion~5                   ; 1       ;
+; bouncy_ball:inst|ball_y_motion~4                   ; 1       ;
+; bouncy_ball:inst|ball_y_motion~3                   ; 1       ;
 ; MOUSE:inst3|PACKET_CHAR1[0]                        ; 1       ;
-; MOUSE:inst3|left_button~1                          ; 1       ;
-; MOUSE:inst3|left_button~0                          ; 1       ;
-; MOUSE:inst3|PACKET_CHAR1[1]                        ; 1       ;
 ; VGA_SYNC:inst1|v_count[3]~8                        ; 1       ;
 ; VGA_SYNC:inst1|v_count[4]~7                        ; 1       ;
 ; VGA_SYNC:inst1|v_count[7]~6                        ; 1       ;
@@ -1914,48 +1922,42 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; VGA_SYNC:inst1|h_count~0                           ; 1       ;
 ; MOUSE:inst3|WideOr4                                ; 1       ;
 ; MOUSE:inst3|MOUSE_DATA_BUF                         ; 1       ;
+; bouncy_ball:inst|lives~10                          ; 1       ;
+; bouncy_ball:inst|lives~9                           ; 1       ;
 ; bouncy_ball:inst|lives~8                           ; 1       ;
-; bouncy_ball:inst|lives~6                           ; 1       ;
-; bouncy_ball:inst|Add34~0                           ; 1       ;
+; bouncy_ball:inst|lives[3]~6                        ; 1       ;
 ; bouncy_ball:inst|lives~5                           ; 1       ;
-; bouncy_ball:inst|gameState~10                      ; 1       ;
-; bouncy_ball:inst|lives[3]~3                        ; 1       ;
-; bouncy_ball:inst|LessThan26~4                      ; 1       ;
-; bouncy_ball:inst|LessThan26~3                      ; 1       ;
-; bouncy_ball:inst|collision~5                       ; 1       ;
+; bouncy_ball:inst|lives~2                           ; 1       ;
+; bouncy_ball:inst|lives~1                           ; 1       ;
 ; VGA_SYNC:inst1|process_0~5                         ; 1       ;
 ; VGA_SYNC:inst1|process_0~4                         ; 1       ;
 ; VGA_SYNC:inst1|process_0~3                         ; 1       ;
 ; VGA_SYNC:inst1|process_0~2                         ; 1       ;
 ; VGA_SYNC:inst1|process_0~1                         ; 1       ;
 ; VGA_SYNC:inst1|process_0~0                         ; 1       ;
+; bouncy_ball:inst|gameState~10                      ; 1       ;
 ; bouncy_ball:inst|gameState~9                       ; 1       ;
 ; bouncy_ball:inst|gameState~8                       ; 1       ;
-; bouncy_ball:inst|gameState~7                       ; 1       ;
-; bouncy_ball:inst|gameState~5                       ; 1       ;
+; bouncy_ball:inst|gameState~6                       ; 1       ;
+; bouncy_ball:inst|collision~5                       ; 1       ;
+; bouncy_ball:inst|collision~4                       ; 1       ;
+; bouncy_ball:inst|LessThan26~3                      ; 1       ;
+; bouncy_ball:inst|pipe2_x_pos~28                    ; 1       ;
+; bouncy_ball:inst|pipe2_x_pos~27                    ; 1       ;
+; bouncy_ball:inst|pipe2_x_pos~26                    ; 1       ;
+; bouncy_ball:inst|pipe2_x_pos~25                    ; 1       ;
+; bouncy_ball:inst|pipe2_x_pos~24                    ; 1       ;
+; bouncy_ball:inst|pipe2_x_pos~23                    ; 1       ;
 ; bouncy_ball:inst|pipe2_x_pos~22                    ; 1       ;
 ; bouncy_ball:inst|pipe2_x_pos~21                    ; 1       ;
 ; bouncy_ball:inst|pipe2_x_pos~20                    ; 1       ;
 ; bouncy_ball:inst|pipe2_x_pos~19                    ; 1       ;
 ; bouncy_ball:inst|pipe2_x_pos~18                    ; 1       ;
-; bouncy_ball:inst|pipe2_x_pos~17                    ; 1       ;
 ; bouncy_ball:inst|pipe2_x_pos~16                    ; 1       ;
 ; bouncy_ball:inst|pipe2_x_pos~15                    ; 1       ;
 ; bouncy_ball:inst|pipe2_x_pos~14                    ; 1       ;
 ; bouncy_ball:inst|pipe2_x_pos~13                    ; 1       ;
 ; bouncy_ball:inst|pipe2_x_pos~12                    ; 1       ;
-; bouncy_ball:inst|pipe2_x_pos~11                    ; 1       ;
-; bouncy_ball:inst|pipe2_x_pos~10                    ; 1       ;
-; bouncy_ball:inst|pipe2_x_pos~9                     ; 1       ;
-; bouncy_ball:inst|pipe2_x_pos~8                     ; 1       ;
-; bouncy_ball:inst|pipe2_x_pos~7                     ; 1       ;
-; bouncy_ball:inst|pipe2_x_pos~6                     ; 1       ;
-; bouncy_ball:inst|pipe2_x_pos~4                     ; 1       ;
-; bouncy_ball:inst|pipe2_x_pos~3                     ; 1       ;
-; bouncy_ball:inst|pipe2_x_pos~2                     ; 1       ;
-; bouncy_ball:inst|pipe2_x_pos~1                     ; 1       ;
-; bouncy_ball:inst|pipe2_x_pos~0                     ; 1       ;
-; bouncy_ball:inst|Add24~46                          ; 1       ;
 ; bouncy_ball:inst|Add24~45                          ; 1       ;
 ; bouncy_ball:inst|Add24~44                          ; 1       ;
 ; bouncy_ball:inst|Add24~43                          ; 1       ;
@@ -1976,24 +1978,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; bouncy_ball:inst|Add24~28                          ; 1       ;
 ; bouncy_ball:inst|Add24~27                          ; 1       ;
 ; bouncy_ball:inst|Add24~26                          ; 1       ;
-; bouncy_ball:inst|Add24~2                           ; 1       ;
+; bouncy_ball:inst|Add24~25                          ; 1       ;
+; bouncy_ball:inst|Add24~1                           ; 1       ;
 ; bouncy_ball:inst|temp1                             ; 1       ;
-; bouncy_ball:inst|ball_y_pos~39                     ; 1       ;
-; bouncy_ball:inst|ball_y_pos~38                     ; 1       ;
-; bouncy_ball:inst|ball_y_pos~37                     ; 1       ;
-; bouncy_ball:inst|ball_y_pos~36                     ; 1       ;
-; bouncy_ball:inst|ball_y_pos~35                     ; 1       ;
-; bouncy_ball:inst|ball_y_pos~34                     ; 1       ;
-; bouncy_ball:inst|ball_y_pos~33                     ; 1       ;
-; bouncy_ball:inst|ball_y_pos~32                     ; 1       ;
-; bouncy_ball:inst|ball_y_pos~31                     ; 1       ;
-; bouncy_ball:inst|ball_y_pos~30                     ; 1       ;
-; bouncy_ball:inst|ball_y_pos~29                     ; 1       ;
-; bouncy_ball:inst|ball_y_pos~28                     ; 1       ;
-; bouncy_ball:inst|ball_y_pos~25                     ; 1       ;
-; bouncy_ball:inst|ball_y_pos~24                     ; 1       ;
-; bouncy_ball:inst|ball_y_pos~23                     ; 1       ;
-; bouncy_ball:inst|ball_y_pos~22                     ; 1       ;
 ; bouncy_ball:inst|ball_y_pos~21                     ; 1       ;
 ; bouncy_ball:inst|ball_y_pos~20                     ; 1       ;
 ; bouncy_ball:inst|ball_y_pos~19                     ; 1       ;
@@ -2001,38 +1988,37 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; bouncy_ball:inst|ball_y_pos~17                     ; 1       ;
 ; bouncy_ball:inst|ball_y_pos~16                     ; 1       ;
 ; bouncy_ball:inst|ball_y_pos~15                     ; 1       ;
-; bouncy_ball:inst|ball_y_pos~14                     ; 1       ;
 ; bouncy_ball:inst|ball_y_pos~13                     ; 1       ;
-; bouncy_ball:inst|LessThan28~6                      ; 1       ;
-; bouncy_ball:inst|LessThan28~5                      ; 1       ;
+; bouncy_ball:inst|ball_y_pos~12                     ; 1       ;
+; bouncy_ball:inst|ball_y_pos~11                     ; 1       ;
+; bouncy_ball:inst|ball_y_pos~10                     ; 1       ;
+; bouncy_ball:inst|gameState~1                       ; 1       ;
+; bouncy_ball:inst|LessThan24~2                      ; 1       ;
+; bouncy_ball:inst|LessThan24~1                      ; 1       ;
+; bouncy_ball:inst|LessThan25~2                      ; 1       ;
+; bouncy_ball:inst|LessThan25~1                      ; 1       ;
+; bouncy_ball:inst|LessThan25~0                      ; 1       ;
+; bouncy_ball:inst|LessThan27~1                      ; 1       ;
+; bouncy_ball:inst|LessThan27~0                      ; 1       ;
+; bouncy_ball:inst|ball_y_pos~7                      ; 1       ;
 ; bouncy_ball:inst|LessThan28~4                      ; 1       ;
 ; bouncy_ball:inst|LessThan28~3                      ; 1       ;
 ; bouncy_ball:inst|LessThan28~2                      ; 1       ;
 ; bouncy_ball:inst|LessThan28~1                      ; 1       ;
 ; bouncy_ball:inst|LessThan28~0                      ; 1       ;
-; bouncy_ball:inst|Move_Ball~16                      ; 1       ;
-; bouncy_ball:inst|Move_Ball~15                      ; 1       ;
-; bouncy_ball:inst|Move_Ball~14                      ; 1       ;
-; bouncy_ball:inst|Move_Ball~13                      ; 1       ;
-; bouncy_ball:inst|Move_Ball~12                      ; 1       ;
-; bouncy_ball:inst|Move_Ball~11                      ; 1       ;
 ; bouncy_ball:inst|Move_Ball~10                      ; 1       ;
+; bouncy_ball:inst|Move_Ball~9                       ; 1       ;
+; bouncy_ball:inst|Move_Ball~8                       ; 1       ;
+; bouncy_ball:inst|Move_Ball~7                       ; 1       ;
+; bouncy_ball:inst|Move_Ball~6                       ; 1       ;
+; bouncy_ball:inst|Move_Ball~5                       ; 1       ;
+; bouncy_ball:inst|Move_Ball~4                       ; 1       ;
 ; bouncy_ball:inst|LessThan30~1                      ; 1       ;
 ; bouncy_ball:inst|LessThan30~0                      ; 1       ;
 ; bouncy_ball:inst|LessThan31~1                      ; 1       ;
 ; bouncy_ball:inst|LessThan31~0                      ; 1       ;
-; bouncy_ball:inst|ball_y_pos~11                     ; 1       ;
-; bouncy_ball:inst|Move_Ball~7                       ; 1       ;
-; bouncy_ball:inst|Move_Ball~6                       ; 1       ;
-; bouncy_ball:inst|Move_Ball~5                       ; 1       ;
-; bouncy_ball:inst|LessThan26~1                      ; 1       ;
-; bouncy_ball:inst|Move_Ball~2                       ; 1       ;
-; bouncy_ball:inst|Move_Ball~1                       ; 1       ;
-; bouncy_ball:inst|LessThan24~1                      ; 1       ;
-; bouncy_ball:inst|Move_Ball~0                       ; 1       ;
-; bouncy_ball:inst|LessThan25~2                      ; 1       ;
-; bouncy_ball:inst|LessThan25~1                      ; 1       ;
-; bouncy_ball:inst|LessThan25~0                      ; 1       ;
+; bouncy_ball:inst|LessThan35~1                      ; 1       ;
+; bouncy_ball:inst|LessThan35~0                      ; 1       ;
 ; bouncy_ball:inst|lives_out~1                       ; 1       ;
 ; bouncy_ball:inst|lives_out~0                       ; 1       ;
 ; VGA_SYNC:inst1|horiz_sync                          ; 1       ;
@@ -2152,22 +2138,36 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; bouncy_ball:inst|Add29~2                           ; 1       ;
 ; bouncy_ball:inst|Add29~1                           ; 1       ;
 ; bouncy_ball:inst|Add29~0                           ; 1       ;
-; bouncy_ball:inst|totalScore[31]~110                ; 1       ;
-; bouncy_ball:inst|totalScore[30]~109                ; 1       ;
-; bouncy_ball:inst|totalScore[30]~108                ; 1       ;
-; bouncy_ball:inst|totalScore[29]~103                ; 1       ;
-; bouncy_ball:inst|totalScore[29]~102                ; 1       ;
-; bouncy_ball:inst|totalScore[28]~101                ; 1       ;
-; bouncy_ball:inst|totalScore[28]~100                ; 1       ;
-; bouncy_ball:inst|totalScore[27]~99                 ; 1       ;
-; bouncy_ball:inst|totalScore[27]~98                 ; 1       ;
-; bouncy_ball:inst|totalScore[26]~97                 ; 1       ;
-; bouncy_ball:inst|totalScore[26]~96                 ; 1       ;
-; bouncy_ball:inst|totalScore[25]~95                 ; 1       ;
-; bouncy_ball:inst|totalScore[25]~94                 ; 1       ;
-; bouncy_ball:inst|totalScore[24]~93                 ; 1       ;
-; bouncy_ball:inst|totalScore[24]~92                 ; 1       ;
-; bouncy_ball:inst|totalScore[23]~91                 ; 1       ;
+; bouncy_ball:inst|totalScore[31]~103                ; 1       ;
+; bouncy_ball:inst|totalScore[30]~102                ; 1       ;
+; bouncy_ball:inst|totalScore[30]~101                ; 1       ;
+; bouncy_ball:inst|totalScore[29]~97                 ; 1       ;
+; bouncy_ball:inst|totalScore[29]~96                 ; 1       ;
+; bouncy_ball:inst|totalScore[28]~95                 ; 1       ;
+; bouncy_ball:inst|totalScore[28]~94                 ; 1       ;
+; bouncy_ball:inst|totalScore[27]~93                 ; 1       ;
+; bouncy_ball:inst|totalScore[27]~92                 ; 1       ;
+; bouncy_ball:inst|totalScore[26]~91                 ; 1       ;
+; bouncy_ball:inst|totalScore[26]~90                 ; 1       ;
+; bouncy_ball:inst|totalScore[25]~89                 ; 1       ;
+; bouncy_ball:inst|totalScore[25]~88                 ; 1       ;
+; bouncy_ball:inst|totalScore[24]~87                 ; 1       ;
+; bouncy_ball:inst|totalScore[24]~86                 ; 1       ;
+; bouncy_ball:inst|totalScore[23]~85                 ; 1       ;
+; bouncy_ball:inst|totalScore[23]~84                 ; 1       ;
+; bouncy_ball:inst|totalScore[22]~83                 ; 1       ;
+; bouncy_ball:inst|totalScore[22]~82                 ; 1       ;
+; bouncy_ball:inst|totalScore[21]~81                 ; 1       ;
+; bouncy_ball:inst|totalScore[21]~80                 ; 1       ;
+; bouncy_ball:inst|totalScore[20]~79                 ; 1       ;
+; bouncy_ball:inst|totalScore[20]~78                 ; 1       ;
+; bouncy_ball:inst|totalScore[19]~77                 ; 1       ;
+; bouncy_ball:inst|totalScore[19]~76                 ; 1       ;
+; bouncy_ball:inst|totalScore[18]~75                 ; 1       ;
+; bouncy_ball:inst|totalScore[18]~74                 ; 1       ;
+; bouncy_ball:inst|totalScore[17]~73                 ; 1       ;
+; bouncy_ball:inst|totalScore[17]~72                 ; 1       ;
+; bouncy_ball:inst|totalScore[16]~71                 ; 1       ;
 +----------------------------------------------------+---------+
 
 
@@ -2176,10 +2176,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+------------+----------------+----------------------+-----------------+-----------------+
 ; Name                                                                                                                  ; Type ; Mode ; Clock Mode   ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Port A Input Registers ; Port A Output Registers ; Port B Input Registers ; Port B Output Registers ; Size ; Implementation Port A Depth ; Implementation Port A Width ; Implementation Port B Depth ; Implementation Port B Width ; Implementation Bits ; M9Ks ; MIF        ; Location       ; Mixed Width RDW Mode ; Port A RDW Mode ; Port B RDW Mode ;
 +-----------------------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+------------+----------------+----------------------+-----------------+-----------------+
-; game_mode_display:inst11|char_rom:scoretext|altsyncram:altsyncram_component|altsyncram_kt91:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; Single Clock ; 512          ; 8            ; --           ; --           ; yes                    ; no                      ; --                     ; --                      ; 4096 ; 512                         ; 8                           ; --                          ; --                          ; 4096                ; 1    ; tcgrom.mif ; M9K_X25_Y14_N0 ; Don't care           ; Old data        ; Old data        ;
-; game_over_display:inst5|char_rom:scoretext|altsyncram:altsyncram_component|altsyncram_kt91:auto_generated|ALTSYNCRAM  ; AUTO ; ROM  ; Single Clock ; 512          ; 8            ; --           ; --           ; yes                    ; no                      ; --                     ; --                      ; 4096 ; 512                         ; 8                           ; --                          ; --                          ; 4096                ; 1    ; tcgrom.mif ; M9K_X25_Y16_N0 ; Don't care           ; Old data        ; Old data        ;
-; main_menu_display:inst7|char_rom:scoretext|altsyncram:altsyncram_component|altsyncram_kt91:auto_generated|ALTSYNCRAM  ; AUTO ; ROM  ; Single Clock ; 512          ; 8            ; --           ; --           ; yes                    ; no                      ; --                     ; --                      ; 4096 ; 512                         ; 8                           ; --                          ; --                          ; 4096                ; 1    ; tcgrom.mif ; M9K_X25_Y15_N0 ; Don't care           ; Old data        ; Old data        ;
-; text_display:inst13|char_rom:scoretext|altsyncram:altsyncram_component|altsyncram_kt91:auto_generated|ALTSYNCRAM      ; AUTO ; ROM  ; Single Clock ; 512          ; 8            ; --           ; --           ; yes                    ; no                      ; --                     ; --                      ; 4096 ; 512                         ; 8                           ; --                          ; --                          ; 4096                ; 1    ; tcgrom.mif ; M9K_X25_Y17_N0 ; Don't care           ; Old data        ; Old data        ;
+; game_mode_display:inst11|char_rom:scoretext|altsyncram:altsyncram_component|altsyncram_kt91:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; Single Clock ; 512          ; 8            ; --           ; --           ; yes                    ; no                      ; --                     ; --                      ; 4096 ; 512                         ; 8                           ; --                          ; --                          ; 4096                ; 1    ; tcgrom.mif ; M9K_X25_Y15_N0 ; Don't care           ; Old data        ; Old data        ;
+; game_over_display:inst5|char_rom:scoretext|altsyncram:altsyncram_component|altsyncram_kt91:auto_generated|ALTSYNCRAM  ; AUTO ; ROM  ; Single Clock ; 512          ; 8            ; --           ; --           ; yes                    ; no                      ; --                     ; --                      ; 4096 ; 512                         ; 8                           ; --                          ; --                          ; 4096                ; 1    ; tcgrom.mif ; M9K_X13_Y15_N0 ; Don't care           ; Old data        ; Old data        ;
+; main_menu_display:inst7|char_rom:scoretext|altsyncram:altsyncram_component|altsyncram_kt91:auto_generated|ALTSYNCRAM  ; AUTO ; ROM  ; Single Clock ; 512          ; 8            ; --           ; --           ; yes                    ; no                      ; --                     ; --                      ; 4096 ; 512                         ; 8                           ; --                          ; --                          ; 4096                ; 1    ; tcgrom.mif ; M9K_X25_Y14_N0 ; Don't care           ; Old data        ; Old data        ;
+; text_display:inst13|char_rom:scoretext|altsyncram:altsyncram_component|altsyncram_kt91:auto_generated|ALTSYNCRAM      ; AUTO ; ROM  ; Single Clock ; 512          ; 8            ; --           ; --           ; yes                    ; no                      ; --                     ; --                      ; 4096 ; 512                         ; 8                           ; --                          ; --                          ; 4096                ; 1    ; tcgrom.mif ; M9K_X25_Y13_N0 ; Don't care           ; Old data        ; Old data        ;
 +-----------------------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+------------+----------------+----------------------+-----------------+-----------------+
 Note: Fitter may spread logical memories into multiple blocks to improve timing. The actual required RAM blocks can be found in the Fitter Resource Usage section.
 
@@ -2477,93 +2477,93 @@ RAM content values are presented in the following format: (Binary) (Octal) (Deci
 +-----------------------------+------------------------+
 ; Other Routing Resource Type ; Usage                  ;
 +-----------------------------+------------------------+
-; Block interconnects         ; 1,379 / 47,787 ( 3 % ) ;
-; C16 interconnects           ; 4 / 1,804 ( < 1 % )    ;
-; C4 interconnects            ; 759 / 31,272 ( 2 % )   ;
-; Direct links                ; 258 / 47,787 ( < 1 % ) ;
+; Block interconnects         ; 1,375 / 47,787 ( 3 % ) ;
+; C16 interconnects           ; 3 / 1,804 ( < 1 % )    ;
+; C4 interconnects            ; 691 / 31,272 ( 2 % )   ;
+; Direct links                ; 260 / 47,787 ( < 1 % ) ;
 ; Global clocks               ; 4 / 20 ( 20 % )        ;
-; Local interconnects         ; 588 / 15,408 ( 4 % )   ;
-; R24 interconnects           ; 10 / 1,775 ( < 1 % )   ;
-; R4 interconnects            ; 749 / 41,310 ( 2 % )   ;
+; Local interconnects         ; 581 / 15,408 ( 4 % )   ;
+; R24 interconnects           ; 17 / 1,775 ( < 1 % )   ;
+; R4 interconnects            ; 872 / 41,310 ( 2 % )   ;
 +-----------------------------+------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Logic Elements                                                         ;
 +---------------------------------------------+------------------------------+
-; Number of Logic Elements  (Average = 12.60) ; Number of LABs  (Total = 84) ;
+; Number of Logic Elements  (Average = 13.49) ; Number of LABs  (Total = 77) ;
 +---------------------------------------------+------------------------------+
-; 1                                           ; 7                            ;
+; 1                                           ; 2                            ;
 ; 2                                           ; 2                            ;
-; 3                                           ; 1                            ;
-; 4                                           ; 0                            ;
-; 5                                           ; 1                            ;
+; 3                                           ; 2                            ;
+; 4                                           ; 2                            ;
+; 5                                           ; 0                            ;
 ; 6                                           ; 0                            ;
-; 7                                           ; 2                            ;
+; 7                                           ; 1                            ;
 ; 8                                           ; 1                            ;
-; 9                                           ; 0                            ;
-; 10                                          ; 1                            ;
-; 11                                          ; 9                            ;
-; 12                                          ; 4                            ;
+; 9                                           ; 1                            ;
+; 10                                          ; 2                            ;
+; 11                                          ; 2                            ;
+; 12                                          ; 1                            ;
 ; 13                                          ; 6                            ;
 ; 14                                          ; 5                            ;
-; 15                                          ; 8                            ;
-; 16                                          ; 37                           ;
+; 15                                          ; 7                            ;
+; 16                                          ; 43                           ;
 +---------------------------------------------+------------------------------+
 
 
 +-------------------------------------------------------------------+
 ; LAB-wide Signals                                                  ;
 +------------------------------------+------------------------------+
-; LAB-wide Signals  (Average = 0.80) ; Number of LABs  (Total = 84) ;
+; LAB-wide Signals  (Average = 0.78) ; Number of LABs  (Total = 77) ;
 +------------------------------------+------------------------------+
 ; 1 Async. clear                     ; 6                            ;
-; 1 Clock                            ; 44                           ;
+; 1 Clock                            ; 31                           ;
 ; 1 Clock enable                     ; 11                           ;
 ; 1 Sync. clear                      ; 2                            ;
 ; 1 Sync. load                       ; 2                            ;
-; 2 Clock enables                    ; 1                            ;
-; 2 Clocks                           ; 1                            ;
+; 2 Clock enables                    ; 2                            ;
+; 2 Clocks                           ; 6                            ;
 +------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 14.46) ; Number of LABs  (Total = 84) ;
+; Number of Signals Sourced  (Average = 15.52) ; Number of LABs  (Total = 77) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
-; 1                                            ; 6                            ;
+; 1                                            ; 2                            ;
 ; 2                                            ; 2                            ;
-; 3                                            ; 2                            ;
-; 4                                            ; 1                            ;
+; 3                                            ; 1                            ;
+; 4                                            ; 0                            ;
 ; 5                                            ; 2                            ;
-; 6                                            ; 1                            ;
-; 7                                            ; 2                            ;
-; 8                                            ; 1                            ;
-; 9                                            ; 1                            ;
+; 6                                            ; 3                            ;
+; 7                                            ; 1                            ;
+; 8                                            ; 2                            ;
+; 9                                            ; 0                            ;
 ; 10                                           ; 2                            ;
-; 11                                           ; 2                            ;
-; 12                                           ; 4                            ;
-; 13                                           ; 3                            ;
+; 11                                           ; 1                            ;
+; 12                                           ; 0                            ;
+; 13                                           ; 4                            ;
 ; 14                                           ; 4                            ;
 ; 15                                           ; 4                            ;
-; 16                                           ; 17                           ;
-; 17                                           ; 4                            ;
+; 16                                           ; 21                           ;
+; 17                                           ; 3                            ;
 ; 18                                           ; 3                            ;
-; 19                                           ; 7                            ;
-; 20                                           ; 4                            ;
+; 19                                           ; 5                            ;
+; 20                                           ; 2                            ;
 ; 21                                           ; 3                            ;
-; 22                                           ; 4                            ;
-; 23                                           ; 0                            ;
-; 24                                           ; 1                            ;
-; 25                                           ; 0                            ;
-; 26                                           ; 1                            ;
+; 22                                           ; 3                            ;
+; 23                                           ; 2                            ;
+; 24                                           ; 4                            ;
+; 25                                           ; 1                            ;
+; 26                                           ; 0                            ;
 ; 27                                           ; 0                            ;
 ; 28                                           ; 0                            ;
 ; 29                                           ; 0                            ;
 ; 30                                           ; 0                            ;
-; 31                                           ; 1                            ;
+; 31                                           ; 0                            ;
 ; 32                                           ; 2                            ;
 +----------------------------------------------+------------------------------+
 
@@ -2571,69 +2571,68 @@ RAM content values are presented in the following format: (Binary) (Octal) (Deci
 +--------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                        ;
 +-------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 7.30) ; Number of LABs  (Total = 84) ;
+; Number of Signals Sourced Out  (Average = 8.27) ; Number of LABs  (Total = 77) ;
 +-------------------------------------------------+------------------------------+
 ; 0                                               ; 0                            ;
-; 1                                               ; 10                           ;
-; 2                                               ; 7                            ;
-; 3                                               ; 9                            ;
-; 4                                               ; 4                            ;
-; 5                                               ; 6                            ;
-; 6                                               ; 7                            ;
-; 7                                               ; 4                            ;
-; 8                                               ; 5                            ;
-; 9                                               ; 4                            ;
-; 10                                              ; 1                            ;
-; 11                                              ; 4                            ;
-; 12                                              ; 7                            ;
-; 13                                              ; 7                            ;
+; 1                                               ; 4                            ;
+; 2                                               ; 5                            ;
+; 3                                               ; 5                            ;
+; 4                                               ; 5                            ;
+; 5                                               ; 7                            ;
+; 6                                               ; 2                            ;
+; 7                                               ; 8                            ;
+; 8                                               ; 7                            ;
+; 9                                               ; 5                            ;
+; 10                                              ; 6                            ;
+; 11                                              ; 3                            ;
+; 12                                              ; 4                            ;
+; 13                                              ; 4                            ;
 ; 14                                              ; 1                            ;
-; 15                                              ; 3                            ;
-; 16                                              ; 4                            ;
+; 15                                              ; 2                            ;
+; 16                                              ; 8                            ;
 ; 17                                              ; 0                            ;
-; 18                                              ; 1                            ;
+; 18                                              ; 0                            ;
+; 19                                              ; 1                            ;
 +-------------------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 14.23) ; Number of LABs  (Total = 84) ;
+; Number of Distinct Inputs  (Average = 15.51) ; Number of LABs  (Total = 77) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
 ; 1                                            ; 0                            ;
-; 2                                            ; 2                            ;
-; 3                                            ; 2                            ;
-; 4                                            ; 6                            ;
-; 5                                            ; 5                            ;
-; 6                                            ; 1                            ;
-; 7                                            ; 4                            ;
-; 8                                            ; 0                            ;
-; 9                                            ; 3                            ;
-; 10                                           ; 2                            ;
-; 11                                           ; 5                            ;
-; 12                                           ; 3                            ;
+; 2                                            ; 1                            ;
+; 3                                            ; 0                            ;
+; 4                                            ; 5                            ;
+; 5                                            ; 2                            ;
+; 6                                            ; 2                            ;
+; 7                                            ; 1                            ;
+; 8                                            ; 5                            ;
+; 9                                            ; 4                            ;
+; 10                                           ; 3                            ;
+; 11                                           ; 1                            ;
+; 12                                           ; 2                            ;
 ; 13                                           ; 2                            ;
-; 14                                           ; 4                            ;
-; 15                                           ; 6                            ;
-; 16                                           ; 7                            ;
+; 14                                           ; 5                            ;
+; 15                                           ; 4                            ;
+; 16                                           ; 6                            ;
 ; 17                                           ; 5                            ;
-; 18                                           ; 1                            ;
-; 19                                           ; 7                            ;
-; 20                                           ; 3                            ;
-; 21                                           ; 3                            ;
-; 22                                           ; 2                            ;
-; 23                                           ; 2                            ;
-; 24                                           ; 1                            ;
-; 25                                           ; 1                            ;
-; 26                                           ; 1                            ;
+; 18                                           ; 2                            ;
+; 19                                           ; 1                            ;
+; 20                                           ; 6                            ;
+; 21                                           ; 1                            ;
+; 22                                           ; 1                            ;
+; 23                                           ; 3                            ;
+; 24                                           ; 2                            ;
+; 25                                           ; 3                            ;
+; 26                                           ; 4                            ;
 ; 27                                           ; 0                            ;
 ; 28                                           ; 0                            ;
-; 29                                           ; 0                            ;
+; 29                                           ; 1                            ;
 ; 30                                           ; 2                            ;
-; 31                                           ; 1                            ;
-; 32                                           ; 1                            ;
-; 33                                           ; 1                            ;
+; 31                                           ; 2                            ;
 +----------------------------------------------+------------------------------+
 
 
@@ -2764,60 +2763,106 @@ RAM content values are presented in the following format: (Binary) (Octal) (Deci
 +---------------------------+--------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Estimated Delay Added for Hold Timing Summary                                                                                                                                         ;
-+--------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-------------------+
-; Source Clock(s)                                                                ; Destination Clock(s)                                                             ; Delay Added in ns ;
-+--------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-------------------+
-; VGA_SYNC:inst1|vert_sync_out                                                   ; VGA_SYNC:inst1|pixel_column[0]                                                   ; 45.0              ;
-; inst6|altpll_component|auto_generated|pll1|clk[0]                              ; VGA_SYNC:inst1|pixel_column[0]                                                   ; 31.5              ;
-; inst6|altpll_component|auto_generated|pll1|clk[0]                              ; MOUSE:inst3|MOUSE_CLK_FILTER                                                     ; 6.4               ;
-; inst6|altpll_component|auto_generated|pll1|clk[0]                              ; inst6|altpll_component|auto_generated|pll1|clk[0],VGA_SYNC:inst1|pixel_column[0] ; 2.9               ;
-; inst6|altpll_component|auto_generated|pll1|clk[0],VGA_SYNC:inst1|vert_sync_out ; VGA_SYNC:inst1|pixel_column[0]                                                   ; 2.3               ;
-; inst6|altpll_component|auto_generated|pll1|clk[0],MOUSE:inst3|MOUSE_CLK_FILTER ; MOUSE:inst3|MOUSE_CLK_FILTER                                                     ; 2.1               ;
-+--------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-------------------+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Summary                                                                                       ;
++--------------------------------------------------------------------------------+--------------------------------+-------------------+
+; Source Clock(s)                                                                ; Destination Clock(s)           ; Delay Added in ns ;
++--------------------------------------------------------------------------------+--------------------------------+-------------------+
+; VGA_SYNC:inst1|vert_sync_out                                                   ; VGA_SYNC:inst1|pixel_column[0] ; 40.8              ;
+; inst6|altpll_component|auto_generated|pll1|clk[0]                              ; VGA_SYNC:inst1|pixel_column[0] ; 24.2              ;
+; inst6|altpll_component|auto_generated|pll1|clk[0]                              ; MOUSE:inst3|MOUSE_CLK_FILTER   ; 8.5               ;
+; inst6|altpll_component|auto_generated|pll1|clk[0],MOUSE:inst3|MOUSE_CLK_FILTER ; MOUSE:inst3|MOUSE_CLK_FILTER   ; 3.5               ;
+; inst6|altpll_component|auto_generated|pll1|clk[0],VGA_SYNC:inst1|vert_sync_out ; VGA_SYNC:inst1|pixel_column[0] ; 2.5               ;
+; VGA_SYNC:inst1|vert_sync_out,MOUSE:inst3|MOUSE_CLK_FILTER                      ; VGA_SYNC:inst1|vert_sync_out   ; 2.1               ;
+; MOUSE:inst3|MOUSE_CLK_FILTER                                                   ; VGA_SYNC:inst1|vert_sync_out   ; 1.9               ;
++--------------------------------------------------------------------------------+--------------------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using either the TimeQuest Timing Analyzer or the Classic Timing Analyzer.
 
 
-+------------------------------------------------------------------------------------------------------+
-; Estimated Delay Added for Hold Timing Details                                                        ;
-+-------------------------------------------+--------------------------------------+-------------------+
-; Source Register                           ; Destination Register                 ; Delay Added in ns ;
-+-------------------------------------------+--------------------------------------+-------------------+
-; VGA_SYNC:inst1|pixel_column[5]            ; text_display:inst13|score_display[5] ; 2.935             ;
-; VGA_SYNC:inst1|pixel_column[6]            ; text_display:inst13|score_display[5] ; 2.920             ;
-; bouncy_ball:inst|score_ones_out[1]        ; text_display:inst13|score_display[1] ; 2.790             ;
-; bouncy_ball:inst|score_ones_out[2]        ; text_display:inst13|score_display[2] ; 2.790             ;
-; bouncy_ball:inst|score_ones_out[3]        ; text_display:inst13|score_display[3] ; 2.787             ;
-; bouncy_ball:inst|score_ones_out[4]        ; text_display:inst13|score_display[4] ; 2.640             ;
-; bouncy_ball:inst|score_ones_out[5]        ; text_display:inst13|score_display[5] ; 2.640             ;
-; VGA_SYNC:inst1|pixel_column[7]            ; text_display:inst13|score_display[3] ; 2.532             ;
-; VGA_SYNC:inst1|pixel_column[9]            ; text_display:inst13|score_display[5] ; 2.486             ;
-; VGA_SYNC:inst1|pixel_column[8]            ; text_display:inst13|score_display[5] ; 2.486             ;
-; VGA_SYNC:inst1|pixel_column[1]            ; text_display:inst13|score_display[5] ; 2.218             ;
-; VGA_SYNC:inst1|pixel_column[0]            ; text_display:inst13|score_display[5] ; 2.218             ;
-; VGA_SYNC:inst1|pixel_column[2]            ; text_display:inst13|score_display[5] ; 2.218             ;
-; VGA_SYNC:inst1|pixel_column[3]            ; text_display:inst13|score_display[5] ; 2.218             ;
-; VGA_SYNC:inst1|pixel_column[4]            ; text_display:inst13|score_display[5] ; 1.920             ;
-; MOUSE:inst3|mouse_state.WAIT_OUTPUT_READY ; MOUSE:inst3|send_char                ; 1.238             ;
-; MOUSE:inst3|send_data                     ; MOUSE:inst3|MOUSE_DATA_BUF           ; 1.091             ;
-; MOUSE:inst3|READ_CHAR                     ; MOUSE:inst3|PACKET_COUNT[0]          ; 0.579             ;
-; bouncy_ball:inst|score_ones_out[0]        ; text_display:inst13|score_display[0] ; 0.441             ;
-; MOUSE:inst3|send_char                     ; MOUSE:inst3|output_ready             ; 0.381             ;
-; MOUSE:inst3|PACKET_COUNT[0]               ; MOUSE:inst3|right_button             ; 0.250             ;
-; MOUSE:inst3|PACKET_COUNT[1]               ; MOUSE:inst3|right_button             ; 0.250             ;
-; MOUSE:inst3|INCNT[2]                      ; MOUSE:inst3|right_button             ; 0.250             ;
-; MOUSE:inst3|INCNT[1]                      ; MOUSE:inst3|right_button             ; 0.250             ;
-; MOUSE:inst3|INCNT[0]                      ; MOUSE:inst3|right_button             ; 0.250             ;
-; MOUSE:inst3|INCNT[3]                      ; MOUSE:inst3|right_button             ; 0.250             ;
-; MOUSE:inst3|OUTCNT[2]                     ; MOUSE:inst3|MOUSE_DATA_BUF           ; 0.222             ;
-; MOUSE:inst3|OUTCNT[3]                     ; MOUSE:inst3|MOUSE_DATA_BUF           ; 0.222             ;
-; MOUSE:inst3|OUTCNT[1]                     ; MOUSE:inst3|MOUSE_DATA_BUF           ; 0.222             ;
-; mouse_data                                ; MOUSE:inst3|iready_set               ; 0.106             ;
-; bouncy_ball:inst|mouseReset               ; MOUSE:inst3|iready_set               ; 0.106             ;
-+-------------------------------------------+--------------------------------------+-------------------+
-Note: This table only shows the top 31 path(s) that have the largest delay added for hold.
++-------------------------------------------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Details                                                         ;
++--------------------------------------------+--------------------------------------+-------------------+
+; Source Register                            ; Destination Register                 ; Delay Added in ns ;
++--------------------------------------------+--------------------------------------+-------------------+
+; bouncy_ball:inst|score_ones_out[1]         ; text_display:inst13|score_display[1] ; 2.870             ;
+; bouncy_ball:inst|score_ones_out[2]         ; text_display:inst13|score_display[2] ; 2.870             ;
+; bouncy_ball:inst|score_ones_out[3]         ; text_display:inst13|score_display[3] ; 2.308             ;
+; bouncy_ball:inst|score_ones_out[4]         ; text_display:inst13|score_display[4] ; 2.277             ;
+; bouncy_ball:inst|score_ones_out[5]         ; text_display:inst13|score_display[5] ; 2.277             ;
+; VGA_SYNC:inst1|pixel_column[5]             ; text_display:inst13|score_display[5] ; 1.996             ;
+; VGA_SYNC:inst1|pixel_column[4]             ; text_display:inst13|score_display[5] ; 1.980             ;
+; VGA_SYNC:inst1|pixel_column[6]             ; text_display:inst13|score_display[5] ; 1.978             ;
+; VGA_SYNC:inst1|pixel_column[1]             ; text_display:inst13|score_display[5] ; 1.928             ;
+; VGA_SYNC:inst1|pixel_column[0]             ; text_display:inst13|score_display[5] ; 1.928             ;
+; VGA_SYNC:inst1|pixel_column[2]             ; text_display:inst13|score_display[5] ; 1.928             ;
+; VGA_SYNC:inst1|pixel_column[3]             ; text_display:inst13|score_display[5] ; 1.928             ;
+; VGA_SYNC:inst1|pixel_column[9]             ; text_display:inst13|score_display[5] ; 1.776             ;
+; VGA_SYNC:inst1|pixel_column[8]             ; text_display:inst13|score_display[5] ; 1.776             ;
+; VGA_SYNC:inst1|pixel_column[7]             ; text_display:inst13|score_display[5] ; 1.776             ;
+; MOUSE:inst3|mouse_state.WAIT_OUTPUT_READY  ; MOUSE:inst3|send_char                ; 1.741             ;
+; MOUSE:inst3|READ_CHAR                      ; MOUSE:inst3|PACKET_COUNT[1]          ; 1.162             ;
+; MOUSE:inst3|send_data                      ; MOUSE:inst3|MOUSE_DATA_BUF           ; 1.090             ;
+; MOUSE:inst3|left_button                    ; bouncy_ball:inst|ball_y_pos[1]       ; 0.546             ;
+; MOUSE:inst3|send_char                      ; MOUSE:inst3|output_ready             ; 0.508             ;
+; bouncy_ball:inst|ball_y_pos[8]             ; bouncy_ball:inst|gameState[1]        ; 0.495             ;
+; bouncy_ball:inst|ball_y_pos[5]             ; bouncy_ball:inst|gameState[1]        ; 0.495             ;
+; bouncy_ball:inst|ball_y_pos[4]             ; bouncy_ball:inst|gameState[1]        ; 0.495             ;
+; bouncy_ball:inst|ball_y_pos[2]             ; bouncy_ball:inst|gameState[1]        ; 0.495             ;
+; bouncy_ball:inst|ball_y_pos[6]             ; bouncy_ball:inst|gameState[1]        ; 0.495             ;
+; bouncy_ball:inst|ball_y_pos[9]             ; bouncy_ball:inst|gameState[1]        ; 0.495             ;
+; bouncy_ball:inst|ball_y_pos[7]             ; bouncy_ball:inst|gameState[1]        ; 0.495             ;
+; bouncy_ball:inst|ball_y_pos[1]             ; bouncy_ball:inst|gameState[1]        ; 0.495             ;
+; bouncy_ball:inst|ball_y_pos[3]             ; bouncy_ball:inst|gameState[1]        ; 0.495             ;
+; bouncy_ball:inst|gameState[1]              ; bouncy_ball:inst|gameState[1]        ; 0.495             ;
+; bouncy_ball:inst|gameState[0]              ; bouncy_ball:inst|gameState[1]        ; 0.495             ;
+; bouncy_ball:inst|ball_y_pos[0]             ; bouncy_ball:inst|gameState[1]        ; 0.495             ;
+; bouncy_ball:inst|score_ones_out[0]         ; text_display:inst13|score_display[0] ; 0.468             ;
+; mouse_data                                 ; MOUSE:inst3|iready_set               ; 0.380             ;
+; bouncy_ball:inst|mouseReset                ; MOUSE:inst3|iready_set               ; 0.380             ;
+; sw0                                        ; bouncy_ball:inst|gameState[0]        ; 0.296             ;
+; MOUSE:inst3|right_button                   ; bouncy_ball:inst|gameState[0]        ; 0.296             ;
+; MOUSE:inst3|OUTCNT[2]                      ; MOUSE:inst3|MOUSE_DATA_BUF           ; 0.283             ;
+; MOUSE:inst3|OUTCNT[3]                      ; MOUSE:inst3|MOUSE_DATA_BUF           ; 0.283             ;
+; MOUSE:inst3|OUTCNT[1]                      ; MOUSE:inst3|MOUSE_DATA_BUF           ; 0.283             ;
+; bouncy_ball:inst|rand_num2[7]              ; bouncy_ball:inst|ball_y_pos[0]       ; 0.210             ;
+; bouncy_ball:inst|rand_num2[0]              ; bouncy_ball:inst|ball_y_pos[0]       ; 0.210             ;
+; bouncy_ball:inst|pipe2_x_pos[10]           ; bouncy_ball:inst|ball_y_pos[0]       ; 0.210             ;
+; bouncy_ball:inst|pipe2_x_pos[9]            ; bouncy_ball:inst|ball_y_pos[0]       ; 0.210             ;
+; bouncy_ball:inst|pipe2_x_pos[8]            ; bouncy_ball:inst|ball_y_pos[0]       ; 0.210             ;
+; bouncy_ball:inst|pipe2_x_pos[7]            ; bouncy_ball:inst|ball_y_pos[0]       ; 0.210             ;
+; bouncy_ball:inst|pipe2_x_pos[6]            ; bouncy_ball:inst|ball_y_pos[0]       ; 0.210             ;
+; bouncy_ball:inst|pipe2_x_pos[5]            ; bouncy_ball:inst|ball_y_pos[0]       ; 0.210             ;
+; bouncy_ball:inst|pipe2_x_pos[3]            ; bouncy_ball:inst|ball_y_pos[0]       ; 0.210             ;
+; bouncy_ball:inst|pipe2_x_pos[0]            ; bouncy_ball:inst|ball_y_pos[0]       ; 0.210             ;
+; bouncy_ball:inst|pipe2_x_pos[4]            ; bouncy_ball:inst|ball_y_pos[0]       ; 0.210             ;
+; bouncy_ball:inst|pipe2_x_pos[2]            ; bouncy_ball:inst|ball_y_pos[0]       ; 0.210             ;
+; bouncy_ball:inst|pipe2_x_pos[1]            ; bouncy_ball:inst|ball_y_pos[0]       ; 0.210             ;
+; bouncy_ball:inst|lives[3]                  ; bouncy_ball:inst|gameState[1]        ; 0.135             ;
+; bouncy_ball:inst|lives[0]                  ; bouncy_ball:inst|gameState[1]        ; 0.135             ;
+; bouncy_ball:inst|lives[1]                  ; bouncy_ball:inst|gameState[1]        ; 0.135             ;
+; bouncy_ball:inst|lives[2]                  ; bouncy_ball:inst|gameState[1]        ; 0.135             ;
+; pb2                                        ; bouncy_ball:inst|gameState[1]        ; 0.135             ;
+; MOUSE:inst3|INCNT[2]                       ; MOUSE:inst3|SHIFTIN[0]               ; 0.099             ;
+; MOUSE:inst3|INCNT[1]                       ; MOUSE:inst3|SHIFTIN[0]               ; 0.099             ;
+; MOUSE:inst3|INCNT[0]                       ; MOUSE:inst3|SHIFTIN[0]               ; 0.099             ;
+; MOUSE:inst3|INCNT[3]                       ; MOUSE:inst3|SHIFTIN[0]               ; 0.099             ;
+; bouncy_ball:inst|\Move_Ball:incrementScore ; bouncy_ball:inst|gameState[1]        ; 0.067             ;
+; bouncy_ball:inst|rand_num1[7]              ; bouncy_ball:inst|gameState[1]        ; 0.067             ;
+; bouncy_ball:inst|pipe1_x_pos[10]           ; bouncy_ball:inst|gameState[1]        ; 0.067             ;
+; bouncy_ball:inst|pipe1_x_pos[9]            ; bouncy_ball:inst|gameState[1]        ; 0.067             ;
+; bouncy_ball:inst|pipe1_x_pos[8]            ; bouncy_ball:inst|gameState[1]        ; 0.067             ;
+; bouncy_ball:inst|pipe1_x_pos[6]            ; bouncy_ball:inst|gameState[1]        ; 0.067             ;
+; bouncy_ball:inst|pipe1_x_pos[5]            ; bouncy_ball:inst|gameState[1]        ; 0.067             ;
+; bouncy_ball:inst|pipe1_x_pos[4]            ; bouncy_ball:inst|gameState[1]        ; 0.067             ;
+; bouncy_ball:inst|pipe1_x_pos[3]            ; bouncy_ball:inst|gameState[1]        ; 0.067             ;
+; bouncy_ball:inst|pipe1_x_pos[0]            ; bouncy_ball:inst|gameState[1]        ; 0.067             ;
+; bouncy_ball:inst|pipe1_x_pos[7]            ; bouncy_ball:inst|gameState[1]        ; 0.067             ;
+; bouncy_ball:inst|pipe1_x_pos[2]            ; bouncy_ball:inst|gameState[1]        ; 0.067             ;
+; bouncy_ball:inst|pipe1_x_pos[1]            ; bouncy_ball:inst|gameState[1]        ; 0.067             ;
+; bouncy_ball:inst|\Move_Ball:collision      ; bouncy_ball:inst|gameState[1]        ; 0.067             ;
++--------------------------------------------+--------------------------------------+-------------------+
+Note: This table only shows the top 76 path(s) that have the largest delay added for hold.
 
 
 +-----------------+
@@ -2892,21 +2937,21 @@ Info (170137): Fitter placement was successful
 Info (170192): Fitter placement operations ending: elapsed time is 00:00:01
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 1% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 9% of the available device resources in the region that extends from location X21_Y10 to location X30_Y19
+    Info (170196): Router estimated peak interconnect usage is 15% of the available device resources in the region that extends from location X21_Y10 to location X30_Y19
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:02
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 0.61 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.63 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
-Info (144001): Generated suppressed messages file C:/Users/krith/Documents/GitHub/COMPSYS305-Mini-Project/Project Files/output_files/Miniproject.fit.smsg
+Info (144001): Generated suppressed messages file C:/Users/krith/Documents/University/Year 3/COMPSYS 305/Mini-project/Project Files/output_files/Miniproject.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 18 warnings
-    Info: Peak virtual memory: 4923 megabytes
-    Info: Processing ended: Tue May 25 21:26:47 2021
+    Info: Peak virtual memory: 4919 megabytes
+    Info: Processing ended: Tue May 25 21:49:06 2021
     Info: Elapsed time: 00:00:08
     Info: Total CPU time (on all processors): 00:00:08
 
@@ -2914,6 +2959,6 @@ Info: Quartus II 64-Bit Fitter was successful. 0 errors, 18 warnings
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in C:/Users/krith/Documents/GitHub/COMPSYS305-Mini-Project/Project Files/output_files/Miniproject.fit.smsg.
+The suppressed messages can be found in C:/Users/krith/Documents/University/Year 3/COMPSYS 305/Mini-project/Project Files/output_files/Miniproject.fit.smsg.
 
 

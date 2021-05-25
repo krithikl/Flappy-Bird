@@ -206,7 +206,6 @@ begin
 			end if;
 			
 			if (gameState = "01" or gameState = "10") then
-				lives <= "0011";
 				gameStart <= gameState;
 				pipe_x_motion <= CONV_STD_LOGIC_VECTOR(2,11);
 
@@ -246,8 +245,7 @@ begin
 				
 				
 			-- Game over if lives gone
-			if (lives = "0000") then
-				totalScore <= 0;
+			if (gameState = "10" and lives = "0000") then
 				gameState <= "11";
 				lives_out <= "0011";
 
@@ -289,11 +287,12 @@ begin
 				end if;
 				
 				if ((gamestate = "01" or gameState = "10") and (ball_x_pos + size <= pipe1XLeft)) then
-					collision := '0';
+					--collision := '0';
 					if (incrementScore = '0') then
 						incrementScore := '1';
 						-- ones_score <= ones_Score + "000001";
 						totalScore <= totalScore + 1;
+						collision := '0';
 					end if;
 						
 				end if;
@@ -324,11 +323,12 @@ begin
 
 						end if;
 				elsif ((gamestate = "01" or gameState = "10") and (ball_x_pos + size <= pipe2XLeft + pipeSpacing)) then
-					collision := '0';
+					--collision := '0';
 					if (incrementScore2 = '0') then
 						incrementScore2 := '1';
 						-- ones_score <= ones_Score + "000001";
 						totalScore <= totalScore + 1;
+						collision := '0';
 						
 					end if;
 				end if;
