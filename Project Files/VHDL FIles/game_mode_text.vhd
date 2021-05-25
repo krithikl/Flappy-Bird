@@ -6,7 +6,7 @@ use IEEE.NUMERIC_STD.all;
 
 
 
-ENTITY main_menu_display is 
+ENTITY game_mode_display is 
 	PORT(
 		clock_25Mhz : IN STD_LOGIC;
 		pixel_row, pixel_column: IN STD_LOGIC_VECTOR (9 DOWNTO 0);
@@ -15,11 +15,11 @@ ENTITY main_menu_display is
 		over_text_on : OUT STD_LOGIC;
 		output_text : OUT STD_LOGIC	
 	  );
-END ENTITY main_menu_display;
+END ENTITY game_mode_display;
 
 
 
-ARCHITECTURE BEHAVIOUR of main_menu_display is
+ARCHITECTURE BEHAVIOUR of game_mode_display is
 
 	COMPONENT char_rom
 		PORT 
@@ -34,7 +34,7 @@ ARCHITECTURE BEHAVIOUR of main_menu_display is
 
 	SIGNAL score_display : std_logic_vector(5 downto 0);
 	SIGNAL output_score  : STD_LOGIC := '0';
-	SIGNAL main_menu_display : std_logic_vector(5 downto 0); 
+	SIGNAL game_mode_display : std_logic_vector(5 downto 0); 
  
 	
 BEGIN							
@@ -44,7 +44,7 @@ BEGIN
 		and pixel_row <= CONV_STD_LOGIC_VECTOR(300,10) and pixel_row >= CONV_STD_LOGIC_VECTOR(30,10)) else'0';
 
 --START GAME DISPLAY TEXT--	
-		main_menu_display <= 
+		game_mode_display <= 
 				
 					--"START GAME"--
 					CONV_STD_LOGIC_VECTOR(32,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(255,10) and pixel_row <= CONV_STD_LOGIC_VECTOR(45,10) and pixel_row >= CONV_STD_LOGIC_VECTOR(30,10) else --"space"
@@ -78,7 +78,7 @@ BEGIN
 					CONV_STD_LOGIC_VECTOR(15,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(415,10) and pixel_row <= CONV_STD_LOGIC_VECTOR(221,10) and pixel_row >= CONV_STD_LOGIC_VECTOR(205,10) else --"O"
 					CONV_STD_LOGIC_VECTOR(4,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(431,10) and pixel_row <= CONV_STD_LOGIC_VECTOR(221,10) and pixel_row >= CONV_STD_LOGIC_VECTOR(205,10) else --"D"
 					CONV_STD_LOGIC_VECTOR(5,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(447,10) and pixel_row <= CONV_STD_LOGIC_VECTOR(221,10) and pixel_row >= CONV_STD_LOGIC_VECTOR(205,10) else --"E"	
-					CONV_STD_LOGIC_VECTOR(31,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(463,10) and pixel_row <= CONV_STD_LOGIC_VECTOR(221,10) and pixel_row >= CONV_STD_LOGIC_VECTOR(205,10) else --"space"
+					CONV_STD_LOGIC_VECTOR(32,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(463,10) and pixel_row <= CONV_STD_LOGIC_VECTOR(221,10) and pixel_row >= CONV_STD_LOGIC_VECTOR(205,10) else --"space"
 
 					CONV_STD_LOGIC_VECTOR(32,6) when pixel_row <= CONV_STD_LOGIC_VECTOR(255,10) and pixel_row >= CONV_STD_LOGIC_VECTOR(221,10) else --"space"					
 					
@@ -94,7 +94,7 @@ BEGIN
 					CONV_STD_LOGIC_VECTOR(15,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(383,10) and pixel_row <= CONV_STD_LOGIC_VECTOR(270,10) and pixel_row >= CONV_STD_LOGIC_VECTOR(255,10) else --"O"
 					CONV_STD_LOGIC_VECTOR(4,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(399,10) and pixel_row <= CONV_STD_LOGIC_VECTOR(270,10) and pixel_row >= CONV_STD_LOGIC_VECTOR(255,10) else --"D"
 					CONV_STD_LOGIC_VECTOR(5,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(415,10) and pixel_row <= CONV_STD_LOGIC_VECTOR(270,10) and pixel_row >= CONV_STD_LOGIC_VECTOR(255,10) else --"E"
-					CONV_STD_LOGIC_VECTOR(32,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(431,10) and pixel_row <= CONV_STD_LOGIC_VECTOR(270,10) and pixel_row >= CONV_STD_LOGIC_VECTOR(255,10) else --"space" 
+					CONV_STD_LOGIC_VECTOR(31,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(431,10) and pixel_row <= CONV_STD_LOGIC_VECTOR(270,10) and pixel_row >= CONV_STD_LOGIC_VECTOR(255,10) else --"space" 
 					CONV_STD_LOGIC_VECTOR(32,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(447,10) and pixel_row <= CONV_STD_LOGIC_VECTOR(270,10) and pixel_row >= CONV_STD_LOGIC_VECTOR(255,10) else --"space"
 					CONV_STD_LOGIC_VECTOR(32,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(463,10) and pixel_row <= CONV_STD_LOGIC_VECTOR(270,10) and pixel_row >= CONV_STD_LOGIC_VECTOR(255,10) else --"space"
 				
@@ -102,7 +102,7 @@ BEGIN
 				;
 	
 		scoretext : char_rom PORT MAP(
-							character_address => main_menu_display,
+							character_address => game_mode_display,
 							font_row=>pixel_row(3 downto 1),
 							font_col=>pixel_column(3 downto 1),
 							clock => clock_25Mhz,

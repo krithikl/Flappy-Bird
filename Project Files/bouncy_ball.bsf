@@ -115,6 +115,13 @@ applicable agreement for further details.
 		(line (pt 0 224)(pt 16 224)(line_width 3))
 	)
 	(port
+		(pt 0 240)
+		(input)
+		(text "gameModeText" (rect 0 0 62 12)(font "Arial" ))
+		(text "gameModeText" (rect 21 235 83 247)(font "Arial" ))
+		(line (pt 0 240)(pt 16 240)(line_width 1))
+	)
+	(port
 		(pt 256 32)
 		(output)
 		(text "score_ones_out[5..0]" (rect 0 0 84 12)(font "Arial" ))

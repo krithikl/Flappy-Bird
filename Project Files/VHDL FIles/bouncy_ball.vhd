@@ -16,6 +16,7 @@ ENTITY bouncy_ball IS
 		  SIGNAL mainmenuText		: IN std_logic; 
 		  signal livesText			: IN std_logic; 
 		  signal randNum				: IN std_logic_vector(7 downto 0);
+		  signal gameModeText		: IN std_logic;
 		  SIGNAL red, green, blue	: OUT std_logic; 
 		  SIGNAL mouseReset 			: OUT std_logic := '0'; 
 		  
@@ -144,8 +145,14 @@ variable incrementScore2 : std_logic := '0';
 begin
 	
 		-- Main menu
-		if (gameState = "00") then
+		if (gameState = "00" and sw0 = '1') then
 			Red <= not mainMenuBackground or not mainMenuText;
+			Green <= not mainMenuBackground;
+			Blue <= not mainMenuBackground;
+		end if;
+		
+		if (gameState = "00" and sw0 = '0') then
+			Red <= not mainMenuBackground or not gameModeText;
 			Green <= not mainMenuBackground;
 			Blue <= not mainMenuBackground;
 		end if;
