@@ -61,6 +61,7 @@ signal pipe2XRight 			: std_logic_vector(10 downto 0) := pipe2_x_pos + pipeWidth
 
 
 SIGNAL ones_score,tens_score : std_logic_vector(5 downto 0) := "110000";
+SIGNAL totalScore : integer := 0;
 
 -- NEW 
 SIGNAL lives : std_logic_vector(3 DOWNTO 0) := "0011"; --3 
@@ -136,8 +137,12 @@ Move_Ball: process (vert_sync)
 variable tick : std_logic := '0';
 variable incrementScore : std_logic := '0';
 variable incrementScore2 : std_logic := '0';
+variable collision : std_logic := '0';
 
 begin
+		Red <= not mainMenuBackground or not mainMenuText;
+		Green <= not mainMenuBackground;
+		Blue <= not mainMenuBackground;
 	
 		-- Main menu selection of training mode
 		if (gameState = "00" and sw0 = '1') then
@@ -162,7 +167,7 @@ begin
 		
 		-- Training mode
 		if (gameState = "10") then
-			Red <= (background or ball_on) and ((not pipes) or ( textOutput));
+			Red <= (background) and ((not pipes or ball_on) or ( textOutput));
 			Green <=  (background or ball_on or pipes) and (not textOutput);
 			Blue <= background and (not ball_on) and ((not pipes) or (textOutput));
 		end if;	
@@ -189,9 +194,30 @@ begin
 				gameState <= "01";
 			end if;
 			
+			if (pb2 = '0' and gameState = "11") then
+				gameState <= "00";
+			end if;
+			
+			if (gameState = "00") then
+				lives <= "0011";
+				totalScore <= 0;
+			end if;
+			
 			if (gameState = "01" or gameState = "10") then
+				lives <= "0011";
 				gameStart <= gameState;
-				pipe_x_motion <= CONV_STD_LOGIC_VECTOR(4,11);
+				pipe_x_motion <= CONV_STD_LOGIC_VECTOR(2,11);
+
+
+				if (totalScore >= 5 and totalScore < 10) then
+					pipe_x_motion <= CONV_STD_LOGIC_VECTOR(3,11);
+				elsif (totalScore >= 10 and totalScore < 15) then
+					pipe_x_motion <= CONV_STD_LOGIC_VECTOR(5,11);
+				elsif (totalScore >= 15 and totalScore < 20) then
+					pipe_x_motion <= CONV_STD_LOGIC_VECTOR(8,11);
+				end if;
+
+
 				pipe1_x_pos <= pipe1_x_pos - pipe_x_motion;
 				pipe2_x_pos <= pipe2_x_pos - pipe_x_motion;
 				if((pipe1_x_pos + pipeWidth) <=  '1' & CONV_STD_LOGIC_VECTOR(0,10)) then  
@@ -208,75 +234,95 @@ begin
 				end if;
 			end if;
 			
-
-			
-			
 				
+			
+			score_ones_out <= ones_score + CONV_STD_LOGIC_VECTOR(totalScore, 6);
+			lives_out <= lives; 
+				
+				
+			-- Game over if lives gone
+			if (lives = "0000") then
+				totalScore <= 0;
+				gameState <= "11";
+				lives_out <= "0011";
+
+				ball_y_pos <= CONV_STD_LOGIC_VECTOR(50,10);
+				pipe1_x_pos <= CONV_STD_LOGIC_VECTOR(0,11);
+				pipe2_x_pos <= CONV_STD_LOGIC_VECTOR(0,11);
+				pipe_x_motion <= CONV_STD_LOGIC_VECTOR(0,11);
+				ball_y_motion <= CONV_STD_LOGIC_VECTOR(0,10);
+				ones_score <= "110000";
+				totalScore <= 0;
+
+				
+			end if;
+
+
 			-- Pipe 1 collision
-				score_ones_out <= ones_score;
-				lives_out <= lives; 
-				
-				-- Game over if lives gone
-				if (lives = "0000") then
-					gameState <= "11";
-				end if;
+			if ((ball_y_pos + size + ballPadding >= pipeBotGap + rand_num1) OR ((ball_y_pos <= pipeTopGap + size + rand_num1))) then
+				if ((ball_x_pos + size  <= pipe1XLeft) 
+				and (ball_x_pos + size >= pipe1XRight)) then
+					if (gameState = "10" and collision = '0') then
+						-- ball_y_pos <= CONV_STD_LOGIC_VECTOR(50,10);
+						-- pipe1_x_pos <= CONV_STD_LOGIC_VECTOR(0,11);
+						-- pipe2_x_pos <= CONV_STD_LOGIC_VECTOR(0,11);
+						-- pipe_x_motion <= CONV_STD_LOGIC_VECTOR(0,11);
+						-- ball_y_motion <= CONV_STD_LOGIC_VECTOR(0,10);
+						-- ones_score <= "110000";
+						-- totalScore <= 0;
 
-				if ((ball_y_pos + size + ballPadding >= pipeBotGap + rand_num1) OR ((ball_y_pos <= pipeTopGap + size + rand_num1))) then
-					if ((ball_x_pos + size  <= pipe1XLeft) 
-					and (ball_x_pos + size >= pipe1XRight)) then
-						if (gameState = "10") then
+						--decreases lives if collision occurs  
+						lives <= lives - "0001"; 
+						collision := '1';
+					
+					
+					elsif (gameState = "01") then
+							gameState <= "11";
 							ball_y_pos <= CONV_STD_LOGIC_VECTOR(50,10);
 							pipe1_x_pos <= CONV_STD_LOGIC_VECTOR(0,11);
 							pipe2_x_pos <= CONV_STD_LOGIC_VECTOR(0,11);
 							pipe_x_motion <= CONV_STD_LOGIC_VECTOR(0,11);
 							ball_y_motion <= CONV_STD_LOGIC_VECTOR(0,10);
 							ones_score <= "110000";
+							totalScore <= 0;
+					end if;
 
-							--decreases lives if collision occurs  
-							lives <= lives - "0001"; 
-						end if;
 						
-						if (gameState = "01") then
-							 gameState <= "11";
-							 ball_y_pos <= CONV_STD_LOGIC_VECTOR(50,10);
-							 pipe1_x_pos <= CONV_STD_LOGIC_VECTOR(0,11);
-							 pipe2_x_pos <= CONV_STD_LOGIC_VECTOR(0,11);
-							 pipe_x_motion <= CONV_STD_LOGIC_VECTOR(0,11);
-							 ball_y_motion <= CONV_STD_LOGIC_VECTOR(0,10);
-							 ones_score <= "110000";
-						end if;
-
-						 
-					end if;
---				elsif ((ball_y_pos + size + ballPadding <= pipeBotGap) OR ((ball_y_pos >= pipeTopGap + size))) then
-					if ((gamestate = "01" or gameState = "10") and (ball_x_pos + size <= pipe1XLeft)) then
-						if (incrementScore = '0') then
-							incrementScore := '1';
-							ones_score <= ones_Score + "000001";
-						end if;
-							
-					end if;
 				end if;
+				
+				if ((gamestate = "01" or gameState = "10") and (ball_x_pos + size <= pipe1XLeft)) then
+					collision := '0';
+					if (incrementScore = '0') then
+						incrementScore := '1';
+						-- ones_score <= ones_Score + "000001";
+						totalScore <= totalScore + 1;
+						collision := '0';
+					end if;
+						
+				end if;
+			end if;
 						
 
 --			--Pipe 2 collision
 			if ((ball_y_pos + size + ballPadding >= pipeBotGap + rand_num2) OR (ball_y_pos - size + ballPadding <= pipeTopGap + rand_num2)) then
 				if ((ball_x_pos + size <= pipe2XLeft + pipeSpacing) 
 				and (ball_x_pos + size >= pipe2XRight + pipeSpacing)) then
-					 if (gameState = "10") then
-							 ball_y_pos <= CONV_STD_LOGIC_VECTOR(50,10);
-							 pipe1_x_pos <= CONV_STD_LOGIC_VECTOR(0,11);
-							 pipe2_x_pos <= CONV_STD_LOGIC_VECTOR(0,11);
-							 pipe_x_motion <= CONV_STD_LOGIC_VECTOR(0,11);
-							 ball_y_motion <= CONV_STD_LOGIC_VECTOR(0,10);
-							 ones_score <= "110000";
+					 if (gameState = "10" and collision = '0') then
+							--  ball_y_pos <= CONV_STD_LOGIC_VECTOR(50,10);
+							--  pipe1_x_pos <= CONV_STD_LOGIC_VECTOR(0,11);
+							--  pipe2_x_pos <= CONV_STD_LOGIC_VECTOR(0,11);
+							--  pipe_x_motion <= CONV_STD_LOGIC_VECTOR(0,11);
+							--  ball_y_motion <= CONV_STD_LOGIC_VECTOR(0,10);
+							--  ones_score <= "110000";
+							--  totalScore <= 0;
 
 							--decreases lives if collision occurs  
 						 	lives <= lives - "0001"; 
+							collision := '1';
 							 
-						end if;
 						
-						if (gameState = "01") then
+						
+						elsif (gameState = "01") then
 							 gameState <= "11";
 							 ball_y_pos <= CONV_STD_LOGIC_VECTOR(50,10);
 							 pipe1_x_pos <= CONV_STD_LOGIC_VECTOR(0,11);
@@ -284,16 +330,19 @@ begin
 							 pipe_x_motion <= CONV_STD_LOGIC_VECTOR(0,11);
 							 ball_y_motion <= CONV_STD_LOGIC_VECTOR(0,10);
 							 ones_score <= "110000";
+							 totalScore <= 0;
 
 						end if;
 				elsif ((gamestate = "01" or gameState = "10") and (ball_x_pos + size <= pipe2XLeft + pipeSpacing)) then
+					
 					if (incrementScore2 = '0') then
 						incrementScore2 := '1';
-						ones_score <= ones_Score + "000001";
+						-- ones_score <= ones_Score + "000001";
+						totalScore <= totalScore + 1;
+						
 					end if;
 				end if;
 			end if;
---	
 				
 			if (leftButton = '1' and (gameState = "01" or gameState = "10")) then
 				-- Bounce off top or bottom of the screen
@@ -328,7 +377,21 @@ begin
 				 
 					 -- hits the bottom or top of screen: This part works
 				if (ball_y_pos+size >= CONV_STD_LOGIC_VECTOR(480,10) or ball_y_pos+size <= CONV_STD_LOGIC_VECTOR(0,10))then
-					if (gameState = "01") then
+					if (gameState = "10" and collision = '0') then
+						-- ball_y_pos <= CONV_STD_LOGIC_VECTOR(50,10);
+						-- pipe1_x_pos <= CONV_STD_LOGIC_VECTOR(0,11);
+						-- pipe2_x_pos <= CONV_STD_LOGIC_VECTOR(250,11);
+						-- ball_y_motion <= CONV_STD_LOGIC_VECTOR(0,10);
+						-- pipe_x_motion <= CONV_STD_LOGIC_VECTOR(0,11);
+						-- ones_score <= "110000";
+						-- totalScore <= 0;
+
+						--decreases lives if collision occurs  
+						lives <= lives - "0001";
+						collision := '1'; 
+					
+
+					elsif (gameState = "01") then
 						gameState <= "11";
 						ball_y_pos <= CONV_STD_LOGIC_VECTOR(50,10);
 						pipe1_x_pos <= CONV_STD_LOGIC_VECTOR(0,11);
@@ -336,22 +399,13 @@ begin
 						ball_y_motion <= CONV_STD_LOGIC_VECTOR(0,10);
 						pipe_x_motion <= CONV_STD_LOGIC_VECTOR(0,11);
 						ones_score <= "110000";
+						totalScore <= 0;
 					end if;
 					
-					if (gameState = "10") then
-						ball_y_pos <= CONV_STD_LOGIC_VECTOR(50,10);
-						pipe1_x_pos <= CONV_STD_LOGIC_VECTOR(0,11);
-						pipe2_x_pos <= CONV_STD_LOGIC_VECTOR(250,11);
-						ball_y_motion <= CONV_STD_LOGIC_VECTOR(0,10);
-						pipe_x_motion <= CONV_STD_LOGIC_VECTOR(0,11);
-						ones_score <= "110000";
 
-						--decreases lives if collision occurs  
-						lives <= lives - "0001"; 
-					end if;
 				end if ;
 
-	end if;
+		end if;
 end if;
 end process Move_Ball;
 

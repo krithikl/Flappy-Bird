@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Miniproject
-Tue May 25 19:21:47 2021
+Tue May 25 20:30:06 2021
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -60,15 +60,15 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue May 25 19:21:47 2021           ;
+; Analysis & Synthesis Status        ; Successful - Tue May 25 20:30:06 2021           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; Miniproject                                     ;
 ; Top-level Entity Name              ; mainDiagram                                     ;
 ; Family                             ; Cyclone III                                     ;
-; Total logic elements               ; 991                                             ;
-;     Total combinational functions  ; 927                                             ;
-;     Dedicated logic registers      ; 176                                             ;
-; Total registers                    ; 176                                             ;
+; Total logic elements               ; 1,068                                           ;
+;     Total combinational functions  ; 1,006                                           ;
+;     Dedicated logic registers      ; 209                                             ;
+; Total registers                    ; 209                                             ;
 ; Total pins                         ; 26                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 16,384                                          ;
@@ -216,20 +216,20 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+--------------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                                ;
 +---------------------------------------------+--------------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 991                                                                                  ;
+; Estimated Total logic elements              ; 1,068                                                                                ;
 ;                                             ;                                                                                      ;
-; Total combinational functions               ; 927                                                                                  ;
+; Total combinational functions               ; 1006                                                                                 ;
 ; Logic element usage by number of LUT inputs ;                                                                                      ;
-;     -- 4 input functions                    ; 462                                                                                  ;
-;     -- 3 input functions                    ; 179                                                                                  ;
-;     -- <=2 input functions                  ; 286                                                                                  ;
+;     -- 4 input functions                    ; 461                                                                                  ;
+;     -- 3 input functions                    ; 217                                                                                  ;
+;     -- <=2 input functions                  ; 328                                                                                  ;
 ;                                             ;                                                                                      ;
 ; Logic elements by mode                      ;                                                                                      ;
-;     -- normal mode                          ; 692                                                                                  ;
-;     -- arithmetic mode                      ; 235                                                                                  ;
+;     -- normal mode                          ; 708                                                                                  ;
+;     -- arithmetic mode                      ; 298                                                                                  ;
 ;                                             ;                                                                                      ;
-; Total registers                             ; 176                                                                                  ;
-;     -- Dedicated logic registers            ; 176                                                                                  ;
+; Total registers                             ; 209                                                                                  ;
+;     -- Dedicated logic registers            ; 209                                                                                  ;
 ;     -- I/O registers                        ; 0                                                                                    ;
 ;                                             ;                                                                                      ;
 ; I/O pins                                    ; 26                                                                                   ;
@@ -240,8 +240,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;                                             ;                                                                                      ;
 ; Maximum fan-out node                        ; altpll0:inst6|altpll:altpll_component|altpll0_altpll:auto_generated|wire_pll1_clk[0] ;
 ; Maximum fan-out                             ; 109                                                                                  ;
-; Total fan-out                               ; 3767                                                                                 ;
-; Average fan-out                             ; 3.16                                                                                 ;
+; Total fan-out                               ; 4111                                                                                 ;
+; Average fan-out                             ; 3.15                                                                                 ;
 +---------------------------------------------+--------------------------------------------------------------------------------------+
 
 
@@ -250,27 +250,27 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                     ; Library Name ;
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------+--------------+
-; |mainDiagram                                 ; 927 (0)           ; 176 (0)      ; 16384       ; 0            ; 0       ; 0         ; 26   ; 0            ; |mainDiagram                                                                                                            ; work         ;
-;    |MOUSE:inst3|                             ; 51 (51)           ; 65 (65)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mainDiagram|MOUSE:inst3                                                                                                ; work         ;
-;    |VGA_SYNC:inst1|                          ; 62 (62)           ; 48 (48)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mainDiagram|VGA_SYNC:inst1                                                                                             ; work         ;
+; |mainDiagram                                 ; 1006 (1)          ; 209 (0)      ; 16384       ; 0            ; 0       ; 0         ; 26   ; 0            ; |mainDiagram                                                                                                            ; work         ;
+;    |MOUSE:inst3|                             ; 53 (53)           ; 65 (65)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mainDiagram|MOUSE:inst3                                                                                                ; work         ;
+;    |VGA_SYNC:inst1|                          ; 60 (60)           ; 48 (48)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mainDiagram|VGA_SYNC:inst1                                                                                             ; work         ;
 ;    |altpll0:inst6|                           ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mainDiagram|altpll0:inst6                                                                                              ; work         ;
 ;       |altpll:altpll_component|              ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mainDiagram|altpll0:inst6|altpll:altpll_component                                                                      ; work         ;
 ;          |altpll0_altpll:auto_generated|     ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mainDiagram|altpll0:inst6|altpll:altpll_component|altpll0_altpll:auto_generated                                        ; work         ;
 ;    |bcdToSegment:inst2|                      ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mainDiagram|bcdToSegment:inst2                                                                                         ; work         ;
-;    |bouncy_ball:inst|                        ; 493 (493)         ; 63 (63)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mainDiagram|bouncy_ball:inst                                                                                           ; work         ;
-;    |game_mode_display:inst11|                ; 143 (139)         ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |mainDiagram|game_mode_display:inst11                                                                                   ; work         ;
+;    |bouncy_ball:inst|                        ; 576 (576)         ; 96 (96)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mainDiagram|bouncy_ball:inst                                                                                           ; work         ;
+;    |game_mode_display:inst11|                ; 103 (99)          ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |mainDiagram|game_mode_display:inst11                                                                                   ; work         ;
 ;       |char_rom:scoretext|                   ; 4 (4)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |mainDiagram|game_mode_display:inst11|char_rom:scoretext                                                                ; work         ;
 ;          |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |mainDiagram|game_mode_display:inst11|char_rom:scoretext|altsyncram:altsyncram_component                                ; work         ;
 ;             |altsyncram_kt91:auto_generated| ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |mainDiagram|game_mode_display:inst11|char_rom:scoretext|altsyncram:altsyncram_component|altsyncram_kt91:auto_generated ; work         ;
-;    |game_over_display:inst5|                 ; 33 (29)           ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |mainDiagram|game_over_display:inst5                                                                                    ; work         ;
+;    |game_over_display:inst5|                 ; 35 (31)           ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |mainDiagram|game_over_display:inst5                                                                                    ; work         ;
 ;       |char_rom:scoretext|                   ; 4 (4)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |mainDiagram|game_over_display:inst5|char_rom:scoretext                                                                 ; work         ;
 ;          |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |mainDiagram|game_over_display:inst5|char_rom:scoretext|altsyncram:altsyncram_component                                 ; work         ;
 ;             |altsyncram_kt91:auto_generated| ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |mainDiagram|game_over_display:inst5|char_rom:scoretext|altsyncram:altsyncram_component|altsyncram_kt91:auto_generated  ; work         ;
-;    |main_menu_display:inst7|                 ; 97 (93)           ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |mainDiagram|main_menu_display:inst7                                                                                    ; work         ;
+;    |main_menu_display:inst7|                 ; 128 (124)         ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |mainDiagram|main_menu_display:inst7                                                                                    ; work         ;
 ;       |char_rom:scoretext|                   ; 4 (4)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |mainDiagram|main_menu_display:inst7|char_rom:scoretext                                                                 ; work         ;
 ;          |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |mainDiagram|main_menu_display:inst7|char_rom:scoretext|altsyncram:altsyncram_component                                 ; work         ;
 ;             |altsyncram_kt91:auto_generated| ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |mainDiagram|main_menu_display:inst7|char_rom:scoretext|altsyncram:altsyncram_component|altsyncram_kt91:auto_generated  ; work         ;
-;    |text_display:inst13|                     ; 41 (37)           ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |mainDiagram|text_display:inst13                                                                                        ; work         ;
+;    |text_display:inst13|                     ; 43 (39)           ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |mainDiagram|text_display:inst13                                                                                        ; work         ;
 ;       |char_rom:scoretext|                   ; 4 (4)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |mainDiagram|text_display:inst13|char_rom:scoretext                                                                     ; work         ;
 ;          |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |mainDiagram|text_display:inst13|char_rom:scoretext|altsyncram:altsyncram_component                                     ; work         ;
 ;             |altsyncram_kt91:auto_generated| ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |mainDiagram|text_display:inst13|char_rom:scoretext|altsyncram:altsyncram_component|altsyncram_kt91:auto_generated      ; work         ;
@@ -325,24 +325,24 @@ Encoding Type:  One-Hot
 ; text_display:inst13|score_display[3]                ; text_display:inst13|score_display[0] ; yes                    ;
 ; text_display:inst13|score_display[4]                ; text_display:inst13|score_display[0] ; yes                    ;
 ; text_display:inst13|score_display[5]                ; text_display:inst13|score_display[0] ; yes                    ;
-; game_over_display:inst5|game_over_display[0]        ; GND                                  ; yes                    ;
-; game_over_display:inst5|game_over_display[1]        ; GND                                  ; yes                    ;
-; game_over_display:inst5|game_over_display[2]        ; GND                                  ; yes                    ;
-; game_over_display:inst5|game_over_display[3]        ; GND                                  ; yes                    ;
-; game_over_display:inst5|game_over_display[4]        ; GND                                  ; yes                    ;
-; game_over_display:inst5|game_over_display[5]        ; GND                                  ; yes                    ;
-; game_mode_display:inst11|game_mode_display[0]       ; GND                                  ; yes                    ;
-; game_mode_display:inst11|game_mode_display[1]       ; GND                                  ; yes                    ;
-; game_mode_display:inst11|game_mode_display[2]       ; GND                                  ; yes                    ;
-; game_mode_display:inst11|game_mode_display[3]       ; GND                                  ; yes                    ;
-; game_mode_display:inst11|game_mode_display[4]       ; GND                                  ; yes                    ;
-; game_mode_display:inst11|game_mode_display[5]       ; GND                                  ; yes                    ;
 ; main_menu_display:inst7|main_menu_display[0]        ; GND                                  ; yes                    ;
 ; main_menu_display:inst7|main_menu_display[1]        ; GND                                  ; yes                    ;
 ; main_menu_display:inst7|main_menu_display[2]        ; GND                                  ; yes                    ;
 ; main_menu_display:inst7|main_menu_display[3]        ; GND                                  ; yes                    ;
 ; main_menu_display:inst7|main_menu_display[4]        ; GND                                  ; yes                    ;
 ; main_menu_display:inst7|main_menu_display[5]        ; GND                                  ; yes                    ;
+; game_mode_display:inst11|game_mode_display[0]       ; GND                                  ; yes                    ;
+; game_mode_display:inst11|game_mode_display[1]       ; GND                                  ; yes                    ;
+; game_mode_display:inst11|game_mode_display[2]       ; GND                                  ; yes                    ;
+; game_mode_display:inst11|game_mode_display[3]       ; GND                                  ; yes                    ;
+; game_mode_display:inst11|game_mode_display[4]       ; GND                                  ; yes                    ;
+; game_mode_display:inst11|game_mode_display[5]       ; GND                                  ; yes                    ;
+; game_over_display:inst5|game_over_display[0]        ; GND                                  ; yes                    ;
+; game_over_display:inst5|game_over_display[1]        ; GND                                  ; yes                    ;
+; game_over_display:inst5|game_over_display[2]        ; GND                                  ; yes                    ;
+; game_over_display:inst5|game_over_display[3]        ; GND                                  ; yes                    ;
+; game_over_display:inst5|game_over_display[4]        ; GND                                  ; yes                    ;
+; game_over_display:inst5|game_over_display[5]        ; GND                                  ; yes                    ;
 ; Number of user-specified and inferred latches = 24  ;                                      ;                        ;
 +-----------------------------------------------------+--------------------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
@@ -350,27 +350,29 @@ Note: All latches listed above may not be present at the end of synthesis due to
 
 +-----------------------------------------------------------------------------------------+
 ; Registers Removed During Synthesis                                                      ;
-+-----------------------------------------+-----------------------------------------------+
-; Register name                           ; Reason for Removal                            ;
-+-----------------------------------------+-----------------------------------------------+
-; MOUSE:inst3|CHAROUT[4..7]               ; Stuck at VCC due to stuck port data_in        ;
-; MOUSE:inst3|CHAROUT[3]                  ; Stuck at GND due to stuck port data_in        ;
-; MOUSE:inst3|CHAROUT[2]                  ; Stuck at VCC due to stuck port data_in        ;
-; MOUSE:inst3|CHAROUT[0,1]                ; Stuck at GND due to stuck port data_in        ;
-; MOUSE:inst3|SHIFTOUT[10]                ; Stuck at VCC due to stuck port data_in        ;
-; bouncy_ball:inst|rand_num2[1,3,5]       ; Stuck at VCC due to stuck port data_in        ;
-; bouncy_ball:inst|rand_num1[0..6]        ; Stuck at VCC due to stuck port data_in        ;
-; bouncy_ball:inst|ball_y_motion[3..9]    ; Merged with bouncy_ball:inst|ball_y_motion[2] ;
-; bouncy_ball:inst|rand_num2[2,4,6]       ; Merged with bouncy_ball:inst|rand_num2[0]     ;
-; bouncy_ball:inst|pipe_x_motion[1,3..10] ; Merged with bouncy_ball:inst|pipe_x_motion[0] ;
-; VGA_SYNC:inst1|pixel_row[9]             ; Stuck at GND due to stuck port data_in        ;
-; bouncy_ball:inst|pipe_x_motion[0]       ; Stuck at GND due to stuck port data_in        ;
-; bouncy_ball:inst|temp2                  ; Merged with bouncy_ball:inst|rand_num2[0]     ;
-; bouncy_ball:inst|pipe1_x_pos[0,1]       ; Stuck at GND due to stuck port data_in        ;
-; bouncy_ball:inst|pipe2_x_pos[0]         ; Stuck at GND due to stuck port data_in        ;
-; bouncy_ball:inst|ball_y_motion[0]       ; Stuck at GND due to stuck port data_in        ;
-; Total Number of Removed Registers = 45  ;                                               ;
-+-----------------------------------------+-----------------------------------------------+
++----------------------------------------+------------------------------------------------+
+; Register name                          ; Reason for Removal                             ;
++----------------------------------------+------------------------------------------------+
+; MOUSE:inst3|CHAROUT[4..7]              ; Stuck at VCC due to stuck port data_in         ;
+; MOUSE:inst3|CHAROUT[3]                 ; Stuck at GND due to stuck port data_in         ;
+; MOUSE:inst3|CHAROUT[2]                 ; Stuck at VCC due to stuck port data_in         ;
+; MOUSE:inst3|CHAROUT[0,1]               ; Stuck at GND due to stuck port data_in         ;
+; MOUSE:inst3|SHIFTOUT[10]               ; Stuck at VCC due to stuck port data_in         ;
+; bouncy_ball:inst|rand_num2[1,3,5]      ; Stuck at VCC due to stuck port data_in         ;
+; bouncy_ball:inst|rand_num1[0..6]       ; Stuck at VCC due to stuck port data_in         ;
+; bouncy_ball:inst|ones_score[5]         ; Merged with bouncy_ball:inst|ones_score[4]     ;
+; bouncy_ball:inst|ones_score[1..3]      ; Merged with bouncy_ball:inst|ones_score[0]     ;
+; bouncy_ball:inst|ball_y_motion[3..9]   ; Merged with bouncy_ball:inst|ball_y_motion[2]  ;
+; bouncy_ball:inst|rand_num2[2,4,6]      ; Merged with bouncy_ball:inst|rand_num2[0]      ;
+; bouncy_ball:inst|pipe_x_motion[4..9]   ; Merged with bouncy_ball:inst|pipe_x_motion[10] ;
+; bouncy_ball:inst|temp2                 ; Merged with bouncy_ball:inst|rand_num2[0]      ;
+; bouncy_ball:inst|ones_score[4]         ; Stuck at VCC due to stuck port data_in         ;
+; VGA_SYNC:inst1|pixel_row[9]            ; Stuck at GND due to stuck port data_in         ;
+; bouncy_ball:inst|pipe_x_motion[10]     ; Stuck at GND due to stuck port data_in         ;
+; bouncy_ball:inst|ones_score[0]         ; Stuck at GND due to stuck port data_in         ;
+; bouncy_ball:inst|ball_y_motion[0]      ; Stuck at GND due to stuck port data_in         ;
+; Total Number of Removed Registers = 45 ;                                                ;
++----------------------------------------+------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------+
@@ -378,9 +380,8 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +-------------------------------+---------------------------+---------------------------------------------------------------------+
 ; Register name                 ; Reason for Removal        ; Registers Removed due to This Register                              ;
 +-------------------------------+---------------------------+---------------------------------------------------------------------+
-; bouncy_ball:inst|rand_num2[1] ; Stuck at VCC              ; bouncy_ball:inst|pipe_x_motion[0], bouncy_ball:inst|pipe1_x_pos[0], ;
-;                               ; due to stuck port data_in ; bouncy_ball:inst|pipe1_x_pos[1], bouncy_ball:inst|pipe2_x_pos[0],   ;
-;                               ;                           ; bouncy_ball:inst|ball_y_motion[0]                                   ;
+; bouncy_ball:inst|rand_num2[1] ; Stuck at VCC              ; bouncy_ball:inst|ones_score[4], bouncy_ball:inst|pipe_x_motion[10], ;
+;                               ; due to stuck port data_in ; bouncy_ball:inst|ones_score[0], bouncy_ball:inst|ball_y_motion[0]   ;
 +-------------------------------+---------------------------+---------------------------------------------------------------------+
 
 
@@ -389,9 +390,9 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 176   ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 2     ;
+; Total registers                              ; 209   ;
+; Number of registers using Synchronous Clear  ; 32    ;
+; Number of registers using Synchronous Load   ; 32    ;
 ; Number of registers using Asynchronous Clear ; 44    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 78    ;
@@ -404,20 +405,18 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +-----------------------------------------+---------+
 ; Inverted Register                       ; Fan out ;
 +-----------------------------------------+---------+
-; bouncy_ball:inst|rand_num2[0]           ; 9       ;
-; bouncy_ball:inst|lives[0]               ; 6       ;
-; bouncy_ball:inst|lives[1]               ; 5       ;
+; bouncy_ball:inst|rand_num2[0]           ; 10      ;
+; bouncy_ball:inst|lives[1]               ; 6       ;
+; bouncy_ball:inst|lives[0]               ; 7       ;
 ; bouncy_ball:inst|score_ones_out[4]      ; 3       ;
 ; bouncy_ball:inst|score_ones_out[5]      ; 3       ;
 ; MOUSE:inst3|send_char                   ; 3       ;
-; bouncy_ball:inst|ones_score[4]          ; 3       ;
-; bouncy_ball:inst|ones_score[5]          ; 3       ;
 ; MOUSE:inst3|SHIFTOUT[3]                 ; 1       ;
 ; MOUSE:inst3|SHIFTOUT[5]                 ; 1       ;
 ; MOUSE:inst3|SHIFTOUT[6]                 ; 1       ;
 ; MOUSE:inst3|SHIFTOUT[7]                 ; 1       ;
 ; MOUSE:inst3|SHIFTOUT[8]                 ; 1       ;
-; Total number of inverted registers = 13 ;         ;
+; Total number of inverted registers = 11 ;         ;
 +-----------------------------------------+---------+
 
 
@@ -426,26 +425,27 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |mainDiagram|VGA_SYNC:inst1|v_count[9]                       ;
-; 4:1                ; 22 bits   ; 44 LEs        ; 22 LEs               ; 22 LEs                 ; Yes        ; |mainDiagram|bouncy_ball:inst|ones_score[0]                  ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |mainDiagram|bouncy_ball:inst|ball_y_motion[2]               ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |mainDiagram|bouncy_ball:inst|ball_y_pos[1]                  ;
-; 8:1                ; 7 bits    ; 35 LEs        ; 21 LEs               ; 14 LEs                 ; Yes        ; |mainDiagram|bouncy_ball:inst|ball_y_pos[6]                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 0 LEs                ; 8 LEs                  ; Yes        ; |mainDiagram|bouncy_ball:inst|lives[3]                       ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |mainDiagram|bouncy_ball:inst|gameState[1]                   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 0 LEs                ; 8 LEs                  ; Yes        ; |mainDiagram|bouncy_ball:inst|lives[1]                       ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |mainDiagram|bouncy_ball:inst|green                          ;
-; 3:1                ; 34 bits   ; 68 LEs        ; 34 LEs               ; 34 LEs                 ; No         ; |mainDiagram|bouncy_ball:inst|pipe1_x_pos                    ;
-; 3:1                ; 24 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; No         ; |mainDiagram|bouncy_ball:inst|pipe2_x_pos                    ;
-; 3:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |mainDiagram|bouncy_ball:inst|pipe1_x_pos                    ;
-; 3:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |mainDiagram|bouncy_ball:inst|pipe2_x_pos                    ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |mainDiagram|VGA_SYNC:inst1|v_count[6]                       ;
+; 4:1                ; 54 bits   ; 108 LEs       ; 54 LEs               ; 54 LEs                 ; Yes        ; |mainDiagram|bouncy_ball:inst|pipe1_x_pos[7]                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |mainDiagram|bouncy_ball:inst|ball_y_pos[5]                  ;
+; 8:1                ; 7 bits    ; 35 LEs        ; 21 LEs               ; 14 LEs                 ; Yes        ; |mainDiagram|bouncy_ball:inst|ball_y_pos[9]                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 2 LEs                ; 6 LEs                  ; Yes        ; |mainDiagram|bouncy_ball:inst|lives[3]                       ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; Yes        ; |mainDiagram|bouncy_ball:inst|ball_y_motion[2]               ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 2 LEs                ; 6 LEs                  ; Yes        ; |mainDiagram|bouncy_ball:inst|lives[0]                       ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |mainDiagram|bouncy_ball:inst|blue                           ;
 ; 8:1                ; 4 bits    ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |mainDiagram|game_over_display:inst5|char_rom:scoretext|Mux0 ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |mainDiagram|bouncy_ball:inst|ball_y_pos                     ;
 ; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |mainDiagram|game_over_display:inst5|game_over_display[1]    ;
-; 8:1                ; 2 bits    ; 10 LEs        ; 8 LEs                ; 2 LEs                  ; No         ; |mainDiagram|text_display:inst13|score_display[1]            ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 8 LEs                ; 2 LEs                  ; No         ; |mainDiagram|text_display:inst13|score_display[2]            ;
 ; 9:1                ; 2 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |mainDiagram|game_over_display:inst5|game_over_display[0]    ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |mainDiagram|bouncy_ball:inst|ones_score                     ;
-; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |mainDiagram|bouncy_ball:inst|ones_score                     ;
-; 39:1               ; 4 bits    ; 104 LEs       ; 104 LEs              ; 0 LEs                  ; No         ; |mainDiagram|game_mode_display:inst11|game_mode_display[1]   ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |mainDiagram|bouncy_ball:inst|ones_score                     ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |mainDiagram|bouncy_ball:inst|pipe_x_motion                  ;
+; 6:1                ; 11 bits   ; 44 LEs        ; 22 LEs               ; 22 LEs                 ; No         ; |mainDiagram|bouncy_ball:inst|pipe1_x_pos                    ;
+; 6:1                ; 11 bits   ; 44 LEs        ; 22 LEs               ; 22 LEs                 ; No         ; |mainDiagram|bouncy_ball:inst|pipe2_x_pos                    ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |mainDiagram|bouncy_ball:inst|pipe_x_motion                  ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |mainDiagram|bouncy_ball:inst|gameState                      ;
+; 7:1                ; 32 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; No         ; |mainDiagram|bouncy_ball:inst|totalScore                     ;
+; 39:1               ; 4 bits    ; 104 LEs       ; 104 LEs              ; 0 LEs                  ; No         ; |mainDiagram|main_menu_display:inst7|main_menu_display[3]    ;
 ; 41:1               ; 5 bits    ; 135 LEs       ; 135 LEs              ; 0 LEs                  ; No         ; |mainDiagram|main_menu_display:inst7|main_menu_display[5]    ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
 
@@ -1189,7 +1189,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Tue May 25 19:21:43 2021
+    Info: Processing started: Tue May 25 20:30:01 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Miniproject -c Miniproject
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file maindiagram.bdf
@@ -1306,61 +1306,59 @@ Warning (10540): VHDL Signal Declaration warning at bouncy_ball.vhd(57): used ex
 Warning (10540): VHDL Signal Declaration warning at bouncy_ball.vhd(58): used explicit default value for signal "pipe1XRight" because signal was never assigned a value
 Warning (10540): VHDL Signal Declaration warning at bouncy_ball.vhd(59): used explicit default value for signal "pipe2XLeft" because signal was never assigned a value
 Warning (10540): VHDL Signal Declaration warning at bouncy_ball.vhd(60): used explicit default value for signal "pipe2XRight" because signal was never assigned a value
-Warning (10540): VHDL Signal Declaration warning at bouncy_ball.vhd(77): used explicit default value for signal "rand_num_variable1" because signal was never assigned a value
-Warning (10540): VHDL Signal Declaration warning at bouncy_ball.vhd(81): used explicit default value for signal "rand_num_variable2" because signal was never assigned a value
-Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(143): signal "gameState" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(143): signal "sw0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10540): VHDL Signal Declaration warning at bouncy_ball.vhd(78): used explicit default value for signal "rand_num_variable1" because signal was never assigned a value
+Warning (10540): VHDL Signal Declaration warning at bouncy_ball.vhd(82): used explicit default value for signal "rand_num_variable2" because signal was never assigned a value
+Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(143): signal "mainMenuBackground" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(143): signal "mainmenuText" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(144): signal "mainMenuBackground" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(144): signal "mainmenuText" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(145): signal "mainMenuBackground" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(146): signal "mainMenuBackground" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(150): signal "gameState" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(150): signal "sw0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(148): signal "gameState" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(148): signal "sw0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(149): signal "mainMenuBackground" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(149): signal "mainmenuText" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(150): signal "mainMenuBackground" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(151): signal "mainMenuBackground" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(151): signal "gameModeText" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(152): signal "mainMenuBackground" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(153): signal "mainMenuBackground" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(157): signal "gameState" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(158): signal "background" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(158): signal "ball_on" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(158): signal "pipes" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(158): signal "textOutput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(159): signal "background" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(159): signal "ball_on" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(159): signal "pipes" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(159): signal "textOutput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(160): signal "background" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(160): signal "ball_on" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(160): signal "pipes" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(160): signal "textOutput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(164): signal "gameState" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(155): signal "gameState" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(155): signal "sw0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(156): signal "mainMenuBackground" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(156): signal "gameModeText" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(157): signal "mainMenuBackground" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(158): signal "mainMenuBackground" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(162): signal "gameState" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(163): signal "background" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(163): signal "ball_on" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(163): signal "pipes" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(163): signal "textOutput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(164): signal "background" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(164): signal "ball_on" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(164): signal "pipes" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(164): signal "textOutput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(165): signal "background" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(165): signal "ball_on" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(165): signal "pipes" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(165): signal "textOutput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(166): signal "background" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(166): signal "ball_on" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(166): signal "pipes" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(166): signal "textOutput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(167): signal "background" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(167): signal "ball_on" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(167): signal "pipes" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(167): signal "textOutput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(171): signal "gameState" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(172): signal "gameState" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(173): signal "gameOverBackground" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(173): signal "gameOverText" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(174): signal "gameOverBackground" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(175): signal "gameOverBackground" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10631): VHDL Process Statement warning at bouncy_ball.vhd(135): inferring latch(es) for signal or variable "red", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at bouncy_ball.vhd(135): inferring latch(es) for signal or variable "green", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at bouncy_ball.vhd(135): inferring latch(es) for signal or variable "blue", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at bouncy_ball.vhd(135): inferring latch(es) for signal or variable "gameOver", which holds its previous value in one or more paths through the process
-Info (10041): Inferred latch for "gameOver[0]" at bouncy_ball.vhd(135)
-Info (10041): Inferred latch for "gameOver[1]" at bouncy_ball.vhd(135)
-Info (10041): Inferred latch for "blue" at bouncy_ball.vhd(135)
-Info (10041): Inferred latch for "green" at bouncy_ball.vhd(135)
-Info (10041): Inferred latch for "red" at bouncy_ball.vhd(135)
+Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(169): signal "gameState" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(170): signal "background" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(170): signal "pipes" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(170): signal "ball_on" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(170): signal "textOutput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(171): signal "background" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(171): signal "ball_on" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(171): signal "pipes" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(171): signal "textOutput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(172): signal "background" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(172): signal "ball_on" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(172): signal "pipes" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(172): signal "textOutput" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(176): signal "gameState" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(177): signal "gameState" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(178): signal "gameOverBackground" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(178): signal "gameOverText" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(179): signal "gameOverBackground" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at bouncy_ball.vhd(180): signal "gameOverBackground" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at bouncy_ball.vhd(136): inferring latch(es) for signal or variable "gameOver", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "gameOver[0]" at bouncy_ball.vhd(136)
+Info (10041): Inferred latch for "gameOver[1]" at bouncy_ball.vhd(136)
 Info (12128): Elaborating entity "MOUSE" for hierarchy "MOUSE:inst3"
 Warning (10036): Verilog HDL or VHDL warning at mouse.vhd(25): object "CHARIN" assigned a value but never read
 Warning (10492): VHDL Process Statement warning at mouse.vhd(151): signal "CHAROUT" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
@@ -1418,9 +1416,6 @@ Info (10041): Inferred latch for "game_mode_display[4]" at game_mode_text.vhd(47
 Info (10041): Inferred latch for "game_mode_display[5]" at game_mode_text.vhd(47)
 Info (12128): Elaborating entity "lfsr" for hierarchy "lfsr:inst10"
 Info (12128): Elaborating entity "bcdToSegment" for hierarchy "bcdToSegment:inst2"
-Warning (14026): LATCH primitive "bouncy_ball:inst|red" is permanently enabled
-Warning (14026): LATCH primitive "bouncy_ball:inst|green" is permanently enabled
-Warning (14026): LATCH primitive "bouncy_ball:inst|blue" is permanently enabled
 Warning (13012): Latch text_display:inst13|score_display[0] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal VGA_SYNC:inst1|pixel_column[7]
 Warning (13012): Latch text_display:inst13|score_display[1] has unsafe behavior
@@ -1438,22 +1433,30 @@ Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal 
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "seg0_dec" is stuck at VCC
     Warning (13410): Pin "seg1_dec" is stuck at VCC
+    Warning (13410): Pin "seg1[6]" is stuck at VCC
+    Warning (13410): Pin "seg1[5]" is stuck at GND
+    Warning (13410): Pin "seg1[4]" is stuck at GND
+    Warning (13410): Pin "seg1[3]" is stuck at GND
+    Warning (13410): Pin "seg1[2]" is stuck at GND
+    Warning (13410): Pin "seg1[1]" is stuck at GND
+    Warning (13410): Pin "seg1[0]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
 Info (17016): Found the following redundant logic cells in design
-    Info (17048): Logic cell "bouncy_ball:inst|Add39~18"
+    Info (17048): Logic cell "bouncy_ball:inst|Add40~18"
+    Info (17048): Logic cell "bouncy_ball:inst|Add43~18"
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1054 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1133 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
     Info (21059): Implemented 21 output pins
     Info (21060): Implemented 2 bidirectional pins
-    Info (21061): Implemented 995 logic cells
+    Info (21061): Implemented 1074 logic cells
     Info (21064): Implemented 32 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 79 warnings
-    Info: Peak virtual memory: 4647 megabytes
-    Info: Processing ended: Tue May 25 19:21:47 2021
-    Info: Elapsed time: 00:00:04
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 84 warnings
+    Info: Peak virtual memory: 4648 megabytes
+    Info: Processing ended: Tue May 25 20:30:06 2021
+    Info: Elapsed time: 00:00:05
     Info: Total CPU time (on all processors): 00:00:05
 
 
