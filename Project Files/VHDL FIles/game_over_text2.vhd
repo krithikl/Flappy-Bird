@@ -47,8 +47,8 @@ BEGIN
 	game_over_display <= 
 					
 					--"GAME OVER!"--
-					--CONV_STD_LOGIC_VECTOR(7,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(271,10) else --"G"
-					CONV_STD_LOGIC_VECTOR(7,11) when pixel_column <= CONV_STD_LOGIC_VECTOR(271,10) else --"G" -- size change attempt 
+					CONV_STD_LOGIC_VECTOR(7,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(271,10) else --"G"
+					--CONV_STD_LOGIC_VECTOR(7,11) when pixel_column <= CONV_STD_LOGIC_VECTOR(271,10) else --"G" -- size change attempt 
 					CONV_STD_LOGIC_VECTOR(1,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(287,10) else --"A"
 					CONV_STD_LOGIC_VECTOR(13,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(303,10) else --"M"
 					CONV_STD_LOGIC_VECTOR(5,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(319,10) else --"E"

@@ -20,8 +20,6 @@ ENTITY bouncy_ball IS
 		  SIGNAL mouseReset 			: OUT std_logic := '0'; 
 		  
 		
-		 
-		 
 		  SIGNAL gameOver      		: OUT std_logic_vector(1 downto 0); 
 		  SIGNAL gameStart			: OUT std_logic_vector(1 downto 0); 
 		  SIGNAL lives_out 			: OUT std_logic_vector(3 downto 0)); 
@@ -263,8 +261,7 @@ begin
 
 			-- Pipe 1 collision
 			if ((ball_y_pos + size + ballPadding >= pipeBotGap + rand_num1) OR ((ball_y_pos <= pipeTopGap + size + rand_num1))) then
-				if ((ball_x_pos + size  <= pipe1XLeft) 
-				and (ball_x_pos + size >= pipe1XRight)) then
+				if ((ball_x_pos + size  <= pipe1XLeft) and (ball_x_pos + size >= pipe1XRight)) then
 					if (gameState = "10" and collision = '0') then
 
 						--decreases lives if collision occurs  
@@ -285,15 +282,20 @@ begin
 
 						
 				end if;
-				
-				if ((gamestate = "01" or gameState = "10") and (ball_x_pos + size <= pipe1XLeft)) then
-					--collision := '0';
+			elsif ((ball_y_pos + size + ballPadding <= pipeBotGap + rand_num1) OR ((ball_y_pos >= pipeTopGap + size + rand_num1))) then	
+				if ((gamestate = "01" or gameState = "10") and ((ball_x_pos + size <= pipe1XLeft) and (ball_x_pos + size >= pipe1XRight))) then
+
 					if (incrementScore = '0') then
-						incrementScore := '1';
-						-- ones_score <= ones_Score + "000001";
 						totalScore <= totalScore + 1;
 						collision := '0';
+						incrementScore := '1';
 					end if;
+
+					if ((ball_x_pos + size >= pipe1XLeft) and (ball_x_pos + size <= pipe1XRight)) then
+						incrementScore := '0';
+
+					end if;
+
 						
 				end if;
 			end if;
@@ -322,15 +324,22 @@ begin
 							 totalScore <= 0;
 
 						end if;
-				elsif ((gamestate = "01" or gameState = "10") and (ball_x_pos + size <= pipe2XLeft + pipeSpacing)) then
-					--collision := '0';
+				end if;
+			elsif ((ball_y_pos + size + ballPadding <= pipeBotGap + rand_num2) OR (ball_y_pos - size + ballPadding >= pipeTopGap + rand_num2)) then
+				if ((gamestate = "01" or gameState = "10") and ((ball_x_pos + size <= pipe2XLeft + pipeSpacing) and (ball_x_pos + size >= pipe2XRight + pipeSpacing))) then
+
 					if (incrementScore2 = '0') then
-						incrementScore2 := '1';
-						-- ones_score <= ones_Score + "000001";
 						totalScore <= totalScore + 1;
 						collision := '0';
-						
+						incrementScore2 := '1';
 					end if;
+
+					if ((ball_x_pos + size >= pipe2XLeft + pipeSpacing) and (ball_x_pos + size <= pipe2XRight + pipeSpacing)) then
+						incrementScore2 := '0';
+
+					end if;
+
+						
 				end if;
 			end if;
 				
