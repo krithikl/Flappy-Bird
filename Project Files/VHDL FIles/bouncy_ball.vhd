@@ -31,6 +31,15 @@ architecture behavior of bouncy_ball is
 
 
 SIGNAL ball_on					: std_logic;
+SIGNAL eye1 : std_logic;
+SIGNAL eye2 : std_logic;
+
+SiGNAL eye1XPos				: std_logic_vector(10 DOWNTO 0);
+SiGNAL eye2XPos				: std_logic_vector(10 DOWNTO 0);
+SiGNAL mouthXPos				: std_logic_vector(10 DOWNTO 0);
+SIGNAL eye1Size 				: std_logic_vector(9 DOWNTO 0);
+SIGNAL mouthSize				: std_logic_vector(9 DOWNTO 0);
+SIGNAL mouth					: std_logic;
 SIGNAL background          : std_logic;
 SIGNAL gameOverBackground  : std_logic;
 SIGNAL mainMenuBackground  : std_logic;
@@ -80,10 +89,17 @@ SIGNAL rand_num2: STD_LOGIC_VECTOR (7 DOWNTO 0):= "01111111";
 SIGNAL rand_num_variable2: STD_LOGIC_VECTOR (6 DOWNTO 0):= "0101010";
 signal temp2 : std_logic := '0';
 
+signal derpyBird : std_logic;
+
 BEGIN           
 
 size <= CONV_STD_LOGIC_VECTOR(8,10);
+eye1Size <= CONV_STD_LOGIC_VECTOR(1,10);
 ball_x_pos <= CONV_STD_LOGIC_VECTOR(250,11);
+eye1XPos <= CONV_STD_LOGIC_VECTOR(254,11);
+eye2XPos <= CONV_STD_LOGIC_VECTOR(246,11);
+mouthXPos <= CONV_STD_LOGIC_VECTOR(250,11);
+mouthSize <= CONV_STD_LOGIC_VECTOR(2,10);
 
 pipeSpacing <= CONV_STD_LOGIC_VECTOR(400,10);
 pipeWidth <= CONV_STD_LOGIC_VECTOR(20,10);
@@ -99,6 +115,24 @@ ball_on <= '1' when ( ('0' & pixel_column + size >= '0' & ball_x_pos)
 					and (pixel_row + size >= '0' & ball_y_pos) 
 					and ('0' & pixel_row <= ball_y_pos + size) )  else	-- y_pos - size <= pixel_row <= y_pos + size
 			  '0';
+
+eye1 <= '1' when ( ('0' & pixel_column + eye1Size >= '0' & eye1XPos) 
+					and ('0' & pixel_column <= '0' & eye1XPos + eye1Size) 	-- x_pos - size <= pixel_column <= x_pos + size
+					and (pixel_row + eye1Size >= '0' & ball_y_pos - CONV_STD_LOGIC_VECTOR(2,10)) 
+					and ('0' & pixel_row <= ball_y_pos + eye1Size - CONV_STD_LOGIC_VECTOR(2,10)) )  else	-- y_pos - size <= pixel_row <= y_pos + size
+'0';
+
+eye2 <= '1' when ( ('0' & pixel_column + eye1Size >= '0' & eye2XPos) 
+					and ('0' & pixel_column <= '0' & eye2XPos + eye1Size) 	-- x_pos - size <= pixel_column <= x_pos + size
+					and (pixel_row + eye1Size >= '0' & ball_y_pos - CONV_STD_LOGIC_VECTOR(2,10)) 
+					and ('0' & pixel_row <= ball_y_pos + eye1Size - CONV_STD_LOGIC_VECTOR(2,10)) )  else	-- y_pos - size <= pixel_row <= y_pos + size
+'0';
+
+mouth <= '1' when ( ('0' & pixel_column + mouthSize >= '0' & mouthXPos) 
+					and ('0' & pixel_column <= '0' & mouthXPos + mouthSize) 	-- x_pos - size <= pixel_column <= x_pos + size
+					and (pixel_row + mouthSize >= '0' & ball_y_pos + CONV_STD_LOGIC_VECTOR(3,10)) 
+					and ('0' & pixel_row <= ball_y_pos + mouthSize + CONV_STD_LOGIC_VECTOR(3,10)) )  else	-- y_pos - size <= pixel_row <= y_pos + size
+'0';
 			  
 background <= '1' when (pixel_row >= 0 and pixel_row <= 479) or (pixel_column >= 0 and pixel_column <= 639) else
 				  '0';
@@ -109,7 +143,6 @@ gameOverBackground <= '1' when (pixel_row >= 0 and pixel_row <= 479) or (pixel_c
 mainMenuBackground <= '1' when (pixel_row >= 0 and pixel_row <= 479) or (pixel_column >= 0 and pixel_column <= 639) else
 				  '0';
 			  
-		
 pipeBot1 <= '1' when ( pixel_row >= pipeTopGap + rand_num1 and pixel_row <= pipeBotGap + rand_num1) 
 				else	-- y_pos - size <= pixel_row <= y_pos + size
 			  '0';
@@ -128,6 +161,9 @@ pipeTop2 <= '0' when (( '1' & pixel_column + pipeWidth >= '1' & pipe2_x_pos + pi
 							'1';
 
 pipes <= ((not pipeBot1 and not pipeTop1) or (not pipeBot2 and not pipeTop2));
+
+derpyBird <= (not eye1 and not eye2 and not mouth);
+
 
 Move_Ball: process (vert_sync)
 variable tick : std_logic := '0';
@@ -156,16 +192,16 @@ begin
 		
 		-- Normal mode
 		if (gameState = "01") then 
-			Red <= (background or ball_on) and ((not pipes) or ( textOutput));
-			Green <=  (background or ball_on or pipes) and (not textOutput);
-			Blue <= background and (not ball_on) and ((not pipes) or (textOutput));
+			Red <= derpyBird and (background or ball_on) and ((not pipes) or ( textOutput));
+			Green <=  derpyBird and (background or ball_on or pipes) and (not textOutput);
+			Blue <= derpyBird and (background and (not ball_on) and ((not pipes) or (textOutput)));
 		end if;
 		
 		-- Training mode
 		if (gameState = "10") then
-			Red <= (background) and ((not pipes or ball_on) or ( textOutput));
-			Green <=  (background or ball_on or pipes) and (not textOutput);
-			Blue <= background and (not ball_on) and ((not pipes) or (textOutput));
+			Red <= derpyBird and ((background) and ((not pipes or ball_on) or ( textOutput)));
+			Green <=  derpyBird and ((background or ball_on or pipes) and (not textOutput));
+			Blue <= derpyBird and (background and (not ball_on) and ((not pipes) or (textOutput)));
 		end if;	
 		
 		-- Game over
