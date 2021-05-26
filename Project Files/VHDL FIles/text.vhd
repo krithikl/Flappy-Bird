@@ -43,7 +43,7 @@ BEGIN
 --		over_text_on <= '1' when (output_score = '1' and pixel_column <= CONV_STD_LOGIC_VECTOR(335,10) and pixel_column >= CONV_STD_LOGIC_VECTOR(320,10) 
 --		and pixel_row <= CONV_STD_LOGIC_VECTOR(45,10) and pixel_row >= CONV_STD_LOGIC_VECTOR(30,10)) and gameState = "00" else'0';
 
-		over_text_on <= '1' when (output_score = '1' and pixel_column <= CONV_STD_LOGIC_VECTOR(335,10) and pixel_column >= CONV_STD_LOGIC_VECTOR(320,10) 
+		over_text_on <= '1' when (output_score = '1' and pixel_column <= CONV_STD_LOGIC_VECTOR(446,10) and pixel_column >= CONV_STD_LOGIC_VECTOR(414,10) 
 		and pixel_row <= CONV_STD_LOGIC_VECTOR(45,10) and pixel_row >= CONV_STD_LOGIC_VECTOR(30,10)) and (gameState = "01" or gameState = "10") else'0';
 		
 		
@@ -58,23 +58,24 @@ BEGIN
 --					CONV_STD_LOGIC_VECTOR(18,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(350,10) else --"R"
 --					CONV_STD_LOGIC_VECTOR(5,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(366,10) else --"E"
 					--CONV_STD_LOGIC_VECTOR(58,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(382,10) else --":"
-					ones_score when pixel_column <= CONV_STD_LOGIC_VECTOR(398,10) else 							--"ones_score"
---					tens_score when pixel_column <= CONV_STD_LOGIC_VECTOR(414,10) else 							--"tens_score"
+					ones_score when pixel_column <= CONV_STD_LOGIC_VECTOR(446,10) and pixel_column >= CONV_STD_LOGIC_VECTOR(430,10)else 							--"ones_score"
+					tens_score when pixel_column <= CONV_STD_LOGIC_VECTOR(430,10) and pixel_column >= CONV_STD_LOGIC_VECTOR(414,10) else 							--"tens_score"
 					--"100000" when pixel_column <= CONV_STD_LOGIC_VECTOR(414,10) else									--" space 
 					
 			
 					-- for tens
---					CONV_STD_LOGIC_VECTOR(48,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(430,10) AND tens_score = "110000" else --"0"
---					CONV_STD_LOGIC_VECTOR(49,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(430,10) AND tens_score = "110001" else --"1"
---			      CONV_STD_LOGIC_VECTOR(50,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(430,10) AND tens_score = "110010" else --"2"
---					CONV_STD_LOGIC_VECTOR(51,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(430,10) AND tens_score = "110011" else --"3"
---					CONV_STD_LOGIC_VECTOR(52,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(430,10) AND tens_score = "110100" else --"4"
---					CONV_STD_LOGIC_VECTOR(53,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(430,10) AND tens_score = "110101" else --"5"
---					CONV_STD_LOGIC_VECTOR(54,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(430,10) AND tens_score = "110110" else-- "6"
---					CONV_STD_LOGIC_VECTOR(55,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(430,10) AND tens_score = "110111" else --"7"
---					CONV_STD_LOGIC_VECTOR(56,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(430,10) AND tens_score = "111000" else--"8"
---					CONV_STD_LOGIC_VECTOR(57,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(430,10) AND tens_score = "111001" else --"9"
---					
+					CONV_STD_LOGIC_VECTOR(48,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(430,10) AND tens_score = "110000" else --"0"
+					CONV_STD_LOGIC_VECTOR(49,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(430,10) AND tens_score = "110001" else --"1"
+			      CONV_STD_LOGIC_VECTOR(50,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(430,10) AND tens_score = "110010" else --"2"
+					CONV_STD_LOGIC_VECTOR(51,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(430,10) AND tens_score = "110011" else --"3"
+					CONV_STD_LOGIC_VECTOR(52,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(430,10) AND tens_score = "110100" else --"4"
+					CONV_STD_LOGIC_VECTOR(53,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(430,10) AND tens_score = "110101" else --"5"
+					CONV_STD_LOGIC_VECTOR(54,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(430,10) AND tens_score = "110110" else-- "6"
+					CONV_STD_LOGIC_VECTOR(55,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(430,10) AND tens_score = "110111" else --"7"
+					CONV_STD_LOGIC_VECTOR(56,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(430,10) AND tens_score = "111000" else--"8"
+					CONV_STD_LOGIC_VECTOR(57,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(430,10) AND tens_score = "111001" else --"9"
+					
+					
 					
 						-- for ones  
 					CONV_STD_LOGIC_VECTOR(48,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(446,10) AND ones_score = "110000" else --"0"
@@ -91,37 +92,7 @@ BEGIN
 					
 					;
 
-					
---					ones_score when pixel_column <= CONV_STD_LOGIC_VECTOR(398,10) else 							--"ones_score"
---					tens_score when pixel_column <= CONV_STD_LOGIC_VECTOR(414,10) else 							--"tens_score"
---					--"100000" when pixel_column <= CONV_STD_LOGIC_VECTOR(414,10) else									--" space 
---					
---			
---					-- for tens
---					CONV_STD_LOGIC_VECTOR(48,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(430,10) AND tens_score = "110000" else --"0"
---					CONV_STD_LOGIC_VECTOR(49,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(430,10) AND tens_score = "110001" else --"1"
---			      CONV_STD_LOGIC_VECTOR(50,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(430,10) AND tens_score = "110010" else --"2"
---					CONV_STD_LOGIC_VECTOR(51,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(430,10) AND tens_score = "110011" else --"3"
---					CONV_STD_LOGIC_VECTOR(52,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(430,10) AND tens_score = "110100" else --"4"
---					CONV_STD_LOGIC_VECTOR(53,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(430,10) AND tens_score = "110101" else --"5"
---					CONV_STD_LOGIC_VECTOR(54,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(430,10) AND tens_score = "110110" else-- "6"
---					CONV_STD_LOGIC_VECTOR(55,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(430,10) AND tens_score = "110111" else --"7"
---					CONV_STD_LOGIC_VECTOR(56,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(430,10) AND tens_score = "111000" else--"8"
---					CONV_STD_LOGIC_VECTOR(57,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(430,10) AND tens_score = "111001" else --"9"
---					
---					
---						-- for ones  
---					CONV_STD_LOGIC_VECTOR(48,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(446,10) AND ones_score = "110000" else --"0"
---					CONV_STD_LOGIC_VECTOR(49,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(446,10) AND ones_score = "110001" else --"1"
---			      CONV_STD_LOGIC_VECTOR(50,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(446,10) AND ones_score = "110010" else --"2"
---					CONV_STD_LOGIC_VECTOR(51,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(446,10) AND ones_score = "110011" else --"3"
---					CONV_STD_LOGIC_VECTOR(52,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(446,10) AND ones_score = "110100" else --"4"
---					CONV_STD_LOGIC_VECTOR(53,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(446,10) AND ones_score = "110101" else --"5"
---					CONV_STD_LOGIC_VECTOR(54,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(446,10) AND ones_score = "110110" else-- "6"
---					CONV_STD_LOGIC_VECTOR(55,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(446,10) AND ones_score = "110111" else --"7"
---					CONV_STD_LOGIC_VECTOR(56,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(446,10) AND ones_score = "111000" else--"8"
---					CONV_STD_LOGIC_VECTOR(57,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(446,10) AND ones_score = "111001" --"9"
---		
+	
 		scoretext : char_rom PORT MAP(
 							character_address => score_display,
 							font_row=>pixel_row(3 downto 1),

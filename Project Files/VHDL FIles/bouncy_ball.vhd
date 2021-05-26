@@ -129,8 +129,6 @@ pipeTop2 <= '0' when (( '1' & pixel_column + pipeWidth >= '1' & pipe2_x_pos + pi
 
 pipes <= ((not pipeBot1 and not pipeTop1) or (not pipeBot2 and not pipeTop2));
 
---pipes <= ((not pipeBot1 and not pipeTop1));
-
 Move_Ball: process (vert_sync)
 variable tick : std_logic := '0';
 variable incrementScore : std_logic := '0';
@@ -182,6 +180,7 @@ begin
 		-- Move ball once every vertical sync
 		if (rising_edge(vert_sync)) then
 
+		--STATE CHANGES
 			-- Initialise to training mode
 			if (sw0 = '1' and rightButton = '1') then
 				gameState <= "10";
@@ -243,8 +242,15 @@ begin
 			end if;
 			
 				
-			
-			score_ones_out <= ones_score + CONV_STD_LOGIC_VECTOR(totalScore, 6);
+			if (ones_score > "111001") then
+				ones_score <= "110000";
+				tens_score <= tens_score + "000001";
+			end if;
+
+			-- Score and lives outputs
+			score_ones_out <= ones_score;
+			score_tens_out <= tens_score;
+
 			lives_out <= lives; 
 				
 				
@@ -292,6 +298,7 @@ begin
 							pipe_x_motion <= CONV_STD_LOGIC_VECTOR(0,11);
 							ball_y_motion <= CONV_STD_LOGIC_VECTOR(0,10);
 							ones_score <= "110000";
+							tens_score <= "110000";
 							totalScore <= 0;
 					end if;
 	
@@ -303,12 +310,11 @@ begin
 
 					if (incrementScore = '0') then
 						totalScore <= totalScore + 1;
+						ones_score <= ones_score + "000001";
+						
 						incrementScore := '1';
 					end if;
 
-
-
-						
 				end if;
 			end if;
 						
@@ -333,6 +339,7 @@ begin
 							 pipe_x_motion <= CONV_STD_LOGIC_VECTOR(0,11);
 							 ball_y_motion <= CONV_STD_LOGIC_VECTOR(0,10);
 							 ones_score <= "110000";
+							 tens_score <= "110000";
 							 totalScore <= 0;
 
 						end if;
@@ -344,6 +351,7 @@ begin
 
 					if (incrementScore2 = '0') then
 						totalScore <= totalScore + 1;
+						ones_score <= ones_score + "000001";
 						incrementScore2 := '1';
 					end if;
 		
