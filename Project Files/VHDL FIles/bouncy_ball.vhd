@@ -94,8 +94,8 @@ signal resetScore : std_logic_vector(5 downto 0) := "110000";
 
 signal gameState : std_logic_vector(1 downto 0) := "00";
 
-SIGNAL rand_num1: STD_LOGIC_VECTOR (7 DOWNTO 0):= "01111111";
-SIGNAL rand_num_variable1: STD_LOGIC_VECTOR (6 DOWNTO 0):= "1111111";
+SIGNAL rand_num1: STD_LOGIC_VECTOR (7 DOWNTO 0):= "10000000";
+SIGNAL rand_num_variable1: STD_LOGIC_VECTOR (6 DOWNTO 0):= "1010101";
 signal temp1 : std_logic := '0';
 
 SIGNAL rand_num2: STD_LOGIC_VECTOR (7 DOWNTO 0):= "01111111";
@@ -117,7 +117,7 @@ eye2XPos <= CONV_STD_LOGIC_VECTOR(246,11);
 mouthXPos <= CONV_STD_LOGIC_VECTOR(250,11);
 mouthSize <= CONV_STD_LOGIC_VECTOR(2,10);
 
-pipeSpacing <= CONV_STD_LOGIC_VECTOR(400,10);
+pipeSpacing <= CONV_STD_LOGIC_VECTOR(320,10);
 pipeWidth <= CONV_STD_LOGIC_VECTOR(20,10);
 pipeTopGap <= CONV_STD_LOGIC_VECTOR(170,10);
 pipeBotGap <= CONV_STD_LOGIC_VECTOR(250,10);
@@ -257,6 +257,9 @@ begin
 				incrementScore := '0';
 				incrementScore2 := '0';
 				lives <= "0011";
+				rand_num1 <= "10000000";
+				rand_num2 <= "00000001";
+				temp1 <= '0';
 				ball_y_pos <= CONV_STD_LOGIC_VECTOR(50, 10);
 			end if;
 			
@@ -266,6 +269,9 @@ begin
 				incrementScore := '0';
 				incrementScore2 := '0';
 				lives <= "0011";
+				rand_num1 <= "10000000";
+				rand_num2 <= "00000001";
+				temp2 <= '0';
 				ball_y_pos <= CONV_STD_LOGIC_VECTOR(50,10);
 			end if;
 			
@@ -317,13 +323,15 @@ begin
 				
 
 				if((pipe1_x_pos + pipeWidth) <=  '1' & CONV_STD_LOGIC_VECTOR(0,10)) then  
-					pipe1_x_pos <= '1' & CONV_STD_LOGIC_VECTOR(640,10) + pipeWidth + pipeSpacing;
+					pipe1_x_pos <= '1' & CONV_STD_LOGIC_VECTOR(640,10) + pipeWidth;
+					rand_num1 <= "10000000";
 					temp1 <= rand_num1(6) XOR rand_num1(4) XOR rand_num1(3) XOR rand_num1(2) XOR rand_num1(0);
 					rand_num1 <= temp1 & rand_num_variable1;
 					incrementScore := '0';	
 				end if;
 				if((pipe2_x_pos + pipeWidth + pipeSpacing) <=  '1' & CONV_STD_LOGIC_VECTOR(0,10)) then  
-					pipe2_x_pos <= '1' & CONV_STD_LOGIC_VECTOR(640,10) + pipeWidth;
+					pipe2_x_pos <= '1' & CONV_STD_LOGIC_VECTOR(640,10) - pipeSpacing + pipeWidth;
+					rand_num2 <= "00000001";
 					temp2 <= rand_num2(6) XOR rand_num2(4) XOR rand_num2(3) XOR rand_num2(2) XOR rand_num2(0);
 					rand_num2 <= temp2 & rand_num_variable2;
 					incrementScore2 := '0';	
