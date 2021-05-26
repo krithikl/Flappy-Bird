@@ -37,6 +37,7 @@ signal gift : std_logic;
 signal giftYPos : std_logic_vector(9 downto 0);
 signal giftXPos : std_logic_vector(10 downto 0);
 signal giftSize : std_logic_vector(9 downto 0);
+SIGNAL giftXMotion	: std_logic_vector(10 DOWNTO 0) := CONV_STD_LOGIC_VECTOR(500,11);
 
 
 
@@ -106,8 +107,7 @@ signal derpyBird : std_logic;
 BEGIN
 
 giftYPos <= CONV_STD_LOGIC_VECTOR(200,10);
-giftXPos <= CONV_STD_LOGIC_VECTOR(600,11);
-giftSize <= CONV_STD_LOGIC_VECTOR(15,10);   
+giftSize <= CONV_STD_LOGIC_VECTOR(5,10);   
 
 size <= CONV_STD_LOGIC_VECTOR(8,10);
 eye1Size <= CONV_STD_LOGIC_VECTOR(1,10);
@@ -217,9 +217,9 @@ begin
 		
 		-- Normal mode
 		if (gameState = "01") then 
-			Red <= derpyBird and (background or ball_on) and ((not pipes) or (gift) or (levelsText));
-			Green <= derpyBird and (background or ball_on or pipes) and (not gift) and (not levelsText);
-			Blue <= derpyBird and (background and (not ball_on) and ((not pipes)  or (gift) or (levelsText)));
+			Red <= derpyBird and (background or ball_on) and ((not pipes) or (gift) or (levelsText) or (textOutput));
+			Green <= derpyBird and (background or ball_on or pipes) and (not gift) and (not levelsText) and (not textOutput);
+			Blue <= derpyBird and (background and (not ball_on) and ((not pipes)  or (gift) or (levelsText) or (textOutput)));
 		end if;
 		
 		-- Training mode
@@ -274,6 +274,7 @@ begin
 			if (gameState = "01" or gameState = "10") then
 				gameStart <= gameState;
 				pipe_x_motion <= CONV_STD_LOGIC_VECTOR(2,11);
+				giftXMotion <= CONV_STD_LOGIC_VECTOR(1,11);
 
 				if (gameState = "01") then
 					pipe_x_motion <= CONV_STD_LOGIC_VECTOR(3,11);
@@ -296,6 +297,8 @@ begin
 				pipe1_x_pos <= pipe1_x_pos - pipe_x_motion;
 				pipe2_x_pos <= pipe2_x_pos - pipe_x_motion;
 				
+				giftXPos <= giftXPos - giftXMotion;
+
 				if((pipe1_x_pos + pipeWidth) <=  '1' & CONV_STD_LOGIC_VECTOR(0,10)) then  
 					pipe1_x_pos <= '1' & CONV_STD_LOGIC_VECTOR(640,10) + pipeWidth + pipeSpacing;
 					temp1 <= rand_num1(6) XOR rand_num1(4) XOR rand_num1(3) XOR rand_num1(2) XOR rand_num1(0);
