@@ -18,13 +18,15 @@ ENTITY bouncy_ball IS
 		signal randNum				: IN std_logic_vector(7 downto 0);
 		signal gameModeText		: IN std_logic;
 		signal giftDisplay		: IN std_logic;
+		signal levelsText			: IN std_logic;
 		SIGNAL red, green, blue	: OUT std_logic; 
 		SIGNAL mouseReset 			: OUT std_logic := '0'; 
 		
 	
 		SIGNAL gameOver      		: OUT std_logic_vector(1 downto 0); 
 		SIGNAL gameStart			: OUT std_logic_vector(1 downto 0); 
-		SIGNAL lives_out 			: OUT std_logic_vector(3 downto 0)
+		SIGNAL lives_out 			: OUT std_logic_vector(3 downto 0);
+		signal levelOut			: OUT std_logic_vector(1 downto 0)
 		); 
 		  
 END bouncy_ball;
@@ -104,8 +106,8 @@ signal derpyBird : std_logic;
 BEGIN
 
 giftYPos <= CONV_STD_LOGIC_VECTOR(200,10);
-giftXPos <= CONV_STD_LOGIC_VECTOR(200,11);
-giftSize <= CONV_STD_LOGIC_VECTOR(15,10);      
+giftXPos <= CONV_STD_LOGIC_VECTOR(600,11);
+giftSize <= CONV_STD_LOGIC_VECTOR(15,10);   
 
 size <= CONV_STD_LOGIC_VECTOR(8,10);
 eye1Size <= CONV_STD_LOGIC_VECTOR(1,10);
@@ -192,6 +194,7 @@ variable tick : std_logic := '0';
 variable incrementScore : std_logic := '0';
 variable incrementScore2 : std_logic := '0';
 variable collision : std_logic := '0';
+variable currentLevel : std_logic_vector(1 downto 0);
 
 begin
 		Red <= not mainMenuBackground or not mainMenuText;
@@ -214,9 +217,9 @@ begin
 		
 		-- Normal mode
 		if (gameState = "01") then 
-			Red <= derpyBird and (background or ball_on) and ((not pipes) or (textOutput) or gift);
-			Green <= derpyBird and (background or ball_on or pipes) and (not textOutput) and (not gift);
-			Blue <= derpyBird and (background and (not ball_on) and ((not pipes) or (textOutput) or (gift)));
+			Red <= derpyBird and (background or ball_on) and ((not pipes) or (textOutput) or (gift) or (levelsText));
+			Green <= derpyBird and (background or ball_on or pipes) and (not textOutput) and (not gift) and (not levelsText);
+			Blue <= derpyBird and (background and (not ball_on) and ((not pipes) or (textOutput) or (gift) or (levelsText)));
 		end if;
 		
 		-- Training mode
@@ -274,12 +277,16 @@ begin
 
 				if (gameState = "01") then
 					pipe_x_motion <= CONV_STD_LOGIC_VECTOR(3,11);
+					currentLevel := "00";
 					if (totalScore >= 5 and totalScore < 10) then
 						pipe_x_motion <= CONV_STD_LOGIC_VECTOR(4,11);
+						currentLevel := "01";
 					elsif (totalScore >= 10 and totalScore < 15) then
 						pipe_x_motion <= CONV_STD_LOGIC_VECTOR(5,11);
+						currentLevel := "10";
 					elsif (totalScore >= 15 and totalScore < 20) then
 						pipe_x_motion <= CONV_STD_LOGIC_VECTOR(7,11);
+						currentLevel := "11";
 					end if;
 				end if;
 
