@@ -17,6 +17,7 @@ ENTITY bouncy_ball IS
 		SIGNAL mainmenuText		: IN std_logic;  
 		signal randNum				: IN std_logic_vector(7 downto 0);
 		signal gameModeText		: IN std_logic;
+		signal giftDisplay		: IN std_logic;
 		SIGNAL red, green, blue	: OUT std_logic; 
 		SIGNAL mouseReset 			: OUT std_logic := '0'; 
 		
@@ -30,12 +31,19 @@ END bouncy_ball;
 
 architecture behavior of bouncy_ball is
 
+signal gift : std_logic;
+signal giftYPos : std_logic_vector(9 downto 0);
+signal giftXPos : std_logic_vector(10 downto 0);
+signal giftSize : std_logic_vector(9 downto 0);
+
+
+
+
 
 
 SIGNAL ball_on					: std_logic;
 SIGNAL eye1 : std_logic;
 SIGNAL eye2 : std_logic;
-
 SiGNAL eye1XPos				: std_logic_vector(10 DOWNTO 0);
 SiGNAL eye2XPos				: std_logic_vector(10 DOWNTO 0);
 SiGNAL mouthXPos				: std_logic_vector(10 DOWNTO 0);
@@ -93,7 +101,11 @@ signal temp2 : std_logic := '0';
 
 signal derpyBird : std_logic;
 
-BEGIN           
+BEGIN
+
+giftYPos <= CONV_STD_LOGIC_VECTOR(200,10);
+giftXPos <= CONV_STD_LOGIC_VECTOR(200,11);
+giftSize <= CONV_STD_LOGIC_VECTOR(15,10);      
 
 size <= CONV_STD_LOGIC_VECTOR(8,10);
 eye1Size <= CONV_STD_LOGIC_VECTOR(1,10);
@@ -109,6 +121,8 @@ pipeTopGap <= CONV_STD_LOGIC_VECTOR(170,10);
 pipeBotGap <= CONV_STD_LOGIC_VECTOR(250,10);
 
 ballPadding <= CONV_STD_LOGIC_VECTOR(3,10);
+
+
 
 
 
@@ -134,6 +148,12 @@ mouth <= '1' when ( ('0' & pixel_column + mouthSize >= '0' & mouthXPos)
 					and ('0' & pixel_column <= '0' & mouthXPos + mouthSize) 	-- x_pos - size <= pixel_column <= x_pos + size
 					and (pixel_row + mouthSize >= '0' & ball_y_pos + CONV_STD_LOGIC_VECTOR(3,10)) 
 					and ('0' & pixel_row <= ball_y_pos + mouthSize + CONV_STD_LOGIC_VECTOR(3,10)) )  else	-- y_pos - size <= pixel_row <= y_pos + size
+'0';
+
+gift <= '1' when ( ('0' & pixel_column + giftSize >= '0' & giftXPos) 
+					and ('0' & pixel_column <= '0' & giftXPos + giftSize) 	-- x_pos - size <= pixel_column <= x_pos + size
+					and (pixel_row + giftSize >= '0' & giftYPos) 
+					and ('0' & pixel_row <= giftYPos + giftSize))  else	-- y_pos - size <= pixel_row <= y_pos + size
 '0';
 			  
 background <= '1' when (pixel_row >= 0 and pixel_row <= 479) or (pixel_column >= 0 and pixel_column <= 639) else
@@ -194,9 +214,9 @@ begin
 		
 		-- Normal mode
 		if (gameState = "01") then 
-			Red <= derpyBird and (background or ball_on) and ((not pipes) or ( textOutput));
-			Green <=  derpyBird and (background or ball_on or pipes) and (not textOutput);
-			Blue <= derpyBird and (background and (not ball_on) and ((not pipes) or (textOutput)));
+			Red <= derpyBird and (background or ball_on) and ((not pipes) or (textOutput) or gift);
+			Green <= derpyBird and (background or ball_on or pipes) and (not textOutput) and (not gift);
+			Blue <= derpyBird and (background and (not ball_on) and ((not pipes) or (textOutput) or (gift)));
 		end if;
 		
 		-- Training mode
