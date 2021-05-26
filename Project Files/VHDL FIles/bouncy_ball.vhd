@@ -185,12 +185,16 @@ begin
 			-- Initialise to training mode
 			if (sw0 = '1' and rightButton = '1') then
 				gameState <= "10";
+				incrementScore := '0';
+				incrementScore2 := '0';
 				ball_y_pos <= CONV_STD_LOGIC_VECTOR(50, 10);
 			end if;
 			
 			-- Initialise to normal game mode
 			if (sw0 = '0' and rightButton = '1') then
 				gameState <= "01";
+				incrementScore := '0';
+				incrementScore2 := '0';
 				ball_y_pos <= CONV_STD_LOGIC_VECTOR(50,10);
 			end if;
 			
@@ -257,7 +261,15 @@ begin
 
 				
 			end if;
+			if ((ball_x_pos + size >= pipe1XLeft) and (ball_x_pos + size <= pipe1XRight)) then
+				incrementScore := '0';
 
+			end if;
+
+			if ((ball_x_pos + size >= pipe2XLeft + pipeSpacing) and (ball_x_pos + size <= pipe2XRight + pipeSpacing)) then
+				incrementScore2 := '0';
+
+			end if;
 
 			-- Pipe 1 collision
 			if ((ball_y_pos + size + ballPadding >= pipeBotGap + rand_num1) OR ((ball_y_pos <= pipeTopGap + size + rand_num1))) then
@@ -291,10 +303,7 @@ begin
 						incrementScore := '1';
 					end if;
 
-					if ((ball_x_pos + size >= pipe1XLeft) and (ball_x_pos + size <= pipe1XRight)) then
-						incrementScore := '0';
 
-					end if;
 
 						
 				end if;
@@ -334,10 +343,7 @@ begin
 						incrementScore2 := '1';
 					end if;
 
-					if ((ball_x_pos + size >= pipe2XLeft + pipeSpacing) and (ball_x_pos + size <= pipe2XRight + pipeSpacing)) then
-						incrementScore2 := '0';
-
-					end if;
+					
 
 						
 				end if;
