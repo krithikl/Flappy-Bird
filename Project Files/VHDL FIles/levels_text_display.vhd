@@ -42,25 +42,25 @@ BEGIN
 	 
 --LEVEL OVER TEXT--
 		over_text_on <= '1' when (output_score = '1' and pixel_column <= CONV_STD_LOGIC_VECTOR(415,10) and pixel_column >= CONV_STD_LOGIC_VECTOR(255,10) 
-		and pixel_row <= CONV_STD_LOGIC_VECTOR(45,10) and pixel_row >= CONV_STD_LOGIC_VECTOR(30,10)) else'0';
+		and pixel_row <= CONV_STD_LOGIC_VECTOR(60,10) and pixel_row >= CONV_STD_LOGIC_VECTOR(46,10)) else'0';
 
 --LEVEL OVER DISPLAY TEXT--		
 	levels_display <= 
 					
 					--"LEVEL 1"--
-					CONV_STD_LOGIC_VECTOR(12,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(271,10) else --"L"
-					CONV_STD_LOGIC_VECTOR(5,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(287,10) else --"E"
-					CONV_STD_LOGIC_VECTOR(22,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(303,10) else --"V"
-					CONV_STD_LOGIC_VECTOR(5,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(319,10) else --"E"
-					CONV_STD_LOGIC_VECTOR(12,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(335,10) else --"L"					
-					CONV_STD_LOGIC_VECTOR(32,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(351,10) else --"space"
-					CONV_STD_LOGIC_VECTOR(48,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(367,10) and levelOut = "00" else --"0"
-					CONV_STD_LOGIC_VECTOR(49,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(367,10) and levelOut = "01" else --"1"
-					CONV_STD_LOGIC_VECTOR(50,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(367,10) and levelOut = "10" else --"2"
-					CONV_STD_LOGIC_VECTOR(51,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(367,10) and levelOut = "11" else --"3"
-					CONV_STD_LOGIC_VECTOR(32,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(383,10) else --"space"
-					CONV_STD_LOGIC_VECTOR(32,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(399,10) else --"space"
-					CONV_STD_LOGIC_VECTOR(32,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(415,10)--"space" 
+					CONV_STD_LOGIC_VECTOR(12,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(271,10) and pixel_row <= CONV_STD_LOGIC_VECTOR(60,10) and pixel_row >= CONV_STD_LOGIC_VECTOR(45,10)else --"L"
+					CONV_STD_LOGIC_VECTOR(5,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(287,10) and pixel_row <= CONV_STD_LOGIC_VECTOR(60,10) and pixel_row >= CONV_STD_LOGIC_VECTOR(45,10)else --"E"
+					CONV_STD_LOGIC_VECTOR(22,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(303,10) and pixel_row <= CONV_STD_LOGIC_VECTOR(60,10) and pixel_row >= CONV_STD_LOGIC_VECTOR(45,10)else --"V"
+					CONV_STD_LOGIC_VECTOR(5,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(319,10) and pixel_row <= CONV_STD_LOGIC_VECTOR(60,10) and pixel_row >= CONV_STD_LOGIC_VECTOR(45,10)else --"E"
+					CONV_STD_LOGIC_VECTOR(12,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(335,10) and pixel_row <= CONV_STD_LOGIC_VECTOR(60,10) and pixel_row >= CONV_STD_LOGIC_VECTOR(45,10)else --"L"					
+					CONV_STD_LOGIC_VECTOR(32,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(351,10) and pixel_row <= CONV_STD_LOGIC_VECTOR(60,10) and pixel_row >= CONV_STD_LOGIC_VECTOR(45,10)else --"space"
+					CONV_STD_LOGIC_VECTOR(48,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(367,10) and pixel_row <= CONV_STD_LOGIC_VECTOR(60,10) and pixel_row >= CONV_STD_LOGIC_VECTOR(45,10) and levelOut = "00" else --"0"
+					CONV_STD_LOGIC_VECTOR(49,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(367,10) and pixel_row <= CONV_STD_LOGIC_VECTOR(60,10) and pixel_row >= CONV_STD_LOGIC_VECTOR(45,10) and levelOut = "01" else --"1"
+					CONV_STD_LOGIC_VECTOR(50,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(367,10) and pixel_row <= CONV_STD_LOGIC_VECTOR(60,10) and pixel_row >= CONV_STD_LOGIC_VECTOR(45,10) and levelOut = "10" else --"2"
+					CONV_STD_LOGIC_VECTOR(51,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(367,10) and pixel_row <= CONV_STD_LOGIC_VECTOR(60,10) and pixel_row >= CONV_STD_LOGIC_VECTOR(45,10) and levelOut = "11" else --"3"
+					CONV_STD_LOGIC_VECTOR(32,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(383,10) and pixel_row <= CONV_STD_LOGIC_VECTOR(60,10) and pixel_row >= CONV_STD_LOGIC_VECTOR(45,10)else --"space"
+					CONV_STD_LOGIC_VECTOR(32,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(399,10) and pixel_row <= CONV_STD_LOGIC_VECTOR(60,10) and pixel_row >= CONV_STD_LOGIC_VECTOR(45,10) else --"space"
+					CONV_STD_LOGIC_VECTOR(32,6) when pixel_column <= CONV_STD_LOGIC_VECTOR(415,10) and pixel_row <= CONV_STD_LOGIC_VECTOR(60,10) and pixel_row >= CONV_STD_LOGIC_VECTOR(45,10) --"space" 
 
 
 				;

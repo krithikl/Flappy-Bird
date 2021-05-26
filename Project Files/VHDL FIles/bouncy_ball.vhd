@@ -35,9 +35,9 @@ architecture behavior of bouncy_ball is
 
 signal gift : std_logic;
 signal giftYPos : std_logic_vector(9 downto 0);
-signal giftXPos : std_logic_vector(10 downto 0);
+signal giftXPos : std_logic_vector(10 downto 0)  := CONV_STD_LOGIC_VECTOR(700,11);
 signal giftSize : std_logic_vector(9 downto 0);
-SIGNAL giftXMotion	: std_logic_vector(10 DOWNTO 0) := CONV_STD_LOGIC_VECTOR(500,11);
+SIGNAL giftXMotion	: std_logic_vector(10 DOWNTO 0);
 
 
 
@@ -195,11 +195,13 @@ variable incrementScore : std_logic := '0';
 variable incrementScore2 : std_logic := '0';
 variable collision : std_logic := '0';
 variable currentLevel : std_logic_vector(1 downto 0) := "00";
+variable giftCollision : std_logic := '0';
 
 begin
 		Red <= not mainMenuBackground or not mainMenuText;
 		Green <= not mainMenuBackground;
 		Blue <= not mainMenuBackground;
+		
 	
 		-- Main menu selection of training mode
 		if (gameState = "00" and sw0 = '1') then
@@ -217,9 +219,14 @@ begin
 		
 		-- Normal mode
 		if (gameState = "01") then 
-			Red <= derpyBird and (background or ball_on) and ((not pipes) or (gift) or (levelsText) or (textOutput));
-			Green <= derpyBird and (background or ball_on or pipes) and (not gift) and (not levelsText) and (not textOutput);
-			Blue <= derpyBird and (background and (not ball_on) and ((not pipes)  or (gift) or (levelsText) or (textOutput)));
+				Red <= derpyBird and (background or ball_on) and ((not pipes) or (gift) or (levelsText) or (textOutput));
+				Green <= derpyBird and (background or ball_on or pipes) and (not gift) and (not levelsText) and (not textOutput);
+				Blue <= derpyBird and (background and (not ball_on) and ((not pipes)  or (gift) or (levelsText) or (textOutput)));	
+			if (giftCollision = '1') then
+				Red <= derpyBird and (background or ball_on) and ((not pipes) or (levelsText) or (textOutput));
+				Green <= derpyBird and (background or ball_on or pipes) and (not levelsText) and (not textOutput);
+				Blue <= derpyBird and (background and (not ball_on) and ((not pipes)  or (levelsText) or (textOutput)));
+			end if;
 		end if;
 		
 		-- Training mode
@@ -299,6 +306,16 @@ begin
 				
 				giftXPos <= giftXPos - giftXMotion;
 
+				-- Gift collision
+				if ((ball_x_pos + size >= giftXPos - giftSize) and (ball_x_pos + size <= giftXPos + giftSize)) then
+					if ((ball_y_pos - size <= giftYPos + giftSize ) or (ball_y_pos + size >= giftYPos - giftSize)) then
+						giftCollision := '1';
+						ones_score <= ones_score + "000001";
+						giftXPos <= CONV_STD_LOGIC_VECTOR(700,11);
+					end if;
+				end if;
+				
+
 				if((pipe1_x_pos + pipeWidth) <=  '1' & CONV_STD_LOGIC_VECTOR(0,10)) then  
 					pipe1_x_pos <= '1' & CONV_STD_LOGIC_VECTOR(640,10) + pipeWidth + pipeSpacing;
 					temp1 <= rand_num1(6) XOR rand_num1(4) XOR rand_num1(3) XOR rand_num1(2) XOR rand_num1(0);
@@ -311,6 +328,11 @@ begin
 					rand_num2 <= temp2 & rand_num_variable2;
 					incrementScore2 := '0';	
 				end if;
+				
+				if ((giftXPos + giftSize <= '1' & CONV_STD_LOGIC_VECTOR(0,10))) then
+					giftXPos <= '1' & CONV_STD_LOGIC_VECTOR(700,10) + giftSize;
+				end if;
+				
 			end if;
 			
 				
@@ -385,6 +407,7 @@ begin
 						ones_score <= ones_score + "000001";
 						
 						incrementScore := '1';
+						giftCollision := '0';
 					end if;
 
 				end if;
@@ -425,6 +448,7 @@ begin
 						totalScore <= totalScore + 1;
 						ones_score <= ones_score + "000001";
 						incrementScore2 := '1';
+						giftCollision := '0';
 					end if;
 		
 				end if;
