@@ -3,51 +3,51 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'inst6|altpll_component|auto_generated|pll1|clk[0]'
-Slack : -10.159
-TNS   : -44.953
+Slack : -9.601
+TNS   : -43.967
 
 Type  : Slow 1200mV 85C Model Setup 'VGA_SYNC:inst1|vert_sync_out'
-Slack : -8.197
-TNS   : -816.284
+Slack : -8.020
+TNS   : -814.346
 
 Type  : Slow 1200mV 85C Model Setup 'MOUSE:inst3|MOUSE_CLK_FILTER'
-Slack : -2.270
-TNS   : -56.075
+Slack : -2.214
+TNS   : -60.025
 
 Type  : Slow 1200mV 85C Model Setup 'VGA_SYNC:inst1|pixel_column[0]'
-Slack : -1.568
-TNS   : -3.873
+Slack : -0.990
+TNS   : -1.444
 
 Type  : Slow 1200mV 85C Model Hold 'VGA_SYNC:inst1|pixel_column[0]'
-Slack : -4.042
-TNS   : -21.850
+Slack : -3.821
+TNS   : -20.324
 
 Type  : Slow 1200mV 85C Model Hold 'inst6|altpll_component|auto_generated|pll1|clk[0]'
 Slack : -0.183
 TNS   : -0.183
 
 Type  : Slow 1200mV 85C Model Hold 'MOUSE:inst3|MOUSE_CLK_FILTER'
-Slack : 0.275
+Slack : 0.143
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'VGA_SYNC:inst1|vert_sync_out'
-Slack : 0.357
+Slack : 0.341
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Recovery 'inst6|altpll_component|auto_generated|pll1|clk[0]'
-Slack : -3.791
-TNS   : -61.908
+Slack : -3.667
+TNS   : -65.232
 
 Type  : Slow 1200mV 85C Model Recovery 'MOUSE:inst3|MOUSE_CLK_FILTER'
-Slack : -2.269
-TNS   : -18.064
+Slack : -2.229
+TNS   : -16.752
 
 Type  : Slow 1200mV 85C Model Removal 'MOUSE:inst3|MOUSE_CLK_FILTER'
-Slack : 0.020
-TNS   : 0.000
+Slack : -0.094
+TNS   : -0.564
 
 Type  : Slow 1200mV 85C Model Removal 'inst6|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 3.042
+Slack : 3.392
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'VGA_SYNC:inst1|vert_sync_out'
@@ -59,8 +59,8 @@ Slack : -1.000
 TNS   : -37.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'VGA_SYNC:inst1|pixel_column[0]'
-Slack : -0.925
-TNS   : -25.767
+Slack : -0.483
+TNS   : -13.272
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
 Slack : 9.825
@@ -71,51 +71,51 @@ Slack : 19.733
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'inst6|altpll_component|auto_generated|pll1|clk[0]'
-Slack : -8.930
-TNS   : -38.923
+Slack : -8.428
+TNS   : -37.850
 
 Type  : Slow 1200mV 0C Model Setup 'VGA_SYNC:inst1|vert_sync_out'
-Slack : -7.249
-TNS   : -717.986
+Slack : -7.111
+TNS   : -715.385
 
 Type  : Slow 1200mV 0C Model Setup 'MOUSE:inst3|MOUSE_CLK_FILTER'
-Slack : -2.028
-TNS   : -47.980
+Slack : -1.990
+TNS   : -51.490
 
 Type  : Slow 1200mV 0C Model Setup 'VGA_SYNC:inst1|pixel_column[0]'
-Slack : -1.457
-TNS   : -3.570
+Slack : -0.951
+TNS   : -1.531
 
 Type  : Slow 1200mV 0C Model Hold 'VGA_SYNC:inst1|pixel_column[0]'
-Slack : -3.507
-TNS   : -18.931
+Slack : -3.237
+TNS   : -17.068
 
 Type  : Slow 1200mV 0C Model Hold 'inst6|altpll_component|auto_generated|pll1|clk[0]'
 Slack : -0.289
 TNS   : -0.289
 
+Type  : Slow 1200mV 0C Model Hold 'VGA_SYNC:inst1|vert_sync_out'
+Slack : 0.298
+TNS   : 0.000
+
 Type  : Slow 1200mV 0C Model Hold 'MOUSE:inst3|MOUSE_CLK_FILTER'
 Slack : 0.312
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Hold 'VGA_SYNC:inst1|vert_sync_out'
-Slack : 0.312
-TNS   : 0.000
-
 Type  : Slow 1200mV 0C Model Recovery 'inst6|altpll_component|auto_generated|pll1|clk[0]'
-Slack : -3.213
-TNS   : -51.895
+Slack : -3.094
+TNS   : -54.762
 
 Type  : Slow 1200mV 0C Model Recovery 'MOUSE:inst3|MOUSE_CLK_FILTER'
-Slack : -2.025
-TNS   : -17.371
+Slack : -1.982
+TNS   : -15.569
 
 Type  : Slow 1200mV 0C Model Removal 'MOUSE:inst3|MOUSE_CLK_FILTER'
-Slack : 0.223
+Slack : 0.121
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Removal 'inst6|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 2.624
+Slack : 2.937
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'VGA_SYNC:inst1|vert_sync_out'
@@ -127,63 +127,63 @@ Slack : -1.000
 TNS   : -37.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'VGA_SYNC:inst1|pixel_column[0]'
-Slack : -0.792
-TNS   : -22.280
+Slack : -0.395
+TNS   : -10.406
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : 9.785
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'inst6|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 19.741
+Slack : 19.739
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'inst6|altpll_component|auto_generated|pll1|clk[0]'
-Slack : -5.453
-TNS   : -23.791
+Slack : -5.040
+TNS   : -22.999
 
 Type  : Fast 1200mV 0C Model Setup 'VGA_SYNC:inst1|vert_sync_out'
-Slack : -4.114
-TNS   : -403.061
+Slack : -4.047
+TNS   : -406.392
 
 Type  : Fast 1200mV 0C Model Setup 'MOUSE:inst3|MOUSE_CLK_FILTER'
-Slack : -1.015
-TNS   : -17.618
+Slack : -0.999
+TNS   : -19.787
 
 Type  : Fast 1200mV 0C Model Setup 'VGA_SYNC:inst1|pixel_column[0]'
-Slack : -0.623
-TNS   : -1.064
+Slack : -0.428
+TNS   : -0.428
 
 Type  : Fast 1200mV 0C Model Hold 'VGA_SYNC:inst1|pixel_column[0]'
-Slack : -2.443
-TNS   : -13.520
+Slack : -2.358
+TNS   : -12.669
 
 Type  : Fast 1200mV 0C Model Hold 'inst6|altpll_component|auto_generated|pll1|clk[0]'
 Slack : -0.135
 TNS   : -0.135
 
 Type  : Fast 1200mV 0C Model Hold 'MOUSE:inst3|MOUSE_CLK_FILTER'
-Slack : 0.185
+Slack : 0.143
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'VGA_SYNC:inst1|vert_sync_out'
-Slack : 0.186
+Slack : 0.178
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Recovery 'inst6|altpll_component|auto_generated|pll1|clk[0]'
-Slack : -1.833
-TNS   : -28.843
+Slack : -1.758
+TNS   : -30.910
 
 Type  : Fast 1200mV 0C Model Recovery 'MOUSE:inst3|MOUSE_CLK_FILTER'
-Slack : -1.099
-TNS   : -8.275
+Slack : -1.080
+TNS   : -7.305
 
 Type  : Fast 1200mV 0C Model Removal 'MOUSE:inst3|MOUSE_CLK_FILTER'
-Slack : 0.084
+Slack : 0.033
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Removal 'inst6|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 1.739
+Slack : 1.937
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'VGA_SYNC:inst1|vert_sync_out'
@@ -195,15 +195,15 @@ Slack : -1.000
 TNS   : -37.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'VGA_SYNC:inst1|pixel_column[0]'
-Slack : -0.393
-TNS   : -9.070
+Slack : -0.106
+TNS   : -1.302
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : 9.585
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'inst6|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 19.747
+Slack : 19.746
 TNS   : 0.000
 
 ------------------------------------------------------------
