@@ -261,6 +261,7 @@ begin
 
 				
 			end if;
+			
 			if ((ball_x_pos + size >= pipe1XLeft) and (ball_x_pos + size <= pipe1XRight)) then
 				incrementScore := '0';
 
@@ -291,15 +292,15 @@ begin
 							ones_score <= "110000";
 							totalScore <= 0;
 					end if;
-
-						
+	
 				end if;
-			elsif ((ball_y_pos + size + ballPadding <= pipeBotGap + rand_num1) OR ((ball_y_pos >= pipeTopGap + size + rand_num1))) then	
+				
+			elsif ((ball_y_pos + size + ballPadding <= pipeBotGap + rand_num1) OR ((ball_y_pos >= pipeTopGap + size + rand_num1))) then
+				collision := '0';
 				if ((gamestate = "01" or gameState = "10") and ((ball_x_pos + size <= pipe1XLeft) and (ball_x_pos + size >= pipe1XRight))) then
 
 					if (incrementScore = '0') then
 						totalScore <= totalScore + 1;
-						collision := '0';
 						incrementScore := '1';
 					end if;
 
@@ -334,20 +335,19 @@ begin
 
 						end if;
 				end if;
+				
 			elsif ((ball_y_pos + size + ballPadding <= pipeBotGap + rand_num2) OR (ball_y_pos - size + ballPadding >= pipeTopGap + rand_num2)) then
+				collision := '0';
 				if ((gamestate = "01" or gameState = "10") and ((ball_x_pos + size <= pipe2XLeft + pipeSpacing) and (ball_x_pos + size >= pipe2XRight + pipeSpacing))) then
 
 					if (incrementScore2 = '0') then
 						totalScore <= totalScore + 1;
-						collision := '0';
 						incrementScore2 := '1';
 					end if;
-
-					
-
-						
+		
 				end if;
 			end if;
+			
 				
 			if (leftButton = '1' and (gameState = "01" or gameState = "10")) then
 				-- Bounce off top or bottom of the screen
