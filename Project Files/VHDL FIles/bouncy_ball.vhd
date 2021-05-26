@@ -187,6 +187,7 @@ begin
 				gameState <= "10";
 				incrementScore := '0';
 				incrementScore2 := '0';
+				lives <= "0011";
 				ball_y_pos <= CONV_STD_LOGIC_VECTOR(50, 10);
 			end if;
 			
@@ -195,6 +196,7 @@ begin
 				gameState <= "01";
 				incrementScore := '0';
 				incrementScore2 := '0';
+				lives <= "0011";
 				ball_y_pos <= CONV_STD_LOGIC_VECTOR(50,10);
 			end if;
 			
