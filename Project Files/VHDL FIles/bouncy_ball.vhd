@@ -6,23 +6,25 @@ USE  IEEE.STD_LOGIC_SIGNED.all;
 
 ENTITY bouncy_ball IS
 	PORT
-		( SIGNAL sw0, pb2, leftButton, rightButton, clk, vert_sync	: IN std_logic;
-         SIGNAL pixel_row, pixel_column	: IN std_logic_vector(9 DOWNTO 0);
-		 	
-		  SIGNAL score_ones_out, score_tens_out : OUT std_logic_vector(5 downto 0) := "110000";
-		 
-		  SIGNAL textOutput 			: IN std_logic; 
-		  SIGNAL gameOverText		: IN std_logic; 
-		  SIGNAL mainmenuText		: IN std_logic;  
-		  signal randNum				: IN std_logic_vector(7 downto 0);
-		  signal gameModeText		: IN std_logic;
-		  SIGNAL red, green, blue	: OUT std_logic; 
-		  SIGNAL mouseReset 			: OUT std_logic := '0'; 
-		  
+		( 
+		SIGNAL sw1, sw0, pb2, leftButton, rightButton, clk, vert_sync	: IN std_logic;
+		SIGNAL pixel_row, pixel_column	: IN std_logic_vector(9 DOWNTO 0);
 		
-		  SIGNAL gameOver      		: OUT std_logic_vector(1 downto 0); 
-		  SIGNAL gameStart			: OUT std_logic_vector(1 downto 0); 
-		  SIGNAL lives_out 			: OUT std_logic_vector(3 downto 0)); 
+		SIGNAL score_ones_out, score_tens_out : OUT std_logic_vector(5 downto 0) := "110000";
+		
+		SIGNAL textOutput 			: IN std_logic; 
+		SIGNAL gameOverText		: IN std_logic; 
+		SIGNAL mainmenuText		: IN std_logic;  
+		signal randNum				: IN std_logic_vector(7 downto 0);
+		signal gameModeText		: IN std_logic;
+		SIGNAL red, green, blue	: OUT std_logic; 
+		SIGNAL mouseReset 			: OUT std_logic := '0'; 
+		
+	
+		SIGNAL gameOver      		: OUT std_logic_vector(1 downto 0); 
+		SIGNAL gameStart			: OUT std_logic_vector(1 downto 0); 
+		SIGNAL lives_out 			: OUT std_logic_vector(3 downto 0)
+		); 
 		  
 END bouncy_ball;
 
@@ -216,6 +218,8 @@ begin
 		-- Move ball once every vertical sync
 		if (rising_edge(vert_sync)) then
 
+		
+
 		--STATE CHANGES
 			-- Initialise to training mode
 			if (sw0 = '1' and rightButton = '1') then
@@ -395,7 +399,7 @@ begin
 			end if;
 			
 				
-			if (leftButton = '1' and (gameState = "01" or gameState = "10")) then
+			if (leftButton = '1' and (gameState = "01" or gameState = "10") and sw1 = '0') then
 				-- Bounce off top or bottom of the screen
 				
 				if (ball_y_pos <= size) then
@@ -415,9 +419,10 @@ begin
 					ball_y_motion <= - CONV_STD_LOGIC_VECTOR(2,10);
 				elsif ('0' & ball_y_pos >= CONV_STD_LOGIC_VECTOR(479, 10) - size) then
 					ball_y_motion <= CONV_STD_LOGIC_VECTOR(0,10);
-				elsif (pb2 = '0') then
-					ball_y_motion <= CONV_STD_LOGIC_VECTOR(0,10);
-				elsif (pb2 = '1') then
+				elsif (sw1 = '1') then
+						pipe_x_motion <= CONV_STD_LOGIC_VECTOR(0,11);
+						ball_y_motion <= CONV_STD_LOGIC_VECTOR(0,10);
+				elsif (sw1 = '0') then
 					ball_y_motion <= - CONV_STD_LOGIC_VECTOR(2,10);
 				end if;
 				-- Compute next ball Y position
@@ -448,10 +453,19 @@ begin
 					
 
 				end if ;
+				
+
+			
 
 		end if;
+		
+
+
 end if;
 end process Move_Ball;
+
+
+		
 
 END behavior;
 

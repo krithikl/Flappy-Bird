@@ -1,6 +1,7 @@
 |mainDiagram
 red_out <= VGA_SYNC:inst1.red_out
 clk => altpll0:inst6.inclk0
+sw1 => bouncy_ball:inst.sw1
 sw0 => bouncy_ball:inst.sw0
 pb2 => bouncy_ball:inst.pb2
 mouse_data <> MOUSE:inst3.mouse_data
@@ -188,29 +189,22 @@ locked <= locked.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |mainDiagram|bouncy_ball:inst
+sw1 => pipe_x_motion.OUTPUTSELECT
+sw1 => pipe_x_motion.OUTPUTSELECT
+sw1 => pipe_x_motion.OUTPUTSELECT
+sw1 => pipe_x_motion.OUTPUTSELECT
+sw1 => pipe_x_motion.OUTPUTSELECT
+sw1 => pipe_x_motion.OUTPUTSELECT
+sw1 => pipe_x_motion.OUTPUTSELECT
+sw1 => pipe_x_motion.OUTPUTSELECT
+sw1 => pipe_x_motion.OUTPUTSELECT
+sw1 => pipe_x_motion.OUTPUTSELECT
+sw1 => pipe_x_motion.OUTPUTSELECT
+sw1 => Move_Ball.IN1
+sw1 => ball_y_motion.DATAA
 sw0 => Move_Ball.IN0
 sw0 => Move_Ball.IN1
 sw0 => Move_Ball.IN0
-pb2 => ball_y_motion.OUTPUTSELECT
-pb2 => ball_y_motion.OUTPUTSELECT
-pb2 => ball_y_motion.OUTPUTSELECT
-pb2 => ball_y_motion.OUTPUTSELECT
-pb2 => ball_y_motion.OUTPUTSELECT
-pb2 => ball_y_motion.OUTPUTSELECT
-pb2 => ball_y_motion.OUTPUTSELECT
-pb2 => ball_y_motion.OUTPUTSELECT
-pb2 => ball_y_motion.OUTPUTSELECT
-pb2 => ball_y_motion.OUTPUTSELECT
-pb2 => ball_y_motion.OUTPUTSELECT
-pb2 => ball_y_motion.OUTPUTSELECT
-pb2 => ball_y_motion.OUTPUTSELECT
-pb2 => ball_y_motion.OUTPUTSELECT
-pb2 => ball_y_motion.OUTPUTSELECT
-pb2 => ball_y_motion.OUTPUTSELECT
-pb2 => ball_y_motion.OUTPUTSELECT
-pb2 => ball_y_motion.OUTPUTSELECT
-pb2 => ball_y_motion.OUTPUTSELECT
-pb2 => ball_y_motion.OUTPUTSELECT
 pb2 => Move_Ball.IN1
 leftButton => Move_Ball.IN1
 leftButton => Move_Ball.IN1
