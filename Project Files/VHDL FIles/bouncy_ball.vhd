@@ -194,7 +194,7 @@ variable tick : std_logic := '0';
 variable incrementScore : std_logic := '0';
 variable incrementScore2 : std_logic := '0';
 variable collision : std_logic := '0';
-variable currentLevel : std_logic_vector(1 downto 0);
+variable currentLevel : std_logic_vector(1 downto 0) := "00";
 
 begin
 		Red <= not mainMenuBackground or not mainMenuText;
@@ -217,9 +217,9 @@ begin
 		
 		-- Normal mode
 		if (gameState = "01") then 
-			Red <= derpyBird and (background or ball_on) and ((not pipes) or (textOutput) or (gift) or (levelsText));
-			Green <= derpyBird and (background or ball_on or pipes) and (not textOutput) and (not gift) and (not levelsText);
-			Blue <= derpyBird and (background and (not ball_on) and ((not pipes) or (textOutput) or (gift) or (levelsText)));
+			Red <= derpyBird and (background or ball_on) and ((not pipes) or (gift) or (levelsText));
+			Green <= derpyBird and (background or ball_on or pipes) and (not gift) and (not levelsText);
+			Blue <= derpyBird and (background and (not ball_on) and ((not pipes)  or (gift) or (levelsText)));
 		end if;
 		
 		-- Training mode
@@ -288,6 +288,8 @@ begin
 						pipe_x_motion <= CONV_STD_LOGIC_VECTOR(7,11);
 						currentLevel := "11";
 					end if;
+					
+					levelOut <= currentLevel;
 				end if;
 
 

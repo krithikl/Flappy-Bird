@@ -290,6 +290,8 @@ vert_sync => pipe1_x_pos[7].CLK
 vert_sync => pipe1_x_pos[8].CLK
 vert_sync => pipe1_x_pos[9].CLK
 vert_sync => pipe1_x_pos[10].CLK
+vert_sync => levelOut[0]~reg0.CLK
+vert_sync => levelOut[1]~reg0.CLK
 vert_sync => pipe_x_motion[0].CLK
 vert_sync => pipe_x_motion[1].CLK
 vert_sync => pipe_x_motion[2].CLK
@@ -647,8 +649,7 @@ score_tens_out[3] <= score_tens_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 score_tens_out[4] <= score_tens_out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 score_tens_out[5] <= score_tens_out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 textOutput => red.IN1
-textOutput => red.IN1
-textOutput => green.IN1
+textOutput => blue.IN1
 textOutput => green.IN1
 gameOverText => red.IN1
 mainmenuText => red.IN1
@@ -676,8 +677,8 @@ lives_out[0] <= lives_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 lives_out[1] <= lives_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 lives_out[2] <= lives_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 lives_out[3] <= lives_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-levelOut[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
-levelOut[1] <= levelOut[1].DB_MAX_OUTPUT_PORT_TYPE
+levelOut[0] <= levelOut[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+levelOut[1] <= levelOut[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |mainDiagram|MOUSE:inst3
